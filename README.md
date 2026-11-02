@@ -1,2 +1,3 @@
 # C.cd
-Mobile
+
+Clixora Instagram içerik projesi (@tagi.ilbeyliii). Ayrıntılar için CLAUDE.md dosyasına bakın.
