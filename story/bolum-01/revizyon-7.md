@@ -20,3 +20,13 @@ Konuşma hızı mevcut anlatıcı seslerinden ölçüldü: sahne 2 için 1,64 ke
 | 11 | Gün doğunca Sisliler yavaşlıyor. O zamana kadar dokuz kat inmeliyim. | 10 | ~5,4 sn | ~84 |
 
 Seçilen metinle toplam ~282 kredi, bölüm ~109,1 sn. Kısaltılmış seçenekle ~259 kredi, ~107,3 sn.
+
+## Kesinleşen metin (ChatGPT ve Claude, ses/render yok)
+Bölüm 1'in gerçek bitişi: Deniz daire kapısını açar (sahne 14). Koridordaki Sisli, merdiven ile Deniz'in arasındadır (sahne 15-16). Seçim (sahne 17), Deniz'in merdivene nasıl geçeceğini belirler. Mini amaç bölüm içinde konur, engellenir, Bölüm 2 başında çözülür.
+
+| Sahne | Metin | Kelime | Tahmini süre | Kredi |
+|---|---|---|---|---|
+| 2 | Sisi soluyanlar dakikalar içinde dönüşüyor. Dönüşmeyen birini görmedim. Gündüz uyuşuklar, gece ışığa ve sese yöneliyorlar. Onlara Sisli dedik. | 18 | ~11,0 sn (şu an 8,5) | ~180 |
+| 11 | Gün doğunca Sisliler yavaşlıyor. O zamana kadar aşağı inmeliyim. Önce koridorun sonundaki merdivene. | 13 | ~7,0 sn (şu an 7,5) | ~116 |
+
+Toplam ~296 kredi, bölüm ~108,9 sn. Panel: HEDEF: MERDİVEN BOŞLUĞUNA ULAŞ (sığdığı ölçüldü).

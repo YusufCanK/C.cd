@@ -48,15 +48,15 @@
 ### Panel hedefi (bölümün mini amacıyla eşleşir)
 | Bölüm | Panel hedefi | Süren aciliyet (sağ panel) |
 |---|---|---|
-| 1 | HEDEF: MERDİVENE ULAŞ | GÜN DOĞUMUNA |
+| 1 | HEDEF: MERDİVEN BOŞLUĞUNA ULAŞ | GÜN DOĞUMUNA |
 | 2 | HEDEF: ZEMİNE İN | GÜN DOĞUMUNA |
 | 3 | HEDEF: YEDEK FİLTRE BUL | FİLTRE % ve GÜN BATIMINA |
 
-Not: "MERDİVEN BOŞLUĞUNA ULAŞ" (30 karakter, 36 px) sol panele sığar ama sahne 11'deki sağ "ELA'YA: 14 KM" satırına ~70 px kalır. Kısa hali "MERDİVENE ULAŞ" öneriliyor.
+Ölçüm (render tarayıcısı, Courier New 700 36 px): "HEDEF: MERDİVEN BOŞLUĞUNA ULAŞ" x 40-688, sağdaki "ELA'YA: 14 KM" x 759-1040. Arada 71 px var, sığıyor.
 
 ## Bölüm 1 için düzeltme listesi (uygulama ayrı onaya bağlı, ayrıntı: `bolum-01/revizyon-7.md`)
-1. **Sahne 2 (yeni ses):** "Sisi soluyanlar dakikalar içinde dönüşüyor. Şimdiye kadar dönüşmeyen birini görmedim. Gündüz uyuşuklar, gece ışığa ve sese yöneliyorlar. Biz onlara Sisli dedik."
-2. **Sahne 11 (yeni ses):** "Gün doğunca Sisliler yavaşlıyor. O zamana kadar dokuz kat inmeliyim." "Asansör çalışmıyor" sesten çıkar, görselde asansör kapısına "ARIZALI" bandı eklenir.
-3. **Panel:** "HEDEF: ELA'YA ULAŞ" yerine "HEDEF: MERDİVENE ULAŞ". Ana hedef (Ela) sağ panelde "ELA'YA: 14 KM" olarak kalır.
+1. **Sahne 2 (yeni ses):** "Sisi soluyanlar dakikalar içinde dönüşüyor. Dönüşmeyen birini görmedim. Gündüz uyuşuklar, gece ışığa ve sese yöneliyorlar. Onlara Sisli dedik."
+2. **Sahne 11 (yeni ses):** "Gün doğunca Sisliler yavaşlıyor. O zamana kadar aşağı inmeliyim. Önce koridorun sonundaki merdivene." Genel aciliyet (aşağı inmek) ile bölümün adımı (merdiven) aynı repliktedir. "Asansör çalışmıyor" sesten çıkar, görselde asansör kapısına "ARIZALI" bandı eklenir.
+3. **Panel:** "HEDEF: ELA'YA ULAŞ" yerine "HEDEF: MERDİVEN BOŞLUĞUNA ULAŞ". Ana hedef (Ela) sağ panelde "ELA'YA: 14 KM" olarak kalır.
 4. Kapı altında ıslak havlu (görsel, dünya kuralı 3).
 5. Ses üretimi ve yeniden render: önce kredi tahmini, sonra kullanıcı onayı.
