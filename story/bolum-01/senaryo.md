@@ -37,8 +37,8 @@ Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve 
 
 **[SEÇİM ve YORUM]**
 17. "Fener mi, balta mı? Ve o şey… sence kim?"
-   - **A) FENER:** ışığı yak, sessizce kaç (ışık Sisli'leri çeker)
-   - **B) BALTA:** karşı koy (çıkan ses Sisli'leri çeker)
+   - **A) FENER:** Işıkla yolunu bul. *Sisli seni fark edebilir.*
+   - **B) BALTA:** Karşı koy. *Gürültü diğer Sisli'leri çekebilir.*
 
 ---
 

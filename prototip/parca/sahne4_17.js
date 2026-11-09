@@ -8,7 +8,7 @@ Rigs.deniz($('d9'),{x:290,y:1010,s:.64});Rigs.ela($('e9'),{x:780,y:1060,s:.6,pha
  const g=$('stairs');for(let k=0;k<10;k++){const sz=1200*Math.pow(.76,k),a=k*7,c=Math.round(54-k*4.6);
   const r=el(g,'rect',{x:540-sz/2,y:860-sz/2,width:sz,height:sz,fill:`rgb(${c},${c+14},${c+26})`,stroke:'#05090d','stroke-width':Math.max(4,14-k),transform:`rotate(${a} 540 860)`});
   if(k<9){const g2=el(g,'g',{transform:`rotate(${a} 540 860)`});el(g2,'line',{x1:540-sz/2,y1:860-sz/2,x2:540+sz/2,y2:860-sz/2,stroke:'#0a131c','stroke-width':Math.max(3,9-k)})}}})();
-Rigs.deniz($('d13'),{x:540,y:800,s:.62,mood:'worried',anim:'looklr'});
+Rigs.deniz($('d13'),{x:540,y:640,s:.58,mood:'worried',anim:'looklr'});
 function corridor(g){
  const xl=u=>400*u,yt=u=>700*u,yb=u=>1920-820*u;
  el(g,'rect',{x:-100,y:-100,width:1280,height:2200,fill:'#05090d'});
@@ -26,8 +26,8 @@ function corridor(g){
  return g}
 corridor($('cor14'));corridor($('cor15'));corridor($('cor17'));
 Sisli.draw($('ahmet15'),Sisli.presets.ahmet,540,1090,.34);
-Sisli.draw($('q17'),Sisli.presets.ahmet,330,1400,.55);
-Rigs.deniz($('d16'),{x:540,y:1010,s:1.25,mood:'scared',anim:'speaker'});
+Sisli.draw($('q17'),Sisli.presets.ahmet,330,1262,.45);
+Rigs.deniz($('d16'),{x:540,y:1010,s:1.25,mood:'scared'});
 // ---- sahne ipuçları (kare kare) ----
 BOLUM.hooks[3]=(lt,sc)=>{const c=sc.altyazi,b=c[1]?c[1].t0:2.06,d=c[2]?c[2].t0:3.71;
  $('s3a').style.display=lt<b?'inline':'none';$('s3b').style.display=(lt>=b&&lt<d)?'inline':'none';$('s3c').style.display=lt>=d?'inline':'none';

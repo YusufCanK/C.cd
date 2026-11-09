@@ -183,7 +183,8 @@
       "ses_dosyasi": null,
       "tahmini_konusma_sn": 5.6,
       "bos_pay_sn": 0.9,
-      "ses_notu": "Mevcut anlatıcı sesinin ilk iki cümlesi kullanılacak (üçüncü cümle 'Sonra çok kısık bir ses duyuyorum:' kesilir). Yeni ses üretilmeyecek. Fısıltı dosyası (sahne15-fisilti.mp3) kullanılmayacak."
+      "ses_notu": "Mevcut anlatıcı sesinin ilk iki cümlesi kullanılacak (üçüncü cümle 'Sonra çok kısık bir ses duyuyorum:' kesilir). Yeni ses üretilmeyecek. Fısıltı dosyası (sahne15-fisilti.mp3) kullanılmayacak.",
+      "ses_kirp_sn": 3.33
     },
     {
       "id": 16,
@@ -196,14 +197,15 @@
       "ses_dosyasi": null,
       "tahmini_konusma_sn": 1.2,
       "bos_pay_sn": 1.8,
-      "ses_notu": "'Nasıl biliyor adımı?' repliği kaldırıldı (Sisli konuşmuyor). Üretilmiş Deniz sesi (sahne16-deniz.mp3) bu bölümde kullanılmayacak."
+      "ses_notu": "'Nasıl biliyor adımı?' repliği kaldırıldı (Sisli konuşmuyor). Üretilmiş Deniz sesi (sahne16-deniz.mp3) bu bölümde kullanılmayacak.",
+      "ses_yok": true
     },
     {
       "id": 17,
       "sure_sn": 4,
       "anlatim": "Fener mi, balta mı? Ve o şey… sence kim?",
       "konusmaci": "Deniz",
-      "gorsel": "seçim kartları: A) FENER (kaç) | B) BALTA (savaş) + 'o şey kim?' siluet kartı",
+      "gorsel": "seçim kartları: A) FENER | B) BALTA, her birinde iki kısa satır (avantaj + risk) + 'o şey kim?' siluet kartı",
       "hareket": "kart animasyonu",
       "ses_efekt": "vurgu sesi",
       "ses_dosyasi": null,
@@ -213,14 +215,14 @@
         {
           "harf": "A",
           "etiket": "FENER",
-          "aciklama": "Işığı yak, sessizce kaç",
-          "risk": "Işık Sisli'leri çeker"
+          "satir1": "Işıkla yolunu bul.",
+          "satir2": "Sisli seni fark edebilir."
         },
         {
           "harf": "B",
           "etiket": "BALTA",
-          "aciklama": "Karşı koy, savaş",
-          "risk": "Çıkan ses Sisli'leri çeker"
+          "satir1": "Karşı koy.",
+          "satir2": "Gürültü diğer Sisli'leri çekebilir."
         }
       ]
     }

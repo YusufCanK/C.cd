@@ -11,7 +11,7 @@ function setCap(sc,lt){
  const c=(sc.altyazi||[]).find(x=>lt>=x.t0&&lt<x.t1);
  if(!c){capg.style.display='none';return}
  capg.style.display='inline';capg.setAttribute('class','cap-'+c.konusan);
- const L=c.satir,n=L.length,y0=1540-(n-1)*44;
+ const L=c.satir,n=L.length,y0=1500-(n-1)*88;
  lines.forEach((e,i)=>{const s=L[i]||'';if(e.__s!==s){e.textContent=s;e.__s=s}e.setAttribute('y',y0+i*88)})
 }
 window.__renderAt=function(T){
@@ -25,7 +25,7 @@ window.__renderAt=function(T){
  const hudg=document.getElementById('hud');
  if(hudg){const h=sc.hud;if(!h||(sc.id===1&&lt<3.0)){hudg.style.display='none'}else{hudg.style.display='inline';hudg.style.opacity=String(sc.id===1?Math.min(1,(lt-3.0)/.4):1);
   const set=(id,v)=>{const e=document.getElementById(id);if(e&&e.__v!==v){e.textContent=v;e.__v=v}};
-  set('h-gun',h.gun+'. GÜN');set('h-saat',h.saat);set('h-kat','KAT: '+h.kat);set('h-esya','EŞYA: '+h.esya);set('h-kalan',h.kalan);set('h-uzak','ELA\'YA: '+h.uzak)}}
+  set('h-gun',h.gun+'. GÜN');set('h-saat',h.saat);set('h-kat',h.kat?('KAT: '+h.kat):'');set('h-kalan',h.kalan);set('h-uzak',h.uzak?('ELA\'YA: '+h.uzak):'')}}
  // tüm animasyonları sahne zamanına bağla
  document.getAnimations().forEach(a=>{
   if(a.constructor&&a.constructor.name==='CSSTransition'){try{a.finish()}catch(e){}return}

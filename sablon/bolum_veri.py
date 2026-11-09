@@ -18,7 +18,7 @@ def wrap(t,maxc=22):
     return lines
 LEAD=.2
 # sahne başına: kuyruk (ses bittikten sonra bekleme), en az süre, ek
-CFG={1:(.6,3.6),2:(.5,0),3:(.4,0),4:(1.6,0),5:(.5,0),6:(.45,0),7:(.5,0),8:(0,4.0),9:(.4,0),10:(.5,0),11:(.5,0),12:(.4,0),13:(.6,0),14:(.5,0),15:(.9,0),16:(0,3.0),17:(.8,0)}
+CFG={1:(.6,3.6),2:(.5,0),3:(.4,0),4:(1.6,0),5:(.5,0),6:(.45,0),7:(.5,0),8:(0,4.0),9:(.4,0),10:(.5,0),11:(.5,0),12:(.4,0),13:(.6,0),14:(.5,0),15:(.9,8.73),16:(0,3.0),17:(.8,0)}
 WHISPER_DUR=1.3
 wp=B/'ses'/'sahne15-fisilti.mp3'
 if wp.exists():WHISPER_DUR=round(sure(wp),2)
@@ -27,16 +27,18 @@ HUD_SAAT={1:'05:41',2:'05:41',3:'05:41',4:'05:41',5:'05:41',6:'05:41',7:'05:41',
 def hud(i):
     if i not in HUD_SAAT:return None
     h,m=map(int,HUD_SAAT[i].split(':'));kalan=(6*60+50)-(h*60+m)
-    return {'gun':3,'saat':HUD_SAAT[i],'kalan':f'{kalan//60}:{kalan%60:02d}','kat':'9 / 9','uzak':'14 KM','esya':'?' if i>=13 else '—'}
+    return {'gun':3,'saat':HUD_SAAT[i],'kalan':f'{kalan//60}:{kalan%60:02d}','kat':'9' if i in (11,12) else None,'uzak':'14 KM' if i==11 else None}
 out=[];t=0.0
 for s in S:
-    i=s['id'];ses=B/'ses'/(f'sahne{i:02d}-ela.mp3' if i==7 else f'sahne{i:02d}-deniz.mp3' if (B/'ses'/f'sahne{i:02d}-deniz.mp3').exists() else f'sahne{i:02d}-anlatici.mp3')
+    i=s['id'];ses=None if s.get('ses_yok') else B/'ses'/(f'sahne{i:02d}-ela.mp3' if i==7 else f'sahne{i:02d}-deniz.mp3' if (B/'ses'/f'sahne{i:02d}-deniz.mp3').exists() else f'sahne{i:02d}-anlatici.mp3')
     tail,minimum=CFG[i];sc={'id':i,'konusmaci':s['konusmaci'],'ses_efekt':s.get('ses_efekt','')}
-    if ses.exists():
-        d=sure(ses);v=visemes(ses);sc['ses']={'dosya':str(ses.relative_to(B)),'baslangic':LEAD,'sure':round(d,3)}
+    if ses is not None and ses.exists():
+        d=sure(ses);v=visemes(ses)
+        if s.get('ses_kirp_sn'):
+            d=min(d,s['ses_kirp_sn']);v=v[:int(d/.033)]
+        sc['ses']={'dosya':str(ses.relative_to(B)),'baslangic':LEAD,'sure':round(d,3)}
+        if s.get('ses_kirp_sn'):sc['ses']['kirp']=True
         dur=LEAD+d+tail
-        if i==15:
-            sc['fisilti']={'baslangic':round(LEAD+d+.5,2),'sure':WHISPER_DUR,'dosya':'ses/sahne15-fisilti.mp3'};dur=LEAD+d+.5+WHISPER_DUR+tail
         dur=max(dur,minimum)
         # altyazı: cümleleri sessizlik boşluklarına göre zamanla
         text=re.sub(r'\([^)]*\)','',s['anlatim']).strip()
@@ -65,7 +67,6 @@ for s in S:
         if i in (7,16):sc['agiz']=v
         if i==13:  # fener / balta vurgusu için cümle sınırları
             sc['vurgu']=[c['t0'] for c in caps]
-        if i==15:sc['altyazi'].append({'t0':sc['fisilti']['baslangic'],'t1':sc['fisilti']['baslangic']+WHISPER_DUR+.4,'satir':['…DENİZ.'],'konusan':'fisilti'})
     else:
         dur=minimum;sc['sessiz']=True;sc['altyazi']=[]
     sc['hud']=hud(i);sc['baslangic']=round(t,2);sc['sure']=round(dur,2);t+=dur;out.append(sc)
