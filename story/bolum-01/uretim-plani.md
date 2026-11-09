@@ -39,9 +39,9 @@ Her sahne için `sahneler.json` içinde `ses_efekt` yazılı. Müzik: lisanslı 
 - 17 sahnenin tamamı kuruldu (`prototip/bolum01.html` + `prototip/parca/`), `sahneler.json` ve `zaman-cizelgesi.json` ile sürülüyor.
 - Anlatıcı sesleri üretildi (14 replik, v4 etiketli, tek deneme, 1.222 kredi). Uzun sessizlikler kısaltıldı.
 - Efekt ve müzik kodla sentezlendi (`sablon/ses_mix.py`), yer tutucu kalitesinde.
-- Video: `story/bolum-01/cikti-fisilti-bekliyor.mp4` (1080x1920, 30 fps, ~106,9 sn, sesli).
+- Video: `story/bolum-01/cikti.mp4` (1080x1920, 30 fps, ~106,9 sn, sesli).
 - Kapak: `story/bolum-01/kapak.png`.
-- **Bekleyen:** sahne 15 "...Deniz" fısıltısı (yaşlı erkek sesi seçilecek), sonra yeniden render.
+- Fısıltı eklendi (Ahmet Amca, ses: ejJ1ETWS2ohLMMeCu1H3). Telaffuz kontrolü bekliyor.
 
 ## Yeniden üretim komutları
 ```

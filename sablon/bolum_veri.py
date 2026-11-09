@@ -20,6 +20,8 @@ LEAD=.2
 # sahne başına: kuyruk (ses bittikten sonra bekleme), en az süre, ek
 CFG={1:(.6,3.6),2:(.5,0),3:(.4,0),4:(1.6,0),5:(.5,0),6:(.45,0),7:(.5,0),8:(0,4.0),9:(.4,0),10:(.5,0),11:(.5,0),12:(.4,0),13:(.6,0),14:(.5,0),15:(.9,0),16:(0,3.0),17:(.8,0)}
 WHISPER_DUR=1.3
+wp=B/'ses'/'sahne15-fisilti.mp3'
+if wp.exists():WHISPER_DUR=round(sure(wp),2)
 out=[];t=0.0
 for s in S:
     i=s['id'];ses=B/'ses'/(f'sahne{i:02d}-ela.mp3' if i==7 else f'sahne{i:02d}-anlatici.mp3')

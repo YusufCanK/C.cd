@@ -87,7 +87,7 @@ for s in D['sahneler']:
     if 'fisilti' in s:
         p=B/s['fisilti']['dosya']
         if p.exists():
-            x=load(p);rms=np.sqrt(np.mean(x**2))+1e-9;put(voice,x*(0.09/rms),S+s['fisilti']['baslangic'])
+            x=load(p);rms=np.sqrt(np.mean(x**2))+1e-9;w=x*(0.09/rms);put(voice,w,S+s['fisilti']['baslangic']);put(sfx,echo(W(w),((.2,.45),(.45,.28),(.8,.15))),S+s['fisilti']['baslangic'],.5)
 # ---- efektler (sahne başına) ----
 def sc(i,t):return SC[i]['baslangic']+t
 # 1

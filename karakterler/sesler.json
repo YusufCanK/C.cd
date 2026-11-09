@@ -17,7 +17,10 @@
     "etiketler": "[childlike voice] [high voice] [cheerfully] ... [nervous] ... [trembling voice] ... [breathless] [pause]"
   },
   "ahmet_fisilti": {
-    "voice_id": null,
-    "secen": "kullanıcı (yaşlı erkek sesi, Bölüm 1 sahne 15 '...Deniz' için bekleniyor)"
-  }
+    "voice_id": "ejJ1ETWS2ohLMMeCu1H3",
+    "ad": "Atlas The Greek",
+    "secen": "kullanıcı",
+    "not": "Her karakter ayrı ses kuralı. Türkçe telaffuzu kulakla kontrol edilecek."
+  },
+  "kural": "Her karakter için farklı ses. Anlatıcı, Deniz (konuşurken), Ela, Ahmet Amca ayrı."
 }
