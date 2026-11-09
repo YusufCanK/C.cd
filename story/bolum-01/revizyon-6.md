@@ -26,3 +26,8 @@ Gerekmiyor: sahne 15 mevcut anlatıcı sesinin ilk iki cümlesiyle kullanılacak
 - Sahne 13: fener/balta altyazıdan yukarı alındı. Sahne 15: fısıltı yok. Sahne 16: sessiz. Sahne 17: A/B kartları.
 - Önizleme sayfası: kaydırıcı + güvenli alan düğmesi (`sablon/bolum_derle.py ... --onizleme`).
 - **Yapılmadı (onay bekliyor):** Sisli ses imzasının sentezi, sahne 15 sesinin kırpılması, video render.
+
+## Render öncesi kontroller (yapıldı)
+1. **Okunabilirlik:** 28 px (≈10 pt) küçük bulundu; hedef/kat/mesafe 36 px, etiket 30 px yapıldı. 390 px genişlikte (gerçek telefon boyutu) okunuyor.
+2. **Güvenli alan:** Gerçek Reels arayüzüyle test **edilemedi**; ölçüler tahmini ve `sablon/guvenli-alan.md` içinde belirtildi.
+3. **Sisli ses imzası örneği:** `sablon/sisli_ses.py` ile sentezlendi (0 kredi), kullanıcı onayı bekliyor.

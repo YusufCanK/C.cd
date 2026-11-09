@@ -240,7 +240,8 @@
     "kat": "yalnızca merdiven ve kapı sahnelerinde (11, 12) göster",
     "mesafe": "yalnızca bir kez (sahne 11), diğer sahnelerde gösterme",
     "gizli": "sahne 1'in ilk 3 sn'si (başlık kartı), sahne 8 (sessizlik), sahne 17 (seçim kartları)",
-    "guvenli_alan": "Reels arayüzü payı: üst 270 px, alt 1500 px sınırı, sağ kenarda alt yarıda 120 px boş. Panel, rozet ve altyazı bu çerçevenin içinde, birbiriyle ve karakter yüzleriyle çakışmaz.",
-    "not": "Kod henüz güncellenmedi, onay sonrası uygulanacak."
+    "guvenli_alan": "TAHMİNİ (gerçek Reels arayüzünde test edilmedi): üst 270 px, alt 1500 px sınırı, sağ kenarda alt yarıda 120 px boş. Ayrıntı: sablon/guvenli-alan.md",
+    "not": "Kod henüz güncellenmedi, onay sonrası uygulanacak.",
+    "yazi_boyutu": "hedef/kat/mesafe 36 px, etiket 30 px, gün 32 px, saat 84 px, geri sayım 90 px (390 px genişlikte okunabilirliği kontrol edildi)"
   }
 }
