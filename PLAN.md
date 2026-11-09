@@ -17,7 +17,11 @@ Format: kısa bölümler, her bölüm sonunda seçim, izleyici oyları bir sonra
 - Evren ve ton: Metropolde salgın. Enfekte olanlara **"Sisli"** denir; gündüz uyurlar, geceleri ışığa ve sese tepki verirler. Gerilimli ve karanlık, aralarda insani anlar. Gore yok.
 - Mekan: Metropolde bir apartman (dikey harita: her kat farklı risk ve komşu). Sonra sokaklar, metro, çatılar. Görseller: `mekanlar/`.
 - Görsel stil: Düz 2D vektör çizgi film, kalın siyah kontur, düz renkler (kilitli prompt: `karakterler/stil.md`).
-- Sezon taslağı: Bölüm 1-4 apartmandan çıkış, 5-8 sokaklar/metro/çatılar, 9-12 dershane ve Ela.
+- Sezon taslağı: 12 bölüm, **esnek** (detay: `story/sezon-taslagi.md`). Üç bölüm yayında test edilmeden sabitlenmez.
+- Hikâye unsurları: Ela'nın çizimleri, Sisli davranışının aşamalı gizemi, gri karakter Selim, her bölümde yeni bilgi.
+- Seçim hafızası: `story/durum-sistemi.md` ve `story/degiskenler.json`.
+- Başarı ölçütü: güzel animasyon değil, **yorum katılımı** (seçim + teori sorusu).
+- Yayın kuralı: üç bölüm hazır olmadan yayına başlanmaz.
 - Hedef kitle ve dil: Türkçe (ileride başka dil?)
 
 ## 2. Hedefler
