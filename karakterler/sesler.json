@@ -1,15 +1,23 @@
 {
   "model": "eleven_v4",
-  "deniz": {
+  "anlatici": {
     "voice_id": "Xxps7kSjmTEY5ipN1f60",
     "ad": "Tagi İlbeyli",
-    "secen": "kullanıcı"
+    "secen": "kullanıcı",
+    "not": "Bölüm 1'deki tüm Deniz cümleleri iç anlatım, bu sesle."
+  },
+  "deniz_karakter": {
+    "voice_id": null,
+    "secen": "kullanıcı (Bölüm 2'de Deniz başkalarıyla konuşurken gerekecek)"
   },
   "ela": {
     "voice_id": "sJ0xHHPzz1LOio4QNlB0",
     "ad": "CAGLAYAN",
     "secen": "kullanıcı",
-    "etiketler": "[childlike voice] [high voice] [cheerfully] ... [nervous] ... [trembling voice] ... [breathless] [pause]",
-    "onayli_replik": "story/bolum-01/ses/sahne07-ela.mp3 (v4, etiketli, kullanıcı onayladı)"
+    "etiketler": "[childlike voice] [high voice] [cheerfully] ... [nervous] ... [trembling voice] ... [breathless] [pause]"
+  },
+  "ahmet_fisilti": {
+    "voice_id": null,
+    "secen": "kullanıcı (yaşlı erkek sesi, Bölüm 1 sahne 15 '...Deniz' için bekleniyor)"
   }
 }

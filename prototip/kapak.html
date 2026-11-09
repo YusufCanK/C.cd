@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><title>Kat 9 Kapak</title>
+<style>
+:root{color-scheme:dark}html,body{margin:0;background:#000}svg{display:block;width:100vw;height:100vh}
+.m{display:none}.m.on{display:inline}.glow{animation:none}
+.deniz[data-mood="scared"] .d-browL{transform-origin:-85px -58px;transform:translateY(-20px) rotate(-18deg)}
+.deniz[data-mood="scared"] .d-browR{transform-origin:85px -58px;transform:translateY(-20px) rotate(18deg)}
+.deniz[data-mood="scared"] .d-eyes{transform-origin:0 -5px;transform:scale(1.25)}
+.big{font:900 230px Impact,'Arial Black',system-ui,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:30px;stroke-linejoin:round;fill:#ffd23f}
+.sub{font:900 118px Impact,'Arial Black',system-ui,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:22px;stroke-linejoin:round;fill:#fff}
+.tag{font:900 56px Impact,'Arial Black',system-ui,sans-serif;text-anchor:middle;fill:#fff}
+</style></head><body>
+<svg id="svg" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="vig" cx="50%" cy="50%" r="75%"><stop offset="50%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".7"/></radialGradient><radialGradient id="wg"><stop offset="0" stop-color="#ffd58a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient></defs>
+<g id="cor"></g>
+<g id="ahmet" style="filter:brightness(.6)"></g>
+<g><circle cx="531" cy="913" r="14" fill="#e8f3ff" opacity=".3"/><circle cx="549" cy="913" r="14" fill="#e8f3ff" opacity=".3"/><circle cx="531" cy="913" r="7" fill="#fff"/><circle cx="549" cy="913" r="7" fill="#fff"/></g>
+<rect width="1080" height="1920" fill="#05090d" opacity=".25"/>
+<g id="d"></g>
+<rect width="1080" height="1920" fill="url(#vig)"/>
+<g id="chip"><rect x="40" y="70" width="330" height="76" rx="12" fill="#e64b3c" stroke="#111" stroke-width="6"/><text x="205" y="124" font-family="Impact,'Arial Black',sans-serif" font-weight="900" font-size="38" fill="#fff" text-anchor="middle">KAT 9 · SERİ</text></g>
+<text class="big" x="540" y="430">BÖLÜM 1</text>
+<text class="sub" x="540" y="570">SON MESAJ</text>
+<g transform="translate(0 1800)"><rect x="90" y="-70" width="900" height="100" rx="26" fill="#0a141c" stroke="#ef8a3c" stroke-width="8"/><text class="tag" x="540" y="2">FENER Mİ?  ·  BALTA MI?</text></g>
+</svg>
+<script src="../sablon/sisli.js"></script><script src="../sablon/rigs.js"></script>
+<script>
+const ns='http://www.w3.org/2000/svg';function el(p,n,a){const e=document.createElementNS(ns,n);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+const $=id=>document.getElementById(id);
+function corridor(g){const xl=u=>400*u,yt=u=>700*u,yb=u=>1920-820*u;
+ el(g,'rect',{x:-100,y:-100,width:1280,height:2200,fill:'#05090d'});el(g,'polygon',{points:'0,0 1080,0 680,700 400,700',fill:'#0a131c'});el(g,'polygon',{points:'0,1920 1080,1920 680,1100 400,1100',fill:'#16273a'});
+ el(g,'polygon',{points:'0,0 400,700 400,1100 0,1920',fill:'#122234'});el(g,'polygon',{points:'1080,0 680,700 680,1100 1080,1920',fill:'#0f1d2c'});el(g,'rect',{x:400,y:700,width:280,height:400,fill:'#091019'});
+ el(g,'ellipse',{cx:540,cy:900,rx:170,ry:220,fill:'url(#wg)',opacity:.45});el(g,'rect',{x:490,y:790,width:100,height:150,fill:'#26496c',opacity:.85});
+ [[.1,.24],[.4,.5],[.68,.74]].forEach(([u1,u2])=>{[-1,1].forEach(side=>{const X=u=>side<0?xl(u):1080-xl(u),top=u=>yb(u)-.78*(yb(u)-yt(u));
+  el(g,'polygon',{points:`${X(u1)},${top(u1)} ${X(u2)},${top(u2)} ${X(u2)},${yb(u2)} ${X(u1)},${yb(u1)}`,fill:'#1b2c3f',stroke:'#05090d','stroke-width':6})})})}
+corridor($('cor'));Sisli.draw($('ahmet'),Sisli.presets.ahmet,540,1090,.34);
+const dn=Rigs.deniz($('d'),{x:540,y:1330,s:1.18,mood:'scared'});Rigs.mouth(dn,3);
+</script></body></html>

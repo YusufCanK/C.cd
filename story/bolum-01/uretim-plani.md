@@ -34,3 +34,20 @@ Her sahne için `sahneler.json` içinde `ses_efekt` yazılı. Müzik: lisanslı 
 - **Sahne 1-3: önizleme hazır** (`prototip/sahne1-3.html`): sisli metropol, gece sokağı + Sisli siluetleri, kesinti kolajı. Altyazı, "KAT 9 · BÖLÜM 1" etiketi ve efekt sesleri (konuşma yok) dahil.
 - Senaryo **kilitli** (revizyon 5). Sahne 4'e geçilmedi, kullanıcı değerlendirmesi bekleniyor.
 - Henüz video render edilmedi (konuşma sesi olmadığı için; kural: sessiz render yok).
+
+## Durum (Bölüm 1 tamamlandı, fısıltı hariç)
+- 17 sahnenin tamamı kuruldu (`prototip/bolum01.html` + `prototip/parca/`), `sahneler.json` ve `zaman-cizelgesi.json` ile sürülüyor.
+- Anlatıcı sesleri üretildi (14 replik, v4 etiketli, tek deneme, 1.222 kredi). Uzun sessizlikler kısaltıldı.
+- Efekt ve müzik kodla sentezlendi (`sablon/ses_mix.py`), yer tutucu kalitesinde.
+- Video: `story/bolum-01/cikti-fisilti-bekliyor.mp4` (1080x1920, 30 fps, ~106,9 sn, sesli).
+- Kapak: `story/bolum-01/kapak.png`.
+- **Bekleyen:** sahne 15 "...Deniz" fısıltısı (yaşlı erkek sesi seçilecek), sonra yeniden render.
+
+## Yeniden üretim komutları
+```
+python3 sablon/bolum_veri.py story/bolum-01        # zaman çizelgesi
+python3 sablon/bolum_derle.py story/bolum-01 prototip/bolum01.build.html
+node sablon/render_kareler.js prototip/bolum01.build.html /tmp/kareler 106.9 30 4
+python3 sablon/ses_mix.py story/bolum-01 /tmp/bolum01.wav
+ffmpeg -framerate 30 -i /tmp/kareler/%05d.jpg -i /tmp/bolum01.wav -c:v libx264 -crf 21 -pix_fmt yuv420p -c:a aac -shortest cikti.mp4
+```

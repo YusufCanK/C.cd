@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kat 9 Bölüm 1</title>
+<style>
+:root{color-scheme:dark}
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center}
+svg{height:100vh;max-width:100vw;aspect-ratio:9/16;display:block}
+.m{display:none}.m.on{display:inline}
+/* ---- ortak ---- */
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.005,1.009)}}
+@keyframes blink{0%,91%,97%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}}
+@keyframes swayL{0%,100%{transform:rotate(0)}50%{transform:rotate(.9deg)}}
+@keyframes swayR{0%,100%{transform:rotate(0)}50%{transform:rotate(-.9deg)}}
+@keyframes flk{0%{opacity:1}30%{opacity:.8}34%{opacity:1}70%{opacity:.7}74%{opacity:.95}100%{opacity:1}}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4.2s infinite}
+.cam{transform-origin:540px 960px;animation:zoomS var(--dur) ease-in-out both}
+@keyframes zoomS{from{transform:scale(1)}to{transform:scale(1.1)}}
+/* ---- Deniz ---- */
+.deniz .d-torso{transform-origin:0 1100px;animation:breathe 3.4s ease-in-out infinite}
+.deniz .d-armL{transform-origin:-230px 260px;animation:swayL 3.4s ease-in-out infinite}
+.deniz .d-armR{transform-origin:230px 260px;animation:swayR 3.4s ease-in-out infinite}
+.deniz .d-head{transform-origin:0 190px}
+.deniz .d-browL{transform-origin:-85px -58px;transform:rotate(8deg)}.deniz .d-browR{transform-origin:85px -58px;transform:rotate(-8deg)}
+.deniz .d-eyes{transform-origin:0 -5px}
+.deniz[data-mood="worried"] .d-browL{transform:translateY(-8px) rotate(-12deg)}.deniz[data-mood="worried"] .d-browR{transform:translateY(-8px) rotate(12deg)}
+.deniz[data-mood="scared"] .d-browL{transform:translateY(-20px) rotate(-18deg)}.deniz[data-mood="scared"] .d-browR{transform:translateY(-20px) rotate(18deg)}
+.deniz[data-mood="scared"] .d-eyes{transform:scale(1.25)}
+.deniz[data-mood="scared"] .d-head{animation:shake .11s linear infinite}
+@keyframes shake{0%{transform:rotate(-1.4deg) translateX(-3px)}50%{transform:rotate(1.4deg) translateX(3px)}100%{transform:rotate(-1.4deg) translateX(-3px)}}
+.lookwin .d-head{animation:headturn var(--dur) ease-in-out both}
+@keyframes headturn{0%,30%{transform:rotate(0) translateY(0)}48%,78%{transform:rotate(4deg) translate(8px,3px)}92%,100%{transform:rotate(1deg) translate(3px,1px)}}
+.lookwin .d-feat{animation:featturn var(--dur) ease-in-out both}
+@keyframes featturn{0%,30%{transform:translateX(0)}48%,100%{transform:translateX(24px)}}
+.lookwin .d-eyes{animation:eyeshift var(--dur) ease-in-out both}
+@keyframes eyeshift{0%,30%{transform:translateX(0)}48%,100%{transform:translateX(7px)}}
+.looklr .d-head{transform-origin:0 190px;animation:lookitems 5s ease-in-out infinite}
+@keyframes lookitems{0%,100%{transform:rotate(-3deg) translateX(-8px)}50%{transform:rotate(3deg) translateX(8px)}}
+/* ---- Ela ---- */
+.ela .e-torso{transform-origin:0 1100px;animation:breathe 3s ease-in-out infinite}
+.ela .e-braidL{transform-origin:-185px 40px;animation:swayB 3.4s ease-in-out infinite}
+.ela .e-braidR{transform-origin:185px 40px;animation:swayB 3.4s ease-in-out infinite reverse}
+@keyframes swayB{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+.ela .e-head{transform-origin:0 200px}
+.ela[data-phase="0"] .e-head{transform:rotate(-2deg)}.ela[data-phase="1"] .e-head{transform:rotate(3deg) translateY(10px)}.ela[data-phase="2"] .e-head{transform:rotate(-1deg) translateY(-4px)}
+.ela[data-phase="3"] .e-head{animation:shake .13s linear infinite}
+.ela .e-eyes{transform-origin:0 -5px}.ela[data-phase="1"] .e-eyes{transform:translateY(9px)}.ela[data-phase="2"] .e-eyes{transform:scale(1.1) translateY(-2px)}.ela[data-phase="3"] .e-eyes{transform:scale(1.22) translateY(-3px)}
+.ela .e-browL{transform-origin:-85px -80px;transform:translateY(-8px) rotate(3deg)}.ela .e-browR{transform-origin:85px -80px;transform:translateY(-8px) rotate(-3deg)}
+.ela[data-phase="1"] .e-browL{transform:translateY(-4px)}.ela[data-phase="1"] .e-browR{transform:translateY(-4px)}
+.ela[data-phase="2"] .e-browL{transform:translateY(-12px) rotate(-10deg)}.ela[data-phase="2"] .e-browR{transform:translateY(-12px) rotate(10deg)}
+.ela[data-phase="3"] .e-browL{transform:translateY(-18px) rotate(-16deg)}.ela[data-phase="3"] .e-browR{transform:translateY(-18px) rotate(16deg)}
+.ela .e-pen{transform-origin:150px 650px}.ela[data-phase="1"] .e-pen{animation:scribble .55s ease-in-out infinite}
+@keyframes scribble{0%,100%{transform:translate(-22px,6px) rotate(-6deg)}50%{transform:translate(26px,-8px) rotate(6deg)}}
+.worry{display:none}.ela[data-phase="2"] .smile,.ela[data-phase="3"] .smile{display:none}.ela[data-phase="2"] .worry,.ela[data-phase="3"] .worry{display:inline}
+/* ---- sahne 1-3 ---- */
+#cam1{transform-origin:540px 1000px;animation:z1 var(--dur) ease-in-out both}@keyframes z1{from{transform:scale(1)}to{transform:scale(1.14)}}
+.fogA{animation:driftA 12s linear infinite}.fogB{animation:driftB 17s linear infinite}
+@keyframes driftA{from{transform:translateX(-90px)}to{transform:translateX(90px)}}@keyframes driftB{from{transform:translateX(80px)}to{transform:translateX(-80px)}}
+.flk{animation:flk 2.2s steps(1) infinite}
+#cam2{animation:p2 var(--dur) linear both}@keyframes p2{from{transform:translateX(50px) scale(1.04)}to{transform:translateX(-50px) scale(1.04)}}
+.sisli{animation:walk var(--dur) linear both}@keyframes walk{from{transform:translate(var(--x0),var(--y)) scale(var(--s))}to{transform:translate(var(--x1),var(--y)) scale(var(--s))}}
+.sisli>g{animation:bob .9s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-7px) rotate(1.5deg)}}
+.sisli .head,.sisli2 .head{animation:headt 2.4s ease-in-out infinite}@keyframes headt{0%,100%{transform:rotate(10deg)}50%{transform:rotate(20deg)}}
+.sisli .glow,.sisli2 .glow{animation:flk 2.6s steps(1) infinite}
+.sisli .keys,.sisli2 .keys{animation:ksw 1.2s ease-in-out infinite;transform-origin:0px 0px}@keyframes ksw{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+#lampglow{animation:flk 3s steps(1) infinite}
+#s3a{transform-origin:540px 960px;animation:z3 2.06s ease-in both}@keyframes z3{from{transform:scale(1)}to{transform:scale(1.08)}}
+.win{fill:#f3c46b;animation:off .05s forwards;animation-delay:var(--d)}@keyframes off{to{fill:#0c1620}}
+.stat rect,#stat rect{animation:jit .09s steps(2) infinite}@keyframes jit{0%{transform:translateX(-30px)}100%{transform:translateX(30px)}}
+#tvscreen{animation:tvoff 1.65s forwards}@keyframes tvoff{0%,84%{transform:scaleY(1)}100%{transform:scaleY(.01)}}
+#dial{animation:dialf 1.69s forwards}@keyframes dialf{0%{opacity:1}100%{opacity:.04}}
+#needle{animation:nd 1.69s ease-in-out forwards;transform-origin:665px 895px}@keyframes nd{from{transform:rotate(-14deg)}to{transform:rotate(12deg)}}
+/* ---- sahne 5 pusula ---- */
+#needle5{transform-origin:640px 1000px;animation:needle5 3s ease-in-out infinite}@keyframes needle5{0%,100%{transform:rotate(-12deg)}25%{transform:rotate(9deg)}50%{transform:rotate(-5deg)}75%{transform:rotate(7deg)}}
+/* ---- sahne 6/8 telefon ---- */
+#batt6{animation:flk 1s steps(1) infinite}
+#notif6{animation:slide6 .5s ease-out both;animation-delay:1.4s}@keyframes slide6{from{transform:translateY(-140px);opacity:0}to{transform:translateY(0);opacity:1}}
+#flash8{animation:flash8 .5s ease-out both}@keyframes flash8{0%{opacity:.9}100%{opacity:0}}
+/* ---- sahne 10 buzdolabı ---- */
+.zin{transform-origin:540px 960px;animation:zin var(--dur) ease-in-out both}@keyframes zin{from{transform:scale(1)}to{transform:scale(1.22)}}
+/* ---- sahne 11 merdiven ---- */
+#stair{transform-origin:540px 860px;animation:stairz var(--dur) ease-in both}@keyframes stairz{from{transform:scale(1) rotate(0)}to{transform:scale(1.35) rotate(3deg)}}
+#drip{animation:drip 2.2s ease-in infinite}@keyframes drip{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(900px);opacity:.2}}
+/* ---- sahne 12 kapı ---- */
+#hand12{animation:reach 1.6s ease-out both}@keyframes reach{from{transform:translate(220px,260px)}to{transform:translate(0,0)}}
+#bolt12{transform-origin:700px 1010px;animation:turn12 .5s ease-in-out both;animation-delay:1.9s}@keyframes turn12{from{transform:rotate(0)}to{transform:rotate(90deg)}}
+/* ---- sahne 13 eşyalar ---- */
+.fl-glow,.ax-spark{opacity:0}
+#sc13[data-focus="fener"] .fl-glow{opacity:1;animation:flk 1.6s steps(1) infinite}
+#sc13[data-focus="balta"] .ax-spark{opacity:1;animation:flk 1.1s steps(1) infinite}
+#sc13[data-focus="fener"] .fl-item{transform:translateY(-12px)}#sc13[data-focus="balta"] .ax-item{transform:translateY(-12px)}
+/* ---- sahne 14/15 koridor ---- */
+#doorleaf{transform-origin:70px 0;animation:dooropen 1.4s ease-out both}@keyframes dooropen{from{transform:skewY(-6deg) scaleX(1)}to{transform:skewY(-6deg) scaleX(.18)}}
+.cam14{transform-origin:540px 860px;animation:z14 var(--dur) ease-in both}@keyframes z14{from{transform:scale(1)}to{transform:scale(1.25)}}
+#turn15{transform-origin:540px 1150px;animation:turn15 3.6s ease-in-out both;animation-delay:1.6s}@keyframes turn15{from{transform:scaleX(.18)}to{transform:scaleX(1)}}
+#eyes15{animation:eyes15 .6s ease-out both;animation-delay:4.9s}@keyframes eyes15{from{opacity:0}to{opacity:1}}
+#pulse15{animation:pulse15 .9s ease-in-out infinite}@keyframes pulse15{0%,100%{opacity:.08}50%{opacity:.22}}
+/* ---- sahne 17 kartlar ---- */
+.card{transform-origin:center;transform-box:fill-box;animation:pop .45s cubic-bezier(.2,1.4,.4,1) both;animation-delay:var(--d)}
+@keyframes pop{from{transform:scale(.55);opacity:0}to{transform:scale(1);opacity:1}}
+.qglow{animation:flk 1.4s steps(1) infinite}
+/* ---- şablon katmanları ---- */
+#cap text{font:900 76px/1 Impact,'Arial Black','Arial Narrow Bold',system-ui,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:16px;stroke-linejoin:round;fill:#fff;letter-spacing:1px}
+#cap.cap-ela text{fill:#ffcb6b}#cap.cap-fisilti text{fill:#9fb8c4;font-style:italic}
+#chip rect{fill:#e64b3c;stroke:#111;stroke-width:6}#chip text{font:900 38px Impact,'Arial Black',system-ui,sans-serif;fill:#fff;text-anchor:middle}
+#title text{font:900 150px Impact,'Arial Black',system-ui,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:22px;stroke-linejoin:round;fill:#ffd23f}
+#title .t2{font-size:74px;fill:#fff}
+</style></head>
+<body>
+<svg id="svg" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kat 9 Bölüm 1: Son Mesaj">
+<defs>
+ <radialGradient id="vig" cx="50%" cy="50%" r="75%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".55"/></radialGradient>
+ <radialGradient id="lg"><stop offset="0" stop-color="#f6c05a" stop-opacity=".6"/><stop offset="1" stop-color="#f6c05a" stop-opacity="0"/></radialGradient>
+ <radialGradient id="wg"><stop offset="0" stop-color="#ffd58a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+ <clipPath id="win"><rect x="640" y="470" width="380" height="720"/></clipPath>
+ <clipPath id="win7"><rect x="70" y="380" width="330" height="560"/></clipPath>
+ <clipPath id="sc"><rect x="250" y="680" width="580" height="480" rx="48"/></clipPath>
+</defs>
+<rect width="1080" height="1920" fill="#0b141d"/>
+<!-- ===== SAHNE 1: sisli metropol ===== -->
+<g class="sc" id="sc1" data-id="1" style="display:none"><g id="cam1">
+ <rect x="-100" y="-100" width="1280" height="620" fill="#11273b"/>
+ <rect x="-100" y="500" width="1280" height="300" fill="#1a3a55"/>
+ <rect x="-100" y="800" width="1280" height="260" fill="#2f5d79"/>
+ <ellipse cx="540" cy="930" rx="820" ry="330" fill="#df9a5a" opacity=".55"/>
+ <ellipse cx="540" cy="960" rx="560" ry="230" fill="#ea9e5c" opacity=".8"/>
+ <circle cx="540" cy="900" r="150" fill="#f6c982"/>
+ <g id="far"></g><g id="mid"></g>
+ <g class="fogA" opacity=".5"><ellipse cx="260" cy="1190" rx="520" ry="46" fill="#a9c3cf"/><ellipse cx="880" cy="1260" rx="560" ry="40" fill="#a9c3cf"/><ellipse cx="420" cy="1350" rx="640" ry="44" fill="#a9c3cf"/></g>
+ <g id="near"></g>
+ <!-- merkez apartman kulesi -->
+ <g id="tower"><line x1="540" y1="560" x2="540" y2="470" stroke="#070d13" stroke-width="10"/><circle cx="540" cy="466" r="9" fill="#e64b3c"/><rect x="410" y="560" width="260" height="1000" fill="#0f2233" stroke="#070d13" stroke-width="10"/><g id="twin"></g></g>
+ <g class="fogB" opacity=".55"><ellipse cx="760" cy="1120" rx="560" ry="54" fill="#c8dce3"/><ellipse cx="200" cy="1300" rx="600" ry="56" fill="#c8dce3"/><ellipse cx="640" cy="1450" rx="760" ry="80" fill="#b6ced8"/></g>
+ <rect x="-100" y="1520" width="1280" height="500" fill="#0a131b"/>
+</g></g>
+
+<!-- ===== SAHNE 2: gece sokak + Sisli'ler ===== -->
+<g class="sc" id="sc2" data-id="2" style="display:none"><g id="cam2">
+ <rect x="-140" y="-100" width="1360" height="1500" fill="#0f2336"/>
+ <rect x="-140" y="700" width="1360" height="500" fill="#173149"/>
+ <g fill="#0a1621" stroke="#05090d" stroke-width="8"><rect x="-160" y="420" width="330" height="900"/><rect x="900" y="380" width="340" height="940"/><rect x="190" y="760" width="210" height="560"/><rect x="760" y="820" width="170" height="500"/></g>
+ <g fill="#0f2336"><rect x="-120" y="470" width="40" height="52"/><rect x="-40" y="470" width="40" height="52"/><rect x="40" y="470" width="40" height="52"/><rect x="940" y="440" width="40" height="52"/><rect x="1020" y="440" width="40" height="52"/><rect x="940" y="540" width="40" height="52"/></g>
+ <rect x="-140" y="1280" width="1360" height="700" fill="#1a2a38" stroke="#05090d" stroke-width="8"/>
+ <rect x="-140" y="1260" width="1360" height="40" fill="#233646" stroke="#05090d" stroke-width="6"/>
+ <g fill="#2e4256"><rect x="40" y="1660" width="160" height="22" rx="10"/><rect x="330" y="1660" width="160" height="22" rx="10"/><rect x="620" y="1660" width="160" height="22" rx="10"/><rect x="910" y="1660" width="160" height="22" rx="10"/></g>
+ <!-- terk edilmiş arabalar -->
+ <g stroke="#05090d" stroke-width="9" stroke-linejoin="round"><g><rect x="30" y="1330" width="320" height="110" rx="26" fill="#3b4f63"/><path d="M80 1330 L130 1270 L260 1270 L310 1330Z" fill="#2c3d4f"/><circle cx="100" cy="1445" r="34" fill="#0b1219"/><circle cx="280" cy="1445" r="34" fill="#0b1219"/></g>
+  <g><rect x="760" y="1350" width="300" height="104" rx="26" fill="#4a3b3b"/><path d="M810 1350 L855 1294 L975 1294 L1020 1350Z" fill="#352a2a"/><circle cx="830" cy="1458" r="32" fill="#0b1219"/><circle cx="990" cy="1458" r="32" fill="#0b1219"/></g></g>
+ <!-- sokak lambası -->
+ <ellipse id="lampglow" cx="560" cy="1330" rx="380" ry="95" fill="#f6c05a" opacity=".5"/>
+ <polygon points="520,720 610,720 840,1330 300,1330" fill="#f6c05a" opacity=".16"/>
+ <g stroke="#05090d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><line x1="680" y1="1330" x2="680" y2="700" fill="none"/><path d="M680 710 Q680 660 600 662" fill="none"/><path d="M540 662 H640 L624 704 H556Z" fill="#ef8a3c"/></g>
+ <!-- Sisli'ler -->
+ <g class="fogA" opacity=".35"><ellipse cx="300" cy="1240" rx="560" ry="40" fill="#9fb8c4"/><ellipse cx="900" cy="1560" rx="600" ry="50" fill="#9fb8c4"/></g>
+</g></g>
+
+<!-- ===== SAHNE 3: kesinti kolajı ===== -->
+<g class="sc" id="sc3" data-id="3" style="display:none">
+ <g class="sub" id="s3a" data-sub="0"><rect x="-100" y="-100" width="1280" height="2200" fill="#0f2336"/><g fill="#13293c"><rect x="-40" y="620" width="150" height="1300"/><rect x="960" y="540" width="170" height="1400"/><rect x="60" y="860" width="110" height="1000"/></g><line x1="540" y1="330" x2="540" y2="230" stroke="#05090d" stroke-width="10"/><circle cx="540" cy="226" r="10" fill="#e64b3c"/>
+  <rect x="140" y="330" width="800" height="1260" fill="#14293b" stroke="#05090d" stroke-width="12"/><g id="wins"></g></g>
+ <g class="sub" id="s3b" data-sub="2"><rect x="-100" y="-100" width="1280" height="2200" fill="#2a3a46"/>
+  <rect x="-100" y="1300" width="1280" height="700" fill="#3b2a22" stroke="#05090d" stroke-width="10"/>
+  <rect x="190" y="620" width="700" height="620" rx="60" fill="#5c4a3d" stroke="#05090d" stroke-width="14"/>
+  <rect x="250" y="680" width="580" height="480" rx="48" fill="#0a1218" stroke="#05090d" stroke-width="10"/>
+  <g id="tvscreen" style="transform-origin:540px 920px"><clipPath id="sc"><rect x="250" y="680" width="580" height="480" rx="48"/></clipPath><g clip-path="url(#sc)"><rect x="250" y="680" width="580" height="480" fill="#7f8f98"/><g id="stat" class="stat"></g></g></g>
+  <g stroke="#05090d" stroke-width="10" stroke-linecap="round"><line x1="430" y1="610" x2="360" y2="520"/><line x1="650" y1="610" x2="720" y2="520"/></g></g>
+ <g class="sub" id="s3c" data-sub="4"><rect x="-100" y="-100" width="1280" height="2200" fill="#22313d"/>
+  <rect x="-100" y="1380" width="1280" height="700" fill="#33261f" stroke="#05090d" stroke-width="10"/>
+  <rect x="150" y="760" width="780" height="520" rx="48" fill="#7a5a3c" stroke="#05090d" stroke-width="14"/>
+  <g stroke="#05090d" stroke-width="8" stroke-linecap="round"><line x1="200" y1="830" x2="400" y2="830"/><line x1="200" y1="880" x2="400" y2="880"/><line x1="200" y1="930" x2="400" y2="930"/><line x1="200" y1="980" x2="400" y2="980"/><line x1="200" y1="1030" x2="400" y2="1030"/><line x1="200" y1="1080" x2="400" y2="1080"/></g>
+  <rect x="450" y="820" width="430" height="150" rx="18" fill="#10181e" stroke="#05090d" stroke-width="10"/>
+  <g id="dial"><rect x="466" y="836" width="398" height="118" rx="10" fill="#ef8a3c"/><g stroke="#10181e" stroke-width="5"><line x1="500" y1="850" x2="500" y2="940"/><line x1="560" y1="860" x2="560" y2="930"/><line x1="620" y1="850" x2="620" y2="940"/><line x1="680" y1="860" x2="680" y2="930"/><line x1="740" y1="850" x2="740" y2="940"/><line x1="800" y1="860" x2="800" y2="930"/></g><line id="needle" x1="665" y1="842" x2="665" y2="948" stroke="#fff" stroke-width="8" stroke-linecap="round"/></g>
+  <circle cx="540" cy="1060" r="1" fill="none"/><circle cx="520" cy="1090" r="48" fill="#2d2118" stroke="#05090d" stroke-width="10"/><circle cx="740" cy="1090" r="48" fill="#2d2118" stroke="#05090d" stroke-width="10"/>
+  <line x1="880" y1="780" x2="1000" y2="400" stroke="#05090d" stroke-width="10" stroke-linecap="round"/></g>
+</g>
+
+
+<!-- ===== S4: oturma odası, Deniz ===== -->
+<g class="sc" id="sc4" data-id="4" style="display:none"><g class="cam" style="transform-origin:430px 900px">
+ <rect x="-200" y="-200" width="1480" height="1700" fill="#2c4b5e"/>
+ <rect x="-200" y="1480" width="1480" height="700" fill="#1d2e3b" stroke="#0c1218" stroke-width="10"/>
+ <rect x="-200" y="1440" width="1480" height="44" fill="#16222c" stroke="#0c1218" stroke-width="10"/>
+ <rect x="640" y="470" width="380" height="720" fill="#e7a45a"/>
+ <g clip-path="url(#win)"><rect x="640" y="470" width="380" height="330" fill="#1c3a55"/><rect x="640" y="700" width="380" height="140" fill="#d58a52"/>
+  <g fill="#16304a" stroke="#0c1218" stroke-width="6"><rect x="650" y="640" width="70" height="560"/><rect x="730" y="560" width="80" height="640"/><rect x="820" y="690" width="60" height="520"/><rect x="890" y="600" width="90" height="600"/><rect x="975" y="660" width="60" height="540"/></g>
+  <g fill="#f3c46b"><rect x="668" y="690" width="14" height="18"/><rect x="750" y="620" width="14" height="18"/><rect x="770" y="780" width="14" height="18"/><rect x="912" y="650" width="14" height="18"/><rect x="936" y="860" width="14" height="18"/></g>
+  <g class="fogA" fill="#9fb8c4" opacity=".55"><rect x="600" y="900" width="480" height="70" rx="35"/><rect x="620" y="1040" width="480" height="60" rx="30"/></g>
+  <g class="fogB" fill="#cfe0e6" opacity=".4"><rect x="560" y="820" width="520" height="60" rx="30"/><rect x="600" y="970" width="500" height="50" rx="25"/></g></g>
+ <rect x="640" y="470" width="380" height="720" fill="none" stroke="#0c1218" stroke-width="14"/><line x1="830" y1="470" x2="830" y2="1190" stroke="#0c1218" stroke-width="12"/><line x1="640" y1="830" x2="1020" y2="830" stroke="#0c1218" stroke-width="12"/>
+ <rect x="620" y="1190" width="420" height="30" fill="#16222c" stroke="#0c1218" stroke-width="10"/>
+ <ellipse id="lampglow" cx="140" cy="900" rx="300" ry="460" fill="url(#lg)"/>
+ <line x1="140" y1="900" x2="140" y2="1450" stroke="#0c1218" stroke-width="14"/><path d="M60 900 L220 900 L190 780 L90 780 Z" fill="#ef8a3c" stroke="#0c1218" stroke-width="10" stroke-linejoin="round"/><ellipse cx="140" cy="1452" rx="70" ry="16" fill="#16222c" stroke="#0c1218" stroke-width="8"/>
+ <g id="d4"></g>
+</g></g>
+<!-- ===== S5: pusula ve baba fotoğrafı ===== -->
+<g class="sc" id="sc5" data-id="5" style="display:none"><g class="cam">
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#1b1612"/>
+ <rect x="-100" y="1360" width="1280" height="700" fill="#4a3524" stroke="#05090d" stroke-width="10"/>
+ <ellipse cx="560" cy="1000" rx="760" ry="820" fill="url(#lg)"/>
+ <g><rect x="100" y="360" width="400" height="500" fill="#3a2a1c" stroke="#05090d" stroke-width="12"/><rect x="132" y="392" width="336" height="436" fill="#a8946f"/>
+  <path d="M160 828 Q165 690 300 676 Q435 690 440 828Z" fill="#4a5f78" stroke="#05090d" stroke-width="8"/>
+  <circle cx="300" cy="580" r="84" fill="#c89a6e" stroke="#05090d" stroke-width="8"/>
+  <path d="M216 566 Q300 470 384 566 Q344 516 300 516 Q256 516 216 566Z" fill="#59544d" stroke="#05090d" stroke-width="6"/>
+  <path d="M248 628 Q300 604 352 628 Q330 650 300 642 Q270 650 248 628Z" fill="#59544d" stroke="#05090d" stroke-width="5"/>
+  <circle cx="272" cy="570" r="9" fill="#111"/><circle cx="328" cy="570" r="9" fill="#111"/>
+  <path d="M276 606 Q300 616 324 606" stroke="#05090d" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+ <path d="M640 740 Q640 560 780 470" stroke="#5b3a20" stroke-width="12" fill="none" stroke-linecap="round"/>
+ <circle cx="640" cy="740" r="38" fill="none" stroke="#d9a441" stroke-width="16"/>
+ <circle cx="640" cy="1010" r="280" fill="#d9a441" stroke="#05090d" stroke-width="14"/><circle cx="640" cy="1010" r="242" fill="#efe3c2" stroke="#8a6a22" stroke-width="8"/>
+ <g id="ticks5"></g>
+ <g font-family="Georgia,serif" font-weight="700" font-size="52" text-anchor="middle" fill="#3a2a1c"><text x="640" y="826">K</text><text x="640" y="1218">G</text><text x="448" y="1028">B</text><text x="832" y="1028">D</text></g>
+ <g id="needle5"><polygon points="640,790 606,1010 674,1010" fill="#c0392b" stroke="#05090d" stroke-width="6" stroke-linejoin="round"/><polygon points="640,1230 606,1010 674,1010" fill="#e9e4cf" stroke="#05090d" stroke-width="6" stroke-linejoin="round"/><circle cx="640" cy="1010" r="26" fill="#d9a441" stroke="#05090d" stroke-width="8"/></g>
+</g></g>
+<!-- ===== S6: telefon %4 ===== -->
+<g class="sc" id="sc6" data-id="6" style="display:none"><g class="cam">
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#090e13"/>
+ <ellipse cx="540" cy="880" rx="560" ry="720" fill="#6ac4ff" opacity=".1"/>
+ <path d="M200 1240 Q150 1100 190 980 L260 1000 L260 1300Z" fill="#E0A56B" stroke="#05090d" stroke-width="12" stroke-linejoin="round"/>
+ <rect x="250" y="320" width="580" height="1060" rx="80" fill="#0d1218" stroke="#05090d" stroke-width="14"/>
+ <rect x="276" y="352" width="528" height="996" rx="58" fill="#12354a"/>
+ <text x="540" y="640" text-anchor="middle" font-family="Arial Narrow,Impact,sans-serif" font-weight="700" font-size="170" fill="#e8f3ff">05:41</text>
+ <text x="540" y="720" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" fill="#9fc3d8">Salı · Üç gün sonra</text>
+ <g id="batt6"><rect x="640" y="388" width="104" height="44" rx="10" fill="none" stroke="#ff5a4a" stroke-width="6"/><rect x="648" y="396" width="14" height="28" rx="3" fill="#ff5a4a"/><rect x="744" y="400" width="10" height="20" rx="3" fill="#ff5a4a"/><text x="620" y="426" text-anchor="end" font-family="system-ui,sans-serif" font-weight="800" font-size="40" fill="#ff5a4a">%4</text></g>
+ <g id="notif6"><rect x="304" y="800" width="472" height="150" rx="34" fill="#1f5c80" stroke="#0a2a3d" stroke-width="6"/><circle cx="372" cy="875" r="38" fill="#f2c230" stroke="#05090d" stroke-width="5"/><text x="438" y="860" font-family="system-ui,sans-serif" font-weight="800" font-size="40" fill="#fff">Ela</text><text x="438" y="910" font-family="system-ui,sans-serif" font-size="36" fill="#cfe0e6">Sesli mesaj · 0:08</text></g>
+ <path d="M880 1240 Q930 1100 890 980 L820 1000 L820 1300Z" fill="#E0A56B" stroke="#05090d" stroke-width="12" stroke-linejoin="round"/>
+</g></g>
+<!-- ===== S7: Ela, dershane ===== -->
+<g class="sc" id="sc7" data-id="7" style="display:none"><g class="cam" style="transform-origin:540px 900px">
+ <rect x="-200" y="-200" width="1480" height="1700" fill="#2c4b5e"/><rect x="-200" y="1500" width="1480" height="700" fill="#1d2e3b" stroke="#0c1218" stroke-width="10"/>
+ <rect x="70" y="380" width="330" height="560" fill="#e0a15a"/>
+ <g clip-path="url(#win7)"><rect x="70" y="380" width="330" height="200" fill="#1c3a55"/><rect x="70" y="560" width="330" height="140" fill="#d58a52"/><rect x="70" y="700" width="330" height="240" fill="#9fb8c4" opacity=".6"/><g fill="#2c4b5e" stroke="#0c1218" stroke-width="5"><rect x="64" y="400" width="342" height="26"/><rect x="64" y="450" width="342" height="26"/><rect x="64" y="500" width="342" height="26"/><rect x="64" y="550" width="342" height="26"/></g></g>
+ <rect x="70" y="380" width="330" height="560" fill="none" stroke="#0c1218" stroke-width="14"/>
+ <rect x="700" y="420" width="300" height="400" fill="#1d3a32" stroke="#0c1218" stroke-width="14"/><g stroke="#cfe0e6" stroke-width="6" fill="none" stroke-linecap="round"><path d="M740 500 H950 M740 560 H920 M740 620 H960 M740 680 H900"/></g>
+ <ellipse cx="540" cy="1300" rx="520" ry="620" fill="url(#lg)" class="flk"/>
+ <g id="e7"></g>
+ <!-- üç gündür mahsur: su şişesi ve yiyecek paketleri -->
+ <g stroke="#05090d" stroke-width="7" stroke-linejoin="round"><rect x="92" y="1420" width="74" height="176" rx="26" fill="#bfe3ef" opacity=".92"/><rect x="92" y="1500" width="74" height="96" rx="20" fill="#7fc4dd"/><rect x="108" y="1394" width="42" height="34" rx="8" fill="#ef8a3c"/>
+  <rect x="200" y="1530" width="130" height="64" rx="8" fill="#e64b3c" transform="rotate(-8 265 1562)"/><rect x="250" y="1486" width="120" height="58" rx="8" fill="#f2c230" transform="rotate(10 310 1515)"/><rect x="330" y="1544" width="110" height="52" rx="8" fill="#4a8f90" transform="rotate(-4 385 1570)"/></g>
+</g></g>
+<!-- ===== S8: telefon kararır ===== -->
+<g class="sc" id="sc8" data-id="8" style="display:none"><g class="cam">
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#04070a"/>
+ <path d="M200 1240 Q150 1100 190 980 L260 1000 L260 1300Z" fill="#0f0b08" stroke="#05090d" stroke-width="12" stroke-linejoin="round"/><path d="M880 1240 Q930 1100 890 980 L820 1000 L820 1300Z" fill="#0f0b08" stroke="#05090d" stroke-width="12" stroke-linejoin="round"/>
+ <rect x="250" y="320" width="580" height="1060" rx="80" fill="#05080c" stroke="#1d2a36" stroke-width="14"/>
+ <rect x="276" y="352" width="528" height="996" rx="58" fill="#04060a"/>
+ <g fill="#cfe9ff" opacity=".16"><ellipse cx="430" cy="760" rx="34" ry="42"/><ellipse cx="650" cy="760" rx="34" ry="42"/></g>
+ <path d="M290 420 L520 900 L470 1100" stroke="#5b7a90" stroke-width="3" fill="none" opacity=".35"/>
+ <rect id="flash8" x="276" y="352" width="528" height="996" rx="58" fill="#8fd4ff"/>
+</g></g>
+<!-- ===== S9: anı, Deniz ve Ela ===== -->
+<g class="sc" id="sc9" data-id="9" style="display:none"><g class="cam">
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#4a3a34"/><rect x="-100" y="1500" width="1280" height="700" fill="#33261f" stroke="#05090d" stroke-width="10"/>
+ <ellipse cx="540" cy="1000" rx="700" ry="900" fill="#ffd58a" opacity=".22"/>
+ <rect x="40" y="1080" width="1000" height="560" rx="120" fill="#7d4a3a" stroke="#05090d" stroke-width="12"/>
+ <g id="d9"></g><g id="e9"></g>
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#f6b95a" opacity=".1"/>
+</g></g>
+<!-- ===== S10: buzdolabı, Ela'nın çizimi ===== -->
+<g class="sc" id="sc10" data-id="10" style="display:none"><g class="zin">
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#26343f"/>
+ <rect x="130" y="140" width="820" height="1560" rx="40" fill="#d4dade" stroke="#05090d" stroke-width="14"/><rect x="130" y="780" width="820" height="16" fill="#9aa5ad"/>
+ <rect x="850" y="260" width="30" height="300" rx="14" fill="#8a949c" stroke="#05090d" stroke-width="8"/><rect x="850" y="880" width="30" height="400" rx="14" fill="#8a949c" stroke="#05090d" stroke-width="8"/>
+ <g transform="rotate(-3 540 1000)"><rect x="270" y="620" width="540" height="720" fill="#f7f1df" stroke="#9b957f" stroke-width="6"/>
+  <g stroke="#2a3b6a" stroke-width="12" stroke-linecap="round" fill="none"><circle cx="440" cy="760" r="38" fill="#f7f1df"/><path d="M440 798 V1000 M440 830 L380 920 M440 830 L520 880 M440 1000 L400 1140 M440 1000 L490 1140"/></g>
+  <path d="M410 748 q22 -34 52 0" stroke="#6B4A2F" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <g><circle cx="552" cy="890" r="46" fill="#f2c230" stroke="#d9a441" stroke-width="8"/><polygon points="552,850 540,892 564,892" fill="#c0392b"/><polygon points="552,934 540,892 564,892" fill="#fff"/></g>
+  <g font-family="'Marker Felt','Comic Sans MS','Segoe Print',cursive" font-weight="700" font-size="46" fill="#ef6a2c" text-anchor="middle"><text x="540" y="1230">KAYBOLURSAN</text><text x="540" y="1290">PUSULANA BAK</text></g></g>
+ <circle cx="330" cy="640" r="34" fill="#e64b3c" stroke="#05090d" stroke-width="6"/><rect x="740" y="620" width="70" height="46" rx="10" fill="#f2c230" stroke="#05090d" stroke-width="6"/>
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#0a141c" opacity=".35"/>
+</g></g>
+<!-- ===== S11: merdiven boşluğu ===== -->
+<g class="sc" id="sc11" data-id="11" style="display:none"><g id="stair">
+ <rect x="-300" y="-300" width="1680" height="2500" fill="#05090d"/><g id="stairs"></g>
+ <rect x="830" y="120" width="140" height="190" fill="#e0a15a" stroke="#05090d" stroke-width="10"/><path d="M830 215 H970 M900 120 V310" stroke="#05090d" stroke-width="8"/>
+ <circle id="drip" cx="520" cy="200" r="10" fill="#9fc3d8"/>
+</g>
+ <path d="M60 1000 Q10 1130 70 1230 L150 1180 L140 980Z" fill="#E0A56B" stroke="#05090d" stroke-width="12" stroke-linejoin="round"/>
+</g>
+<!-- ===== S12: kapı önü ===== -->
+<g class="sc" id="sc12" data-id="12" style="display:none"><g class="cam" style="transform-origin:540px 700px">
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#1a2733"/>
+ <rect x="170" y="130" width="740" height="1560" fill="#6b4a33" stroke="#05090d" stroke-width="14"/>
+ <g fill="none" stroke="#4a3322" stroke-width="10"><rect x="230" y="200" width="270" height="520"/><rect x="580" y="200" width="270" height="520"/><rect x="230" y="800" width="270" height="760"/><rect x="580" y="800" width="270" height="760"/></g>
+ <circle cx="540" cy="640" r="34" fill="#05090d" stroke="#d9a441" stroke-width="12"/><circle cx="530" cy="630" r="8" fill="#9fb8c4" opacity=".6"/>
+ <path d="M780 740 q60 100 20 190" stroke="#c9c2a8" stroke-width="8" fill="none"/><rect x="770" y="920" width="60" height="26" rx="8" fill="#c9c2a8" stroke="#05090d" stroke-width="5"/>
+ <circle cx="760" cy="1060" r="30" fill="#d9a441" stroke="#05090d" stroke-width="8"/>
+ <rect x="660" y="960" width="80" height="150" rx="20" fill="#9aa5ad" stroke="#05090d" stroke-width="8"/><rect id="bolt12" x="690" y="990" width="20" height="100" rx="8" fill="#d9a441" stroke="#05090d" stroke-width="6"/>
+ <g id="hand12"><path d="M1010 1280 Q900 1150 790 1120 L760 1060 L730 1100 L690 1160 Q820 1260 900 1380 L1010 1380Z" fill="#E0A56B" stroke="#05090d" stroke-width="12" stroke-linejoin="round"/></g>
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#05090d" opacity=".25"/>
+</g></g>
+<!-- ===== S13: masa, fener ve balta ===== -->
+<g class="sc" id="sc13" data-id="13" data-focus="" style="display:none"><g class="cam" style="transform-origin:540px 1100px">
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#1d2d3a"/>
+ <ellipse cx="540" cy="1000" rx="640" ry="900" fill="url(#lg)" opacity=".5"/>
+ <g id="d13"></g>
+ <rect x="-100" y="1110" width="1280" height="900" fill="#5a3f2a" stroke="#05090d" stroke-width="12"/><rect x="-100" y="1100" width="1280" height="26" fill="#74533a" stroke="#05090d" stroke-width="8"/>
+ <g transform="translate(300 1290)"><g class="fl-item"><ellipse class="fl-glow" cx="-130" cy="-10" rx="330" ry="210" fill="#fff3c4" opacity=".4"/>
+  <g stroke="#05090d" stroke-width="9" stroke-linejoin="round"><rect x="-120" y="-44" width="270" height="88" rx="18" fill="#2f6f9f"/><path d="M-120 -66 L-120 66 L-190 96 L-190 -96 Z" fill="#d7b24f"/><ellipse cx="-190" cy="0" rx="22" ry="96" fill="#fff3c4"/><rect x="30" y="-52" width="40" height="104" fill="#1d4d70"/><circle cx="90" cy="-62" r="12" fill="#e64b3c"/></g></g></g>
+ <g transform="translate(780 1300)"><g class="ax-item"><g class="ax-spark"><path d="M-170 -110 l14 -30 l14 30 l30 14 l-30 14 l-14 30 l-14 -30 l-30 -14z" fill="#fff"/><path d="M130 -150 l10 -22 l10 22 l22 10 l-22 10 l-10 22 l-10 -22 l-22 -10z" fill="#fff"/></g>
+  <g stroke="#05090d" stroke-width="9" stroke-linejoin="round" transform="rotate(-6)"><rect x="-190" y="-30" width="380" height="60" rx="18" fill="#8a5a33"/><path d="M-170 -34 Q-190 -170 -90 -190 Q-70 -110 -36 -34Z" fill="#aab4be"/><path d="M-170 -34 Q-190 -110 -150 -140" stroke="#e9eef2" stroke-width="6" fill="none"/></g></g>
+</g></g></g>
+<!-- ===== S14: kapı açılır, karanlık koridor ===== -->
+<g class="sc" id="sc14" data-id="14" style="display:none"><g class="cam14" id="cor14"></g>
+ <g id="doorleaf"><rect x="70" y="0" width="560" height="1920" fill="#6b4a33" stroke="#05090d" stroke-width="14"/><rect x="110" y="140" width="400" height="640" fill="none" stroke="#4a3322" stroke-width="10"/><circle cx="560" cy="1000" r="30" fill="#d9a441" stroke="#05090d" stroke-width="8"/></g>
+ <rect x="-60" y="-60" width="130" height="2100" fill="#05090d"/><rect x="1010" y="-60" width="130" height="2100" fill="#05090d"/><rect x="-60" y="-60" width="1200" height="110" fill="#05090d"/>
+</g>
+<!-- ===== S15: dönen siluet ===== -->
+<g class="sc" id="sc15" data-id="15" style="display:none"><g class="cam14" id="cor15"></g>
+ <g id="turn15"><g id="ahmet15" style="filter:brightness(.55)"></g></g>
+ <g id="eyes15" opacity="0"><circle cx="531" cy="913" r="17" fill="#e8f3ff" opacity=".4" class="glow"/><circle cx="549" cy="913" r="17" fill="#e8f3ff" opacity=".4" class="glow"/><circle cx="531" cy="913" r="8" fill="#fff"/><circle cx="549" cy="913" r="8" fill="#fff"/></g>
+ <rect id="pulse15" x="-60" y="-60" width="1200" height="2100" fill="#cfe9ff" opacity=".1"/>
+ <rect x="-60" y="-60" width="130" height="2100" fill="#05090d"/><rect x="1010" y="-60" width="130" height="2100" fill="#05090d"/>
+</g>
+<!-- ===== S16: Deniz korkmuş ===== -->
+<g class="sc" id="sc16" data-id="16" style="display:none"><g class="cam" style="transform-origin:540px 900px">
+ <rect x="-100" y="-100" width="1280" height="2200" fill="#0a1118"/><ellipse cx="540" cy="900" rx="560" ry="760" fill="#3a6a8a" opacity=".16"/>
+ <g id="d16"></g>
+</g></g>
+<!-- ===== S17: seçim kartları ===== -->
+<g class="sc" id="sc17" data-id="17" style="display:none"><g id="cor17"></g><rect x="-100" y="-100" width="1280" height="2200" fill="#05090d" opacity=".72"/>
+ <g class="card" style="--d:.1s"><rect x="60" y="300" width="450" height="620" rx="40" fill="#14212d" stroke="#ef8a3c" stroke-width="12"/>
+  <g transform="translate(285 640) rotate(-28)" stroke="#05090d" stroke-width="8" stroke-linejoin="round"><polygon points="-52,-200 52,-200 150,-460 -150,-460" fill="#fff3c4" opacity=".28" stroke="none"/><rect x="-40" y="-160" width="80" height="260" rx="16" fill="#2f6f9f"/><path d="M-70 -160 L70 -160 L52 -226 L-52 -226Z" fill="#d7b24f"/><ellipse cx="0" cy="-228" rx="54" ry="15" fill="#fff3c4"/></g>
+  <text x="285" y="880" text-anchor="middle" font-family="Impact,'Arial Black',sans-serif" font-size="84" fill="#fff" stroke="#000" stroke-width="10" paint-order="stroke">FENER</text></g>
+ <g class="card" style="--d:.3s"><rect x="570" y="300" width="450" height="620" rx="40" fill="#14212d" stroke="#ef8a3c" stroke-width="12"/>
+  <g transform="translate(795 620) rotate(22)" stroke="#05090d" stroke-width="8" stroke-linejoin="round"><rect x="-16" y="-250" width="32" height="520" rx="12" fill="#8a5a33"/><path d="M16 -240 Q150 -270 160 -150 Q90 -176 16 -130Z" fill="#aab4be"/></g>
+  <text x="795" y="880" text-anchor="middle" font-family="Impact,'Arial Black',sans-serif" font-size="84" fill="#fff" stroke="#000" stroke-width="10" paint-order="stroke">BALTA</text></g>
+ <g class="card" style="--d:.55s"><circle cx="540" cy="610" r="56" fill="#e64b3c" stroke="#05090d" stroke-width="8"/><text x="540" y="636" text-anchor="middle" font-family="Impact,'Arial Black',sans-serif" font-size="70" fill="#fff">VS</text></g>
+ <g class="card" style="--d:1.1s"><rect x="160" y="1000" width="760" height="420" rx="40" fill="#14212d" stroke="#e64b3c" stroke-width="12"/>
+  <g id="q17" style="filter:brightness(.4)"></g>
+  <g class="qglow"><circle cx="500" cy="1170" r="12" fill="#e8f3ff"/><circle cx="530" cy="1170" r="12" fill="#e8f3ff"/></g>
+  <text x="720" y="1250" text-anchor="middle" font-family="Impact,'Arial Black',sans-serif" font-size="190" fill="#e64b3c" stroke="#000" stroke-width="12" paint-order="stroke">?</text>
+  <text x="540" y="1390" text-anchor="middle" font-family="Impact,'Arial Black',sans-serif" font-size="70" fill="#fff" stroke="#000" stroke-width="9" paint-order="stroke">O ŞEY… KİM?</text></g>
+</g>
+
+<rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+<g id="chip"><rect x="40" y="70" width="330" height="76" rx="12"/><text x="205" y="124">KAT 9 · BÖLÜM 1</text></g>
+<g id="title" style="opacity:0"><text x="540" y="860">BÖLÜM 1</text><text class="t2" x="540" y="980">SON MESAJ</text></g>
+<g id="cap" style="display:none"><text id="c1" x="540" y="1540"></text><text id="c2" x="540" y="1628"></text><text id="c3" x="540" y="1716"></text></g>
+</svg>
+<script id="data" type="application/json">{"toplam": 106.92, "sahneler": [{"id": 1, "konusmaci": "Deniz", "ses_efekt": "rüzgâr, düşük gerilim müziği", "ses": {"dosya": "ses/sahne01-anlatici.mp3", "baslangic": 0.2, "sure": 2.456}, "altyazi": [{"t0": 0.2, "t1": 2.66, "satir": ["ÜÇ GÜN ÖNCE ŞEHRİN", "ÜSTÜNE SİS ÇÖKTÜ."], "konusan": "anlatici"}], "baslangic": 0.0, "sure": 3.6}, {"id": 2, "konusmaci": "Deniz", "ses_efekt": "uzaktan inleme, lamba vızıltısı", "ses": {"dosya": "ses/sahne02-anlatici.mp3", "baslangic": 0.2, "sure": 8.542}, "altyazi": [{"t0": 0.2, "t1": 3.96, "satir": ["SİS'E YAKALANANLAR", "GÜNDÜZ HAREKETSİZ", "KALIYOR."], "konusan": "anlatici"}, {"t0": 3.96, "t1": 6.07, "satir": ["GECELERİ IŞIĞI VE SESİ", "ARIYORLAR."], "konusan": "anlatici"}, {"t0": 6.07, "t1": 9.0, "satir": ["BİZ ONLARA SİSLİ", "DEDİK."], "konusan": "anlatici"}], "baslangic": 3.6, "sure": 9.24}, {"id": 3, "konusmaci": "Deniz", "ses_efekt": "elektrik kesilme, statik, sessizlik", "ses": {"dosya": "ses/sahne03-anlatici.mp3", "baslangic": 0.2, "sure": 5.381}, "altyazi": [{"t0": 0.32, "t1": 2.06, "satir": ["ÖNCE İNTERNET GİTTİ."], "konusan": "anlatici"}, {"t0": 2.06, "t1": 3.71, "satir": ["SONRA ELEKTRİK."], "konusan": "anlatici"}, {"t0": 3.71, "t1": 5.4, "satir": ["DÜN GECE RADYO DA", "SUSTU."], "konusan": "anlatici"}], "baslangic": 12.84, "sure": 5.98}, {"id": 4, "konusmaci": "Deniz", "ses_efekt": "oda sessizliği", "ses": {"dosya": "ses/sahne04-anlatici.mp3", "baslangic": 0.2, "sure": 2.769}, "altyazi": [{"t0": 0.25, "t1": 0.88, "satir": ["BEN DENİZ."], "konusan": "anlatici"}, {"t0": 0.88, "t1": 3.03, "satir": ["ANNEM ŞEHİR DIŞINDA,", "ULAŞAMIYORUM."], "konusan": "anlatici"}], "baslangic": 18.82, "sure": 4.57}, {"id": 5, "konusmaci": "Deniz", "ses_efekt": "pusula tik sesi", "ses": {"dosya": "ses/sahne05-anlatici.mp3", "baslangic": 0.2, "sure": 3.814}, "altyazi": [{"t0": 0.2, "t1": 2.18, "satir": ["BABAM İKİ YIL ÖNCE", "ÖLDÜ."], "konusan": "anlatici"}, {"t0": 2.18, "t1": 4.11, "satir": ["GERİYE BİR PUSULA", "KALDI."], "konusan": "anlatici"}], "baslangic": 23.39, "sure": 4.51}, {"id": 6, "konusmaci": "Deniz", "ses_efekt": "bildirim sesi", "ses": {"dosya": "ses/sahne06-anlatici.mp3", "baslangic": 0.2, "sure": 3.187}, "altyazi": [{"t0": 0.45, "t1": 2.03, "satir": ["TELEFONUM YÜZDE DÖRT."], "konusan": "anlatici"}, {"t0": 2.03, "t1": 3.62, "satir": ["TEK BİR MESAJ GELİYOR."], "konusan": "anlatici"}], "baslangic": 27.91, "sure": 3.84}, {"id": 7, "konusmaci": "Ela", "ses_efekt": "kâğıt üstünde kalem, mesaj kesilmesi", "ses": {"dosya": "ses/sahne07-ela.mp3", "baslangic": 0.2, "sure": 8.908}, "altyazi": [{"t0": 0.28, "t1": 1.92, "satir": ["ABİ, BEN İYİYİM!"], "konusan": "ela"}, {"t0": 1.92, "t1": 5.07, "satir": ["SENİ ÇİZİYORUM, ÇOK", "UZUN ÇIKTIN."], "konusan": "ela"}, {"t0": 5.07, "t1": 7.81, "satir": ["GELİRSİN, DEĞİL Mİ?"], "konusan": "ela"}, {"t0": 7.81, "t1": 7.81, "satir": ["ABİ?"], "konusan": "ela"}, {"t0": 7.81, "t1": 8.87, "satir": ["PİLİM..."], "konusan": "ela"}], "agiz": [0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 2, 2, 2, 1, 1, 2, 2, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 2, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "baslangic": 31.74, "sure": 9.61}, {"id": 8, "konusmaci": "-", "ses_efekt": "telefon kapanma sesi, 2 sn sessizlik", "sessiz": true, "altyazi": [], "baslangic": 41.35, "sure": 4.0}, {"id": 9, "konusmaci": "Deniz", "ses_efekt": "sıcak müzik", "ses": {"dosya": "ses/sahne09-anlatici.mp3", "baslangic": 0.2, "sure": 7.184}, "altyazi": [{"t0": 0.2, "t1": 1.95, "satir": ["ELA BENİM KÜÇÜK", "KARDEŞİM."], "konusan": "anlatici"}, {"t0": 1.95, "t1": 5.3, "satir": ["ON İKİ YAŞINDA,", "DÜNYANIN EN İNATÇI", "ÇOCUĞU."], "konusan": "anlatici"}, {"t0": 5.3, "t1": 7.25, "satir": ["ÜÇ GÜNDÜR DERSHANEDE", "MAHSUR."], "konusan": "anlatici"}], "baslangic": 45.35, "sure": 7.78}, {"id": 10, "konusmaci": "Deniz", "ses_efekt": "kâğıt hışırtısı", "ses": {"dosya": "ses/sahne10-anlatici.mp3", "baslangic": 0.2, "sure": 8.229}, "altyazi": [{"t0": 0.2, "t1": 4.7, "satir": ["BUZDOLABINDA ELA'NIN", "ESKİ ÇİZİMİ: BEN,", "ELİMDE PUSULAYLA."], "konusan": "anlatici"}, {"t0": 4.7, "t1": 8.44, "satir": ["ALTINDA TEK SATIR:", "KAYBOLURSAN PUSULANA", "BAK."], "konusan": "anlatici"}], "baslangic": 53.13, "sure": 8.93}, {"id": 11, "konusmaci": "Deniz", "ses_efekt": "uğultu, damla sesi", "ses": {"dosya": "ses/sahne11-anlatici.mp3", "baslangic": 0.2, "sure": 7.523}, "altyazi": [{"t0": 0.2, "t1": 1.97, "satir": ["DERSHANE ŞEHRİN ÖBÜR", "UCUNDA."], "konusan": "anlatici"}, {"t0": 1.97, "t1": 3.58, "satir": ["GÜN DOĞMADAN", "VARMALIYIM."], "konusan": "anlatici"}, {"t0": 3.58, "t1": 5.81, "satir": ["ÖNCE DOKUZ KAT İNMEM", "LAZIM."], "konusan": "anlatici"}, {"t0": 5.81, "t1": 7.74, "satir": ["ASANSÖR ÇALIŞMIYOR."], "konusan": "anlatici"}], "baslangic": 62.06, "sure": 8.22}, {"id": 12, "konusmaci": "Deniz", "ses_efekt": "ayak sesi, kilit", "ses": {"dosya": "ses/sahne12-anlatici.mp3", "baslangic": 0.2, "sure": 3.265}, "altyazi": [{"t0": 0.2, "t1": 1.4, "satir": ["KAPIYA YÜRÜYORUM."], "konusan": "anlatici"}, {"t0": 1.4, "t1": 3.72, "satir": ["KORİDOR TAMAMEN", "KARANLIK."], "konusan": "anlatici"}], "baslangic": 70.29, "sure": 3.87}, {"id": 13, "konusmaci": "Deniz", "ses_efekt": "fener tık, balta ağırlığı", "ses": {"dosya": "ses/sahne13-anlatici.mp3", "baslangic": 0.2, "sure": 10.606}, "altyazi": [{"t0": 0.22, "t1": 3.19, "satir": ["MASADA İKİ ŞEY: FENER", "VE BABAMIN BALTASI."], "konusan": "anlatici"}, {"t0": 3.19, "t1": 6.24, "satir": ["FENER YOLU GÖSTERİR", "AMA IŞIĞI ONLARI", "ÇEKER."], "konusan": "anlatici"}, {"t0": 6.24, "t1": 10.71, "satir": ["BALTA KORUR, KAPI", "KIRAR AMA ÇIKARDIĞI", "SES DE ONLARI ÇEKER."], "konusan": "anlatici"}], "vurgu": [0.22, 3.19, 6.24], "baslangic": 74.15, "sure": 11.41}, {"id": 14, "konusmaci": "Deniz", "ses_efekt": "ağır nefes, uzaktan anahtar şıngırtısı (Sisli Komşu'nun ipucu)", "ses": {"dosya": "ses/sahne14-anlatici.mp3", "baslangic": 0.2, "sure": 3.814}, "altyazi": [{"t0": 0.2, "t1": 1.35, "satir": ["KAPIYI AÇIYORUM."], "konusan": "anlatici"}, {"t0": 1.35, "t1": 4.11, "satir": ["KORİDORDA AĞIR BİR", "NEFES SESİ."], "konusan": "anlatici"}], "baslangic": 85.56, "sure": 4.51}, {"id": 15, "konusmaci": "Deniz + Sisli fısıltısı", "ses_efekt": "nefes, fısıltı vurgu sesi", "ses": {"dosya": "ses/sahne15-anlatici.mp3", "baslangic": 0.2, "sure": 5.825}, "fisilti": {"baslangic": 6.53, "sure": 1.3, "dosya": "ses/sahne15-fisilti.mp3"}, "altyazi": [{"t0": 0.2, "t1": 1.83, "satir": ["BİRİ YAVAŞÇA DÖNÜYOR."], "konusan": "anlatici"}, {"t0": 1.83, "t1": 3.53, "satir": ["YÜZÜNÜ GÖREMİYORUM."], "konusan": "anlatici"}, {"t0": 3.53, "t1": 6.19, "satir": ["SONRA ÇOK KISIK BİR", "SES DUYUYORUM:"], "konusan": "anlatici"}, {"t0": 6.53, "t1": 8.23, "satir": ["…DENİZ."], "konusan": "fisilti"}], "baslangic": 90.07, "sure": 8.73}, {"id": 16, "konusmaci": "Deniz", "ses_efekt": "kalp atışı", "ses": {"dosya": "ses/sahne16-anlatici.mp3", "baslangic": 0.2, "sure": 1.437}, "altyazi": [{"t0": 0.28, "t1": 1.84, "satir": ["NASIL BİLİYOR ADIMI?"], "konusan": "anlatici"}], "agiz": [0, 0, 0, 0, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 3, 3, 3, 3, 0], "baslangic": 98.8, "sure": 3.0}, {"id": 17, "konusmaci": "Deniz", "ses_efekt": "vurgu sesi", "ses": {"dosya": "ses/sahne17-anlatici.mp3", "baslangic": 0.2, "sure": 4.127}, "altyazi": [{"t0": 0.2, "t1": 2.05, "satir": ["FENER Mİ, BALTA MI?"], "konusan": "anlatici"}, {"t0": 2.05, "t1": 4.58, "satir": ["VE O ŞEY… SENCE KİM?"], "konusan": "anlatici"}], "baslangic": 101.8, "sure": 5.13}]}</script>
+<script src="../sablon/sisli.js"></script>
+<script src="../sablon/rigs.js"></script>
+<script>
+const ns='http://www.w3.org/2000/svg';
+function rng(s){return()=>(s=(s*16807)%2147483647)/2147483647}
+function el(p,n,a){const e=document.createElementNS(ns,n);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+const $=id=>document.getElementById(id);
+window.BOLUM={hooks:{}};
+// sahne 1: gökdelen katmanları
+function skyline(id,base,hmin,hmax,wmin,wmax,fill,stroke,seed){const g=document.getElementById(id),r=rng(seed);let x=-30;
+ while(x<1110){const w=wmin+r()*(wmax-wmin),h=hmin+r()*(hmax-hmin);el(g,'rect',{x:x,y:base-h,width:w,height:h,fill:fill,stroke:stroke||'none','stroke-width':stroke?8:0});x+=w+(stroke?4:0)}}
+skyline('far',1400,180,400,50,100,'#2a566f',null,7);
+skyline('mid',1470,240,520,60,120,'#1b3f57',null,13);
+skyline('near',1540,300,640,70,130,'#0f2a3d','#070d13',29);
+(function(){const g=document.getElementById('twin'),r=rng(5);for(let i=0;i<6;i++)for(let j=0;j<18;j++){const lit=r()<0.1;el(g,'rect',{x:430+i*40,y:590+j*52,width:24,height:30,fill:lit?'#f3c46b':'#0a1a28',class:lit&&r()<.5?'flk':''})}})();
+(function(){const g=document.getElementById('wins');let k=0;const rnd=rng(11);for(let i=0;i<5;i++)for(let j=0;j<9;j++){const r=el(g,'rect',{x:190+i*150,y:380+j*125,width:100,height:80,rx:6,class:'win'});r.style.setProperty('--d',(0.15+rnd()*1.25).toFixed(2)+'s')}})();
+(function(){const g=document.getElementById('stat'),r=rng(3);for(let i=0;i<46;i++){const y=670+i*11,w=120+r()*520,x=240+r()*(580-w+60),sh=r();el(g,'rect',{x:x,y:y,width:w,height:6+r()*7,fill:sh<.35?'#e8eef2':sh<.7?'#2a3640':'#a8b6bd'})}})();
+// sahne 2: her biri farklı Sisli (üretici). Ahmet Amca (komşu) arada görünür.
+(function(){const cam=document.getElementById('cam2');
+ [[-40,300,1500,.92,'rnd',21],[1160,820,1450,.8,'rnd',8],[90,260,1380,.6,'ahmet',0],[1000,780,1365,.55,'rnd',33],[380,500,1335,.4,'rnd',44],[820,650,1332,.38,'rnd',57]].forEach(([x0,x1,y,s,k,seed])=>{
+  const w=el(cam,'g',{class:'sisli',style:`--x0:${x0}px;--x1:${x1}px;--y:${y}px;--s:${s}`});const i=el(w,'g',{});
+  Sisli.draw(i,k==='ahmet'?Sisli.presets.ahmet:Sisli.random(seed),0,0,1)})})();
+
+// ---- sahne 4-17 kurulumu ----
+Rigs.deniz($('d4'),{x:430,y:930,s:1,anim:'lookwin'});
+(function(){ // pusula çentikleri
+ const g=$('ticks5');for(let i=0;i<48;i++){const a=i/48*Math.PI*2,r1=i%4===0?206:222,r2=236;el(g,'line',{x1:640+Math.sin(a)*r1,y1:1010-Math.cos(a)*r1,x2:640+Math.sin(a)*r2,y2:1010-Math.cos(a)*r2,stroke:'#3a2a1c','stroke-width':i%4===0?7:3})}})();
+Rigs.ela($('e7'),{x:540,y:860,s:1,anim:'speaker'});
+Rigs.deniz($('d9'),{x:290,y:1010,s:.64});Rigs.ela($('e9'),{x:780,y:1060,s:.6,phase:0});
+(function(){ // merdiven: iç içe kareler
+ const g=$('stairs');for(let k=0;k<10;k++){const sz=1200*Math.pow(.76,k),a=k*7,c=Math.round(54-k*4.6);
+  const r=el(g,'rect',{x:540-sz/2,y:860-sz/2,width:sz,height:sz,fill:`rgb(${c},${c+14},${c+26})`,stroke:'#05090d','stroke-width':Math.max(4,14-k),transform:`rotate(${a} 540 860)`});
+  if(k<9){const g2=el(g,'g',{transform:`rotate(${a} 540 860)`});el(g2,'line',{x1:540-sz/2,y1:860-sz/2,x2:540+sz/2,y2:860-sz/2,stroke:'#0a131c','stroke-width':Math.max(3,9-k)})}}})();
+Rigs.deniz($('d13'),{x:540,y:800,s:.62,mood:'worried',anim:'looklr'});
+function corridor(g){
+ const xl=u=>400*u,yt=u=>700*u,yb=u=>1920-820*u;
+ el(g,'rect',{x:-100,y:-100,width:1280,height:2200,fill:'#05090d'});
+ el(g,'polygon',{points:'0,0 1080,0 680,700 400,700',fill:'#0a131c'});
+ el(g,'polygon',{points:'0,1920 1080,1920 680,1100 400,1100',fill:'#16273a'});
+ el(g,'polygon',{points:'0,0 400,700 400,1100 0,1920',fill:'#122234'});
+ el(g,'polygon',{points:'1080,0 680,700 680,1100 1080,1920',fill:'#0f1d2c'});
+ el(g,'rect',{x:400,y:700,width:280,height:400,fill:'#091019'});
+ const gl=el(g,'ellipse',{cx:540,cy:900,rx:150,ry:200,fill:'url(#wg)',opacity:.35});
+ el(g,'rect',{x:490,y:790,width:100,height:150,fill:'#26496c',opacity:.8});
+ [[.1,.24],[.4,.5],[.68,.74]].forEach(([u1,u2])=>{[-1,1].forEach(side=>{
+  const X=u=>side<0?xl(u):1080-xl(u),top=u=>yb(u)-.78*(yb(u)-yt(u));
+  el(g,'polygon',{points:`${X(u1)},${top(u1)} ${X(u2)},${top(u2)} ${X(u2)},${yb(u2)} ${X(u1)},${yb(u1)}`,fill:'#1b2c3f',stroke:'#05090d','stroke-width':6});
+  el(g,'circle',{cx:X(u2-(u2-u1)*.18),cy:yb(u2)-(yb(u2)-top(u2))*.5,r:Math.max(3,12*(1-u1)),fill:'#d9a441'})})});
+ return g}
+corridor($('cor14'));corridor($('cor15'));corridor($('cor17'));
+Sisli.draw($('ahmet15'),Sisli.presets.ahmet,540,1090,.34);
+Sisli.draw($('q17'),Sisli.presets.ahmet,330,1400,.55);
+Rigs.deniz($('d16'),{x:540,y:1010,s:1.25,mood:'scared',anim:'speaker'});
+// ---- sahne ipuçları (kare kare) ----
+BOLUM.hooks[3]=(lt,sc)=>{const c=sc.altyazi,b=c[1]?c[1].t0:2.06,d=c[2]?c[2].t0:3.71;
+ $('s3a').style.display=lt<b?'inline':'none';$('s3b').style.display=(lt>=b&&lt<d)?'inline':'none';$('s3c').style.display=lt>=d?'inline':'none';
+ $('s3a').dataset.sub=0;$('s3b').dataset.sub=b;$('s3c').dataset.sub=d};
+BOLUM.hooks[7]=(lt,sc,g)=>{const c=sc.altyazi;let i=-1;c.forEach((x,k)=>{if(lt>=x.t0)i=k});g.querySelector('.ela').setAttribute('data-phase',i<=0?0:i===1?1:i===2?2:3)};
+BOLUM.hooks[13]=(lt,sc,g)=>{const c=sc.altyazi;let i=-1;c.forEach((x,k)=>{if(lt>=x.t0&&lt<x.t1)i=k});g.setAttribute('data-focus',i===1?'fener':i===2?'balta':'')};
+
+</script>
+<script src="../sablon/motor.js"></script>
+</body></html>

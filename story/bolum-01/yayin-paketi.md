@@ -1,6 +1,6 @@
 # Kat 9 · Bölüm 1 "Son Mesaj": yayın paketi (taslak)
 
-> **Durum:** Yayına hazır değil. Video henüz yok (render edilmedi). Üç bölüm hazır olmadan yayına başlanmayacak (karar: kullanıcı).
+> **Durum:** Video ve kapak hazır (fısıltı sesi bekliyor). Yayın için Bölüm 2 ve 3 de hazır olmalı. Üç bölüm hazır olmadan yayına başlanmayacak (karar: kullanıcı).
 
 ## 1. Paylaşılacak video
 - Dikey 9:16, **~90 sn** (sahne toplamı 90,5 sn), altyazılı, seslendirmeli (sessiz video yok), efektli
