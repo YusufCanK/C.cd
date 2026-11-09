@@ -39,3 +39,7 @@
 - Sıra (her ok bir onay noktası): senaryo → sahneler.json → ses (önce kredi tahmini) → önizleme (Artifact) → render → kapak/yayın paketi.
 - Önceki seçim ve durum: `story/degiskenler.json`, `story/durum-sistemi.md`. Sisli ses imzası: `sablon/sisli_ses.py`.
 - Bilinen sınır: `bolum_derle.py` ve `ses_mix.py` hâlâ Bölüm 1 sahne kancalarına (`prototip/parca/`, sahne bazlı efektler) bağlı; Bölüm 2 için sahne/efekt tanımlarını veriye taşıma işi yapılacak.
+
+## İletişim düzeni
+- Kullanıcı aracı: Claude ve ChatGPT mesajlarını birbirine taşır, okumaz. Mesajlar ChatGPT'ye yazılır.
+- Kullanıcının okuması gereken bir şey varsa (harcama onayı, karar) mesajın en sonuna ❌❌❌ konur.
