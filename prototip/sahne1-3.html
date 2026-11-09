@@ -24,8 +24,11 @@ svg[data-scene="1"] #cam1{transform-origin:540px 1000px;animation:z1 4s ease-in-
 svg[data-scene="2"] #cam2{animation:p2 6s linear forwards}
 @keyframes p2{from{transform:translateX(50px) scale(1.04)}to{transform:translateX(-50px) scale(1.04)}}
 .sisli{animation:walk 6s linear forwards}
-.sisli .body{animation:bob .9s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}
-.sisli .head{animation:headt 2.4s ease-in-out infinite;transform-origin:0 -150px}
+.sisli>g{animation:bob .9s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}
+.sisli .head{animation:headt 2.4s ease-in-out infinite}
+.sisli .glow{animation:flk 2.6s steps(1) infinite}
+.sisli .keys{animation:ksw 1.2s ease-in-out infinite;transform-origin:0px 0px}
+@keyframes ksw{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
 @keyframes walk{from{transform:translate(var(--x0),var(--y)) scale(var(--s))}to{transform:translate(var(--x1),var(--y)) scale(var(--s))}}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-7px) rotate(1.5deg)}}
 @keyframes headt{0%,100%{transform:rotate(10deg)}50%{transform:rotate(20deg)}}
@@ -107,12 +110,6 @@ svg[data-sub="c"] #needle{animation:nd 1.4s ease-in-out forwards;transform-origi
  <polygon points="520,720 610,720 840,1330 300,1330" fill="#f6c05a" opacity=".16"/>
  <g stroke="#05090d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><line x1="680" y1="1330" x2="680" y2="700" fill="none"/><path d="M680 710 Q680 660 600 662" fill="none"/><path d="M540 662 H640 L624 704 H556Z" fill="#ef8a3c"/></g>
  <!-- Sisli'ler -->
- <use class="sisli" href="#sisli" style="--x0:-60px;--x1:260px;--y:1470px;--s:1.5"/>
- <use class="sisli" href="#sisli" style="--x0:1160px;--x1:860px;--y:1430px;--s:1.3"/>
- <use class="sisli" href="#sisli" style="--x0:60px;--x1:230px;--y:1370px;--s:.95"/>
- <use class="sisli" href="#sisli" style="--x0:980px;--x1:780px;--y:1360px;--s:.9"/>
- <use class="sisli" href="#sisli" style="--x0:330px;--x1:470px;--y:1335px;--s:.7"/>
- <use class="sisli" href="#sisli" style="--x0:830px;--x1:640px;--y:1332px;--s:.65"/>
  <g class="fogA" opacity=".35"><ellipse cx="300" cy="1240" rx="560" ry="40" fill="#9fb8c4"/><ellipse cx="900" cy="1560" rx="600" ry="50" fill="#9fb8c4"/></g>
 </g></g>
 
@@ -144,6 +141,7 @@ svg[data-sub="c"] #needle{animation:nd 1.4s ease-in-out forwards;transform-origi
 </div>
 <div id="info"></div>
 <div class="bar"><button id="sesb">🔈 Efekt sesi aç</button><button id="rs">↺ Baştan</button></div>
+<script src="../sablon/sisli.js"></script>
 <script>
 const svg=document.getElementById('svg'),ns='http://www.w3.org/2000/svg';
 function rng(s){return()=>(s=(s*16807)%2147483647)/2147483647}
@@ -157,6 +155,11 @@ skyline('near',1540,300,640,70,130,'#0f2a3d','#070d13',29);
 (function(){const g=document.getElementById('twin'),r=rng(5);for(let i=0;i<6;i++)for(let j=0;j<18;j++){const lit=r()<0.1;el(g,'rect',{x:430+i*40,y:590+j*52,width:24,height:30,fill:lit?'#f3c46b':'#0a1a28',class:lit&&r()<.5?'flk':''})}})();
 (function(){const g=document.getElementById('wins');let k=0;const rnd=rng(11);for(let i=0;i<5;i++)for(let j=0;j<9;j++){const r=el(g,'rect',{x:190+i*150,y:380+j*125,width:100,height:80,rx:6,class:'win'});r.style.setProperty('--d',(0.15+rnd()*1.25).toFixed(2)+'s')}})();
 (function(){const g=document.getElementById('stat'),r=rng(3);for(let i=0;i<46;i++){const y=670+i*11,w=120+r()*520,x=240+r()*(580-w+60),sh=r();el(g,'rect',{x:x,y:y,width:w,height:6+r()*7,fill:sh<.35?'#e8eef2':sh<.7?'#2a3640':'#a8b6bd'})}})();
+// sahne 2: her biri farklı Sisli (üretici). Ahmet Amca (komşu) arada görünür.
+(function(){const cam=document.getElementById('cam2');
+ [[-40,300,1500,.92,'rnd',21],[1160,820,1450,.8,'rnd',8],[90,260,1380,.6,'ahmet',0],[1000,780,1365,.55,'rnd',33],[380,500,1335,.4,'rnd',44],[820,650,1332,.38,'rnd',57]].forEach(([x0,x1,y,s,k,seed])=>{
+  const w=el(cam,'g',{class:'sisli',style:`--x0:${x0}px;--x1:${x1}px;--y:${y}px;--s:${s}`});const i=el(w,'g',{});
+  Sisli.draw(i,k==='ahmet'?Sisli.presets.ahmet:Sisli.random(seed),0,0,1)})})();
 // zaman çizelgesi (sahneler.json: 4 / 6 / 4,5 sn)
 const B=[0,4,10,14.5],TOT=14.5;
 const CAP=[[0,4,['ÜÇ GÜN ÖNCE ŞEHRİN','ÜSTÜNE SİS ÇÖKTÜ.']],

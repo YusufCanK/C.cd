@@ -17,6 +17,11 @@ Kural: Sisli'ler son duydukları sesi/sözü, aynı ses tonuyla tekrar eder.
 - **Bölüm 4:** Selim kuralı biliyor gibi davranır. Bunun nasıl bildiği sırrın parçası olur.
 - Bölüm 1'deki "...Deniz"in **nereden duyulduğu** erken açıklanmaz. Kural tutarlı kalmalı: Sisli sadece duyduğunu tekrar eder, uydurmaz.
 
+## Tanıdık Sisli'ler
+- Sisli'ler eski komşu ve tanıdıklardır. Tanınan Sisli (Ahmet Amca, Bakkal Cemal, Hemşire Ayşe) Deniz'e ve izleyiciye **duygusal darbe** verir.
+- Yüz ifadesi tanınabilir kalır. Tanıma anı bölümlerin güçlü cliffhanger'larından biri olabilir.
+- Ahmet Amca'nın Bölüm 1'deki fısıltısı ('...Deniz') yankı kuralıyla bağlanır: neden bu adı söylediği ileride açıklanır.
+
 ## Motifler
 - **Ela'nın çizimi:** İlk çizim (buzdolabı: Deniz + pusula) Bölüm 1'de. Sonraki çizimler Deniz'in yolunda ipucu ya da uyarı olarak çıkar. **Açık soru:** Çizimlerle pusulanın bağı tam olarak ne? (Çalışma fikri: çizimlerdeki işaretler pusulanın yönleriyle eşleşir.)
 - **Fener ve balta:** Fener yalnız görüş değil, sinyal ve yönlendirme aracı. Balta yalnız savunma değil, kapı/engel kırma aracı. Seçilmeyen eşya kaybolur ama onun işlevi sonraki bölümlerde başka bir yolla aranır.

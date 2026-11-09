@@ -5,7 +5,7 @@ import re,sys,pathlib,base64
 k=pathlib.Path(__file__).resolve().parent
 src,out,title_txt,marker,mp3=sys.argv[1:6]
 s=(k/src).read_text()
-s=s.replace('<script src="../sablon/lipsync.js"></script>',"<script>"+(k.parent/"sablon"/"lipsync.js").read_text()+"</script>")
+s=re.sub(r'<script src="\.\./sablon/([\w-]+\.js)"></script>',lambda m:"<script>"+(k.parent/"sablon"/m.group(1)).read_text()+"</script>",s)
 style=re.search(r"<style>.*?</style>",s,re.S).group(0).replace(":root{--T:6s}",":root{--T:6s;color-scheme:dark}")
 body=re.search(r"<body>(.*)</body>",s,re.S).group(1)
 m=pathlib.Path(mp3) if pathlib.Path(mp3).is_absolute() else k.parent/mp3

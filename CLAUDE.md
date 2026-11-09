@@ -22,6 +22,10 @@
 - Referans hesabın karakterlerini, adını, logosunu ve sayaç/kapak kutusunu kopyalama. Yalnızca genel format (kısa bölümler, oylamalı devam) ve **görsel stil** ilham kaynağıdır.
 - Görsel stil kararı (kullanıcı): düz 2D vektör çizgi film, kalın siyah kontur, düz renkler, iri kafalı sade karakterler, sade arka planlar. Gerçekçi veya boyama tarzı kullanma. Stile referansa yakın gidilebilir; karakterler, isimler ve marka özgün kalır.
 
+## İçerik
+
+- Sisli'ler (zombiler) eski insanlardır, her biri farklı görünür (`sablon/sisli.js`, `karakterler/sisli.md`). Çizgi film üslubunda kan izi, ısırık, yırtık kıyafet serbest; detaylı/grafik gore yok.
+
 ## Teknik
 
 - Şablonlanabilir olanı koda dök: yeni bölüm, mevcut şablona sadece senaryo ve sahne verisi vererek üretilebilmeli.

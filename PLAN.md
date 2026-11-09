@@ -14,7 +14,7 @@ Format: kısa bölümler, her bölüm sonunda seçim, izleyici oyları bir sonra
 - Ana karakter: **Deniz**, 19 yaş, 9 katlı bir apartmanın en üst katında yaşıyor. Kıvırcık kahverengi saç, yara izli kaş, hafif sakal, zeytin yeşili ceket, lacivert kapüşon, babasından kalan pusula kolye. Detaylar: `karakterler/deniz.md`.
 - Amaç: Gün doğmadan apartmandan çıkıp şehrin öbür ucundaki dershanede mahsur kalan kız kardeşi **Ela'ya (12)** ulaşmak.
 - Seçim mekaniği: **Eşya seçimi** (karar: kullanıcı). Her bölüm sonunda iki eşyadan biri alınır, öbürü kaybolur. Seçilen eşya sonraki bölümün riskini ve fırsatını belirler.
-- Evren ve ton: Metropolde salgın. Enfekte olanlara **"Sisli"** denir; gündüz uyurlar, geceleri ışığa ve sese tepki verirler. Gerilimli ve karanlık, aralarda insani anlar. Gore yok.
+- Evren ve ton: Metropolde salgın. Enfekte olanlara **"Sisli"** denir; gündüz uyurlar, geceleri ışığa ve sese tepki verirler. Gerilimli ve karanlık, aralarda insani anlar. Sisli'ler eski insanlar (kan izi, ısırık, yırtık kıyafet çizgi film üslubunda serbest; detaylı gore yok). Detay: `karakterler/sisli.md`.
 - Mekan: Metropolde bir apartman (dikey harita: her kat farklı risk ve komşu). Sonra sokaklar, metro, çatılar. Görseller: `mekanlar/`.
 - Görsel stil: Düz 2D vektör çizgi film, kalın siyah kontur, düz renkler (kilitli prompt: `karakterler/stil.md`).
 - Sezon taslağı: 12 bölüm, **esnek** (detay: `story/sezon-taslagi.md`). Üç bölüm yayında test edilmeden sabitlenmez.
