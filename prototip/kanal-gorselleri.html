@@ -7,13 +7,21 @@ html,body{margin:0;background:#000}svg{display:block}.m{display:none}.m.on{displ
 .deniz[data-mood="scared"] .d-eyes{transform-origin:0 -5px;transform:scale(1.25)}
 .logo{font-family:Impact,'Arial Black',system-ui,sans-serif;font-weight:900;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-linejoin:round}
 </style></head><body>
-<!-- Profil: 1080x1080 (daire kırpması için içerik merkezde) -->
+<!-- Profil: 1080x1080, marka logosu (Senin Karar) -->
 <svg id="profil" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-<defs><radialGradient id="pg" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#25425e"/><stop offset="1" stop-color="#05090d"/></radialGradient></defs>
+<defs><radialGradient id="pg" cx="50%" cy="40%" r="65%"><stop offset="0" stop-color="#25425e"/><stop offset="1" stop-color="#05090d"/></radialGradient></defs>
 <rect width="1080" height="1080" fill="url(#pg)"/>
-<g id="pd"></g>
-<rect x="250" y="800" width="580" height="150" rx="24" fill="#e64b3c" stroke="#000" stroke-width="12"/>
-<text class="logo" x="540" y="912" font-size="120" fill="#fff" stroke-width="0">KAT 9</text>
+<g stroke="#000" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+ <path d="M540 520 V380 Q540 330 490 300 L360 225" fill="none" stroke-width="64"/>
+ <path d="M540 380 Q540 330 590 300 L720 225" fill="none" stroke-width="64"/>
+ <path d="M540 520 V380 Q540 330 490 300 L360 225" fill="none" stroke="#ef8a3c" stroke-width="40"/>
+ <path d="M540 380 Q540 330 590 300 L720 225" fill="none" stroke="#3a8fd0" stroke-width="40"/>
+ <circle cx="330" cy="205" r="72" fill="#ef8a3c"/><circle cx="750" cy="205" r="72" fill="#3a8fd0"/>
+</g>
+<text class="logo" x="330" y="234" font-size="84" fill="#fff" stroke-width="0">A</text>
+<text class="logo" x="750" y="234" font-size="84" fill="#fff" stroke-width="0">B</text>
+<text class="logo" x="540" y="725" font-size="210" fill="#ffd23f" stroke-width="30">SENİN</text>
+<text class="logo" x="540" y="905" font-size="210" fill="#fff" stroke-width="30">KARAR</text>
 </svg>
 <!-- YouTube kapak: 2560x1440 (güvenli alan ortada 1546x423) -->
 <svg id="banner" width="2560" height="1440" viewBox="0 0 2560 1440" xmlns="http://www.w3.org/2000/svg" style="margin-top:20px">
@@ -22,8 +30,8 @@ html,body{margin:0;background:#000}svg{display:block}.m{display:none}.m.on{displ
 <g transform="translate(740 -240) scale(1.0)"><g id="bcor"></g><g id="bahmet" style="filter:brightness(.6)"></g></g>
 <rect width="2560" height="1440" fill="#05090d" opacity=".45"/>
 <g id="bd"></g>
-<text class="logo" x="1280" y="700" font-size="230" fill="#ffd23f" stroke-width="30">KAT 9</text>
-<text class="logo" x="1280" y="805" font-size="64" fill="#fff" stroke-width="14">SEN SEÇ, HİKÂYE DEVAM ETSİN</text>
+<text class="logo" x="1280" y="690" font-size="200" fill="#ffd23f" stroke-width="28">SENİN KARAR</text>
+<text class="logo" x="1280" y="800" font-size="62" fill="#fff" stroke-width="14">İNTERAKTİF HİKÂYELER · ŞİMDİ: KAT 9</text>
 </svg>
 <script src="../sablon/sisli.js"></script><script src="../sablon/rigs.js"></script>
 <script>
@@ -36,6 +44,5 @@ function corridor(g){const xl=u=>400*u,yt=u=>700*u,yb=u=>1920-820*u;
  [[.1,.24],[.4,.5],[.68,.74]].forEach(([u1,u2])=>{[-1,1].forEach(side=>{const X=u=>side<0?xl(u):1080-xl(u),top=u=>yb(u)-.78*(yb(u)-yt(u));
   el(g,'polygon',{points:`${X(u1)},${top(u1)} ${X(u2)},${top(u2)} ${X(u2)},${yb(u2)} ${X(u1)},${yb(u1)}`,fill:'#1b2c3f',stroke:'#05090d','stroke-width':6})})})}
 corridor($('bcor'));Sisli.draw($('bahmet'),Sisli.presets.ahmet,540,1090,.34);
-const p=Rigs.deniz($("pd"),{x:540,y:600,s:1.25,mood:"scared"});Rigs.mouth(p,3);
 const b=Rigs.deniz($('bd'),{x:560,y:1060,s:1.05,mood:'scared'});Rigs.mouth(b,3);
 </script></body></html>

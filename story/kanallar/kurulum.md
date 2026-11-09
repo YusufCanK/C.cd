@@ -3,27 +3,27 @@
 > Hesapları sen açarsın: telefon ve e-posta doğrulaması gerekiyor, ben açamam. Aşağıdakileri kopyala-yapıştır kullan.
 > Platformlar: Instagram Reels, TikTok, YouTube Shorts. Oy süresi: **24 saat**.
 
-## 1. Kimlik (karar: Claude, kullanıcı onayıyla; üç platformda aynı)
-- **Marka/dizi adı:** Kat 9 (hesap diziye özel)
-- **Görünen ad:** `Kat 9 · İnteraktif Hikâye`. Aramada "hikâye" kelimesiyle de bulunur.
-- **Kullanıcı adı:** `kat9.hikaye` (YouTube: `@kat9hikaye`). Alınmışsa sırayla: `kat9seri`, `kat9.tr`, `kat9hikayesi`. Üç platformda aynısı olmalı.
-- **Profil fotoğrafı:** `story/kanallar/profil.png`
+## 1. Kimlik (karar: kullanıcı, marka adı "Senin Karar")
+- **Yapı:** Hesap = marka (**Senin Karar**). Diziler marka altında yayınlanır, ilk dizi **Kat 9**. Videolardaki "KAT 9 · BÖLÜM 1" etiketi aynen kalır.
+- **Görünen ad:** `Senin Karar · İnteraktif Hikâye`
+- **Kullanıcı adı (sırayla dene, üç platformda aynısı):** `seninkarar` → `senin.karar` → `seninkarar.tr` → `seninkararhikaye`. YouTube'da nokta olmaz: `@seninkarar`.
+- **Profil fotoğrafı:** `story/kanallar/profil.png` (A/B çatal yol logosu ve "SENİN KARAR" yazısı)
 - **YouTube kanal kapağı:** `story/kanallar/youtube-kapak.png`
 - **Bölüm kapağı:** `story/bolum-01/kapak.png`
-- **Kategori (Instagram/TikTok profesyonel hesap):** "Dijital içerik üreticisi" (Digital creator)
+- **Kategori:** Dijital içerik üreticisi
 
 ## 2. Biyografi
-**Instagram (150 karakter):**
-> Sis şehri yuttu. Deniz, kardeşi Ela'ya ulaşmalı.
-> Her bölüm sonunda SEN seçersin 🔦🪓
-> Yeni bölüm: oylar kapanınca
+**Instagram:**
+> Hikâyeyi sen yönetiyorsun 🔀
+> Her bölüm sonunda A mı B mi? Yorumla seç.
+> Şimdi: KAT 9 · sis şehri yuttu 🔦🪓
 
-**TikTok (80 karakter):**
-> Sis şehri yuttu. Her bölümü sen seçersin 🔦🪓
+**TikTok:**
+> Hikâyeyi sen yönet 🔀 Şimdi: KAT 9
 
-**YouTube (açıklama):**
-> Kat 9 interaktif bir animasyon dizisi. Üç gün önce şehre gri bir sis çöktü. Sisi soluyanlar dönüşüyor. 19 yaşındaki Deniz, şehrin öbür ucundaki kardeşi Ela'ya ulaşmaya çalışıyor.
-> Her bölümün sonunda iki seçenek var. Yorumlarda en çok oyu alan seçenek bir sonraki bölümü belirler.
+**YouTube (kanal açıklaması):**
+> Senin Karar: izleyicinin yönettiği animasyon hikâyeleri. Her bölümün sonunda iki seçenek var, yorumlarda en çok oyu alan seçenek bir sonraki bölümü belirler.
+> Şu anki dizi: KAT 9. Üç gün önce şehre gri bir sis çöktü. Sisi soluyanlar dönüşüyor. 19 yaşındaki Deniz, şehrin öbür ucundaki kardeşi Ela'ya ulaşmaya çalışıyor.
 
 ## 3. Bölüm 1 gönderisi
 **Video:** `story/bolum-01/cikti.mp4` (109 sn, 9:16)
