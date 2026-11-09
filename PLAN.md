@@ -91,6 +91,6 @@ Kural: **Sessiz video render edilmez.** Her render seslendirme ve efekt içerir.
 - [x] Konsept ve tür (tamamlandı)
 - [x] Karakter tarifi (`karakterler/deniz.md`)
 - [x] Seçim mekaniği (eşya seçimi)
-- [ ] ElevenLabs sesi (kullanıcı seçecek)
+- [x] ElevenLabs sesleri (Deniz: Tagi İlbeyli, Ela: CAGLAYAN; `karakterler/sesler.json`)
 - [ ] Hesap adı ve marka kimliği
 - [ ] Uygulama gelir modeli
