@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kat 9 Açılış Sahneleri</title>
+<style>
+:root{color-scheme:dark}
+html,body{margin:0;height:100%;background:#0b0f14;color:#e8eef5;font-family:system-ui,sans-serif}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center}
+#stage{height:calc(100vh - 64px);max-width:100vw;aspect-ratio:9/16;background:#000}
+svg{width:100%;height:100%;display:block}
+.bar{height:64px;display:flex;gap:8px;align-items:center;justify-content:center;padding:0 12px}
+button{background:#1e2f3d;color:#e8eef5;border:1px solid #3c566b;border-radius:8px;padding:10px 14px;font-size:14px;cursor:pointer}
+.sc{display:none}
+svg[data-scene="1"] .sc1,svg[data-scene="2"] .sc2,svg[data-scene="3"] .sc3{display:inline}
+/* sahne 1 */
+svg[data-scene="1"] #cam1{transform-origin:540px 1000px;animation:z1 4s ease-in-out forwards}
+@keyframes z1{from{transform:scale(1)}to{transform:scale(1.14)}}
+.fogA{animation:driftA 12s linear infinite}.fogB{animation:driftB 17s linear infinite}
+@keyframes driftA{from{transform:translateX(-90px)}to{transform:translateX(90px)}}
+@keyframes driftB{from{transform:translateX(80px)}to{transform:translateX(-80px)}}
+.flk{animation:flk 2.2s steps(1) infinite}
+@keyframes flk{0%{opacity:1}40%{opacity:.25}46%{opacity:1}80%{opacity:.5}86%{opacity:1}}
+/* sahne 2 */
+svg[data-scene="2"] #cam2{animation:p2 6s linear forwards}
+@keyframes p2{from{transform:translateX(50px) scale(1.04)}to{transform:translateX(-50px) scale(1.04)}}
+.sisli{animation:walk 6s linear forwards}
+.sisli .body{animation:bob .9s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}
+.sisli .head{animation:headt 2.4s ease-in-out infinite;transform-origin:0 -150px}
+@keyframes walk{from{transform:translate(var(--x0),var(--y)) scale(var(--s))}to{transform:translate(var(--x1),var(--y)) scale(var(--s))}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-7px) rotate(1.5deg)}}
+@keyframes headt{0%,100%{transform:rotate(10deg)}50%{transform:rotate(20deg)}}
+#lampglow{animation:flk 3s steps(1) infinite}
+/* sahne 3 */
+.sub{display:none}
+svg[data-sub="a"] #s3a,svg[data-sub="b"] #s3b,svg[data-sub="c"] #s3c{display:inline}
+svg[data-scene="3"][data-sub="a"] #s3a{animation:z3 1.6s ease-in forwards;transform-origin:540px 960px}
+@keyframes z3{from{transform:scale(1)}to{transform:scale(1.08)}}
+.win{fill:#f3c46b;animation:off .05s forwards;animation-delay:var(--d)}
+@keyframes off{to{fill:#0c1620}}
+.stat rect{animation:jit .09s steps(2) infinite}
+@keyframes jit{0%{transform:translateX(-30px)}100%{transform:translateX(30px)}}
+svg[data-sub="b"] #tvscreen{animation:tvoff 1.5s forwards}
+@keyframes tvoff{0%,84%{transform:scaleY(1)}100%{transform:scaleY(.01)}}
+svg[data-sub="c"] #dial{animation:dialf 1.4s forwards}
+@keyframes dialf{0%{opacity:1}100%{opacity:.04}}
+svg[data-sub="c"] #needle{animation:nd 1.4s ease-in-out forwards;transform-origin:540px 1060px}
+@keyframes nd{from{transform:rotate(-14deg)}to{transform:rotate(12deg)}}
+/* altyazı */
+#cap text{font:900 76px/1 Impact,'Arial Black','Arial Narrow Bold',system-ui,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:16px;stroke-linejoin:round;fill:#fff;letter-spacing:1px}
+#cap .hl{fill:#ffd23f}
+#chip rect{fill:#e64b3c;stroke:#111;stroke-width:6}
+#chip text{font:900 38px Impact,'Arial Black',system-ui,sans-serif;fill:#fff;text-anchor:middle}
+#info{position:absolute;bottom:70px;left:0;right:0;text-align:center;font-size:12px;color:#9fb8c4;pointer-events:none}
+</style></head>
+<body>
+<div id="stage">
+<svg id="svg" data-scene="1" data-sub="a" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kat 9 açılış: sis, Sisli'ler, elektrik kesintisi">
+<defs>
+ <radialGradient id="vig" cx="50%" cy="50%" r="75%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".55"/></radialGradient>
+ <radialGradient id="lg"><stop offset="0" stop-color="#f6c05a" stop-opacity=".6"/><stop offset="1" stop-color="#f6c05a" stop-opacity="0"/></radialGradient>
+ <g id="sisli">
+  <g class="body">
+   <path d="M-40 -150 Q-52 -90 -44 -20 L-48 90 L-18 90 L-8 10 L8 10 L18 90 L48 90 L44 -20 Q52 -90 40 -150 Z" fill="#0d1722" stroke="#05090d" stroke-width="9" stroke-linejoin="round"/>
+   <path d="M-42 -140 Q-85 -60 -78 40 M42 -140 Q85 -60 78 40" fill="none" stroke="#05090d" stroke-width="22" stroke-linecap="round"/>
+   <path d="M-42 -140 Q-85 -60 -78 40 M42 -140 Q85 -60 78 40" fill="none" stroke="#0d1722" stroke-width="10" stroke-linecap="round"/>
+   <g class="head">
+    <ellipse cx="14" cy="-190" rx="40" ry="46" fill="#0d1722" stroke="#05090d" stroke-width="9"/>
+    <circle cx="2" cy="-192" r="14" fill="#e8f3ff" opacity=".25"/><circle cx="30" cy="-192" r="14" fill="#e8f3ff" opacity=".25"/>
+    <circle cx="2" cy="-192" r="7" fill="#f6fbff"/><circle cx="30" cy="-192" r="7" fill="#f6fbff"/>
+   </g>
+  </g>
+ </g>
+</defs>
+<rect width="1080" height="1920" fill="#0b141d"/>
+
+<!-- ===== SAHNE 1: sisli metropol ===== -->
+<g class="sc sc1"><g id="cam1">
+ <rect x="-100" y="-100" width="1280" height="620" fill="#11273b"/>
+ <rect x="-100" y="500" width="1280" height="300" fill="#1a3a55"/>
+ <rect x="-100" y="800" width="1280" height="260" fill="#2f5d79"/>
+ <ellipse cx="540" cy="930" rx="820" ry="330" fill="#df9a5a" opacity=".55"/>
+ <ellipse cx="540" cy="960" rx="560" ry="230" fill="#ea9e5c" opacity=".8"/>
+ <circle cx="540" cy="900" r="150" fill="#f6c982"/>
+ <g id="far"></g><g id="mid"></g>
+ <g class="fogA" opacity=".5"><ellipse cx="260" cy="1190" rx="520" ry="46" fill="#a9c3cf"/><ellipse cx="880" cy="1260" rx="560" ry="40" fill="#a9c3cf"/><ellipse cx="420" cy="1350" rx="640" ry="44" fill="#a9c3cf"/></g>
+ <g id="near"></g>
+ <!-- merkez apartman kulesi -->
+ <g id="tower"><line x1="540" y1="560" x2="540" y2="470" stroke="#070d13" stroke-width="10"/><circle cx="540" cy="466" r="9" fill="#e64b3c"/><rect x="410" y="560" width="260" height="1000" fill="#0f2233" stroke="#070d13" stroke-width="10"/><g id="twin"></g></g>
+ <g class="fogB" opacity=".55"><ellipse cx="760" cy="1120" rx="560" ry="54" fill="#c8dce3"/><ellipse cx="200" cy="1300" rx="600" ry="56" fill="#c8dce3"/><ellipse cx="640" cy="1450" rx="760" ry="80" fill="#b6ced8"/></g>
+ <rect x="-100" y="1520" width="1280" height="500" fill="#0a131b"/>
+</g></g>
+
+<!-- ===== SAHNE 2: gece sokak + Sisli'ler ===== -->
+<g class="sc sc2"><g id="cam2">
+ <rect x="-140" y="-100" width="1360" height="1500" fill="#0f2336"/>
+ <rect x="-140" y="700" width="1360" height="500" fill="#173149"/>
+ <g fill="#0a1621" stroke="#05090d" stroke-width="8"><rect x="-160" y="420" width="330" height="900"/><rect x="900" y="380" width="340" height="940"/><rect x="190" y="760" width="210" height="560"/><rect x="760" y="820" width="170" height="500"/></g>
+ <g fill="#0f2336"><rect x="-120" y="470" width="40" height="52"/><rect x="-40" y="470" width="40" height="52"/><rect x="40" y="470" width="40" height="52"/><rect x="940" y="440" width="40" height="52"/><rect x="1020" y="440" width="40" height="52"/><rect x="940" y="540" width="40" height="52"/></g>
+ <rect x="-140" y="1280" width="1360" height="700" fill="#1a2a38" stroke="#05090d" stroke-width="8"/>
+ <rect x="-140" y="1260" width="1360" height="40" fill="#233646" stroke="#05090d" stroke-width="6"/>
+ <g fill="#2e4256"><rect x="40" y="1660" width="160" height="22" rx="10"/><rect x="330" y="1660" width="160" height="22" rx="10"/><rect x="620" y="1660" width="160" height="22" rx="10"/><rect x="910" y="1660" width="160" height="22" rx="10"/></g>
+ <!-- terk edilmiş arabalar -->
+ <g stroke="#05090d" stroke-width="9" stroke-linejoin="round"><g><rect x="30" y="1330" width="320" height="110" rx="26" fill="#3b4f63"/><path d="M80 1330 L130 1270 L260 1270 L310 1330Z" fill="#2c3d4f"/><circle cx="100" cy="1445" r="34" fill="#0b1219"/><circle cx="280" cy="1445" r="34" fill="#0b1219"/></g>
+  <g><rect x="760" y="1350" width="300" height="104" rx="26" fill="#4a3b3b"/><path d="M810 1350 L855 1294 L975 1294 L1020 1350Z" fill="#352a2a"/><circle cx="830" cy="1458" r="32" fill="#0b1219"/><circle cx="990" cy="1458" r="32" fill="#0b1219"/></g></g>
+ <!-- sokak lambası -->
+ <ellipse id="lampglow" cx="560" cy="1330" rx="380" ry="95" fill="#f6c05a" opacity=".5"/>
+ <polygon points="520,720 610,720 840,1330 300,1330" fill="#f6c05a" opacity=".16"/>
+ <g stroke="#05090d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><line x1="680" y1="1330" x2="680" y2="700" fill="none"/><path d="M680 710 Q680 660 600 662" fill="none"/><path d="M540 662 H640 L624 704 H556Z" fill="#ef8a3c"/></g>
+ <!-- Sisli'ler -->
+ <use class="sisli" href="#sisli" style="--x0:-60px;--x1:260px;--y:1470px;--s:1.5"/>
+ <use class="sisli" href="#sisli" style="--x0:1160px;--x1:860px;--y:1430px;--s:1.3"/>
+ <use class="sisli" href="#sisli" style="--x0:60px;--x1:230px;--y:1370px;--s:.95"/>
+ <use class="sisli" href="#sisli" style="--x0:980px;--x1:780px;--y:1360px;--s:.9"/>
+ <use class="sisli" href="#sisli" style="--x0:330px;--x1:470px;--y:1335px;--s:.7"/>
+ <use class="sisli" href="#sisli" style="--x0:830px;--x1:640px;--y:1332px;--s:.65"/>
+ <g class="fogA" opacity=".35"><ellipse cx="300" cy="1240" rx="560" ry="40" fill="#9fb8c4"/><ellipse cx="900" cy="1560" rx="600" ry="50" fill="#9fb8c4"/></g>
+</g></g>
+
+<!-- ===== SAHNE 3: kesinti kolajı ===== -->
+<g class="sc sc3">
+ <g class="sub" id="s3a"><rect x="-100" y="-100" width="1280" height="2200" fill="#0f2336"/><g fill="#13293c"><rect x="-40" y="620" width="150" height="1300"/><rect x="960" y="540" width="170" height="1400"/><rect x="60" y="860" width="110" height="1000"/></g><line x1="540" y1="330" x2="540" y2="230" stroke="#05090d" stroke-width="10"/><circle cx="540" cy="226" r="10" fill="#e64b3c"/>
+  <rect x="140" y="330" width="800" height="1260" fill="#14293b" stroke="#05090d" stroke-width="12"/><g id="wins"></g></g>
+ <g class="sub" id="s3b"><rect x="-100" y="-100" width="1280" height="2200" fill="#2a3a46"/>
+  <rect x="-100" y="1300" width="1280" height="700" fill="#3b2a22" stroke="#05090d" stroke-width="10"/>
+  <rect x="190" y="620" width="700" height="620" rx="60" fill="#5c4a3d" stroke="#05090d" stroke-width="14"/>
+  <rect x="250" y="680" width="580" height="480" rx="48" fill="#0a1218" stroke="#05090d" stroke-width="10"/>
+  <g id="tvscreen" style="transform-origin:540px 920px"><clipPath id="sc"><rect x="250" y="680" width="580" height="480" rx="48"/></clipPath><g clip-path="url(#sc)"><rect x="250" y="680" width="580" height="480" fill="#7f8f98"/><g id="stat" class="stat"></g></g></g>
+  <g stroke="#05090d" stroke-width="10" stroke-linecap="round"><line x1="430" y1="610" x2="360" y2="520"/><line x1="650" y1="610" x2="720" y2="520"/></g></g>
+ <g class="sub" id="s3c"><rect x="-100" y="-100" width="1280" height="2200" fill="#22313d"/>
+  <rect x="-100" y="1380" width="1280" height="700" fill="#33261f" stroke="#05090d" stroke-width="10"/>
+  <rect x="150" y="760" width="780" height="520" rx="48" fill="#7a5a3c" stroke="#05090d" stroke-width="14"/>
+  <g stroke="#05090d" stroke-width="8" stroke-linecap="round"><line x1="200" y1="830" x2="400" y2="830"/><line x1="200" y1="880" x2="400" y2="880"/><line x1="200" y1="930" x2="400" y2="930"/><line x1="200" y1="980" x2="400" y2="980"/><line x1="200" y1="1030" x2="400" y2="1030"/><line x1="200" y1="1080" x2="400" y2="1080"/></g>
+  <rect x="450" y="820" width="430" height="150" rx="18" fill="#10181e" stroke="#05090d" stroke-width="10"/>
+  <g id="dial"><rect x="466" y="836" width="398" height="118" rx="10" fill="#ef8a3c"/><g stroke="#10181e" stroke-width="5"><line x1="500" y1="850" x2="500" y2="940"/><line x1="560" y1="860" x2="560" y2="930"/><line x1="620" y1="850" x2="620" y2="940"/><line x1="680" y1="860" x2="680" y2="930"/><line x1="740" y1="850" x2="740" y2="940"/><line x1="800" y1="860" x2="800" y2="930"/></g><line id="needle" x1="665" y1="842" x2="665" y2="948" stroke="#fff" stroke-width="8" stroke-linecap="round"/></g>
+  <circle cx="540" cy="1060" r="1" fill="none"/><circle cx="520" cy="1090" r="48" fill="#2d2118" stroke="#05090d" stroke-width="10"/><circle cx="740" cy="1090" r="48" fill="#2d2118" stroke="#05090d" stroke-width="10"/>
+  <line x1="880" y1="780" x2="1000" y2="400" stroke="#05090d" stroke-width="10" stroke-linecap="round"/></g>
+</g>
+
+<rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+<!-- şablon katmanları -->
+<g id="chip"><rect x="40" y="70" width="330" height="76" rx="12"/><text x="205" y="124">KAT 9 · BÖLÜM 1</text></g>
+<g id="cap"><text id="c1" x="540" y="1530"></text><text id="c2" x="540" y="1620"></text></g>
+</svg>
+</div>
+<div id="info"></div>
+<div class="bar"><button id="sesb">🔈 Efekt sesi aç</button><button id="rs">↺ Baştan</button></div>
+<script>
+const svg=document.getElementById('svg'),ns='http://www.w3.org/2000/svg';
+function rng(s){return()=>(s=(s*16807)%2147483647)/2147483647}
+function el(p,n,a){const e=document.createElementNS(ns,n);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+// sahne 1: gökdelen katmanları
+function skyline(id,base,hmin,hmax,wmin,wmax,fill,stroke,seed){const g=document.getElementById(id),r=rng(seed);let x=-30;
+ while(x<1110){const w=wmin+r()*(wmax-wmin),h=hmin+r()*(hmax-hmin);el(g,'rect',{x:x,y:base-h,width:w,height:h,fill:fill,stroke:stroke||'none','stroke-width':stroke?8:0});x+=w+(stroke?4:0)}}
+skyline('far',1400,180,400,50,100,'#2a566f',null,7);
+skyline('mid',1470,240,520,60,120,'#1b3f57',null,13);
+skyline('near',1540,300,640,70,130,'#0f2a3d','#070d13',29);
+(function(){const g=document.getElementById('twin'),r=rng(5);for(let i=0;i<6;i++)for(let j=0;j<18;j++){const lit=r()<0.1;el(g,'rect',{x:430+i*40,y:590+j*52,width:24,height:30,fill:lit?'#f3c46b':'#0a1a28',class:lit&&r()<.5?'flk':''})}})();
+(function(){const g=document.getElementById('wins');let k=0;const rnd=rng(11);for(let i=0;i<5;i++)for(let j=0;j<9;j++){const r=el(g,'rect',{x:190+i*150,y:380+j*125,width:100,height:80,rx:6,class:'win'});r.style.setProperty('--d',(0.15+rnd()*1.25).toFixed(2)+'s')}})();
+(function(){const g=document.getElementById('stat'),r=rng(3);for(let i=0;i<46;i++){const y=670+i*11,w=120+r()*520,x=240+r()*(580-w+60),sh=r();el(g,'rect',{x:x,y:y,width:w,height:6+r()*7,fill:sh<.35?'#e8eef2':sh<.7?'#2a3640':'#a8b6bd'})}})();
+// zaman çizelgesi (sahneler.json: 4 / 6 / 4,5 sn)
+const B=[0,4,10,14.5],TOT=14.5;
+const CAP=[[0,4,['ÜÇ GÜN ÖNCE ŞEHRİN','ÜSTÜNE SİS ÇÖKTÜ.']],
+ [4,6.3,['SİS\'E YAKALANANLAR GÜNDÜZ','HAREKETSİZ KALIYOR.']],[6.3,8.2,['GECELERİ IŞIĞI','VE SESİ ARIYORLAR.']],[8.2,10,['BİZ ONLARA','SİSLİ DEDİK.']],
+ [10,11.6,['ÖNCE İNTERNET GİTTİ.']],[11.6,13.1,['SONRA ELEKTRİK.']],[13.1,14.5,['DÜN GECE RADYO','DA SUSTU.']]];
+const c1=document.getElementById('c1'),c2=document.getElementById('c2');
+function setCap(t){const c=CAP.find(x=>t>=x[0]&&t<x[1]);const L=c?c[2]:[];
+ [c1,c2].forEach((e,i)=>{const s=L[i]||'';e.textContent='';if(s.includes('SİSLİ')){const a=s.split('SİSLİ');e.appendChild(document.createTextNode(a[0]));const ts=document.createElementNS(ns,'tspan');ts.setAttribute('class','hl');ts.textContent='SİSLİ';e.appendChild(ts);e.appendChild(document.createTextNode(a[1]))}else e.textContent=s});
+ if(L.length===1){c1.setAttribute('y',1580)}else c1.setAttribute('y',1530)}
+let start=performance.now(),forced=null,lastKey='';
+function frame(){const t=forced!==null?forced:((performance.now()-start)/1000)%TOT;
+ const sc=t<B[1]?1:t<B[2]?2:3;const sub=t<11.6?'a':t<13.1?'b':'c';
+ const key=sc+sub;if(key!==lastKey){svg.setAttribute('data-scene',sc);svg.setAttribute('data-sub',sub);lastKey=key;
+  if(sc===3||sc===2||sc===1){ /* animasyonları sahne başında yeniden başlat */ svg.classList.remove('x');void svg.getBoundingClientRect();}}
+ setCap(t);requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+window.__setT=v=>{forced=v;lastKey=''};
+// efekt sesi (konuşma yok)
+let ac=null,loopT=null;
+function nbuf(c,sec){const b=c.createBuffer(1,c.sampleRate*sec,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;return b}
+function sched(c){const t0=c.currentTime+.05,M=c.createGain();M.gain.value=.9;M.connect(c.destination);
+ const n=nbuf(c,2);
+ function noise(at,dur,freq,type,g0,g1){const s=c.createBufferSource();s.buffer=n;s.loop=true;const f=c.createBiquadFilter();f.type=type;f.frequency.value=freq;const g=c.createGain();g.gain.setValueAtTime(g0,t0+at);g.gain.linearRampToValueAtTime(g1,t0+at+dur);g.gain.linearRampToValueAtTime(0,t0+at+dur+.05);s.connect(f).connect(g).connect(M);s.start(t0+at);s.stop(t0+at+dur+.1)}
+ function tone(at,dur,freq,type,g,vib){const o=c.createOscillator();o.type=type;o.frequency.value=freq;const gg=c.createGain();gg.gain.setValueAtTime(0,t0+at);gg.gain.linearRampToValueAtTime(g,t0+at+dur*.5);gg.gain.linearRampToValueAtTime(0,t0+at+dur);const f=c.createBiquadFilter();f.type='lowpass';f.frequency.value=520;if(vib){const l=c.createOscillator(),lg=c.createGain();l.frequency.value=5;lg.gain.value=6;l.connect(lg).connect(o.frequency);l.start(t0+at);l.stop(t0+at+dur)}o.connect(f).connect(gg).connect(M);o.start(t0+at);o.stop(t0+at+dur)}
+ noise(0,4,420,'bandpass',.02,.2);tone(0,4,55,'sine',.16);            // sahne 1: rüzgâr, düşük gerilim
+ noise(4,6,380,'bandpass',.08,.08);tone(4,6,100,'square',.012);       // sahne 2: rüzgâr, lamba vızıltısı
+ tone(5.1,1.8,118,'sawtooth',.07,true);tone(7.9,1.8,96,'sawtooth',.06,true); // uzaktan inleme
+ for(let i=0;i<6;i++)noise(10+.15+i*.2,.05,1800,'highpass',.3,.3);    // pencere/elektrik kesilme
+ noise(11.6,1.5,3000,'highpass',.16,.16);                              // TV statik
+ noise(13.1,1.2,2500,'bandpass',.08,.0);                               // radyo cızırtısı, sonra sessizlik
+}
+const sb=document.getElementById('sesb'),inf=document.getElementById('info');
+function restart(){start=performance.now();if(ac)sched(ac)}
+document.getElementById('rs').onclick=restart;
+sb.onclick=()=>{try{if(ac){ac.close();ac=null;clearInterval(loopT);sb.textContent='🔈 Efekt sesi aç';inf.textContent='';return}
+ ac=new (window.AudioContext||window.webkitAudioContext)();inf.textContent='Yalnızca efekt sesi. Konuşma yok.';restart();loopT=setInterval(restart,TOT*1000);sb.textContent='🔇 Sesi kapat'}catch(e){}};
+</script>
+</body></html>
