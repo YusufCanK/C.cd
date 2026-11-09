@@ -26,7 +26,9 @@ Yeni bölümde sadece `Sisli.random(tohum)` veya bir preset çağrılır. Aynı 
 - Tanınan Sisli'nin yüzü hâlâ "o insanı" andırır: bıyık, gözlük, saç, kıyafet.
 - Deniz tanıdığı birini görünce **yüz ifadesi** değişir (şaşkınlık, üzüntü). Bu duygusal bir an yaratır ve izleyiciyi hikâyeye bağlar.
 - **Ahmet Amca'nın kimliği Bölüm 1'de söylenmez.** İzleyici "bu apartmandan biri" diye düşünür, sonraki bölümlerde Deniz tanır.
-- Yankı kuralı geçerli: Sisli yalnızca duyduğunu tekrar eder.
+- **Sisli konuşmaz** (ChatGPT kararı). Yankı kuralı ana gizem değil.
+- **Ses imzası:** derin, boğuk hırıltı + içinde kuru, kesik solunum; düzensiz nefes. Seri boyunca tutarlı.
+- Sisli'ler **düşmandır**: karşılaşınca kaç ya da savaş. Tanınan yüz tehdidi azaltmaz.
 
 ## İçerik sınırı
 Çizgi film üslubunda kan izi, ısırık ve yaralar serbest. **Detaylı, grafik gore yok** (platform kuralları ve geniş kitle için). Eksik uzuvlar stilize ve kısa süreli gösterilir.

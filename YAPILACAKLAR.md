@@ -9,3 +9,5 @@
 - [ ] Efekt ve müziği lisanslı/profesyonel ses kütüphanesiyle değiştir (şu an sentezlenmiş yer tutucu)
 - [ ] Bölüm süresi 106,9 sn (hedef ~90): kısaltma kararı
 - [ ] Bölüm 2 ve 3, sonra yayın
+- [ ] Revizyon 6 onayı sonrası uygula: sahne 15/16/17, A/B kartları, HUD sadeleştirme (güvenli alan), Sisli ses imzası, anlatıcı sahne 15 sesini kısalt; ardından render onayı iste
+- [ ] Kullanılmayan sesler (Ahmet fısıltı 28 kredi, Deniz sahne 16 v1+v2 83 kredi) ileride yeniden kullanılabilir mi değerlendir

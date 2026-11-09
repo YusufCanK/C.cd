@@ -1,4 +1,4 @@
-# Bölüm 1: Son Mesaj (KİLİTLİ, taslak 5, hedef ~90 sn)
+# Bölüm 1: Son Mesaj (revizyon 6: Sisli konuşmaz, A/B seçim; süre korunuyor ~107 sn)
 
 Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve onaylı** (✅).
 
@@ -30,20 +30,25 @@ Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve 
 **[EŞYA]**
 13. Masada iki şey: fener ve babamın baltası. Fener yolu gösterir ama ışığı onları çeker. Balta korur, kapı kırar ama çıkardığı ses de onları çeker.
 
-**[CLIFFHANGER: acele yok]**
-14. Kapıyı açıyorum. Koridorda ağır bir nefes sesi.
-15. Biri yavaşça dönüyor. Yüzünü göremiyorum. Sonra çok kısık bir ses duyuyorum: "...Deniz."
-16. Nasıl biliyor adımı?
+**[CLIFFHANGER: acele yok, SİSLİ KONUŞMAZ]**
+14. Kapıyı açıyorum. Koridorda ağır bir nefes sesi. *(Ses imzası: kuru, kesik hırıltı-nefes)*
+15. Biri yavaşça dönüyor. Yüzünü göremiyorum. *(Siluet: hırka, bıyık, anahtar demeti. Kim olduğu söylenmez. Konuşma yok; kuru hırıltı, düzensiz nefes, anahtar şıngırtısı)*
+16. *(Sessiz tepki: Deniz nefesini tutuyor, gözleri Sisli'ye kilitli. Sert nefes çekişi, kalp atışı, yaklaşan hırıltı.)*
 
 **[SEÇİM ve YORUM]**
 17. "Fener mi, balta mı? Ve o şey… sence kim?"
+   - **A) FENER:** ışığı yak, sessizce kaç (ışık Sisli'leri çeker)
+   - **B) BALTA:** karşı koy (çıkan ses Sisli'leri çeker)
 
 ---
 
 ## Notlar
 - **Sahne 15 ses katmanları:** Deniz'in anlatımı ve Sisli fısıltısı ayrı katman. Fısıltı anlatıcının son kelimesi gibi duyulmamalı.
 - **Risk:** Konuşma hızı (2,6 kelime/sn) tek ses örneğinden ölçüldü; gerçek seslendirmeden sonra süreler yeniden ayarlanır.
-- **Sisli'nin "...Deniz" demesi bu bölümde açıklanmaz.** Gizem korunur. Yankı kuralı Bölüm 2-4'te görsel ve işitsel örneklerle doğrulanacak (`story/sezon-taslagi.md`).
+- **Sisli konuşmaz.** "...Deniz" fısıltısı ve "Nasıl biliyor adımı?" repliği kaldırıldı (ChatGPT kararı). Korku davranış, ses ve siluetle kurulur. Yankı kuralı ana gizem değil.
+- **Ses imzası:** Sisli'nin hırıltısı sıradan zombi hırıltısı değil: derin, boğuk, içinde kuru ve kesik bir solunum. Seri boyunca tutarlı kullanılır; izleyici Sisli'yi görmeden yaklaştığını hisseder.
+- **Ahmet Amca** kimliği söylenmez; siluet ve görsel ipuçlarından tahmin edilir (hırka, bıyık, çatlak gözlük, anahtar demeti).
 - **Ela'nın çizimi** sezon boyunca kullanılacak ana motif. Çizim ile pusula arasındaki bağın ileride hikâyede gerçek karşılığı olacak (aynı dosya).
 - **Fener / balta:** İkisinin de farklı kullanımı sezon boyunca düşünülecek (balta kapı/engel kırar, fener sinyal verir/yönlendirir).
-- **Yorum katılımı:** Sahne 17 tek cümlede hem seçimi hem teori sorusunu soruyor, talimat vermiyor.
+- **Yorum katılımı:** Sahne 17 hem A/B seçimini hem teori sorusunu (o şey kim?) soruyor, talimat vermiyor.
+- **Süre:** ~107 sn korunuyor (karar). Boş/statik uzamamalı: atmosfer, karakter hareketi, efekt ve duygusal duraklamalarla dolu olacak.

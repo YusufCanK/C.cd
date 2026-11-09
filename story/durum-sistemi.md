@@ -19,3 +19,7 @@ Her seçim `story/degiskenler.json` içinde kaydedilir. Sonraki bölümler bu de
 
 ## Kural
 Yeni bölümün `sahneler.json` dosyası, ortak sahnelere ek olarak `varyant` alanı ile durum değişkenine bağlı kısa sahneler (20-30 sn) ve tek tek replik/eşya değişimleri taşır.
+
+## A/B seçim anlamı (Bölüm 1)
+- **A) Fener:** kaç. Görüş sağlar, ışık Sisli'leri çeker. `tehlike +1`, kaçış yolu açık.
+- **B) Balta:** karşı koy. Savunur, kapı/engel kırar, çıkan ses Sisli'leri çeker. `tehlike +1`, yakın dövüş.

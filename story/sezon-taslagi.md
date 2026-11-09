@@ -5,22 +5,21 @@
 ## İlkeler
 1. **Her bölüm = fiziksel ilerleme + yeni bir hikâye bilgisi.**
 2. **Ela'nın çizimleri** Deniz'in yolunda karşısına çıkar (ipucu, teselli, uyarı).
-3. **Sisli'lerin davranışında aşamalı keşfedilen bir düzen** vardır. İzleyici teori üretir. Çalışma fikri: Sisli'ler son duydukları sesi/sözü tekrar eder ("yankı").
+3. **Sisli'ler konuşmaz.** Korku davranış, ses imzası ve ortaya çıkışlarla kurulur. Davranışlarında aşamalı keşfedilen bir düzen vardır (ışık/ses tepkisi), izleyici teori üretir. Eski "yankı" (duyduğunu tekrar eder) fikri ana gizem olmaktan çıkarıldı.
 4. **Selim gri karakter:** yardım eder gibi görünür, bir şey saklar. Güvenilirliği tartışılır.
 5. **Seçim sonuçları hatırlanır** (bkz. `durum-sistemi.md`), sadece ilk 20-30 sn'de değil, diyalog, eşya, karakter davranışı ve tehlike seviyesinde de.
 6. **Yorum katılımı** başarı ölçütüdür: her bölümde hem seçim hem teori sorusu.
 
-## Yankı kuralının doğrulanması (Bölüm 2-4, tutarlı olmalı)
-Kural: Sisli'ler son duydukları sesi/sözü, aynı ses tonuyla tekrar eder.
-- **Bölüm 2:** Nezihe Teyze'nin kapısının ardında bir Sisli, daha önce duyduğu bir cümleyi (örn. telefon zil sesi veya teyzenin kendi cümlesi) birebir tekrarlar. Deniz fark eder, izleyici bölüm 1'deki fısıltıyı anımsar.
-- **Bölüm 3:** Kaan kuralı kendi yöntemiyle kullanır (sessiz kalarak saklanır). Kural ilk kez bilinçli kullanılır.
-- **Bölüm 4:** Selim kuralı biliyor gibi davranır. Bunun nasıl bildiği sırrın parçası olur.
-- Bölüm 1'deki "...Deniz"in **nereden duyulduğu** erken açıklanmaz. Kural tutarlı kalmalı: Sisli sadece duyduğunu tekrar eder, uydurmaz.
+## Sisli ses imzası (Kat 9'a özgü)
+Derin, boğuk hırıltı; içinde zor duyulan, kuru ve kesik bir solunum. Düzensiz nefes aralıkları. Sisli görünmeden önce **duyulur**. Her bölümde aynı imza kullanılır (`sablon/ses_mix.py` içinde tek bir fonksiyon).
+
+## Sisli'lerle ilişki
+Sisli'ler düşmandır. Karşılaşınca iki yol vardır: **kaç (A)** ya da **karşı koy (B)**. Tanıdık bir yüz olsa bile tehdit değişmez.
 
 ## Tanıdık Sisli'ler
 - Sisli'ler eski komşu ve tanıdıklardır. Tanınan Sisli (Ahmet Amca, Bakkal Cemal, Hemşire Ayşe) Deniz'e ve izleyiciye **duygusal darbe** verir.
 - Yüz ifadesi tanınabilir kalır. Tanıma anı bölümlerin güçlü cliffhanger'larından biri olabilir.
-- Ahmet Amca'nın Bölüm 1'deki fısıltısı ('...Deniz') yankı kuralıyla bağlanır: neden bu adı söylediği ileride açıklanır.
+- Ahmet Amca olabilecek siluet Bölüm 1'de görünür ama **kimliği söylenmez, konuşmaz**. Kimliği siluetten ve görsel ipuçlarından tahmin edilir.
 
 ## Motifler
 - **Ela'nın çizimi:** İlk çizim (buzdolabı: Deniz + pusula) Bölüm 1'de. Sonraki çizimler Deniz'in yolunda ipucu ya da uyarı olarak çıkar. **Açık soru:** Çizimlerle pusulanın bağı tam olarak ne? (Çalışma fikri: çizimlerdeki işaretler pusulanın yönleriyle eşleşir.)
@@ -29,7 +28,7 @@ Kural: Sisli'ler son duydukları sesi/sözü, aynı ses tonuyla tekrar eder.
 ## Bölüm taslakları (yön, kesin değil)
 | # | Mekan | Yeni bilgi | Cliffhanger (taslak) | Seçim |
 |---|---|---|---|---|
-| 1 | 9. kat | Sisli adını biliyor | Koridordaki Sisli "...Deniz" der | Fener / Balta |
+| 1 | 9. kat | Koridorda Sisli var, ses imzası tanıtılır | Siluet döner, kimliği belirsiz | A) Fener (kaç) / B) Balta (karşı koy) |
 | 2 | 8-6. kat | Nezihe Teyze Sisli'den önce bir şey görmüş | Teyze babasını tanıdığını söyler | İlaç kutusu / Konserve |
 | 3 | 5-3. kat | Kaan'ın saklanma nedeni | Kaan Ela'nın dershanesinden geldiğini söyler | Kırık radyo / İp |
 | 4 | 2-1. kat | Selim'in sırrı | Selim'in elinde baba fotoğrafı | Anahtar / Levye |
@@ -37,6 +36,6 @@ Kural: Sisli'ler son duydukları sesi/sözü, aynı ses tonuyla tekrar eder.
 | 10-12 | Dershane | Sis'in kökeni, babaya uzanan ipucu | Sezon 2 kancası | |
 
 ## Açık sorular
-- Sisli Deniz'in adını neden biliyor? (yankı kuralı ile uyumlu bir cevap bulunacak)
+- Koridordaki Sisli gerçekten Ahmet Amca mı? (Bölüm 2-3'te ipucu, kesin açıklama ertelendi)
 - Selim'in sırrı tam olarak ne? Bölüm 3'ten önce karar verilecek.
 - Annenin hikâyedeki rolü?

@@ -2,7 +2,7 @@
   "bolum": 1,
   "baslik": "Son Mesaj",
   "hedef_sn": 90,
-  "not": "Sahne süresi ile konuşma süresi ayrı hesaplanır. Ses dosyası olmayan sahnelerin konuşması henüz üretilmedi; süreler tahmindir.",
+  "not": "Revizyon 6 (ChatGPT kararları): Sisli konuşmaz, 'Deniz' fısıltısı ve 'Nasıl biliyor adımı?' kaldırıldı, A/B seçenekleri eklendi, panel sadeleşiyor. Süre korunuyor (106,85 sn). Sahne süresi ile konuşma süresi ayrı hesaplanır. Ses dosyası olmayan sahnelerin konuşması henüz üretilmedi; süreler tahmindir.",
   "sahneler": [
     {
       "id": 1,
@@ -175,46 +175,70 @@
     {
       "id": 15,
       "sure_sn": 6.5,
-      "anlatim": "Biri yavaşça dönüyor. Yüzünü göremiyorum. Sonra çok kısık bir ses duyuyorum: ...Deniz.",
-      "konusmaci": "Deniz + Sisli fısıltısı",
-      "gorsel": "koridor sonunda kambur siluet: Ahmet Amca (kel tepe, bıyık, çatlak gözlük, hırka, terlik, boynunda ısırık, elinde anahtar demeti), parlayan gözler, yüz net değil",
+      "anlatim": "Biri yavaşça dönüyor. Yüzünü göremiyorum.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "gorsel": "koridor sonunda kambur siluet (Ahmet Amca olabilir: hırka, bıyık, çatlak gözlük, anahtar demeti siluetten seçilir, yüz net değil), parlayan gözler",
       "hareket": "hızlı zoom-in",
-      "ses_efekt": "nefes, fısıltı vurgu sesi",
+      "ses_efekt": "Sisli ses imzası: derin, boğuk, kuru ve kesik hırıltı-nefes; düzensiz solunum; anahtar şıngırtısı; kalp atışı; sonda alçak vuruş. KONUŞMA YOK.",
       "ses_dosyasi": null,
       "tahmini_konusma_sn": 5.6,
       "bos_pay_sn": 0.9,
-      "ses_katmanlari": [
-        "anlatıcı (Deniz)",
-        "Sisli fısıltısı (ayrı katman, anlatıcının son kelimesi gibi duyulmamalı)"
-      ]
+      "ses_notu": "Mevcut anlatıcı sesinin ilk iki cümlesi kullanılacak (üçüncü cümle 'Sonra çok kısık bir ses duyuyorum:' kesilir). Yeni ses üretilmeyecek. Fısıltı dosyası (sahne15-fisilti.mp3) kullanılmayacak."
     },
     {
       "id": 16,
       "sure_sn": 3,
-      "anlatim": "Nasıl biliyor adımı?",
-      "konusmaci": "Deniz",
-      "gorsel": "Deniz yakın plan, gözler iri",
+      "anlatim": "(sessiz tepki: Deniz nefesini tutuyor)",
+      "konusmaci": "-",
+      "gorsel": "Deniz yakın plan, korkmuş, donmuş; nefesini tutuyor, gözler Sisli'ye kilitli",
       "hareket": "sarsıntı",
-      "ses_efekt": "kalp atışı",
+      "ses_efekt": "sert bir nefes çekiş, nefes tutma sessizliği, hızlanan kalp atışı, uzaktan yaklaşan kuru hırıltı",
       "ses_dosyasi": null,
       "tahmini_konusma_sn": 1.2,
-      "bos_pay_sn": 1.8
+      "bos_pay_sn": 1.8,
+      "ses_notu": "'Nasıl biliyor adımı?' repliği kaldırıldı (Sisli konuşmuyor). Üretilmiş Deniz sesi (sahne16-deniz.mp3) bu bölümde kullanılmayacak."
     },
     {
       "id": 17,
       "sure_sn": 4,
       "anlatim": "Fener mi, balta mı? Ve o şey… sence kim?",
       "konusmaci": "Deniz",
-      "gorsel": "seçim kartı: fener | balta + belirsiz koridor siluetiyle 'sence kim?'",
+      "gorsel": "seçim kartları: A) FENER (kaç) | B) BALTA (savaş) + 'o şey kim?' siluet kartı",
       "hareket": "kart animasyonu",
       "ses_efekt": "vurgu sesi",
       "ses_dosyasi": null,
       "tahmini_konusma_sn": 3.5,
-      "bos_pay_sn": 0.5
+      "bos_pay_sn": 0.5,
+      "secenekler": [
+        {
+          "harf": "A",
+          "etiket": "FENER",
+          "aciklama": "Işığı yak, sessizce kaç",
+          "risk": "Işık Sisli'leri çeker"
+        },
+        {
+          "harf": "B",
+          "etiket": "BALTA",
+          "aciklama": "Karşı koy, savaş",
+          "risk": "Çıkan ses Sisli'leri çeker"
+        }
+      ]
     }
   ],
   "toplam_sahne_sn": 90.5,
   "toplam_tahmini_konusma_sn": 70.0,
   "konusma_hizi_varsayimi": "2,6 kelime/sn (onaylı Deniz sesinden ölçüldü). Ela sahnesi gerçek ses süresi (8,88 sn).",
-  "risk_notu": "2,6 kelime/sn tek ses örneğinden ölçüldü, kesin değil. Boş payı 1 sn altındaki sahneler (2, 3, 6, 7, 9, 13, 15, 17) gerçek seslendirmede vurgu/duraklama ile aşılabilir; gerçek sesten sonra süreler son kez ayarlanır."
+  "risk_notu": "2,6 kelime/sn tek ses örneğinden ölçüldü, kesin değil. Boş payı 1 sn altındaki sahneler (2, 3, 6, 7, 9, 13, 15, 17) gerçek seslendirmede vurgu/duraklama ile aşılabilir; gerçek sesten sonra süreler son kez ayarlanır.",
+  "hud_kurali": {
+    "ana_bilgi": [
+      "saat",
+      "gün doğumuna kalan süre"
+    ],
+    "hedef": "ELA'YA ULAŞ (tek satır, küçük)",
+    "kat": "yalnızca merdiven ve kapı sahnelerinde (11, 12) göster",
+    "mesafe": "yalnızca bir kez (sahne 11), diğer sahnelerde gösterme",
+    "gizli": "sahne 1'in ilk 3 sn'si (başlık kartı), sahne 8 (sessizlik), sahne 17 (seçim kartları)",
+    "guvenli_alan": "Reels arayüzü payı: üst 270 px, alt 1500 px sınırı, sağ kenarda alt yarıda 120 px boş. Panel, rozet ve altyazı bu çerçevenin içinde, birbiriyle ve karakter yüzleriyle çakışmaz.",
+    "not": "Kod henüz güncellenmedi, onay sonrası uygulanacak."
+  }
 }
