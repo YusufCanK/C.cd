@@ -7,14 +7,18 @@ Format: kısa bölümler, her bölüm sonunda seçim, izleyici oyları bir sonra
 
 ---
 
-## 1. Konsept (doldurulacak)
+## 1. Konsept
 
-- Çalışma adı: **Sisli Kıyı**
+- Çalışma adı: **Kat 9**
 - Tür: **Hayatta kalma** (karar: kullanıcı)
-- Ana karakter: **Deniz**, 17 yaş, sahil kasabasında bakkalın kızı. Boynunda eski bir pusula. Hedef: kayıp kardeşini bulmak.
-- Seçim mekaniği: **Eşya seçimi** (karar: kullanıcı). Her bölüm sonunda karakter elindeki iki eşyadan birini yanına alır; seçilen eşya sonraki bölümün riskini ve fırsatlarını belirler. Alınmayan eşya kaybolur.
-- Hikaye evreni ve ton: Türkiye'de bir sahil kasabasında salgın. Enfekte insanlara **"Sisli"** denir; gündüz uyurlar, geceleri ışık ve sese tepki verirler. Ton: gerilimli ve karanlık, aralarda insani anlar. Gore yok.
-- Hedef kitle ve dil: _Türkçe (ileride başka dil?)_
+- Ana karakter: **Deniz**, 19 yaş, 9 katlı bir apartmanın en üst katında yaşıyor. Kıvırcık kahverengi saç, yara izli kaş, hafif sakal, zeytin yeşili ceket, lacivert kapüşon, babasından kalan pusula kolye. Detaylar: `karakterler/deniz.md`.
+- Amaç: Gün doğmadan apartmandan çıkıp şehrin öbür ucundaki dershanede mahsur kalan kız kardeşi **Ela'ya (12)** ulaşmak.
+- Seçim mekaniği: **Eşya seçimi** (karar: kullanıcı). Her bölüm sonunda iki eşyadan biri alınır, öbürü kaybolur. Seçilen eşya sonraki bölümün riskini ve fırsatını belirler.
+- Evren ve ton: Metropolde salgın. Enfekte olanlara **"Sisli"** denir; gündüz uyurlar, geceleri ışığa ve sese tepki verirler. Gerilimli ve karanlık, aralarda insani anlar. Gore yok.
+- Mekan: Metropolde bir apartman (dikey harita: her kat farklı risk ve komşu). Sonra sokaklar, metro, çatılar. Görseller: `mekanlar/`.
+- Görsel stil: Düz 2D vektör çizgi film, kalın siyah kontur, düz renkler (kilitli prompt: `karakterler/stil.md`).
+- Sezon taslağı: Bölüm 1-4 apartmandan çıkış, 5-8 sokaklar/metro/çatılar, 9-12 dershane ve Ela.
+- Hedef kitle ve dil: Türkçe (ileride başka dil?)
 
 ## 2. Hedefler
 
@@ -85,7 +89,7 @@ Kural: **Sessiz video render edilmez.** Her render seslendirme ve efekt içerir.
 ## 9. Açık sorular
 
 - [x] Konsept ve tür (tamamlandı)
-- [x] Karakter tarifi (görsel stil tarifi `karakterler/` altında yazılacak)
+- [x] Karakter tarifi (`karakterler/deniz.md`)
 - [x] Seçim mekaniği (eşya seçimi)
 - [ ] ElevenLabs sesi (kullanıcı seçecek)
 - [ ] Hesap adı ve marka kimliği
