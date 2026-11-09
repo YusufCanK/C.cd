@@ -3,18 +3,14 @@
 > Hesapları sen açarsın: telefon ve e-posta doğrulaması gerekiyor, ben açamam. Aşağıdakileri kopyala-yapıştır kullan.
 > Platformlar: Instagram Reels, TikTok, YouTube Shorts. Oy süresi: **24 saat**.
 
-## 1. Kimlik (üç platformda aynı)
-- **Görünen ad:** Kat 9
-- **Kullanıcı adı (sırayla dene, uygun olanı al; üçünde aynı olsun):**
-  1. `kat9.hikaye`
-  2. `kat9seri`
-  3. `kat9.tr`
-  4. `kat9hikayesi`
-
-  YouTube'da nokta yok, `@kat9hikaye` gibi yazılır.
-- **Profil fotoğrafı:** `story/kanallar/profil.png` (1080x1080, daire kırpmasında güvenli)
-- **YouTube kanal kapağı:** `story/kanallar/youtube-kapak.png` (2560x1440, yazı güvenli alanda)
-- **Bölüm kapağı:** `story/bolum-01/kapak.png`. Seçim kutusu, profil ızgarasındaki 3:4 kırpmaya girecek şekilde yukarı alındı.
+## 1. Kimlik (karar: Claude, kullanıcı onayıyla; üç platformda aynı)
+- **Marka/dizi adı:** Kat 9 (hesap diziye özel)
+- **Görünen ad:** `Kat 9 · İnteraktif Hikâye`. Aramada "hikâye" kelimesiyle de bulunur.
+- **Kullanıcı adı:** `kat9.hikaye` (YouTube: `@kat9hikaye`). Alınmışsa sırayla: `kat9seri`, `kat9.tr`, `kat9hikayesi`. Üç platformda aynısı olmalı.
+- **Profil fotoğrafı:** `story/kanallar/profil.png`
+- **YouTube kanal kapağı:** `story/kanallar/youtube-kapak.png`
+- **Bölüm kapağı:** `story/bolum-01/kapak.png`
+- **Kategori (Instagram/TikTok profesyonel hesap):** "Dijital içerik üreticisi" (Digital creator)
 
 ## 2. Biyografi
 **Instagram (150 karakter):**
