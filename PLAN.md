@@ -26,13 +26,13 @@ Format: kısa bölümler, her bölüm sonunda seçim, izleyici oyları bir sonra
 2. Talep görünürse uygulama MVP'sini çıkar.
 3. Üretim hattını şablonlaştır: yeni bölüm ≈ 20-30 dk.
 
-## 3. Bölüm formatı (1 dk Reels)
+## 3. Bölüm formatı (80-90 sn Reels)
 
-- Süre: 55-60 sn, dikey 9:16
-- Senaryo: ~130-150 kelime
+- Süre: 80-90 sn, dikey 9:16
+- Senaryo: ~210-240 kelime
 - İlk 3 sn: hook
 - Son 5 sn: cliffhanger + seçim sorusu
-- 10-12 sahne, her biri ~5 sn
+- 16-18 sahne, her biri ~5 sn
 - Sabit kapak şablonu, büyük "BÖLÜM X" başlığı
 - Altyazı, müzik ve efekt zorunlu
 
