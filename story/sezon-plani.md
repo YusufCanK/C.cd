@@ -60,3 +60,9 @@
 3. **Panel:** "HEDEF: ELA'YA ULAŞ" yerine "HEDEF: MERDİVEN BOŞLUĞUNA ULAŞ". Ana hedef (Ela) sağ panelde "ELA'YA: 14 KM" olarak kalır.
 4. Kapı altında ıslak havlu (görsel, dünya kuralı 3).
 5. Ses üretimi ve yeniden render: önce kredi tahmini, sonra kullanıcı onayı.
+
+## Üretim akışı (dallanma)
+1. Bölüm yayınlanır.
+2. İzleyici seçimi toplanır ve `degiskenler.json` → `oylar` alanına yazılır.
+3. Seçimin sonucu ve yeni bölümün mini hedefi netleşir.
+4. Yalnızca seçilen dalın bölümü üretilir. Ortak gizem (`ela-sirri-ipuclari.md`) her dalda korunur.
