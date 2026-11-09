@@ -22,6 +22,10 @@ window.__renderAt=function(T){
  const h=BOLUM.hooks[sc.id];if(h)h(lt,sc,g);
  setCap(sc,lt);
  const tt=document.getElementById('title');if(tt)tt.style.opacity=(sc.id===1)?String(Math.max(0,Math.min(1,(2.9-lt)/.5))*Math.min(1,lt/.25)):'0';
+ const hudg=document.getElementById('hud');
+ if(hudg){const h=sc.hud;if(!h||(sc.id===1&&lt<3.0)){hudg.style.display='none'}else{hudg.style.display='inline';hudg.style.opacity=String(sc.id===1?Math.min(1,(lt-3.0)/.4):1);
+  const set=(id,v)=>{const e=document.getElementById(id);if(e&&e.__v!==v){e.textContent=v;e.__v=v}};
+  set('h-gun',h.gun+'. GÜN');set('h-saat',h.saat);set('h-kat','KAT: '+h.kat);set('h-esya','EŞYA: '+h.esya);set('h-kalan',h.kalan);set('h-uzak','ELA\'YA: '+h.uzak)}}
  // tüm animasyonları sahne zamanına bağla
  document.getAnimations().forEach(a=>{
   if(a.constructor&&a.constructor.name==='CSSTransition'){try{a.finish()}catch(e){}return}

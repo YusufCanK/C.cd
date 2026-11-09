@@ -104,6 +104,9 @@ svg{height:100vh;max-width:100vw;aspect-ratio:9/16;display:block}
 #cap text{font:900 76px/1 Impact,'Arial Black','Arial Narrow Bold',system-ui,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:16px;stroke-linejoin:round;fill:#fff;letter-spacing:1px}
 #cap.cap-ela text{fill:#ffcb6b}#cap.cap-fisilti text{fill:#9fb8c4;font-style:italic}
 #chip rect{fill:#e64b3c;stroke:#111;stroke-width:6}#chip text{font:900 38px Impact,'Arial Black',system-ui,sans-serif;fill:#fff;text-anchor:middle}
+#hud text{paint-order:stroke;stroke:#000;stroke-width:8px;stroke-linejoin:round}
+.hg{font:900 46px Impact,'Arial Black',sans-serif;fill:#ffd23f}.hs{font:900 78px Impact,'Arial Black',sans-serif;fill:#fff}
+.hl{font:700 35px 'Courier New',monospace;fill:#ffb347}.hs2{font:900 28px Impact,'Arial Black',sans-serif;fill:#cfe0e6}.hk{font:900 96px Impact,'Arial Black',sans-serif;fill:#fff}
 #title text{font:900 150px Impact,'Arial Black',system-ui,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:22px;stroke-linejoin:round;fill:#ffd23f}
 #title .t2{font-size:74px;fill:#fff}
 </style></head>
@@ -121,6 +124,13 @@ svg{height:100vh;max-width:100vw;aspect-ratio:9/16;display:block}
 <!--SAHNE123-->
 <!--SAHNE4_17-->
 <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+<g id="hud" style="display:none">
+ <g id="hudL"><circle cx="58" cy="226" r="14" fill="#e64b3c" stroke="#111" stroke-width="4"/><text id="h-gun" class="hg" x="86" y="244"></text>
+  <text id="h-saat" class="hs" x="40" y="316"></text>
+  <text class="hl" x="40" y="372">HEDEF: ELA'YA ULAŞ</text><text id="h-kat" class="hl" x="40" y="416"></text><text id="h-esya" class="hl" x="40" y="460"></text></g>
+ <g id="hudR"><circle cx="936" cy="222" r="34" fill="#f6c05a" stroke="#111" stroke-width="5"/><g stroke="#f6c05a" stroke-width="6" stroke-linecap="round"><path d="M936 168v-16M936 276v16M882 222h-16M990 222h16M898 184l-11-11M974 260l11 11M974 184l11-11M898 260l-11 11"/></g>
+  <text class="hs2" x="1040" y="330" text-anchor="end">GÜN DOĞUMUNA</text><text id="h-kalan" class="hk" x="1040" y="412" text-anchor="end"></text><text id="h-uzak" class="hl" x="1040" y="458" text-anchor="end"></text></g>
+</g>
 <g id="chip"><rect x="40" y="70" width="330" height="76" rx="12"/><text x="205" y="124">KAT 9 · BÖLÜM 1</text></g>
 <g id="title" style="opacity:0"><text x="540" y="860">BÖLÜM 1</text><text class="t2" x="540" y="980">SON MESAJ</text></g>
 <g id="cap" style="display:none"><text id="c1" x="540" y="1540"></text><text id="c2" x="540" y="1628"></text><text id="c3" x="540" y="1716"></text></g>

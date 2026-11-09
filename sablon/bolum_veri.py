@@ -22,6 +22,12 @@ CFG={1:(.6,3.6),2:(.5,0),3:(.4,0),4:(1.6,0),5:(.5,0),6:(.45,0),7:(.5,0),8:(0,4.0
 WHISPER_DUR=1.3
 wp=B/'ses'/'sahne15-fisilti.mp3'
 if wp.exists():WHISPER_DUR=round(sure(wp),2)
+# durum paneli: (saat, kalan, kat, uzaklık, eşya); None = panel gizli. Gün doğumu 06:50 varsayımı.
+HUD_SAAT={1:'05:41',2:'05:41',3:'05:41',4:'05:41',5:'05:41',6:'05:41',7:'05:41',9:'05:43',10:'05:43',11:'05:45',12:'05:47',13:'05:47',14:'05:49',15:'05:49',16:'05:49'}
+def hud(i):
+    if i not in HUD_SAAT:return None
+    h,m=map(int,HUD_SAAT[i].split(':'));kalan=(6*60+50)-(h*60+m)
+    return {'gun':3,'saat':HUD_SAAT[i],'kalan':f'{kalan//60}:{kalan%60:02d}','kat':'9 / 9','uzak':'14 KM','esya':'?' if i>=13 else '—'}
 out=[];t=0.0
 for s in S:
     i=s['id'];ses=B/'ses'/(f'sahne{i:02d}-ela.mp3' if i==7 else f'sahne{i:02d}-anlatici.mp3')
@@ -62,7 +68,7 @@ for s in S:
         if i==15:sc['altyazi'].append({'t0':sc['fisilti']['baslangic'],'t1':sc['fisilti']['baslangic']+WHISPER_DUR+.4,'satir':['…DENİZ.'],'konusan':'fisilti'})
     else:
         dur=minimum;sc['sessiz']=True;sc['altyazi']=[]
-    sc['baslangic']=round(t,2);sc['sure']=round(dur,2);t+=dur;out.append(sc)
+    sc['hud']=hud(i);sc['baslangic']=round(t,2);sc['sure']=round(dur,2);t+=dur;out.append(sc)
 json.dump({'toplam':round(t,2),'sahneler':out},open(B/'zaman-cizelgesi.json','w'),ensure_ascii=False)
 print('toplam',round(t,1),'sn')
 for sc in out:print(sc['id'],sc['baslangic'],sc['sure'],[ (c['t0'],c['t1'],' / '.join(c['satir'])) for c in sc['altyazi']][:4])

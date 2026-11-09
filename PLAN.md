@@ -40,6 +40,8 @@ Format: kısa bölümler, her bölüm sonunda seçim, izleyici oyları bir sonra
 - Sabit kapak şablonu, büyük "BÖLÜM X" başlığı
 - Altyazı, müzik ve efekt zorunlu
 
+- Durum paneli (şablon katmanı): gün, saat, hedef, kat, eşya ve gün doğumuna kalan süre; her sahne için `zaman-cizelgesi.json` içindeki `hud` alanından gelir (`sablon/bolum_veri.py` içinde HUD_SAAT). Referans videodan yalnızca fikir alındı, tasarım ve içerik özgün.
+
 ## 4. Üretim hattı (bir bölüm için)
 
 | # | Adım | Çıktı | Onay |
