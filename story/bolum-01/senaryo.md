@@ -1,45 +1,47 @@
-# Bölüm 1: Son Mesaj (taslak 3, hedef ~85 sn)
+# Bölüm 1: Son Mesaj (taslak 4, hedef ~90 sn)
 
-Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve onaylı** (işaretli).
+Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve onaylı** (✅).
+
+**Süre iki ayrı hesaplanır:** sahne toplamı **90,5 sn**, tahmini konuşma toplamı **~69 sn** (2,6 kelime/sn, onaylı Deniz sesinden ölçüldü). Aradaki ~21 sn efekt, müzik, sessizlik ve nefes payı. Ayrıntı: `sahneler.json`.
 
 ---
 
-**[HOOK: dünya, ~15 sn]**
+**[HOOK: dünya]**
 1. Üç gün önce şehrin üstüne sis çöktü.
 2. Soluyanlar uyumadan uyudu. Gündüz yatıyorlar, geceleri ışığı ve sesi arıyorlar. Biz onlara "Sisli" dedik.
 3. Önce internet gitti. Sonra elektrik. Dün gece radyo da sustu.
 
-**[KİM, ~14 sn]**
-4. Ben Deniz. Annem şehir dışında, ulaşamıyorum. ✅ *ses hazır (2,7 sn)*
+**[KİM]**
+4. Ben Deniz. Annem şehir dışında, ulaşamıyorum. ✅
 5. Babam iki yıl önce öldü. Geriye bir pusula kaldı.
 6. Telefonum yüzde dört. Tek bir mesaj geliyor.
 
-**[ELA, ~17 sn]**
-7. ELA: "Abi, ben iyiyim! Seni çiziyorum, çok uzun çıktın. Gelirsin, değil mi? Abi? Pilim..." ✅ *ses hazır (8,9 sn)*
-8. *(Telefon kararır. Kasıtlı sessizlik.)*
+**[ELA, duygusal merkez: acele yok]**
+7. ELA: "Abi, ben iyiyim! Seni çiziyorum, çok uzun çıktın. Gelirsin, değil mi? Abi? Pilim..." ✅
+   *Görsel ipucu:* Ela'nın yanında yarısı boşalmış bir su şişesi ve birkaç yiyecek paketi (üç gündür mahsur olduğunu gösterir, ek diyalog yok).
+8. *(Telefon kararır. 5 sn kasıtlı sessizlik.)*
 9. Ela benim küçük kardeşim. On iki yaşında, dünyanın en inatçı çocuğu. Üç gündür dershanede mahsur.
-10. Buzdolabında Ela'nın eski bir çizimi duruyor: ben, elimde pusulayla. Altında tek satır: "Kaybolursan pusulana bak."
+10. Buzdolabında Ela'nın eski çizimi: ben, elimde pusulayla. Altında tek satır: "Kaybolursan pusulana bak."
 
-**[HEDEF, ~13 sn]**
-11. Dershane şehrin öbür ucunda. Gün doğmadan varmalıyım. Ama önce dokuz kat aşağı inmem lazım. Asansör çalışmıyor.
+**[HEDEF]**
+11. Dershane şehrin öbür ucunda. Gün doğmadan varmalıyım. Önce dokuz kat inmem lazım. Asansör çalışmıyor.
 12. Kapıya yürüyorum. Koridor tamamen karanlık.
 
-**[EŞYA, ~13 sn]**
-13. Dolabın önünde iki şey duruyor: eski bir fener ve babamın baltası. Fener yolu gösterir ama ışık onları çeker. Balta korur ama her darbe ses çıkarır.
+**[EŞYA]**
+13. Masada iki şey: fener ve babamın baltası. Fener yolu gösterir ama ışığı onları çeker. Balta korur, kapı kırar ama sesi duyulur.
 
-**[CLIFFHANGER, ~13 sn]**
+**[CLIFFHANGER: acele yok]**
 14. Kapıyı açıyorum. Koridorda ağır bir nefes sesi.
 15. Biri yavaşça dönüyor. Yüzünü göremiyorum. Sonra çok kısık bir ses duyuyorum: "...Deniz."
 16. Nasıl biliyor adımı?
 
-**[SEÇİM ve YORUM, ~5 sn]**
-17. Fener mi, balta mı? Bir de sence koridordaki kim? İkisini de yorumlara yaz.
+**[SEÇİM ve YORUM]**
+17. "Fener mi, balta mı? Ve o şey… sence kim?"
 
 ---
 
 ## Notlar
-- **Yeni bilgi (bu bölüm):** Sisli'ler Deniz'in adını söyleyebiliyor. Açıklama sonra gelecek (aşağıda "açık sorular").
-- **Ela'nın çizimleri** daha ilk bölümde tanıtıldı (sahne 10), sonraki bölümlerde karşısına çıkacak.
-- **Yorum katılımı:** İki ayrı soru var: seçim (fener/balta) ve teori (koridordaki kim?). İkincisi oy gerektirmeden yorum üretir.
-- **Açık soru:** Sisli Deniz'in adını neden biliyor? Çalışma fikri: Sisli'ler son duydukları sesi/sözü tekrar ediyor. Birisi o kişiye "Deniz" demiş olabilir. Bu yankı kuralı Bölüm 2-4'te doğrulanır ve gizemin parçası olur.
-- Konuşma metni yaklaşık 190-200 kelime. Efekt ve sessizlik payıyla ~85 sn.
+- **Sisli'nin "...Deniz" demesi bu bölümde açıklanmaz.** Gizem korunur. Yankı kuralı Bölüm 2-4'te görsel ve işitsel örneklerle doğrulanacak (`story/sezon-taslagi.md`).
+- **Ela'nın çizimi** sezon boyunca kullanılacak ana motif. Çizim ile pusula arasındaki bağın ileride hikâyede gerçek karşılığı olacak (aynı dosya).
+- **Fener / balta:** İkisinin de farklı kullanımı sezon boyunca düşünülecek (balta kapı/engel kırar, fener sinyal verir/yönlendirir).
+- **Yorum katılımı:** Sahne 17 tek cümlede hem seçimi hem teori sorusunu soruyor, talimat vermiyor.

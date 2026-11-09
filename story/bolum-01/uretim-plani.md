@@ -23,7 +23,7 @@ Yöntem: parçalı SVG karakter + kodla animasyon. Düz görsel üretimi **yok**
 Her sahne için `sahneler.json` içinde `ses_efekt` yazılı. Müzik: lisanslı veya üretilmiş, `muzik-sfx/` altına. **Sessiz render yok.**
 
 ## Sıra
-1. Senaryo ve sahne listesi onayı (şimdi)
+1. Senaryo ve sahne listesi onayı (revizyon 4, kontrol bekliyor)
 2. Sahne 1-3 (dünya) arka plan + animasyon
 3. Kalan sahneler
 4. Ses üretimi (maliyet onayı sonrası)
