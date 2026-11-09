@@ -11,3 +11,5 @@
 - [ ] Bölüm 2 ve 3, sonra yayın
 - [x] Revizyon 6 uygulandı ve render edildi (onaylı Sisli ses imzası dahil)
 - [ ] Kullanılmayan sesler (Ahmet fısıltı 28 kredi, Deniz sahne 16 v1+v2 83 kredi) ileride yeniden kullanılabilir mi değerlendir
+- [x] Revizyon 7 (dünya kuralı, panel hedefi, havlu, ARIZALI/MERDİVEN) render edildi, 109,3 sn
+- [ ] Ela'nın sırrı için ipucu dağılımını planla (Bölüm 3'ten önce)

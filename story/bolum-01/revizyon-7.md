@@ -30,3 +30,8 @@ Bölüm 1'in gerçek bitişi: Deniz daire kapısını açar (sahne 14). Koridord
 | 11 | Gün doğunca Sisliler yavaşlıyor. O zamana kadar aşağı inmeliyim. Önce koridorun sonundaki merdivene. | 13 | ~7,0 sn (şu an 7,5) | ~116 |
 
 Toplam ~296 kredi, bölüm ~108,9 sn. Panel: HEDEF: MERDİVEN BOŞLUĞUNA ULAŞ (sığdığı ölçüldü).
+
+## Üretim (kullanıcı onaylı)
+- Sesler üretildi: sahne 2 = 180 kredi (10,84 sn), sahne 11 = 125 kredi (7,55 sn). **Toplam 305 kredi.** Tahmin 296'ydı: sahne 11 tahmini "merdivene" metniyle yapılmıştı, kesin metin "merdiven boşluğuna" olunca +9 kredi.
+- Eski sesler: `ses/ham/rev6/`.
+- Render: `cikti.mp4`, 109,27 sn, 1080x1920, ses var.
