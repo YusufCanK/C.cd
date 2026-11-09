@@ -1,0 +1,145 @@
+{
+  "bolum": 1,
+  "baslik": "Son Mesaj",
+  "sahneler": [
+    {
+      "id": 1,
+      "sure_sn": 4,
+      "anlatim": "Üç gün önce şehrin üstüne sis çöktü.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [],
+      "gorsel": "Wide shot of a big metropolis skyline at dawn, tall apartment towers half swallowed by thick flat layered fog, orange glow at the horizon.",
+      "hareket": "yavaş zoom-in",
+      "ses_efekt": "düşük gerilim müziği başlar, rüzgar"
+    },
+    {
+      "id": 2,
+      "sure_sn": 5,
+      "anlatim": "Soluyanlar uyumadan uyudu. Gündüz yatıyorlar, geceleri ışığı ve sesi arıyorlar. Biz onlara Sisli dedik.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [],
+      "gorsel": "Empty foggy street at night, a few dark silhouette figures with slumped shoulders and glowing white eyes shuffling toward one orange streetlamp, stalled cars.",
+      "hareket": "pan sola",
+      "ses_efekt": "uzaktan inleme, lamba vızıltısı"
+    },
+    {
+      "id": 3,
+      "sure_sn": 4,
+      "anlatim": "Önce internet gitti. Sonra elektrik. Dün gece radyo da sustu.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [],
+      "gorsel": "Split view of dark apartment windows going out one by one, a dead TV with static, an old radio with a dead light, close and simple.",
+      "hareket": "kesme ile üç hızlı kare",
+      "ses_efekt": "elektrik kesilme sesi, statik, sessizlik"
+    },
+    {
+      "id": 4,
+      "sure_sn": 5,
+      "anlatim": "Ben Deniz. Annem şehir dışında, ulaşamıyorum.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [
+        "deniz"
+      ],
+      "gorsel": "Deniz stands in a small dim apartment living room looking out the window at the foggy city, back half turned, worried face, dark night-skyline in the window.",
+      "hareket": "yavaş zoom-in",
+      "ses_efekt": "oda sessizliği"
+    },
+    {
+      "id": 5,
+      "sure_sn": 4,
+      "anlatim": "Babam iki yıl önce öldü. Geriye bir pusula kaldı.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [
+        "deniz"
+      ],
+      "gorsel": "Close-up of Deniz's hand holding the brass compass pendant, a small framed photo of a smiling middle-aged man with mustache on a shelf behind.",
+      "hareket": "zoom-in pusulaya",
+      "ses_efekt": "pusula tik sesi"
+    },
+    {
+      "id": 6,
+      "sure_sn": 3,
+      "anlatim": "Telefonum yüzde dört. Tek bir mesaj geliyor.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [
+        "deniz"
+      ],
+      "gorsel": "Close-up of Deniz holding a phone, screen shows a red 4% battery icon and a new message bubble, his face lit by the screen.",
+      "hareket": "hafif sarsıntı",
+      "ses_efekt": "telefon bildirim sesi"
+    },
+    {
+      "id": 7,
+      "sure_sn": 9,
+      "anlatim": "Abi, ben iyiyim! Hocam herkesi sessiz tutuyor, ben de seni çiziyorum. Çok uzun çıktın, kusura bakma! Gelirsin, değil mi? Abi? Pilim...",
+      "konusmaci": "Ela (ses)",
+      "karakterler": [
+        "ela"
+      ],
+      "gorsel": "Ela in a classroom corner on the floor with a sketchbook, smiling bravely, a childlike crayon drawing of a very tall stick-figure man next to a small girl on the page, orange crayon in hand.",
+      "hareket": "yavaş zoom-in Ela'nın yüzüne",
+      "ses_efekt": "kâğıt üstünde kalem sesi, mesaj kesilme sesi"
+    },
+    {
+      "id": 8,
+      "sure_sn": 3,
+      "anlatim": "Mesaj yarıda kesiliyor. Telefon kapanıyor.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [
+        "deniz"
+      ],
+      "gorsel": "Close-up of the phone screen going black with a tiny crack of light fading out, Deniz's wide eyes reflected.",
+      "hareket": "ekran kararır",
+      "ses_efekt": "telefon kapanma sesi, kısa sessizlik"
+    },
+    {
+      "id": 9,
+      "sure_sn": 5,
+      "anlatim": "Ela benim küçük kardeşim. On iki yaşında, dünyanın en inatçı çocuğu.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [
+        "deniz",
+        "ela"
+      ],
+      "gorsel": "Warm flashback illustration of Deniz and Ela on a sofa, Ela pulling his sleeve and laughing, Deniz rolling his eyes with a small smile, warm yellow lamplight.",
+      "hareket": "yumuşak pan",
+      "ses_efekt": "sıcak müzik girişi"
+    },
+    {
+      "id": 10,
+      "sure_sn": 5,
+      "anlatim": "Dershane şehrin öbür ucunda. Gün doğmadan varmalıyım. Ama önce dokuz kat aşağı inmem lazım.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [
+        "deniz"
+      ],
+      "gorsel": "Deniz stands at the top of a dark spiral stairwell looking down the center, nine floors of stairs spiraling into darkness, a tiny orange sunrise window above.",
+      "hareket": "aşağı doğru tilt",
+      "ses_efekt": "uğultu, ayak sesi"
+    },
+    {
+      "id": 11,
+      "sure_sn": 7,
+      "anlatim": "Dolabın önünde iki şey duruyor: eski bir fener ve babamın baltası. Fener yolu gösterir ama ışık onları çeker. Balta korur ama her darbe ses çıkarır.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [
+        "deniz"
+      ],
+      "gorsel": "Table by the apartment door with an old flashlight on the left and a wood-handled axe on the right, Deniz in the middle hesitating, labels not shown, one orange glow from the flashlight.",
+      "hareket": "pan fener-balta",
+      "ses_efekt": "fener tık, balta ağırlığı"
+    },
+    {
+      "id": 12,
+      "sure_sn": 6,
+      "anlatim": "Kapıyı açıyorum. Koridorda ağır bir nefes sesi. Biri yavaşça dönüyor. Fener mi, balta mı? Yorumlara yaz.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "karakterler": [
+        "deniz"
+      ],
+      "gorsel": "Dark apartment hallway seen from the open doorway, a hunched dark silhouette at the far end slowly turning its head with glowing white eyes, Deniz's shadow on the floor in front.",
+      "hareket": "hızlı zoom-in, sonra seçim kartı",
+      "ses_efekt": "ağır nefes, kalp atışı, vurgu sesi"
+    }
+  ]
+}
