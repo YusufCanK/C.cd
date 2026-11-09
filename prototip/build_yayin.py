@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
-"""Yayın dosyası üretir: lipsync.js'i içine gömer, iskelet etiketlerini çıkarır.
-Kullanım: python3 prototip/build_yayin.py <çıktı.html>"""
-import re,sys,pathlib
+"""Prototip HTML'ini yayın biçimine çevirir (lipsync.js ve sesi gömer, iskelet etiketlerini çıkarır).
+Kullanım: python3 prototip/build_yayin.py <kaynak.html> <çıktı.html> <başlık> <işaretçi> <mp3>"""
+import re,sys,pathlib,base64
 k=pathlib.Path(__file__).resolve().parent
-s=(k/"sahne4-deniz-rig.html").read_text()
-js=(k.parent/"sablon"/"lipsync.js").read_text()
-s=s.replace('<script src="../sablon/lipsync.js"></script>',"<script>"+js+"</script>")
-title=re.search(r"<title>.*?</title>",s).group(0).replace("Kat 9: Sahne 4 rig prototipi","Deniz Rig Prototipi")
+src,out,title_txt,marker,mp3=sys.argv[1:6]
+s=(k/src).read_text()
+s=s.replace('<script src="../sablon/lipsync.js"></script>',"<script>"+(k.parent/"sablon"/"lipsync.js").read_text()+"</script>")
 style=re.search(r"<style>.*?</style>",s,re.S).group(0).replace(":root{--T:6s}",":root{--T:6s;color-scheme:dark}")
 body=re.search(r"<body>(.*)</body>",s,re.S).group(1)
-import base64
-mp3=k.parent/"story"/"bolum-01"/"ses"/"sahne04-deniz.mp3"
-if mp3.exists(): body=body.replace("__DENIZ_SES__","data:audio/mpeg;base64,"+base64.b64encode(mp3.read_bytes()).decode())
-pathlib.Path(sys.argv[1]).write_text(title+"\n"+style+"\n"+body)
+m=pathlib.Path(mp3) if pathlib.Path(mp3).is_absolute() else k.parent/mp3
+if m.exists(): body=body.replace(marker,"data:audio/mpeg;base64,"+base64.b64encode(m.read_bytes()).decode())
+pathlib.Path(out).write_text(f"<title>{title_txt}</title>\n"+style+"\n"+body)

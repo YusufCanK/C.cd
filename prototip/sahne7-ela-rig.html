@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ela Rig Prototipi</title>
+<style>
+html,body{margin:0;height:100%;background:#0b0f14;color:#e8eef5;font-family:system-ui,sans-serif}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center}
+#stage{height:calc(100vh - 64px);max-width:100vw;aspect-ratio:9/16;background:#000}
+svg{width:100%;height:100%;display:block}
+.bar{height:64px;display:flex;gap:8px;align-items:center;justify-content:center;padding:0 12px}
+button{background:#1e2f3d;color:#e8eef5;border:1px solid #3c566b;border-radius:8px;padding:10px 14px;font-size:14px;cursor:pointer}
+#info{position:absolute;bottom:70px;left:0;right:0;text-align:center;font-size:12px;color:#9fb8c4;pointer-events:none}
+:root{color-scheme:dark}
+#cam{transform-origin:540px 900px;animation:zoom 9.4s ease-in-out infinite}
+@keyframes zoom{0%{transform:scale(1)}90%{transform:scale(1.13)}100%{transform:scale(1.13)}}
+#torso{transform-origin:0 1100px;animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.012,1.02)}}
+/* kafa ve ifadeler: data-phase 0 neşeli, 1 çizim/kıkırdama, 2 gergin, 3 korku */
+#head{transform-origin:0 200px;transition:transform .4s ease}
+svg[data-phase="0"] #head{transform:rotate(-2deg)}
+svg[data-phase="1"] #head{transform:rotate(3deg) translateY(10px)}
+svg[data-phase="2"] #head{transform:rotate(-1deg) translateY(-4px)}
+svg[data-phase="3"] #head{animation:tremble .13s linear infinite}
+@keyframes tremble{0%{transform:rotate(-1.2deg) translateX(-2px)}50%{transform:rotate(1.2deg) translateX(2px)}100%{transform:rotate(-1.2deg) translateX(-2px)}}
+#eyes{transition:transform .35s ease}
+svg[data-phase="1"] #eyes{transform:translateY(9px)}
+svg[data-phase="2"] #eyes{transform:scale(1.1) translateY(-2px)}
+svg[data-phase="3"] #eyes{transform:scale(1.22) translateY(-3px)}
+#eyes{transform-origin:0 -5px}
+#browL,#browR{transition:transform .35s ease}
+#browL{transform-origin:-85px -80px;transform:translateY(-8px) rotate(3deg)}
+#browR{transform-origin:85px -80px;transform:translateY(-8px) rotate(-3deg)}
+svg[data-phase="1"] #browL{transform:translateY(-4px) rotate(0deg)}svg[data-phase="1"] #browR{transform:translateY(-4px) rotate(0deg)}
+svg[data-phase="2"] #browL{transform:translateY(-12px) rotate(-10deg)}svg[data-phase="2"] #browR{transform:translateY(-12px) rotate(10deg)}
+svg[data-phase="3"] #browL{transform:translateY(-18px) rotate(-16deg)}svg[data-phase="3"] #browR{transform:translateY(-18px) rotate(16deg)}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4.3s infinite}
+@keyframes blink{0%,91%,97%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}}
+/* örgüler */
+#braidL{transform-origin:-185px 40px;animation:swayB 3.4s ease-in-out infinite}
+#braidR{transform-origin:185px 40px;animation:swayB 3.4s ease-in-out infinite reverse}
+@keyframes swayB{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+/* çizim yapan el */
+#penHand{transform-origin:150px 650px}
+svg[data-phase="1"] #penHand{animation:scribble .55s ease-in-out infinite}
+@keyframes scribble{0%,100%{transform:translate(-22px,6px) rotate(-6deg)}50%{transform:translate(26px,-8px) rotate(6deg)}}
+/* dış */
+#glow{animation:flick 3s steps(1) infinite}
+@keyframes flick{0%{opacity:1}30%{opacity:.8}34%{opacity:1}70%{opacity:.7}74%{opacity:.95}100%{opacity:1}}
+svg[data-phase="3"] #glow{opacity:.45;animation:none}
+.worry{display:none}
+svg[data-phase="2"] .smile,svg[data-phase="3"] .smile{display:none}
+svg[data-phase="2"] .worry,svg[data-phase="3"] .worry{display:inline}
+.m{display:none}.m.on{display:inline}
+</style></head>
+<body>
+<div id="stage">
+<svg id="svg" data-phase="0" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ela dershanede çizim yapıyor">
+<defs>
+ <radialGradient id="vig" cx="50%" cy="48%" r="75%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".55"/></radialGradient>
+ <radialGradient id="lg"><stop offset="0" stop-color="#f6c05a" stop-opacity=".55"/><stop offset="1" stop-color="#f6c05a" stop-opacity="0"/></radialGradient>
+ <clipPath id="win"><rect x="70" y="380" width="330" height="560"/></clipPath>
+</defs>
+<g id="cam">
+ <rect x="-200" y="-200" width="1480" height="1700" fill="#2c4b5e"/>
+ <rect x="-200" y="1500" width="1480" height="700" fill="#1d2e3b" stroke="#0c1218" stroke-width="10"/>
+ <!-- pencere + jaluzi -->
+ <rect x="70" y="380" width="330" height="560" fill="#e0a15a"/>
+ <g clip-path="url(#win)"><rect x="70" y="380" width="330" height="200" fill="#1c3a55"/><rect x="70" y="560" width="330" height="140" fill="#d58a52"/><rect x="70" y="700" width="330" height="240" fill="#9fb8c4" opacity=".6"/>
+  <g fill="#2c4b5e" stroke="#0c1218" stroke-width="5"><rect x="64" y="400" width="342" height="26"/><rect x="64" y="450" width="342" height="26"/><rect x="64" y="500" width="342" height="26"/><rect x="64" y="550" width="342" height="26"/></g></g>
+ <rect x="70" y="380" width="330" height="560" fill="none" stroke="#0c1218" stroke-width="14"/>
+ <!-- sağda tahta/afiş -->
+ <rect x="700" y="420" width="300" height="400" fill="#1d3a32" stroke="#0c1218" stroke-width="14"/>
+ <g stroke="#cfe0e6" stroke-width="6" fill="none" stroke-linecap="round"><path d="M740 500 H950 M740 560 H920 M740 620 H960 M740 680 H900"/></g>
+ <ellipse id="glow" cx="540" cy="1300" rx="520" ry="620" fill="url(#lg)"/>
+ <!-- Ela -->
+ <g transform="translate(540 860)">
+  <g id="braidL"><g fill="#4a2f1c" stroke="#111" stroke-width="9"><ellipse cx="-205" cy="95" rx="36" ry="30"/><ellipse cx="-212" cy="148" rx="34" ry="28"/><ellipse cx="-206" cy="199" rx="32" ry="27"/></g><circle cx="-198" cy="52" r="20" fill="#ef8a3c" stroke="#111" stroke-width="7"/><circle cx="-204" cy="230" r="14" fill="#ef8a3c" stroke="#111" stroke-width="6"/></g>
+  <g id="braidR"><g fill="#4a2f1c" stroke="#111" stroke-width="9"><ellipse cx="205" cy="95" rx="36" ry="30"/><ellipse cx="212" cy="148" rx="34" ry="28"/><ellipse cx="206" cy="199" rx="32" ry="27"/></g><circle cx="198" cy="52" r="20" fill="#ef8a3c" stroke="#111" stroke-width="7"/><circle cx="204" cy="230" r="14" fill="#ef8a3c" stroke="#111" stroke-width="6"/></g>
+  <g id="torso">
+   <ellipse cx="0" cy="210" rx="140" ry="56" fill="#d9a41f" stroke="#111" stroke-width="9"/>
+   <path d="M-190 1100 L-205 300 Q-195 235 -120 220 L120 220 Q195 235 205 300 L190 1100 Z" fill="#f2c230" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+   <path d="M-40 232 L-34 520 M40 232 L34 520" stroke="#b68a14" stroke-width="9" stroke-linecap="round"/><circle cx="-34" cy="528" r="9" fill="#e9e4cf" stroke="#111" stroke-width="4"/><circle cx="34" cy="528" r="9" fill="#e9e4cf" stroke="#111" stroke-width="4"/>
+  </g>
+  <!-- defter -->
+  <g transform="rotate(-2 0 740)">
+   <rect x="-230" y="560" width="460" height="400" rx="14" fill="#f5f1e4" stroke="#111" stroke-width="10"/>
+   <path d="M0 560 V960" stroke="#c9c2a8" stroke-width="5"/>
+   <!-- uzun çubuk adam (Deniz) -->
+   <g stroke="#2a3b4a" stroke-width="9" stroke-linecap="round" fill="none"><circle cx="-120" cy="640" r="26" fill="#f5f1e4"/><path d="M-120 666 V800 M-120 690 L-158 760 M-120 690 L-82 760 M-120 800 L-150 900 M-120 800 L-90 900"/></g>
+   <path d="M-132 632 q12 -22 28 0" stroke="#6B4A2F" stroke-width="9" fill="none" stroke-linecap="round"/>
+   <!-- küçük kız (Ela) -->
+   <g stroke="#2a3b4a" stroke-width="8" stroke-linecap="round" fill="none"><circle cx="60" cy="790" r="22" fill="#f5f1e4"/><path d="M60 812 V870 M60 826 L30 856 M60 826 L90 856 M60 870 L44 914 M60 870 L76 914"/></g>
+   <path d="M30 790 q-18 6 -14 30 M90 790 q18 6 14 30" stroke="#ef8a3c" stroke-width="8" fill="none" stroke-linecap="round"/>
+   <path d="M-82 760 Q-10 740 38 830" stroke="#ef8a3c" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="2 12"/>
+  </g>
+  <!-- kollar + eller -->
+  <g id="armL"><path d="M-270 290 Q-278 255 -205 250 L-165 280 L-175 650 L-260 650 Z" fill="#f2c230" stroke="#111" stroke-width="10" stroke-linejoin="round"/><circle cx="-205" cy="690" r="38" fill="#E0A56B" stroke="#111" stroke-width="10"/></g>
+  <g id="armR"><path d="M270 290 Q278 255 205 250 L165 280 L175 650 L260 650 Z" fill="#f2c230" stroke="#111" stroke-width="10" stroke-linejoin="round"/></g>
+  <g id="penHand"><circle cx="190" cy="690" r="38" fill="#E0A56B" stroke="#111" stroke-width="10"/><rect x="176" y="650" width="22" height="120" rx="8" fill="#ef8a3c" stroke="#111" stroke-width="7" transform="rotate(14 187 710)"/></g>
+  <g id="head">
+   <rect x="-44" y="150" width="88" height="80" fill="#E0A56B" stroke="#111" stroke-width="10"/>
+   <ellipse cx="0" cy="-30" rx="198" ry="178" fill="#4a2f1c" stroke="#111" stroke-width="10"/>
+   <circle cx="-186" cy="18" r="36" fill="#E0A56B" stroke="#111" stroke-width="10"/><circle cx="186" cy="18" r="36" fill="#E0A56B" stroke="#111" stroke-width="10"/>
+   <ellipse cx="0" cy="5" rx="184" ry="178" fill="#E0A56B" stroke="#111" stroke-width="10"/>
+   <path d="M-186 -10 Q-196 -176 0 -186 Q196 -176 186 -10 Q160 -112 50 -128 Q-72 -138 -186 -10 Z" fill="#4a2f1c" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+   <path d="M20 -176 Q10 -140 46 -126" stroke="#111" stroke-width="7" fill="none" stroke-linecap="round"/>
+   <circle cx="-105" cy="62" r="26" fill="#e27a5a" opacity=".55"/><circle cx="105" cy="62" r="26" fill="#e27a5a" opacity=".55"/>
+   <polygon points="112,40 119,56 136,58 123,69 127,86 112,77 97,86 101,69 88,58 105,56" fill="#f6c244" stroke="#111" stroke-width="5" stroke-linejoin="round" transform="translate(6 -4) scale(.9)"/>
+   <g id="eyes">
+    <g class="eye"><ellipse cx="-72" cy="-4" rx="21" ry="25" fill="#111"/><circle cx="-65" cy="-14" r="8" fill="#fff"/><circle cx="-80" cy="6" r="4" fill="#fff"/></g>
+    <g class="eye"><ellipse cx="72" cy="-4" rx="21" ry="25" fill="#111"/><circle cx="79" cy="-14" r="8" fill="#fff"/><circle cx="64" cy="6" r="4" fill="#fff"/></g>
+   </g>
+   <g id="browL"><rect x="-122" y="-70" width="76" height="15" rx="8" fill="#2a1a10"/></g>
+   <g id="browR"><rect x="46" y="-70" width="76" height="15" rx="8" fill="#2a1a10"/></g>
+   <path d="M-8 44 Q0 54 10 44" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+   <g id="mouth" transform="translate(0 100)" stroke="#111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <g class="m on" id="m0"><g class="smile"><path d="M-34 0 Q0 24 34 0"/><rect x="-6" y="8" width="12" height="9" fill="#fff" stroke-width="4"/></g><path class="worry" d="M-26 12 Q-8 -2 0 4 Q8 -2 26 12"/></g>
+    <path class="m" id="m1" d="M-28 0 Q0 34 28 0 Q0 8 -28 0Z" fill="#7a2b2b"/>
+    <path class="m" id="m2" d="M-36 -4 Q0 70 36 -4 Q0 6 -36 -4Z" fill="#7a2b2b"/>
+    <ellipse class="m" id="m3" cx="0" cy="12" rx="17" ry="24" fill="#7a2b2b"/>
+   </g>
+  </g>
+ </g>
+</g>
+<rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+<rect width="1080" height="1920" fill="#0a1018" opacity=".18" pointer-events="none"/>
+</svg>
+</div>
+<div id="info"></div>
+<div class="bar">
+ <button id="ela">🗣 Ela repliği</button>
+ <button id="talk">👄 Ağız testi</button>
+ <button id="restart">↺ Baştan</button>
+</div>
+<script src="../sablon/lipsync.js"></script>
+<script>
+const svg=document.getElementById('svg'),info=document.getElementById('info');
+const ms=[0,1,2,3].map(i=>document.getElementById('m'+i));
+function setM(i){ms.forEach((e,j)=>e.classList.toggle('on',i===j))}
+// ifade geçişleri: replikteki saniyeler (kelime zamanlamasından değil, duraklardan tahmin; gerekirse buradan ayarla)
+const PHASES=[0,1.6,6.0,7.2];
+function phaseAt(t){let p=0;PHASES.forEach((s,i)=>{if(t>=s)p=i});return p}
+let play=null,talkTimer=null,idleStart=performance.now();
+function frame(){
+ let t;
+ if(play){t=play.ctx.currentTime-play.t0}else{t=((performance.now()-idleStart)/1000)%9.4}
+ svg.setAttribute('data-phase',phaseAt(Math.max(0,t)));
+ if(play){
+  if(t>=play.buf.duration+0.2){setM(0);info.textContent='bitti';play=null}
+  else if(t>=0){setM(play.tl[Math.min(play.tl.length-1,Math.floor(t/0.033))].v)}
+ }
+ requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+function startPlay(buf,label){
+ if(play){try{play.src.stop()}catch(e){}}
+ if(talkTimer){clearInterval(talkTimer);talkTimer=null}
+ const ctx=new (window.AudioContext||window.webkitAudioContext)();
+ const tl=LipSync.analyze(buf.getChannelData(0),buf.sampleRate);
+ const src=ctx.createBufferSource();src.buffer=buf;src.connect(ctx.destination);
+ const t0=ctx.currentTime+0.05;src.start(t0);play={ctx,src,buf,tl,t0};info.textContent=label;
+}
+document.getElementById('talk').onclick=()=>{
+ if(talkTimer){clearInterval(talkTimer);talkTimer=null;setM(0);return}
+ const seq=[1,2,1,0,3,1,2,0,1,3,2,1,0];let k=0;talkTimer=setInterval(()=>setM(seq[k++%seq.length]),130);
+};
+document.getElementById('restart').onclick=()=>{
+ idleStart=performance.now();
+ document.querySelectorAll('#cam').forEach(e=>{e.style.animation='none';e.offsetHeight;e.style.animation=''});
+};
+const ELA_SES="__ELA_SES__";
+document.getElementById('ela').onclick=async()=>{
+ if(ELA_SES.startsWith('__')){info.textContent='Ses bu sürümde gömülü değil';return}
+ try{const bin=atob(ELA_SES.split(',')[1]),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);
+  const ctx=new (window.AudioContext||window.webkitAudioContext)();const buf=await ctx.decodeAudioData(u.buffer);
+  document.getElementById('restart').click();startPlay(buf,'Ela · sahne 7 repliği');
+ }catch(err){info.textContent='Ses çözülemedi'}
+};
+</script>
+</body></html>
