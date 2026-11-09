@@ -1,11 +1,25 @@
 {
-  "bolum_tamamlanan": 0,
+  "bolum_tamamlanan": 1,
   "esya": [],
   "tehlike": 0,
   "guven_nezihe": 0,
   "guven_kaan": 0,
   "guven_selim": 0,
-  "ela_cizimleri": ["buzdolabi_deniz_pusula"],
+  "ela_cizimleri": [
+    "buzdolabi_deniz_pusula"
+  ],
   "yanki_ipuclari": 0,
-  "oylar": {}
+  "oylar": {},
+  "yayin": {
+    "bolum-01": {
+      "tarih_utc": "2026-11-09 18:19",
+      "platformlar": [
+        "instagram",
+        "tiktok",
+        "youtube"
+      ],
+      "oy_kapanis_utc": "2026-11-10 18:19",
+      "marka": "Senin Karar"
+    }
+  }
 }
