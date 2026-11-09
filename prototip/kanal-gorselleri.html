@@ -36,6 +36,6 @@ function corridor(g){const xl=u=>400*u,yt=u=>700*u,yb=u=>1920-820*u;
  [[.1,.24],[.4,.5],[.68,.74]].forEach(([u1,u2])=>{[-1,1].forEach(side=>{const X=u=>side<0?xl(u):1080-xl(u),top=u=>yb(u)-.78*(yb(u)-yt(u));
   el(g,'polygon',{points:`${X(u1)},${top(u1)} ${X(u2)},${top(u2)} ${X(u2)},${yb(u2)} ${X(u1)},${yb(u1)}`,fill:'#1b2c3f',stroke:'#05090d','stroke-width':6})})})}
 corridor($('bcor'));Sisli.draw($('bahmet'),Sisli.presets.ahmet,540,1090,.34);
-const p=Rigs.deniz($('pd'),{x:540,y:560,s:1.0,mood:'scared'});Rigs.mouth(p,3);
+const p=Rigs.deniz($("pd"),{x:540,y:560,s:1.0,mood:"scared"});Rigs.mouth(p,1);
 const b=Rigs.deniz($('bd'),{x:560,y:1060,s:1.05,mood:'scared'});Rigs.mouth(b,3);
 </script></body></html>
