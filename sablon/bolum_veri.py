@@ -3,7 +3,7 @@
 Kullanım: python3 sablon/bolum_veri.py story/bolum-01  -> story/bolum-01/zaman-cizelgesi.json"""
 import json,re,subprocess,sys,pathlib
 kok=pathlib.Path(__file__).resolve().parent.parent
-B=pathlib.Path(sys.argv[1]);S=json.load(open(B/'sahneler.json'))['sahneler']
+B=pathlib.Path(sys.argv[1]);SJ=json.load(open(B/'sahneler.json'));S=SJ['sahneler'];HEDEF=SJ.get('panel_hedef',"ELA'YA ULAŞ")
 def sure(p):return float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',str(p)]).decode())
 def visemes(mp3):
     wav='/tmp/_v.wav';subprocess.run(['ffmpeg','-v','error','-y','-i',str(mp3),'-ac','1','-ar','16000','-c:a','pcm_s16le',wav],check=True)
@@ -27,7 +27,7 @@ HUD_SAAT={1:'05:41',2:'05:41',3:'05:41',4:'05:41',5:'05:41',6:'05:41',7:'05:41',
 def hud(i):
     if i not in HUD_SAAT:return None
     h,m=map(int,HUD_SAAT[i].split(':'));kalan=(6*60+50)-(h*60+m)
-    return {'gun':3,'saat':HUD_SAAT[i],'kalan':f'{kalan//60}:{kalan%60:02d}','kat':'9' if i in (11,12) else None,'uzak':'14 KM' if i==11 else None}
+    return {'gun':3,'saat':HUD_SAAT[i],'kalan':f'{kalan//60}:{kalan%60:02d}','kat':'9' if i in (11,12) else None,'uzak':'14 KM' if i==11 else None,'hedef':HEDEF}
 out=[];t=0.0
 for s in S:
     i=s['id'];ses=None if s.get('ses_yok') else B/'ses'/(f'sahne{i:02d}-ela.mp3' if i==7 else f'sahne{i:02d}-deniz.mp3' if (B/'ses'/f'sahne{i:02d}-deniz.mp3').exists() else f'sahne{i:02d}-anlatici.mp3')

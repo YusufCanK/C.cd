@@ -18,7 +18,18 @@ function corridor(g){
  el(g,'polygon',{points:'1080,0 680,700 680,1100 1080,1920',fill:'#0f1d2c'});
  el(g,'rect',{x:400,y:700,width:280,height:400,fill:'#091019'});
  const gl=el(g,'ellipse',{cx:540,cy:900,rx:150,ry:200,fill:'url(#wg)',opacity:.35});
- el(g,'rect',{x:490,y:790,width:100,height:150,fill:'#26496c',opacity:.8});
+ el(g,'rect',{x:490,y:740,width:100,height:90,fill:'#26496c',opacity:.8});
+ // koridor sonu: solda arızalı asansör, sağda merdiven boşluğu (bölüm hedefi)
+ el(g,'rect',{x:412,y:880,width:118,height:220,fill:'#5d6b75',stroke:'#05090d','stroke-width':6});
+ el(g,'path',{d:'M471 880 V1100',stroke:'#05090d','stroke-width':4});
+ el(g,'path',{d:'M414 890 L528 1090 M528 890 L414 1090',stroke:'#f2c230','stroke-width':14});
+ el(g,'path',{d:'M414 890 L528 1090 M528 890 L414 1090',stroke:'#05090d','stroke-width':14,'stroke-dasharray':'12 14'});
+ el(g,'rect',{x:408,y:842,width:126,height:30,rx:4,fill:'#c8372d',stroke:'#05090d','stroke-width':4});
+ const t1=el(g,'text',{x:471,y:866,'text-anchor':'middle',fill:'#fff','font-family':'Impact,Arial Black,sans-serif','font-size':24});t1.textContent='ARIZALI';
+ el(g,'rect',{x:556,y:880,width:116,height:220,fill:'#05090d',stroke:'#05090d','stroke-width':6});
+ el(g,'path',{d:'M566 1090 H662 M580 1050 H662 M594 1010 H662 M608 970 H662 M622 930 H662',stroke:'#2a3d52','stroke-width':8});
+ el(g,'rect',{x:552,y:842,width:124,height:30,rx:4,fill:'#2f9e5b',stroke:'#05090d','stroke-width':4});
+ const t2=el(g,'text',{x:614,y:866,'text-anchor':'middle',fill:'#fff','font-family':'Impact,Arial Black,sans-serif','font-size':22});t2.textContent='MERDİVEN';
  [[.1,.24],[.4,.5],[.68,.74]].forEach(([u1,u2])=>{[-1,1].forEach(side=>{
   const X=u=>side<0?xl(u):1080-xl(u),top=u=>yb(u)-.78*(yb(u)-yt(u));
   el(g,'polygon',{points:`${X(u1)},${top(u1)} ${X(u2)},${top(u2)} ${X(u2)},${yb(u2)} ${X(u1)},${yb(u1)}`,fill:'#1b2c3f',stroke:'#05090d','stroke-width':6});

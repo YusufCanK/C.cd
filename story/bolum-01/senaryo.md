@@ -8,7 +8,7 @@ Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve 
 
 **[HOOK: dünya]**
 1. Üç gün önce şehrin üstüne sis çöktü.
-2. Sis'e yakalananlar gündüz hareketsiz kalıyor. Geceleri ışığı ve sesi arıyorlar. Biz onlara "Sisli" dedik.
+2. Sisi soluyanlar dakikalar içinde dönüşüyor. Dönüşmeyen birini görmedim. Gündüz uyuşuklar, gece ışığa ve sese yöneliyorlar. Onlara "Sisli" dedik. *(revizyon 7)*
 3. Önce internet gitti. Sonra elektrik. Dün gece radyo da sustu.
 
 **[KİM]**
@@ -24,7 +24,7 @@ Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve 
 10. Buzdolabında Ela'nın eski çizimi: ben, elimde pusulayla. Altında tek satır: "Kaybolursan pusulana bak."
 
 **[HEDEF]**
-11. Dershane şehrin öbür ucunda. Gün doğmadan varmalıyım. Önce dokuz kat inmem lazım. Asansör çalışmıyor.
+11. Gün doğunca Sisliler yavaşlıyor. O zamana kadar aşağı inmeliyim. Önce koridorun sonundaki merdiven boşluğuna. *(revizyon 7; asansör bilgisi görselde: "ARIZALI" bandı)*
 12. Kapıya yürüyorum. Koridor tamamen karanlık.
 
 **[EŞYA]**

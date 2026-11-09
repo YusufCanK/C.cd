@@ -19,7 +19,7 @@
     {
       "id": 2,
       "sure_sn": 6,
-      "anlatim": "Sis'e yakalananlar gündüz hareketsiz kalıyor. Geceleri ışığı ve sesi arıyorlar. Biz onlara Sisli dedik.",
+      "anlatim": "Sisi soluyanlar dakikalar içinde dönüşüyor. Dönüşmeyen birini görmedim. Gündüz uyuşuklar, gece ışığa ve sese yöneliyorlar. Onlara Sisli dedik.",
       "konusmaci": "Deniz",
       "gorsel": "gece sokak; her biri farklı (boy, kilo, kıyafet, yaralar) Sisli'ler tek sokak lambasına yürür",
       "hareket": "pan sola",
@@ -127,7 +127,7 @@
     {
       "id": 11,
       "sure_sn": 6.5,
-      "anlatim": "Dershane şehrin öbür ucunda. Gün doğmadan varmalıyım. Önce dokuz kat inmem lazım. Asansör çalışmıyor.",
+      "anlatim": "Gün doğunca Sisliler yavaşlıyor. O zamana kadar aşağı inmeliyim. Önce koridorun sonundaki merdiven boşluğuna.",
       "konusmaci": "Deniz",
       "gorsel": "merdiven boşluğu yukarıdan, dokuz kat aşağı karanlık",
       "hareket": "aşağı doğru tilt",
@@ -243,5 +243,6 @@
     "guvenli_alan": "TAHMİNİ (gerçek Reels arayüzünde test edilmedi): üst 270 px, alt 1500 px sınırı, sağ kenarda alt yarıda 120 px boş. Ayrıntı: sablon/guvenli-alan.md",
     "not": "Kod henüz güncellenmedi, onay sonrası uygulanacak.",
     "yazi_boyutu": "hedef/kat/mesafe 36 px, etiket 30 px, gün 32 px, saat 84 px, geri sayım 90 px (390 px genişlikte okunabilirliği kontrol edildi)"
-  }
+  },
+  "panel_hedef": "MERDİVEN BOŞLUĞUNA ULAŞ"
 }
