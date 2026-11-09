@@ -137,6 +137,7 @@ button,.btn{background:#1e2f3d;color:#e8eef5;border:1px solid #3c566b;border-rad
 <div class="bar">
  <button id="snd">🔈 Ortam sesi aç</button>
  <button id="talk">👄 Ağız testi</button>
+ <button id="deniz">🗣 Deniz sesi</button>
  <button id="demo">🎧 Örnek ses</button>
  <label class="btn" for="file">🎙 Ses yükle</label><input id="file" type="file" accept="audio/*" hidden>
  <button id="restart">↺ Baştan</button>
@@ -187,6 +188,16 @@ document.getElementById('demo').onclick=()=>{
   else if(k==='n'){v=.18*(Math.random()*2-1)}else v=.002*(Math.random()*2-1);
   d[o]=Math.max(-1,Math.min(1,v))}}
  startPlay(buf,'örnek ses');
+};
+
+
+const DENIZ_SES="__DENIZ_SES__";
+document.getElementById('deniz').onclick=async()=>{
+ if(DENIZ_SES.startsWith('__')){info.textContent='Ses bu sürümde gömülü değil';return}
+ try{const bin=atob(DENIZ_SES.split(',')[1]),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);
+  const ctx=new (window.AudioContext||window.webkitAudioContext)();const buf=await ctx.decodeAudioData(u.buffer);
+  document.getElementById('restart').click();startPlay(buf,'Deniz · sahne 4 repliği');
+ }catch(err){info.textContent='Ses çözülemedi'}
 };
 
 // yalnızca ortam sesi (konuşma yok): düşük oda uğultusu + rüzgar
