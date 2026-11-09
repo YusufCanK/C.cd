@@ -19,7 +19,7 @@
     {
       "id": 2,
       "sure_sn": 6,
-      "anlatim": "Soluyanlar uyumadan uyudu. Gündüz yatıyorlar, geceleri ışığı ve sesi arıyorlar. Biz onlara Sisli dedik.",
+      "anlatim": "Sis'e yakalananlar gündüz hareketsiz kalıyor. Geceleri ışığı ve sesi arıyorlar. Biz onlara Sisli dedik.",
       "konusmaci": "Deniz",
       "gorsel": "arkaplan: gece sokak; Sisli siluetleri tek sokak lambasına yürür",
       "hareket": "pan sola",
@@ -42,7 +42,7 @@
     },
     {
       "id": 4,
-      "sure_sn": 5,
+      "sure_sn": 4.5,
       "anlatim": "Ben Deniz. Annem şehir dışında, ulaşamıyorum.",
       "konusmaci": "Deniz",
       "gorsel": "daire oturma odası, Deniz pencerede",
@@ -50,7 +50,7 @@
       "ses_efekt": "oda sessizliği",
       "ses_dosyasi": "ses/sahne04-deniz.mp3",
       "tahmini_konusma_sn": 2.72,
-      "bos_pay_sn": 2.3
+      "bos_pay_sn": 1.8
     },
     {
       "id": 5,
@@ -138,7 +138,7 @@
     },
     {
       "id": 12,
-      "sure_sn": 3.5,
+      "sure_sn": 3.0,
       "anlatim": "Kapıya yürüyorum. Koridor tamamen karanlık.",
       "konusmaci": "Deniz",
       "gorsel": "kapı önü, kapı deliğinden karanlık koridor",
@@ -146,19 +146,19 @@
       "ses_efekt": "ayak sesi, kilit",
       "ses_dosyasi": null,
       "tahmini_konusma_sn": 1.9,
-      "bos_pay_sn": 1.6
+      "bos_pay_sn": 1.1
     },
     {
       "id": 13,
-      "sure_sn": 9,
-      "anlatim": "Masada iki şey: fener ve babamın baltası. Fener yolu gösterir ama ışığı onları çeker. Balta korur, kapı kırar ama sesi duyulur.",
+      "sure_sn": 10,
+      "anlatim": "Masada iki şey: fener ve babamın baltası. Fener yolu gösterir ama ışığı onları çeker. Balta korur, kapı kırar ama çıkardığı ses de onları çeker.",
       "konusmaci": "Deniz",
       "gorsel": "masa: solda fener, sağda balta (sap kısmı kapı kırmaya uygun), Deniz ortada tereddüt",
       "hareket": "pan fener→balta",
       "ses_efekt": "fener tık, balta ağırlığı",
       "ses_dosyasi": null,
-      "tahmini_konusma_sn": 8.1,
-      "bos_pay_sn": 0.9
+      "tahmini_konusma_sn": 9.2,
+      "bos_pay_sn": 0.8
     },
     {
       "id": 14,
@@ -182,7 +182,11 @@
       "ses_efekt": "nefes, fısıltı vurgu sesi",
       "ses_dosyasi": null,
       "tahmini_konusma_sn": 5.6,
-      "bos_pay_sn": 0.9
+      "bos_pay_sn": 0.9,
+      "ses_katmanlari": [
+        "anlatıcı (Deniz)",
+        "Sisli fısıltısı (ayrı katman, anlatıcının son kelimesi gibi duyulmamalı)"
+      ]
     },
     {
       "id": 16,
@@ -210,6 +214,7 @@
     }
   ],
   "toplam_sahne_sn": 90.5,
-  "toplam_tahmini_konusma_sn": 68.9,
-  "konusma_hizi_varsayimi": "2,6 kelime/sn (onaylı Deniz sesinden ölçüldü). Ela sahnesi gerçek ses süresi (8,88 sn)."
+  "toplam_tahmini_konusma_sn": 70.0,
+  "konusma_hizi_varsayimi": "2,6 kelime/sn (onaylı Deniz sesinden ölçüldü). Ela sahnesi gerçek ses süresi (8,88 sn).",
+  "risk_notu": "2,6 kelime/sn tek ses örneğinden ölçüldü, kesin değil. Boş payı 1 sn altındaki sahneler (2, 3, 6, 7, 9, 13, 15, 17) gerçek seslendirmede vurgu/duraklama ile aşılabilir; gerçek sesten sonra süreler son kez ayarlanır."
 }

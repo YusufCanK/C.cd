@@ -1,14 +1,14 @@
-# Bölüm 1: Son Mesaj (taslak 4, hedef ~90 sn)
+# Bölüm 1: Son Mesaj (KİLİTLİ, taslak 5, hedef ~90 sn)
 
 Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve onaylı** (✅).
 
-**Süre iki ayrı hesaplanır:** sahne toplamı **90,5 sn**, tahmini konuşma toplamı **~69 sn** (2,6 kelime/sn, onaylı Deniz sesinden ölçüldü). Aradaki ~21 sn efekt, müzik, sessizlik ve nefes payı. Ayrıntı: `sahneler.json`.
+**Süre iki ayrı hesaplanır:** sahne toplamı **90,5 sn**, tahmini konuşma toplamı **~70,0 sn** (2,6 kelime/sn, onaylı Deniz sesinden ölçüldü). Aradaki ~21 sn efekt, müzik, sessizlik ve nefes payı. Ayrıntı: `sahneler.json`.
 
 ---
 
 **[HOOK: dünya]**
 1. Üç gün önce şehrin üstüne sis çöktü.
-2. Soluyanlar uyumadan uyudu. Gündüz yatıyorlar, geceleri ışığı ve sesi arıyorlar. Biz onlara "Sisli" dedik.
+2. Sis'e yakalananlar gündüz hareketsiz kalıyor. Geceleri ışığı ve sesi arıyorlar. Biz onlara "Sisli" dedik.
 3. Önce internet gitti. Sonra elektrik. Dün gece radyo da sustu.
 
 **[KİM]**
@@ -28,7 +28,7 @@ Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve 
 12. Kapıya yürüyorum. Koridor tamamen karanlık.
 
 **[EŞYA]**
-13. Masada iki şey: fener ve babamın baltası. Fener yolu gösterir ama ışığı onları çeker. Balta korur, kapı kırar ama sesi duyulur.
+13. Masada iki şey: fener ve babamın baltası. Fener yolu gösterir ama ışığı onları çeker. Balta korur, kapı kırar ama çıkardığı ses de onları çeker.
 
 **[CLIFFHANGER: acele yok]**
 14. Kapıyı açıyorum. Koridorda ağır bir nefes sesi.
@@ -41,6 +41,8 @@ Anlatıcı: Deniz (birinci tekil). Ela'nın sesi ayrı. İki replik **hazır ve 
 ---
 
 ## Notlar
+- **Sahne 15 ses katmanları:** Deniz'in anlatımı ve Sisli fısıltısı ayrı katman. Fısıltı anlatıcının son kelimesi gibi duyulmamalı.
+- **Risk:** Konuşma hızı (2,6 kelime/sn) tek ses örneğinden ölçüldü; gerçek seslendirmeden sonra süreler yeniden ayarlanır.
 - **Sisli'nin "...Deniz" demesi bu bölümde açıklanmaz.** Gizem korunur. Yankı kuralı Bölüm 2-4'te görsel ve işitsel örneklerle doğrulanacak (`story/sezon-taslagi.md`).
 - **Ela'nın çizimi** sezon boyunca kullanılacak ana motif. Çizim ile pusula arasındaki bağın ileride hikâyede gerçek karşılığı olacak (aynı dosya).
 - **Fener / balta:** İkisinin de farklı kullanımı sezon boyunca düşünülecek (balta kapı/engel kırar, fener sinyal verir/yönlendirir).
