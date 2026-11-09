@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sisli Çeşitliliği</title>
+<style>
+:root{color-scheme:dark;--bg:#0c141c;--card:#14212d;--fg:#e8eef5;--mut:#9fb8c4;--acc:#ef8a3c}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+body{padding-block:24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:1100px;margin:0 auto}h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:22px 0 8px;color:var(--acc)}
+.sub{color:var(--mut);margin:0 0 14px;line-height:1.45}
+.sheet{background:var(--card);border:1px solid #284055;border-radius:14px;padding:10px;overflow:hidden}svg{width:100%;height:auto;display:block}
+button{background:#1e2f3d;color:var(--fg);border:1px solid #3c566b;border-radius:8px;padding:9px 12px;font-size:14px;cursor:pointer;margin-top:10px}
+.head{animation:hd 3.4s ease-in-out infinite}@keyframes hd{0%,100%{transform:rotate(7deg)}50%{transform:rotate(14deg)}}
+.glow{animation:gl 2.6s steps(1) infinite}@keyframes gl{0%{opacity:.3}60%{opacity:.18}66%{opacity:.34}100%{opacity:.3}}
+.keys{animation:sw 1.8s ease-in-out infinite;transform-origin:0px 0px}@keyframes sw{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+text{font-family:system-ui,sans-serif}
+</style></head>
+<body><main>
+<h1>Sisli Çeşitliliği</h1>
+<p class="sub">Her Sisli eski bir insan: farklı boy, kilo, kıyafet, yırtık, yara ve ayakkabı. Aşağıdaki kalabalık bir üreticiyle üretildi (her yenilemede yeni yüzler). Tanınabilir Sisli'ler elle tasarlandı.</p>
+<h2>Tanınabilir Sisli'ler</h2>
+<div class="sheet"><svg id="n" viewBox="0 0 1200 760"></svg></div>
+<h2>Kalabalıktan örnekler</h2>
+<div class="sheet"><svg id="c" viewBox="0 0 1200 1400"></svg></div>
+<button id="rf">Yeni kalabalık üret</button>
+</main>
+<script src="../sablon/sisli.js"></script>
+<script>
+const ns='http://www.w3.org/2000/svg';function el(p,n,a,t){const e=document.createElementNS(ns,n);for(const k in a)e.setAttribute(k,a[k]);if(t)e.textContent=t;p.appendChild(e);return e}
+const N=document.getElementById('n');el(N,'rect',{x:0,y:0,width:1200,height:760,fill:'#10202c'});el(N,'rect',{x:0,y:670,width:1200,height:90,fill:'#0a141c'});
+[['ahmet',250,'Ahmet Amca','komşu'],['cemal',600,'Bakkal Cemal','mahalle bakkalı'],['ayse',950,'Hemşire Ayşe','semt kliniği']].forEach(([k,x,n,s])=>{Sisli.draw(N,Sisli.presets[k],x,690,.98);
+ el(N,'text',{x:x,y:725,'text-anchor':'middle','font-size':22,'font-weight':700,fill:'#ef8a3c'},n);el(N,'text',{x:x,y:748,'text-anchor':'middle','font-size':16,fill:'#9fb8c4'},s)});
+function crowd(){const C=document.getElementById('c');C.innerHTML='';el(C,'rect',{x:0,y:0,width:1200,height:1400,fill:'#10202c'});
+ const base=Math.floor(Math.random()*9000)+1;for(let r=0;r<2;r++){el(C,'rect',{x:0,y:r*700+610,width:1200,height:90,fill:'#0a141c'});
+ for(let i=0;i<6;i++){const seed=base+r*6+i;Sisli.draw(C,Sisli.random(seed),110+i*195,r*700+640,.64)}}}
+crowd();document.getElementById('rf').onclick=crowd;
+</script></body></html>

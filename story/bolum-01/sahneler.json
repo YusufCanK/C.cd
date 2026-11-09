@@ -1,0 +1,248 @@
+{
+  "bolum": 1,
+  "baslik": "Son Mesaj",
+  "hedef_sn": 90,
+  "not": "Revizyon 6 (ChatGPT kararları): Sisli konuşmaz, 'Deniz' fısıltısı ve 'Nasıl biliyor adımı?' kaldırıldı, A/B seçenekleri eklendi, panel sadeleşiyor. Süre korunuyor (106,85 sn). Sahne süresi ile konuşma süresi ayrı hesaplanır. Ses dosyası olmayan sahnelerin konuşması henüz üretilmedi; süreler tahmindir.",
+  "sahneler": [
+    {
+      "id": 1,
+      "sure_sn": 4,
+      "anlatim": "Üç gün önce şehrin üstüne sis çöktü.",
+      "konusmaci": "Deniz",
+      "gorsel": "arkaplan: sisli metropol silueti",
+      "hareket": "kamera yavaş zoom-in",
+      "ses_efekt": "rüzgâr, düşük gerilim müziği",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 2.7,
+      "bos_pay_sn": 1.3
+    },
+    {
+      "id": 2,
+      "sure_sn": 6,
+      "anlatim": "Sisi soluyanlar dakikalar içinde dönüşüyor. Dönüşmeyen birini görmedim. Gündüz uyuşuklar, gece ışığa ve sese yöneliyorlar. Onlara Sisli dedik.",
+      "konusmaci": "Deniz",
+      "gorsel": "gece sokak; her biri farklı (boy, kilo, kıyafet, yaralar) Sisli'ler tek sokak lambasına yürür",
+      "hareket": "pan sola",
+      "ses_efekt": "uzaktan inleme, lamba vızıltısı",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 5.4,
+      "bos_pay_sn": 0.6
+    },
+    {
+      "id": 3,
+      "sure_sn": 4.5,
+      "anlatim": "Önce internet gitti. Sonra elektrik. Dün gece radyo da sustu.",
+      "konusmaci": "Deniz",
+      "gorsel": "kolaj: pencereler söner, TV statik, radyo ışığı söner",
+      "hareket": "3 hızlı kesme",
+      "ses_efekt": "elektrik kesilme, statik, sessizlik",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 3.8,
+      "bos_pay_sn": 0.7
+    },
+    {
+      "id": 4,
+      "sure_sn": 4.5,
+      "anlatim": "Ben Deniz. Annem şehir dışında, ulaşamıyorum.",
+      "konusmaci": "Deniz",
+      "gorsel": "daire oturma odası, Deniz pencerede",
+      "hareket": "yavaş zoom-in; kafa pencereye döner",
+      "ses_efekt": "oda sessizliği",
+      "ses_dosyasi": "ses/sahne04-deniz.mp3",
+      "tahmini_konusma_sn": 2.72,
+      "bos_pay_sn": 1.8
+    },
+    {
+      "id": 5,
+      "sure_sn": 4.5,
+      "anlatim": "Babam iki yıl önce öldü. Geriye bir pusula kaldı.",
+      "konusmaci": "Deniz",
+      "gorsel": "pusula yakın plan, rafta baba fotoğrafı",
+      "hareket": "zoom-in pusulaya",
+      "ses_efekt": "pusula tik sesi",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 3.5,
+      "bos_pay_sn": 1.0
+    },
+    {
+      "id": 6,
+      "sure_sn": 3.5,
+      "anlatim": "Telefonum yüzde dört. Tek bir mesaj geliyor.",
+      "konusmaci": "Deniz",
+      "gorsel": "telefon yakın plan %4 pil, mesaj balonu",
+      "hareket": "hafif sarsıntı",
+      "ses_efekt": "bildirim sesi",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 2.7,
+      "bos_pay_sn": 0.8
+    },
+    {
+      "id": 7,
+      "sure_sn": 9.5,
+      "anlatim": "Abi, ben iyiyim! Seni çiziyorum, çok uzun çıktın. Gelirsin, değil mi? Abi? Pilim...",
+      "konusmaci": "Ela",
+      "gorsel": "dershane köşesi, Ela defterle; yanında yarısı boşalmış su şişesi ve birkaç yiyecek paketi (üç gündür mahsur olduğunu gösterir) (rig hazır)",
+      "hareket": "yavaş zoom-in; ifade evreleri",
+      "ses_efekt": "kâğıt üstünde kalem, mesaj kesilmesi",
+      "ses_dosyasi": "ses/sahne07-ela.mp3",
+      "tahmini_konusma_sn": 8.88,
+      "bos_pay_sn": 0.6
+    },
+    {
+      "id": 8,
+      "sure_sn": 5,
+      "anlatim": "(sessizlik: telefon kararır)",
+      "konusmaci": "-",
+      "gorsel": "telefon ekranı kararır, Deniz'in gözleri yansır",
+      "hareket": "ekran kararır",
+      "ses_efekt": "telefon kapanma sesi, 2 sn sessizlik",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 0.0,
+      "bos_pay_sn": 5.0
+    },
+    {
+      "id": 9,
+      "sure_sn": 6.5,
+      "anlatim": "Ela benim küçük kardeşim. On iki yaşında, dünyanın en inatçı çocuğu. Üç gündür dershanede mahsur.",
+      "konusmaci": "Deniz",
+      "gorsel": "anı: Deniz ve Ela kanepede, Ela kolunu çekiyor",
+      "hareket": "yumuşak pan",
+      "ses_efekt": "sıcak müzik",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 5.8,
+      "bos_pay_sn": 0.7
+    },
+    {
+      "id": 10,
+      "sure_sn": 6,
+      "anlatim": "Buzdolabında Ela'nın eski çizimi: ben, elimde pusulayla. Altında tek satır: Kaybolursan pusulana bak.",
+      "konusmaci": "Deniz",
+      "gorsel": "mutfak, buzdolabı kapağında çocuk çizimi (çubuk adam + pusula + yazı)",
+      "hareket": "zoom-in çizime",
+      "ses_efekt": "kâğıt hışırtısı",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 5.0,
+      "bos_pay_sn": 1.0
+    },
+    {
+      "id": 11,
+      "sure_sn": 6.5,
+      "anlatim": "Gün doğunca Sisliler yavaşlıyor. O zamana kadar aşağı inmeliyim. Önce koridorun sonundaki merdiven boşluğuna.",
+      "konusmaci": "Deniz",
+      "gorsel": "merdiven boşluğu yukarıdan, dokuz kat aşağı karanlık",
+      "hareket": "aşağı doğru tilt",
+      "ses_efekt": "uğultu, damla sesi",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 5.4,
+      "bos_pay_sn": 1.1
+    },
+    {
+      "id": 12,
+      "sure_sn": 3.0,
+      "anlatim": "Kapıya yürüyorum. Koridor tamamen karanlık.",
+      "konusmaci": "Deniz",
+      "gorsel": "kapı önü, kapı deliğinden karanlık koridor",
+      "hareket": "yavaş yaklaşma",
+      "ses_efekt": "ayak sesi, kilit",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 1.9,
+      "bos_pay_sn": 1.1
+    },
+    {
+      "id": 13,
+      "sure_sn": 10,
+      "anlatim": "Masada iki şey: fener ve babamın baltası. Fener yolu gösterir ama ışığı onları çeker. Balta korur, kapı kırar ama çıkardığı ses de onları çeker.",
+      "konusmaci": "Deniz",
+      "gorsel": "masa: solda fener, sağda balta (sap kısmı kapı kırmaya uygun), Deniz ortada tereddüt",
+      "hareket": "pan fener→balta",
+      "ses_efekt": "fener tık, balta ağırlığı",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 9.2,
+      "bos_pay_sn": 0.8
+    },
+    {
+      "id": 14,
+      "sure_sn": 3.5,
+      "anlatim": "Kapıyı açıyorum. Koridorda ağır bir nefes sesi.",
+      "konusmaci": "Deniz",
+      "gorsel": "açık kapı, karanlık koridor uzanır",
+      "hareket": "zoom-in",
+      "ses_efekt": "ağır nefes, uzaktan anahtar şıngırtısı (Sisli Komşu'nun ipucu)",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 2.7,
+      "bos_pay_sn": 0.8
+    },
+    {
+      "id": 15,
+      "sure_sn": 6.5,
+      "anlatim": "Biri yavaşça dönüyor. Yüzünü göremiyorum.",
+      "konusmaci": "Deniz (anlatıcı)",
+      "gorsel": "koridor sonunda kambur siluet (Ahmet Amca olabilir: hırka, bıyık, çatlak gözlük, anahtar demeti siluetten seçilir, yüz net değil), parlayan gözler",
+      "hareket": "hızlı zoom-in",
+      "ses_efekt": "Sisli ses imzası: derin, boğuk, kuru ve kesik hırıltı-nefes; düzensiz solunum; anahtar şıngırtısı; kalp atışı; sonda alçak vuruş. KONUŞMA YOK.",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 5.6,
+      "bos_pay_sn": 0.9,
+      "ses_notu": "Mevcut anlatıcı sesinin ilk iki cümlesi kullanılacak (üçüncü cümle 'Sonra çok kısık bir ses duyuyorum:' kesilir). Yeni ses üretilmeyecek. Fısıltı dosyası (sahne15-fisilti.mp3) kullanılmayacak.",
+      "ses_kirp_sn": 3.33
+    },
+    {
+      "id": 16,
+      "sure_sn": 3,
+      "anlatim": "(sessiz tepki: Deniz nefesini tutuyor)",
+      "konusmaci": "-",
+      "gorsel": "Deniz yakın plan, korkmuş, donmuş; nefesini tutuyor, gözler Sisli'ye kilitli",
+      "hareket": "sarsıntı",
+      "ses_efekt": "sert bir nefes çekiş, nefes tutma sessizliği, hızlanan kalp atışı, uzaktan yaklaşan kuru hırıltı",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 1.2,
+      "bos_pay_sn": 1.8,
+      "ses_notu": "'Nasıl biliyor adımı?' repliği kaldırıldı (Sisli konuşmuyor). Üretilmiş Deniz sesi (sahne16-deniz.mp3) bu bölümde kullanılmayacak.",
+      "ses_yok": true
+    },
+    {
+      "id": 17,
+      "sure_sn": 4,
+      "anlatim": "Fener mi, balta mı? Ve o şey… sence kim?",
+      "konusmaci": "Deniz",
+      "gorsel": "seçim kartları: A) FENER | B) BALTA, her birinde iki kısa satır (avantaj + risk) + 'o şey kim?' siluet kartı",
+      "hareket": "kart animasyonu",
+      "ses_efekt": "vurgu sesi",
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 3.5,
+      "bos_pay_sn": 0.5,
+      "secenekler": [
+        {
+          "harf": "A",
+          "etiket": "FENER",
+          "satir1": "Işıkla yolunu bul.",
+          "satir2": "Sisli seni fark edebilir."
+        },
+        {
+          "harf": "B",
+          "etiket": "BALTA",
+          "satir1": "Karşı koy.",
+          "satir2": "Gürültü diğer Sisli'leri çekebilir."
+        }
+      ]
+    }
+  ],
+  "toplam_sahne_sn": 90.5,
+  "toplam_tahmini_konusma_sn": 70.0,
+  "konusma_hizi_varsayimi": "2,6 kelime/sn (onaylı Deniz sesinden ölçüldü). Ela sahnesi gerçek ses süresi (8,88 sn).",
+  "risk_notu": "2,6 kelime/sn tek ses örneğinden ölçüldü, kesin değil. Boş payı 1 sn altındaki sahneler (2, 3, 6, 7, 9, 13, 15, 17) gerçek seslendirmede vurgu/duraklama ile aşılabilir; gerçek sesten sonra süreler son kez ayarlanır.",
+  "hud_kurali": {
+    "ana_bilgi": [
+      "saat",
+      "gün doğumuna kalan süre"
+    ],
+    "hedef": "ELA'YA ULAŞ (tek satır, küçük)",
+    "kat": "yalnızca merdiven ve kapı sahnelerinde (11, 12) göster",
+    "mesafe": "yalnızca bir kez (sahne 11), diğer sahnelerde gösterme",
+    "gizli": "sahne 1'in ilk 3 sn'si (başlık kartı), sahne 8 (sessizlik), sahne 17 (seçim kartları)",
+    "guvenli_alan": "TAHMİNİ (gerçek Reels arayüzünde test edilmedi): üst 270 px, alt 1500 px sınırı, sağ kenarda alt yarıda 120 px boş. Ayrıntı: sablon/guvenli-alan.md",
+    "not": "Kod henüz güncellenmedi, onay sonrası uygulanacak.",
+    "yazi_boyutu": "hedef/kat/mesafe 36 px, etiket 30 px, gün 32 px, saat 84 px, geri sayım 90 px (390 px genişlikte okunabilirliği kontrol edildi)"
+  },
+  "panel_hedef": "MERDİVEN BOŞLUĞUNA ULAŞ"
+}
