@@ -8,7 +8,8 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
 #stage{height:calc(100vh - 64px);max-width:100vw;aspect-ratio:9/16;background:#000}
 svg{width:100%;height:100%;display:block}
 .bar{height:64px;display:flex;gap:8px;align-items:center;justify-content:center;padding:0 12px}
-button{background:#1e2f3d;color:#e8eef5;border:1px solid #3c566b;border-radius:8px;padding:10px 14px;font-size:14px}
+button,.btn{background:#1e2f3d;color:#e8eef5;border:1px solid #3c566b;border-radius:8px;padding:10px 14px;font-size:14px;cursor:pointer}
+#info{position:absolute;bottom:70px;left:0;right:0;text-align:center;font-size:12px;color:#9fb8c4;pointer-events:none}
 :root{--T:6s}
 /* kamera */
 #cam{transform-origin:430px 900px;animation:zoom var(--T) ease-in-out infinite}
@@ -120,9 +121,9 @@ button{background:#1e2f3d;color:#e8eef5;border:1px solid #3c566b;border-radius:8
     <ellipse cx="0" cy="48" rx="30" ry="24" fill="#D48F5A" stroke="#111" stroke-width="7"/>
     <g id="mouth" transform="translate(0 108)" stroke="#111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
      <path class="m on" id="m0" d="M-36 4 Q0 12 36 4"/>
-     <path class="m" id="m1" d="M-34 2 Q0 36 34 2 Q0 10 -34 2Z" fill="#7a2b2b"/>
-     <path class="m" id="m2" d="M-40 0 Q0 58 40 0 Q0 8 -40 0Z" fill="#7a2b2b"/>
-     <ellipse class="m" id="m3" cx="0" cy="12" rx="17" ry="20" fill="#7a2b2b"/>
+     <path class="m" id="m1" d="M-38 0 Q0 46 38 0 Q0 10 -38 0Z" fill="#7a2b2b"/>
+     <path class="m" id="m2" d="M-48 -4 Q0 84 48 -4 Q0 8 -48 -4Z" fill="#7a2b2b"/>
+     <ellipse class="m" id="m3" cx="0" cy="14" rx="21" ry="27" fill="#7a2b2b"/>
     </g>
    </g>
   </g>
@@ -132,11 +133,15 @@ button{background:#1e2f3d;color:#e8eef5;border:1px solid #3c566b;border-radius:8
 <rect width="1080" height="1920" fill="#0a1018" opacity=".22" pointer-events="none"/>
 </svg>
 </div>
+<div id="info"></div>
 <div class="bar">
  <button id="snd">🔈 Ortam sesi aç</button>
  <button id="talk">👄 Ağız testi</button>
+ <button id="demo">🎧 Örnek ses</button>
+ <label class="btn" for="file">🎙 Ses yükle</label><input id="file" type="file" accept="audio/*" hidden>
  <button id="restart">↺ Baştan</button>
 </div>
+<script src="../sablon/lipsync.js"></script>
 <script>
 // ağız testi: gerçek bölümde ses dosyasından gelen viseme zamanlamasıyla sürülecek
 let talkTimer=null;const ms=[0,1,2,3].map(i=>document.getElementById('m'+i));
@@ -148,6 +153,42 @@ document.getElementById('talk').onclick=()=>{
 document.getElementById('restart').onclick=()=>{
  document.querySelectorAll('#cam,#head,#feat,#eyes,#browL,#browR').forEach(e=>{e.style.animation='none';e.offsetHeight;e.style.animation=''});
 };
+
+// === ağız senkronu: ses -> LipSync.analyze -> zamanlı ağız şekli ===
+let play=null;const info=document.getElementById('info');
+function stopPlay(){if(play){try{play.src.stop()}catch(e){}cancelAnimationFrame(play.raf);play=null}setM(0)}
+function startPlay(buf,label){
+ stopPlay();if(talkTimer){clearInterval(talkTimer);talkTimer=null}
+ const ctx=new (window.AudioContext||window.webkitAudioContext)();
+ const tl=LipSync.analyze(buf.getChannelData(0),buf.sampleRate);
+ const src=ctx.createBufferSource();src.buffer=buf;src.connect(ctx.destination);
+ const t0=ctx.currentTime+0.05;src.start(t0);
+ play={src,raf:0};info.textContent=label+' · '+tl.length+' kare';
+ const tick=()=>{
+  const t=ctx.currentTime-t0;
+  if(t>=buf.duration+0.1){setM(0);info.textContent=label+' · bitti';play=null;return}
+  if(t>=0){const i=Math.min(tl.length-1,Math.floor(t/0.033));setM(tl[i].v)}
+  play.raf=requestAnimationFrame(tick);
+ };play.raf=requestAnimationFrame(tick);
+}
+document.getElementById('file').onchange=async e=>{
+ const f=e.target.files[0];if(!f)return;
+ try{const ctx=new (window.AudioContext||window.webkitAudioContext)();
+  const buf=await ctx.decodeAudioData(await f.arrayBuffer());startPlay(buf,f.name);
+ }catch(err){info.textContent='Ses dosyası çözülemedi'}
+};
+document.getElementById('demo').onclick=()=>{
+ // konuşma değil: hece benzeri sentetik sinyal (a, o, ünsüz, kısık a)
+ const sr=16000,seg=[[.4,'s'],[.3,'a'],[.1,'s'],[.3,'o'],[.1,'s'],[.2,'n'],[.3,'q'],[.4,'s']];
+ const len=seg.reduce((a,b)=>a+b[0],0)*sr,ac=new (window.AudioContext||window.webkitAudioContext)(),buf=ac.createBuffer(1,len,sr),d=buf.getChannelData(0);
+ let o=0;for(const [dur,k] of seg){for(let i=0;i<dur*sr;i++,o++){const t=i/sr;let v=0;
+  if(k==='a'||k==='q'){for(let h=1;h<25;h++)v+=Math.sin(2*Math.PI*140*h*t)/Math.sqrt(h);v*=.125*(k==='q'?.5:1)}
+  else if(k==='o'){for(let h=1;h<5;h++)v+=Math.sin(2*Math.PI*140*h*t)/Math.pow(h,1.5);v*=.5}
+  else if(k==='n'){v=.18*(Math.random()*2-1)}else v=.002*(Math.random()*2-1);
+  d[o]=Math.max(-1,Math.min(1,v))}}
+ startPlay(buf,'örnek ses');
+};
+
 // yalnızca ortam sesi (konuşma yok): düşük oda uğultusu + rüzgar
 let ac=null;
 document.getElementById('snd').onclick=function(){
