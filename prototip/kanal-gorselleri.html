@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><title>Kat 9 Kanal Görselleri</title>
+<style>
+html,body{margin:0;background:#000}svg{display:block}
+.deniz[data-mood="scared"] .d-browL{transform-origin:-85px -58px;transform:translateY(-20px) rotate(-18deg)}
+.deniz[data-mood="scared"] .d-browR{transform-origin:85px -58px;transform:translateY(-20px) rotate(18deg)}
+.deniz[data-mood="scared"] .d-eyes{transform-origin:0 -5px;transform:scale(1.25)}
+.logo{font-family:Impact,'Arial Black',system-ui,sans-serif;font-weight:900;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-linejoin:round}
+</style></head><body>
+<!-- Profil: 1080x1080 (daire kırpması için içerik merkezde) -->
+<svg id="profil" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="pg" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#25425e"/><stop offset="1" stop-color="#05090d"/></radialGradient></defs>
+<rect width="1080" height="1080" fill="url(#pg)"/>
+<g id="pd"></g>
+<rect x="250" y="800" width="580" height="150" rx="24" fill="#e64b3c" stroke="#000" stroke-width="12"/>
+<text class="logo" x="540" y="912" font-size="120" fill="#fff" stroke-width="0">KAT 9</text>
+</svg>
+<!-- YouTube kapak: 2560x1440 (güvenli alan ortada 1546x423) -->
+<svg id="banner" width="2560" height="1440" viewBox="0 0 2560 1440" xmlns="http://www.w3.org/2000/svg" style="margin-top:20px">
+<defs><radialGradient id="wg"><stop offset="0" stop-color="#ffd58a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient></defs>
+<rect width="2560" height="1440" fill="#05090d"/>
+<g transform="translate(740 -240) scale(1.0)"><g id="bcor"></g><g id="bahmet" style="filter:brightness(.6)"></g></g>
+<rect width="2560" height="1440" fill="#05090d" opacity=".45"/>
+<g id="bd"></g>
+<text class="logo" x="1280" y="700" font-size="230" fill="#ffd23f" stroke-width="30">KAT 9</text>
+<text class="logo" x="1280" y="805" font-size="64" fill="#fff" stroke-width="14">SEN SEÇ, HİKÂYE DEVAM ETSİN</text>
+</svg>
+<script src="../sablon/sisli.js"></script><script src="../sablon/rigs.js"></script>
+<script>
+const ns='http://www.w3.org/2000/svg';function el(p,n,a){const e=document.createElementNS(ns,n);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+const $=id=>document.getElementById(id);
+function corridor(g){const xl=u=>400*u,yt=u=>700*u,yb=u=>1920-820*u;
+ el(g,'polygon',{points:'0,0 1080,0 680,700 400,700',fill:'#0a131c'});el(g,'polygon',{points:'0,1920 1080,1920 680,1100 400,1100',fill:'#16273a'});
+ el(g,'polygon',{points:'0,0 400,700 400,1100 0,1920',fill:'#122234'});el(g,'polygon',{points:'1080,0 680,700 680,1100 1080,1920',fill:'#0f1d2c'});el(g,'rect',{x:400,y:700,width:280,height:400,fill:'#091019'});
+ el(g,'ellipse',{cx:540,cy:900,rx:170,ry:220,fill:'url(#wg)',opacity:.45});
+ [[.1,.24],[.4,.5],[.68,.74]].forEach(([u1,u2])=>{[-1,1].forEach(side=>{const X=u=>side<0?xl(u):1080-xl(u),top=u=>yb(u)-.78*(yb(u)-yt(u));
+  el(g,'polygon',{points:`${X(u1)},${top(u1)} ${X(u2)},${top(u2)} ${X(u2)},${yb(u2)} ${X(u1)},${yb(u1)}`,fill:'#1b2c3f',stroke:'#05090d','stroke-width':6})})})}
+corridor($('bcor'));Sisli.draw($('bahmet'),Sisli.presets.ahmet,540,1090,.34);
+const p=Rigs.deniz($('pd'),{x:540,y:560,s:1.0,mood:'scared'});Rigs.mouth(p,3);
+const b=Rigs.deniz($('bd'),{x:560,y:1060,s:1.05,mood:'scared'});Rigs.mouth(b,3);
+</script></body></html>
