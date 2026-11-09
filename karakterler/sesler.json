@@ -1,5 +1,15 @@
 {
-  "model": "eleven_v3",
-  "deniz": {"voice_id": "Xxps7kSjmTEY5ipN1f60", "ad": "Tagi İlbeyli", "secen": "kullanıcı"},
-  "ela":   {"voice_id": "sJ0xHHPzz1LOio4QNlB0", "ad": "CAGLAYAN", "secen": "kullanıcı"}
+  "model": "eleven_v4",
+  "deniz": {
+    "voice_id": "Xxps7kSjmTEY5ipN1f60",
+    "ad": "Tagi İlbeyli",
+    "secen": "kullanıcı"
+  },
+  "ela": {
+    "voice_id": "sJ0xHHPzz1LOio4QNlB0",
+    "ad": "CAGLAYAN",
+    "secen": "kullanıcı",
+    "etiketler": "[childlike voice] [high voice] [cheerfully] ... [nervous] ... [trembling voice] ... [breathless] [pause]",
+    "onayli_replik": "story/bolum-01/ses/sahne07-ela.mp3 (v4, etiketli, kullanıcı onayladı)"
+  }
 }

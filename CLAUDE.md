@@ -11,6 +11,8 @@
 ## Ses ve video
 
 - **Ses:** ElevenLabs sesini kullanıcı seçer. Kullanıcı bir ses seçmeden konuşma üretme.
+- **Üretim tasarrufu:** Konuşma/görsel üretiminde her seferinde **tek deneme** (generations_count=1) üret. Pahalı modellerde (örn. v4 konuşma, gemini görsel) önce estimate_only ile maliyeti göster. Kullanıcı açıkça isterse birden fazla.
+- **Konuşma modeli:** eleven_v4 + duyguya göre etiketler ([nervous], [trembling voice] vb.). Sesler: `karakterler/sesler.json`.
 - **Sessiz video yok:** Her render seslendirme ve efekt içermeli. Sesi olmayan bir videoyu render etme.
 - Format: dikey 9:16, 55-60 sn, altyazı ve sabit kapak şablonu.
 - Karakter tutarlılığı için her görsel prompt'u `karakterler/` altındaki stil tarifini birebir içermeli.

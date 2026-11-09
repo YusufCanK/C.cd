@@ -42,7 +42,8 @@
       ],
       "gorsel": "Deniz stands in a small dim apartment living room looking out the window at the foggy city, back half turned, worried face, dark night-skyline in the window.",
       "hareket": "yavaş zoom-in",
-      "ses_efekt": "oda sessizliği"
+      "ses_efekt": "oda sessizliği",
+      "ses_dosyasi": "ses/sahne04-deniz.mp3"
     },
     {
       "id": 5,
@@ -70,7 +71,7 @@
     },
     {
       "id": 7,
-      "sure_sn": 7,
+      "sure_sn": 9,
       "anlatim": "Abi, ben iyiyim! Seni çiziyorum, çok uzun çıktın. Gelirsin, değil mi? Abi? Pilim...",
       "konusmaci": "Ela (ses)",
       "karakterler": [
@@ -78,11 +79,12 @@
       ],
       "gorsel": "Ela in a classroom corner on the floor with a sketchbook, smiling bravely, a childlike crayon drawing of a very tall stick-figure man next to a small girl on the page, orange crayon in hand.",
       "hareket": "yavaş zoom-in Ela'nın yüzüne",
-      "ses_efekt": "kâğıt üstünde kalem sesi, mesaj kesilme sesi"
+      "ses_efekt": "kâğıt üstünde kalem sesi, mesaj kesilme sesi",
+      "ses_dosyasi": "ses/sahne07-ela.mp3"
     },
     {
       "id": 8,
-      "sure_sn": 5,
+      "sure_sn": 3,
       "anlatim": "Mesaj yarıda kesiliyor. Telefon kapanıyor. (sessizlik)",
       "konusmaci": "Deniz (anlatıcı)",
       "karakterler": [
