@@ -9,11 +9,11 @@ Format: kısa bölümler, her bölüm sonunda seçim, izleyici oyları bir sonra
 
 ## 1. Konsept (doldurulacak)
 
-- Çalışma adı: _TBD_
+- Çalışma adı: **Sisli Kıyı**
 - Tür: **Hayatta kalma** (karar: kullanıcı)
-- Ana karakter: _yaş, görünüş, belirgin özellik_
+- Ana karakter: **Deniz**, 17 yaş, sahil kasabasında bakkalın kızı. Boynunda eski bir pusula. Hedef: kayıp kardeşini bulmak.
 - Seçim mekaniği: **Eşya seçimi** (karar: kullanıcı). Her bölüm sonunda karakter elindeki iki eşyadan birini yanına alır; seçilen eşya sonraki bölümün riskini ve fırsatlarını belirler. Alınmayan eşya kaybolur.
-- Hikaye evreni ve ton: _TBD_
+- Hikaye evreni ve ton: Türkiye'de bir sahil kasabasında salgın. Enfekte insanlara **"Sisli"** denir; gündüz uyurlar, geceleri ışık ve sese tepki verirler. Ton: gerilimli ve karanlık, aralarda insani anlar. Gore yok.
 - Hedef kitle ve dil: _Türkçe (ileride başka dil?)_
 
 ## 2. Hedefler
@@ -84,8 +84,8 @@ Kural: **Sessiz video render edilmez.** Her render seslendirme ve efekt içerir.
 
 ## 9. Açık sorular
 
-- [~] Konsept ve tür (tür: hayatta kalma; evren/ton açık)
-- [ ] Karakter tarifi
+- [x] Konsept ve tür (tamamlandı)
+- [x] Karakter tarifi (görsel stil tarifi `karakterler/` altında yazılacak)
 - [x] Seçim mekaniği (eşya seçimi)
 - [ ] ElevenLabs sesi (kullanıcı seçecek)
 - [ ] Hesap adı ve marka kimliği
