@@ -7,8 +7,10 @@
     "not": "Bölüm 1'deki tüm Deniz cümleleri iç anlatım, bu sesle."
   },
   "deniz_karakter": {
-    "voice_id": null,
-    "secen": "kullanıcı (Bölüm 2'de Deniz başkalarıyla konuşurken gerekecek)"
+    "voice_id": "Dzgub2SzfGvifooR4JMV",
+    "ad": "Mahmut Sesigüzel (Bilingual Turkish Narrator)",
+    "secen": "kullanıcı",
+    "not": "Deniz konuşurken (diyalog). Bölüm 1'de sahne 16. Anlatım (iç ses) Tagi İlbeyli."
   },
   "ela": {
     "voice_id": "sJ0xHHPzz1LOio4QNlB0",

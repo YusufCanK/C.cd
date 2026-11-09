@@ -30,7 +30,7 @@ def hud(i):
     return {'gun':3,'saat':HUD_SAAT[i],'kalan':f'{kalan//60}:{kalan%60:02d}','kat':'9 / 9','uzak':'14 KM','esya':'?' if i>=13 else '—'}
 out=[];t=0.0
 for s in S:
-    i=s['id'];ses=B/'ses'/(f'sahne{i:02d}-ela.mp3' if i==7 else f'sahne{i:02d}-anlatici.mp3')
+    i=s['id'];ses=B/'ses'/(f'sahne{i:02d}-ela.mp3' if i==7 else f'sahne{i:02d}-deniz.mp3' if (B/'ses'/f'sahne{i:02d}-deniz.mp3').exists() else f'sahne{i:02d}-anlatici.mp3')
     tail,minimum=CFG[i];sc={'id':i,'konusmaci':s['konusmaci'],'ses_efekt':s.get('ses_efekt','')}
     if ses.exists():
         d=sure(ses);v=visemes(ses);sc['ses']={'dosya':str(ses.relative_to(B)),'baslangic':LEAD,'sure':round(d,3)}
