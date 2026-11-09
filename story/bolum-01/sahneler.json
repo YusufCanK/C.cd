@@ -70,8 +70,8 @@
     },
     {
       "id": 7,
-      "sure_sn": 9,
-      "anlatim": "Abi, ben iyiyim! Hocam herkesi sessiz tutuyor, ben de seni çiziyorum. Çok uzun çıktın, kusura bakma! Gelirsin, değil mi? Abi? Pilim...",
+      "sure_sn": 7,
+      "anlatim": "Abi, ben iyiyim! Seni çiziyorum, çok uzun çıktın. Gelirsin, değil mi? Abi? Pilim...",
       "konusmaci": "Ela (ses)",
       "karakterler": [
         "ela"
@@ -82,8 +82,8 @@
     },
     {
       "id": 8,
-      "sure_sn": 3,
-      "anlatim": "Mesaj yarıda kesiliyor. Telefon kapanıyor.",
+      "sure_sn": 5,
+      "anlatim": "Mesaj yarıda kesiliyor. Telefon kapanıyor. (sessizlik)",
       "konusmaci": "Deniz (anlatıcı)",
       "karakterler": [
         "deniz"

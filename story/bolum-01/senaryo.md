@@ -15,9 +15,9 @@ Ben Deniz. Annem şehir dışında, ulaşamıyorum.
 Babam iki yıl önce öldü. Geriye bir pusula kaldı.
 Telefonum yüzde dört. Tek bir mesaj geliyor.
 
-**[ELA, 20-35 sn]**
-ELA (ses): "Abi, ben iyiyim! Hocam herkesi sessiz tutuyor, ben de seni çiziyorum. Çok uzun çıktın, kusura bakma! Gelirsin, değil mi? Abi? Pilim..."
-Mesaj yarıda kesiliyor. Telefon kapanıyor.
+**[ELA, 20-35 sn: Ela 7 sn, sonra 3-5 sn sessizlik]**
+ELA (ses): "Abi, ben iyiyim! Seni çiziyorum, çok uzun çıktın. Gelirsin, değil mi? Abi? Pilim..."
+Mesaj yarıda kesiliyor. Telefon kapanıyor. (Burada kasıtlı sessizlik.)
 Ela benim küçük kardeşim. On iki yaşında, dünyanın en inatçı çocuğu.
 
 **[HEDEF, 35-42 sn]**

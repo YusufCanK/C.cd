@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kat 9: Sahne 4 rig prototipi</title>
+<style>
+html,body{margin:0;height:100%;background:#0b0f14;color:#e8eef5;font-family:system-ui,sans-serif}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center}
+#stage{height:calc(100vh - 64px);max-width:100vw;aspect-ratio:9/16;background:#000}
+svg{width:100%;height:100%;display:block}
+.bar{height:64px;display:flex;gap:8px;align-items:center;justify-content:center;padding:0 12px}
+button{background:#1e2f3d;color:#e8eef5;border:1px solid #3c566b;border-radius:8px;padding:10px 14px;font-size:14px}
+:root{--T:6s}
+/* kamera */
+#cam{transform-origin:430px 900px;animation:zoom var(--T) ease-in-out infinite}
+@keyframes zoom{0%{transform:scale(1)}85%{transform:scale(1.16)}100%{transform:scale(1.16)}}
+/* nefes */
+#torso{transform-origin:0 1100px;animation:breathe 3.2s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.012,1.022)}}
+#armL{transform-origin:-230px 260px;animation:swayL 3.2s ease-in-out infinite}
+#armR{transform-origin:230px 260px;animation:swayR 3.2s ease-in-out infinite}
+@keyframes swayL{0%,100%{transform:rotate(0)}50%{transform:rotate(1.2deg)}}
+@keyframes swayR{0%,100%{transform:rotate(0)}50%{transform:rotate(-1.2deg)}}
+/* kafa: önce önü bakar, sonra pencereye döner, sonra geri */
+#head{transform-origin:0 190px;animation:headturn var(--T) ease-in-out infinite}
+@keyframes headturn{0%,30%{transform:rotate(0) translateY(0)}48%,78%{transform:rotate(6deg) translate(14px,4px)}92%,100%{transform:rotate(0) translateY(0)}}
+#feat{animation:featturn var(--T) ease-in-out infinite}
+@keyframes featturn{0%,30%{transform:translateX(0) scaleX(1)}48%,78%{transform:translateX(38px) scaleX(.93)}92%,100%{transform:translateX(0) scaleX(1)}}
+#eyes{animation:eyeshift var(--T) ease-in-out infinite}
+@keyframes eyeshift{0%,30%{transform:translateX(0)}48%,78%{transform:translateX(10px)}92%,100%{transform:translateX(0)}}
+#browL{transform-origin:-85px -55px;animation:browA var(--T) ease-in-out infinite}
+#browR{transform-origin:85px -55px;animation:browB var(--T) ease-in-out infinite}
+@keyframes browA{0%,30%{transform:rotate(8deg)}48%,78%{transform:rotate(14deg) translateY(-4px)}92%,100%{transform:rotate(8deg)}}
+@keyframes browB{0%,30%{transform:rotate(-8deg)}48%,78%{transform:rotate(-14deg) translateY(-4px)}92%,100%{transform:rotate(-8deg)}}
+/* göz kırpma */
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4.1s infinite}
+@keyframes blink{0%,91%,97%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}}
+/* dış dünya */
+#fog1{animation:drift 14s linear infinite}
+#fog2{animation:drift 22s linear infinite reverse}
+@keyframes drift{0%{transform:translateX(-60px)}100%{transform:translateX(60px)}}
+#glow{animation:flick 2.6s steps(1) infinite}
+@keyframes flick{0%{opacity:1}20%{opacity:.7}24%{opacity:1}60%{opacity:.85}64%{opacity:.55}68%{opacity:.95}100%{opacity:1}}
+.m{display:none}.m.on{display:inline}
+</style></head>
+<body>
+<div id="stage">
+<svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deniz pencereden dışarı bakıyor">
+<defs>
+ <radialGradient id="vig" cx="50%" cy="48%" r="75%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".55"/></radialGradient>
+ <radialGradient id="lg"><stop offset="0" stop-color="#f6c05a" stop-opacity=".55"/><stop offset="1" stop-color="#f6c05a" stop-opacity="0"/></radialGradient><clipPath id="win"><rect x="640" y="470" width="380" height="720"/></clipPath>
+</defs>
+<g id="cam">
+ <!-- duvar ve zemin -->
+ <rect x="-200" y="-200" width="1480" height="1700" fill="#2c4b5e"/>
+ <rect x="-200" y="1480" width="1480" height="700" fill="#1d2e3b" stroke="#0c1218" stroke-width="10"/>
+ <rect x="-200" y="1440" width="1480" height="44" fill="#16222c" stroke="#0c1218" stroke-width="10"/>
+ <!-- pencere -->
+ <g>
+  <rect x="640" y="470" width="380" height="720" fill="#e7a45a"/>
+  <g clip-path="url(#win)">
+   <rect x="640" y="470" width="380" height="330" fill="#1c3a55"/>
+   <rect x="640" y="700" width="380" height="140" fill="#d58a52"/>
+   <g id="skyline" fill="#16304a" stroke="#0c1218" stroke-width="6">
+    <rect x="650" y="640" width="70" height="560"/><rect x="730" y="560" width="80" height="640"/>
+    <rect x="820" y="690" width="60" height="520"/><rect x="890" y="600" width="90" height="600"/><rect x="975" y="660" width="60" height="540"/>
+   </g>
+   <g fill="#f3c46b"><rect x="668" y="690" width="14" height="18"/><rect x="750" y="620" width="14" height="18"/><rect x="770" y="780" width="14" height="18"/><rect x="912" y="650" width="14" height="18"/><rect x="936" y="860" width="14" height="18"/></g>
+   <g id="fog1" fill="#9fb8c4" opacity=".55"><rect x="600" y="900" width="480" height="70" rx="35"/><rect x="620" y="1040" width="480" height="60" rx="30"/></g>
+   <g id="fog2" fill="#cfe0e6" opacity=".4"><rect x="560" y="820" width="520" height="60" rx="30"/><rect x="600" y="970" width="500" height="50" rx="25"/></g>
+  </g>
+  <rect x="640" y="470" width="380" height="720" fill="none" stroke="#0c1218" stroke-width="14"/>
+  <line x1="830" y1="470" x2="830" y2="1190" stroke="#0c1218" stroke-width="12"/>
+  <line x1="640" y1="830" x2="1020" y2="830" stroke="#0c1218" stroke-width="12"/>
+  <rect x="620" y="1190" width="420" height="30" fill="#16222c" stroke="#0c1218" stroke-width="10"/>
+ </g>
+ <!-- lamba -->
+ <g>
+  <ellipse id="glow" cx="140" cy="900" rx="300" ry="460" fill="url(#lg)"/>
+  <line x1="140" y1="900" x2="140" y2="1450" stroke="#0c1218" stroke-width="14"/>
+  <path d="M60 900 L220 900 L190 780 L90 780 Z" fill="#ef8a3c" stroke="#0c1218" stroke-width="10" stroke-linejoin="round"/>
+  <ellipse cx="140" cy="1452" rx="70" ry="16" fill="#16222c" stroke="#0c1218" stroke-width="8"/>
+ </g>
+ <!-- Deniz -->
+ <g transform="translate(430 930)">
+  <g id="torso">
+   <ellipse cx="0" cy="205" rx="150" ry="62" fill="#2f3552" stroke="#111" stroke-width="10"/>
+   <path d="M-230 620 L-250 300 Q-240 230 -150 215 L150 215 Q240 230 250 300 L230 1100 L-230 1100 Z" fill="#3b4160" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+   <path d="M-250 300 Q-240 230 -150 215 L-42 215 L-32 1100 L-230 1100 Z" fill="#86835a" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+   <path d="M250 300 Q240 230 150 215 L42 215 L32 1100 L230 1100 Z" fill="#86835a" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+   <path d="M-120 220 Q-170 330 -200 440" fill="none" stroke="#6c6a47" stroke-width="12" stroke-linecap="round"/>
+   <path d="M120 220 Q170 330 200 440" fill="none" stroke="#6c6a47" stroke-width="12" stroke-linecap="round"/>
+   <path d="M-42 215 L-32 1100 M42 215 L32 1100" stroke="#e9e4cf" stroke-width="7" stroke-dasharray="8 8"/>
+   <path d="M-48 215 Q-52 340 0 372 Q52 340 48 215" fill="none" stroke="#5b3a20" stroke-width="9"/>
+   <circle cx="0" cy="392" r="30" fill="#d9a441" stroke="#111" stroke-width="8"/>
+   <path d="M0 370 L0 414 M-22 392 L22 392" stroke="#111" stroke-width="5"/>
+  </g>
+  <g id="armL"><path d="M-300 270 Q-310 250 -250 245 L-200 270 L-215 760 L-300 760 Z" fill="#86835a" stroke="#111" stroke-width="10" stroke-linejoin="round"/><circle cx="-258" cy="800" r="40" fill="#E0A56B" stroke="#111" stroke-width="10"/></g>
+  <g id="armR"><path d="M300 270 Q310 250 250 245 L200 270 L215 760 L300 760 Z" fill="#86835a" stroke="#111" stroke-width="10" stroke-linejoin="round"/><circle cx="258" cy="800" r="40" fill="#E0A56B" stroke="#111" stroke-width="10"/></g>
+  <g id="head">
+   <rect x="-46" y="150" width="92" height="80" fill="#E0A56B" stroke="#111" stroke-width="10"/>
+   <!-- saç arka -->
+   <g id="hairBack" fill="#6B4A2F" stroke="#111" stroke-width="10">
+    <circle cx="-170" cy="-60" r="62"/><circle cx="-120" cy="-140" r="64"/><circle cx="-40" cy="-185" r="66"/><circle cx="50" cy="-190" r="66"/><circle cx="130" cy="-145" r="64"/><circle cx="175" cy="-62" r="62"/>
+   </g>
+   <circle cx="-190" cy="15" r="40" fill="#E0A56B" stroke="#111" stroke-width="10"/><circle cx="190" cy="15" r="40" fill="#E0A56B" stroke="#111" stroke-width="10"/>
+   <ellipse cx="0" cy="0" rx="190" ry="185" fill="#E0A56B" stroke="#111" stroke-width="10"/>
+   <g id="hairFront">
+    <g fill="#6B4A2F" stroke="#111" stroke-width="10"><circle cx="-105" cy="-135" r="48"/><circle cx="-35" cy="-150" r="50"/><circle cx="45" cy="-152" r="50"/><circle cx="112" cy="-130" r="48"/></g>
+    <g fill="#6B4A2F"><circle cx="-105" cy="-135" r="43"/><circle cx="-35" cy="-150" r="45"/><circle cx="45" cy="-152" r="45"/><circle cx="112" cy="-130" r="43"/></g>
+   </g>
+   <g id="feat">
+    <g fill="#8a5a35"><circle cx="-110" cy="120" r="4"/><circle cx="-85" cy="140" r="4"/><circle cx="-55" cy="150" r="4"/><circle cx="-20" cy="156" r="4"/><circle cx="20" cy="156" r="4"/><circle cx="55" cy="150" r="4"/><circle cx="85" cy="140" r="4"/><circle cx="110" cy="120" r="4"/><circle cx="-130" cy="90" r="4"/><circle cx="130" cy="90" r="4"/><circle cx="-70" cy="118" r="4"/><circle cx="70" cy="118" r="4"/></g>
+    <ellipse cx="-80" cy="22" rx="42" ry="14" fill="#b9794a" opacity=".55"/><ellipse cx="80" cy="22" rx="42" ry="14" fill="#b9794a" opacity=".55"/>
+    <g id="eyes">
+     <g class="eye"><circle cx="-80" cy="-5" r="17" fill="#111"/><circle cx="-74" cy="-11" r="5" fill="#fff"/></g>
+     <g class="eye"><circle cx="80" cy="-5" r="17" fill="#111"/><circle cx="86" cy="-11" r="5" fill="#fff"/></g>
+    </g>
+    <g id="browL"><rect x="-135" y="-70" width="100" height="24" rx="12" fill="#2a1a10" stroke="#111" stroke-width="5" transform="rotate(0 -85 -58)"/><path d="M-118 -84 L-96 -40 M-102 -84 L-80 -40" stroke="#E0A56B" stroke-width="7" stroke-linecap="round"/></g>
+    <g id="browR"><rect x="35" y="-70" width="100" height="24" rx="12" fill="#2a1a10" stroke="#111" stroke-width="5"/></g>
+    <ellipse cx="0" cy="48" rx="30" ry="24" fill="#D48F5A" stroke="#111" stroke-width="7"/>
+    <g id="mouth" transform="translate(0 108)" stroke="#111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+     <path class="m on" id="m0" d="M-36 4 Q0 12 36 4"/>
+     <path class="m" id="m1" d="M-34 2 Q0 36 34 2 Q0 10 -34 2Z" fill="#7a2b2b"/>
+     <path class="m" id="m2" d="M-40 0 Q0 58 40 0 Q0 8 -40 0Z" fill="#7a2b2b"/>
+     <ellipse class="m" id="m3" cx="0" cy="12" rx="17" ry="20" fill="#7a2b2b"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</g>
+<rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+<rect width="1080" height="1920" fill="#0a1018" opacity=".22" pointer-events="none"/>
+</svg>
+</div>
+<div class="bar">
+ <button id="snd">🔈 Ortam sesi aç</button>
+ <button id="talk">👄 Ağız testi</button>
+ <button id="restart">↺ Baştan</button>
+</div>
+<script>
+// ağız testi: gerçek bölümde ses dosyasından gelen viseme zamanlamasıyla sürülecek
+let talkTimer=null;const ms=[0,1,2,3].map(i=>document.getElementById('m'+i));
+function setM(i){ms.forEach((e,j)=>e.classList.toggle('on',i===j))}
+document.getElementById('talk').onclick=()=>{
+ if(talkTimer){clearInterval(talkTimer);talkTimer=null;setM(0);return}
+ const seq=[1,2,1,0,3,1,2,0,1,3,2,1,0];let k=0;talkTimer=setInterval(()=>setM(seq[k++%seq.length]),130);
+};
+document.getElementById('restart').onclick=()=>{
+ document.querySelectorAll('#cam,#head,#feat,#eyes,#browL,#browR').forEach(e=>{e.style.animation='none';e.offsetHeight;e.style.animation=''});
+};
+// yalnızca ortam sesi (konuşma yok): düşük oda uğultusu + rüzgar
+let ac=null;
+document.getElementById('snd').onclick=function(){
+ try{
+  if(ac){ac.close();ac=null;this.textContent='🔈 Ortam sesi aç';return}
+  ac=new (window.AudioContext||window.webkitAudioContext)();
+  const n=ac.sampleRate*4,b=ac.createBuffer(1,n,ac.sampleRate),d=b.getChannelData(0);let l=0;
+  for(let i=0;i<n;i++){const w=Math.random()*2-1;l=(l+0.02*w)/1.02;d[i]=l*3.5}
+  const s=ac.createBufferSource();s.buffer=b;s.loop=true;
+  const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=380;
+  const g=ac.createGain();g.gain.value=.35;
+  const lfo=ac.createOscillator(),lg=ac.createGain();lfo.frequency.value=.15;lg.gain.value=.12;lfo.connect(lg).connect(g.gain);lfo.start();
+  s.connect(f).connect(g).connect(ac.destination);s.start();this.textContent='🔇 Sesi kapat';
+ }catch(e){}
+};
+</script>
+</body></html>
