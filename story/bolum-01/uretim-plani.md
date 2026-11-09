@@ -33,7 +33,7 @@ Her sahne için `sahneler.json` içinde `ses_efekt` yazılı. Müzik: lisanslı 
 ## Durum (güncel)
 - **Sahne 1-3: önizleme hazır** (`prototip/sahne1-3.html`): sisli metropol, gece sokağı + Sisli siluetleri, kesinti kolajı. Altyazı, "KAT 9 · BÖLÜM 1" etiketi ve efekt sesleri (konuşma yok) dahil.
 - Senaryo **kilitli** (revizyon 5). Sahne 4'e geçilmedi, kullanıcı değerlendirmesi bekleniyor.
-- Henüz video render edilmedi (konuşma sesi olmadığı için; kural: sessiz render yok).
+- Revizyon 6 render edildi (cikti.mp4, 106,93 sn).
 
 ## Durum (Bölüm 1 tamamlandı, fısıltı hariç)
 - 17 sahnenin tamamı kuruldu (`prototip/bolum01.html` + `prototip/parca/`), `sahneler.json` ve `zaman-cizelgesi.json` ile sürülüyor.

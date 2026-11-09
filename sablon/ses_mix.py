@@ -129,10 +129,15 @@ put(sfx,thud(75,.5)*1.4+bp(noise(.2),500,3000)*env(int(.2*SR),.001,.1),sc(13,c13
 put(sfx,swell(11,40,200,1),sc(13,0),.16)
 # 14
 put(sfx,sweep(420,950,1.4,.02,.4)*np.sin(np.linspace(0,25,int(1.4*SR)))**2*.8,sc(14,0),.3);put(sfx,thud(60,.25),sc(14,1.35),.3)
-breath(sfx,sc(14,1.2),sc(14,4.5),2.6,.3);jingle(sfx,sc(14,2.7),.7)
+jingle(sfx,sc(14,2.7),.7)
 # 15
-heart(sfx,sc(15,0),sc(15,SC[15]['sure']),.9,.3);breath(sfx,sc(15,.2),sc(15,6),2.6,.25);jingle(sfx,sc(15,1.8),.8)
+heart(sfx,sc(15,0),sc(15,SC[15]['sure']),.9,.3);jingle(sfx,sc(15,1.8),.8)
 put(sfx,thud(42,1.2)*1.2,sc(15,SC[15]['sure']-.9),.55)
+# Sisli ses imzası (onaylı örnek, sahne 14-15)
+import importlib.util
+_sp=importlib.util.spec_from_file_location('sisli_ses',str(pathlib.Path(__file__).parent/'sisli_ses.py'));_m=importlib.util.module_from_spec(_sp);_sys_argv=sys.argv;sys.argv=['x'];_sp.loader.exec_module(_m);sys.argv=_sys_argv
+_im=np.asarray(_m.imza(sure=11.0,seed=11),dtype=float);_im=_im/(np.max(np.abs(_im))+1e-9)
+put(sfx,_im,sc(14,1.0),.55)
 # 16
 put(sfx,thud(48,.8)*1.4,sc(16,0),.6);heart(sfx,sc(16,.1),sc(16,3),.45,.4);put(sfx,tone(3500,2.2,.5,1.2)*.5,sc(16,.4),.05)
 # 17
@@ -165,4 +170,4 @@ mix=mix/np.max(np.abs(mix))*0.89
 st=np.stack([mix,mix],1);i16=(st*32767).astype(np.int16)
 import wave
 w=wave.open(out,'wb');w.setnchannels(2);w.setsampwidth(2);w.setframerate(SR);w.writeframes(i16.tobytes());w.close()
-print('ses karışımı tamam',round(TOT,1),'sn, tepe',round(float(np.max(np.abs(mix))),2),'; fısıltı:','var' if (B/'ses/sahne15-fisilti.mp3').exists() else 'YOK')
+print('ses karışımı tamam',round(TOT,1),'sn, tepe',round(float(np.max(np.abs(mix))),2))
