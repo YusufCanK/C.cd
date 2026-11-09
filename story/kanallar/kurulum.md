@@ -1,7 +1,7 @@
 # Kat 9: kanal kurulumu ve Bölüm 1 yayını
 
 > Hesapları sen açarsın: telefon ve e-posta doğrulaması gerekiyor, ben açamam. Aşağıdakileri kopyala-yapıştır kullan.
-> Platformlar: Instagram Reels, TikTok, YouTube Shorts. Oy süresi: **24 saat**.
+> Platformlar: Instagram Reels, TikTok, YouTube Shorts. Oy süresi: **48 saat** (Bölüm 1: takipçi olmadığı için uzatıldı).
 
 ## 1. Kimlik (karar: kullanıcı, marka adı "Senin Karar")
 - **Yapı:** Hesap = marka (**Senin Karar**). Diziler marka altında yayınlanır, ilk dizi **Kat 9**. Videolardaki "KAT 9 · BÖLÜM 1" etiketi aynen kalır.
