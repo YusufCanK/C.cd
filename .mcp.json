@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "headroom": {
+      "command": "/root/.headroom-venv/bin/headroom",
+      "args": ["mcp", "serve"]
+    }
+  }
+}
