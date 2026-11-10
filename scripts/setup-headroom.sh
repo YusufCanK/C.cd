@@ -3,8 +3,8 @@
 set -uo pipefail
 
 VENV=/root/.headroom-venv
-if [ ! -x "$VENV/bin/headroom" ]; then
-  python3 -m venv "$VENV" && "$VENV/bin/pip" install -q "headroom-ai[code]" || echo "headroom install failed" >&2
+if ! "$VENV/bin/python" -c "import mcp" >/dev/null 2>&1; then
+  [ -d "$VENV" ] || python3 -m venv "$VENV";  "$VENV/bin/pip" install -q "headroom-ai[mcp,code]" || echo "headroom install failed" >&2
 fi
 
 if command -v claude >/dev/null 2>&1 && ! claude plugin list 2>/dev/null | grep -q "claude-mem@thedotmack"; then
