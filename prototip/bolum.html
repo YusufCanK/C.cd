@@ -20,6 +20,18 @@ text{font-family:Impact,'Arial Black','Helvetica Neue',Arial,sans-serif;font-wei
 @keyframes flk{0%{opacity:.16}30%{opacity:.10}34%{opacity:.16}70%{opacity:.08}74%{opacity:.15}100%{opacity:.16}}
 .blnk{animation:blnk 1.8s steps(1) infinite}
 @keyframes blnk{0%{opacity:1}50%{opacity:.15}}
+.moth{animation:moth 2.4s ease-in-out infinite}
+@keyframes moth{0%,100%{transform:translate(0,0)}25%{transform:translate(34px,-22px)}50%{transform:translate(0,-46px)}75%{transform:translate(-34px,-22px)}}
+.rot{animation:rot 6s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes rot{to{transform:rotate(360deg)}}
+.fog{animation:fogd 14s linear infinite}
+@keyframes fogd{from{transform:translateX(-140px)}to{transform:translateX(140px)}}
+.drip8{animation:dr8 1.6s ease-in infinite}
+@keyframes dr8{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(170px);opacity:0}}
+.dustm{animation:dust 9s ease-in-out infinite}
+@keyframes dust{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-60px)}}
+.spid{animation:spid 4s ease-in-out infinite}
+@keyframes spid{0%,100%{transform:translateY(0)}50%{transform:translateY(40px)}}
 .cap-anlatici text{fill:#fff}.cap-telsiz text{fill:#f6d56a}.cap-riza text{fill:#ffb366}
 #cap text{font-size:74px;font-weight:900;text-anchor:middle;stroke:#000;stroke-width:16px;stroke-linejoin:round;paint-order:stroke fill}
 </style></head>
