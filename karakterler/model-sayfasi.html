@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kara Burun karakter model sayfası</title>
+<style>
+:root{color-scheme:dark}
+html,body{margin:0;background:#868c92;font-family:system-ui,Segoe UI,Arial,sans-serif;color:#10151a}
+.wrap{max-width:1560px;margin:0 auto;padding:28px 24px 36px}
+h1{margin:0 0 4px;font-size:26px;letter-spacing:.5px}
+.sub{margin:0 0 22px;font-size:14px;opacity:.85}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.col{display:flex;flex-direction:column;align-items:center}
+.big{width:340px;height:auto}
+.ad{font-weight:700;font-size:20px;margin:6px 0 2px}
+.not{font-size:13px;opacity:.85;text-align:center;max-width:440px;min-height:34px}
+.etiket{font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin:16px 0 6px;opacity:.8}
+.sira{display:flex;gap:6px;justify-content:center}
+.th{display:flex;flex-direction:column;align-items:center;font-size:11px}
+.th svg{width:128px;height:auto;display:block}
+.ctl{display:flex;gap:12px;align-items:center;margin:0 0 18px}
+button{font:inherit;padding:9px 16px;border-radius:8px;border:0;background:#10151a;color:#fff;cursor:pointer}
+/* ortak animasyon (Kat 9 ile aynı mantık) */
+.m{display:none}.m.on{display:inline}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.005,1.009)}}
+@keyframes blink{0%,91%,97%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}}
+@keyframes swayL{0%,100%{transform:rotate(0)}50%{transform:rotate(.9deg)}}
+@keyframes swayR{0%,100%{transform:rotate(0)}50%{transform:rotate(-.9deg)}}
+@keyframes shake{0%{transform:rotate(-1.4deg) translateX(-3px)}50%{transform:rotate(1.4deg) translateX(3px)}100%{transform:rotate(-1.4deg) translateX(-3px)}}
+@keyframes lanternSway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes dripF{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(120px);opacity:0}}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4.2s infinite}
+.karakter .k-torso{transform-origin:0 1100px;animation:breathe 3.4s ease-in-out infinite}
+.karakter .k-armL{transform-origin:-230px 260px;animation:swayL 3.4s ease-in-out infinite}
+.karakter .k-armR{transform-origin:230px 260px;animation:swayR 3.4s ease-in-out infinite}
+.karakter .k-head{transform-origin:0 190px}
+.karakter .k-lantern{transform-origin:258px 830px;animation:lanternSway 3s ease-in-out infinite}
+.karakter .k-browL{transform-origin:-85px -58px;transform:rotate(8deg)}
+.karakter .k-browR{transform-origin:85px -58px;transform:rotate(-8deg)}
+.karakter .k-eyes{transform-origin:0 -5px}
+.karakter[data-mood="worried"] .k-browL{transform:translateY(-8px) rotate(-12deg)}
+.karakter[data-mood="worried"] .k-browR{transform:translateY(-8px) rotate(12deg)}
+.karakter[data-mood="scared"] .k-browL{transform:translateY(-20px) rotate(-18deg)}
+.karakter[data-mood="scared"] .k-browR{transform:translateY(-20px) rotate(18deg)}
+.karakter[data-mood="scared"] .k-eyes{transform:scale(1.25)}
+.karakter[data-mood="scared"] .k-head{animation:shake .11s linear infinite}
+.karakter .drip{animation:dripF 2.6s ease-in infinite}.karakter .d2{animation-delay:1.3s}
+</style></head>
+<body><div class="wrap">
+<h1>KARA BURUN · Karakter model sayfası</h1>
+<p class="sub">Düz 2D vektör çizgi film, kalın siyah kontur, düz renkler, iri kafalar (Kat 9 stili). Karakterler parçalı SVG olarak çizilir: kafa, kaşlar, gözler, ağız, kollar ayrı katmandır. Hepsi video için hareketli: nefes, göz kırpma, kol sallanması, duygu ve 4 şekilli ağız senkronu.</p>
+<div class="ctl"><button id="konus">▶ Konuşturmayı dene (ağız senkronu)</button><span style="font-size:13px;opacity:.85">Gerçek videoda ağız şekli ses dosyasından otomatik seçilir (Kat 9 lipsync, 33 ms'lik parçalar).</span></div>
+<div class="grid" id="grid"></div>
+</div>
+<script src="../sablon/rigs.js"></script>
+<script>
+const ns='http://www.w3.org/2000/svg';
+const KAR=[
+ {k:'bekci',ad:'BEKÇİ (sen)',not:'Yeni fener bekçisi. Lacivert bere, koyu petrol palto, turuncu atkı, gaz feneri. Adı yok, anlatıcı ona "sen" der.'},
+ {k:'reis',ad:'REİS RIZA',not:'Kıyıdan tekneyle gündüz gelen yaşlı balıkçı. Siyah kasket, hardal muşamba, kalın beyaz bıyık, elinde çay bardağı.'},
+ {k:'golgesiz',ad:'GÖLGESİZ',not:'Gece yarısından şafağa dolaşan şey. Solgun, ıslak, gölge düşürmez. Sesleri taklit eder, ağzı sese uymaz.'}
+];
+const VB_BIG='-370 -280 740 1290',VB_HEAD='-260 -290 520 560';
+function svg(vb){const s=document.createElementNS(ns,'svg');s.setAttribute('viewBox',vb);return s}
+function sec(t){const d=document.createElement('div');d.className='etiket';d.textContent=t;return d}
+const big=[];
+const grid=document.getElementById('grid');
+KAR.forEach(c=>{
+ const col=document.createElement('div');col.className='col';
+ const s=svg(VB_BIG);s.setAttribute('class','big');const r=Rigs[c.k](s,{mood:'calm'});big.push(r);col.appendChild(s);
+ const ad=document.createElement('div');ad.className='ad';ad.textContent=c.ad;col.appendChild(ad);
+ const n=document.createElement('div');n.className='not';n.textContent=c.not;col.appendChild(n);
+ col.appendChild(sec('Ağız şekilleri (ses senkronu)'));
+ const sira=document.createElement('div');sira.className='sira';
+ ['kapalı','az açık','açık','"o"'].forEach((ad,v)=>{const th=document.createElement('div');th.className='th';const t=svg(VB_HEAD);const g=Rigs[c.k](t,{mood:'calm'});Rigs.mouth(g,v);th.appendChild(t);th.appendChild(document.createTextNode(v+' · '+ad));sira.appendChild(th)});
+ col.appendChild(sira);
+ col.appendChild(sec('Duygular'));
+ const s2=document.createElement('div');s2.className='sira';
+ [['calm','sakin',0],['worried','endişeli',1],['scared','korkmuş',2]].forEach(([m,ad,v])=>{const th=document.createElement('div');th.className='th';const t=svg(VB_HEAD);const g=Rigs[c.k](t,{mood:m});Rigs.mouth(g,m==='scared'?3:m==='worried'?1:0);th.appendChild(t);th.appendChild(document.createTextNode(ad));s2.appendChild(th)});
+ col.appendChild(s2);
+ grid.appendChild(col);
+});
+// ağız senkronu demo: ses yokken rastgele 0-3 (gerçekte lipsync.js seçer)
+let konus=false,timer=null;
+document.getElementById('konus').onclick=function(){
+ konus=!konus;this.textContent=konus?'⏸ Durdur':'▶ Konuşturmayı dene (ağız senkronu)';
+ if(konus){timer=setInterval(()=>{big.forEach((r,i)=>{if(i===2){Rigs.mouth(r,0);return}const x=Math.random();Rigs.mouth(r,x<.25?0:x<.55?1:x<.85?2:3)})},110)}
+ else{clearInterval(timer);big.forEach(r=>Rigs.mouth(r,0))}
+};
+window.__demoAgiz=(a)=>{big.forEach((r,i)=>Rigs.mouth(r,a[i]))};
+</script></body></html>
