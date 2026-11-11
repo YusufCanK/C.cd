@@ -179,7 +179,8 @@
         "saat": "23:20",
         "isik": "AÇIK",
         "tekne": 0,
-        "hedef": "7 GECE DAYAN"
+        "hedef": "7 GECE DAYAN",
+        "saat_bas": "18:12"
       },
       "ses_dosyasi": null,
       "tahmini_konusma_sn": 0,

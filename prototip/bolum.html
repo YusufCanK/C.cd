@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kara Burun · Bölüm önizleme</title>
+<style>
+:root{color-scheme:dark}
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center}
+svg{height:100vh;max-width:100vw;aspect-ratio:9/16;display:block}
+text{font-family:Impact,'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900}
+.hand{font-family:'Segoe Script','Bradley Hand','Comic Sans MS','Noteworthy',cursive;font-weight:400}
+/*CSS*/
+.rain{animation:rainfall .55s linear infinite}
+@keyframes rainfall{from{transform:translateY(0)}to{transform:translateY(160px)}}
+.wv0{animation:waveA 5s linear infinite}.wv1{animation:waveB 7s linear infinite}
+@keyframes waveA{from{transform:translateX(0)}to{transform:translateX(-240px)}}
+@keyframes waveB{from{transform:translateX(-240px)}to{transform:translateX(0)}}
+.cap-anlatici text{fill:#fff}.cap-telsiz text{fill:#f6d56a}.cap-riza text{fill:#ffb366}
+#cap text{font-size:74px;font-weight:900;text-anchor:middle;stroke:#000;stroke-width:16px;stroke-linejoin:round;paint-order:stroke fill}
+</style></head>
+<body>
+<svg id="svg" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="vig" cx="50%" cy="50%" r="75%"><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".55"/></radialGradient></defs>
+<g id="ust">
+ <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+ <g id="hud" style="display:none">
+  <circle cx="72" cy="112" r="10" fill="#e0453a"/><text id="h-donem" x="96" y="124" font-size="38" fill="#e8eef5" font-weight="900" letter-spacing="2">GECE 1/7</text>
+  <text id="h-saat" x="60" y="236" font-size="124" fill="#fff" font-weight="900">00:00</text>
+  <rect id="h-isik-bg" x="60" y="268" rx="14" width="250" height="52" fill="#1f7a45" stroke="#111" stroke-width="4"/><text id="h-isik" x="185" y="306" font-size="30" fill="#fff" text-anchor="middle">IŞIK: AÇIK</text>
+  <rect x="326" y="268" rx="14" width="228" height="52" fill="#1f5a7a" stroke="#111" stroke-width="4"/><text id="h-tekne" x="440" y="306" font-size="30" fill="#fff" text-anchor="middle">TEKNE: 0</text>
+  <text id="h-hedef" x="60" y="368" font-size="28" fill="#c9d4de" letter-spacing="1">HEDEF</text>
+ </g>
+ <g id="cap" style="display:none"><text id="c1" x="540" y="1500"></text><text id="c2" x="540" y="1588"></text><text id="c3" x="540" y="1676"></text></g>
+ <g id="safe" style="display:none" fill="none" stroke="#ff4d4d" stroke-width="4" stroke-dasharray="14 10"><rect x="0" y="0" width="1080" height="250"/><rect x="0" y="1560" width="1080" height="360"/><rect x="900" y="250" width="180" height="1310"/></g>
+</g>
+</svg>
+<!--ONIZLEME-->
+<script id="data" type="application/json">__DATA__</script>
+<!--SCRIPTS-->
+<!--ONIZLEME_JS-->
+</body></html>
