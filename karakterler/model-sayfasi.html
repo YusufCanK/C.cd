@@ -43,11 +43,21 @@ button{font:inherit;padding:9px 16px;border-radius:8px;border:0;background:#1015
 .karakter[data-mood="scared"] .k-eyes{transform:scale(1.25)}
 .karakter[data-mood="scared"] .k-head{animation:shake .11s linear infinite}
 .karakter .drip{animation:dripF 2.6s ease-in infinite}.karakter .d2{animation-delay:1.3s}
+/* yürüme: bacaklar kalçadan, kollar ters fazda sallanır */
+@keyframes walkA{0%,100%{transform:rotate(11deg)}50%{transform:rotate(-11deg)}}
+@keyframes walkB{0%,100%{transform:rotate(-11deg)}50%{transform:rotate(11deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.karakter .k-legL{transform-origin:-100px 800px}.karakter .k-legR{transform-origin:100px 800px}
+.karakter.walk .k-legL{animation:walkA .8s ease-in-out infinite}
+.karakter.walk .k-legR{animation:walkB .8s ease-in-out infinite}
+.karakter.walk .k-armL{animation:walkB .8s ease-in-out infinite}
+.karakter.walk .k-armR{animation:walkA .8s ease-in-out infinite}
+.karakter.walk .k-torso,.karakter.walk .k-head{animation:bob .4s ease-in-out infinite}
 </style></head>
 <body><div class="wrap">
 <h1>KARA BURUN · Karakter model sayfası</h1>
 <p class="sub">Düz 2D vektör çizgi film, kalın siyah kontur, düz renkler, iri kafalar (Kat 9 stili). Karakterler parçalı SVG olarak çizilir: kafa, kaşlar, gözler, ağız, kollar ayrı katmandır. Hepsi video için hareketli: nefes, göz kırpma, kol sallanması, duygu ve 4 şekilli ağız senkronu.</p>
-<div class="ctl"><button id="konus">▶ Konuşturmayı dene (ağız senkronu)</button><span style="font-size:13px;opacity:.85">Gerçek videoda ağız şekli ses dosyasından otomatik seçilir (Kat 9 lipsync, 33 ms'lik parçalar).</span></div>
+<div class="ctl"><button id="yuru">▶ Yürüt</button><button id="konus">▶ Konuşturmayı dene (ağız senkronu)</button><span style="font-size:13px;opacity:.85">Gerçek videoda ağız şekli ses dosyasından otomatik seçilir (Kat 9 lipsync, 33 ms'lik parçalar).</span></div>
 <div class="grid" id="grid"></div>
 </div>
 <script src="../sablon/rigs.js"></script>
@@ -58,7 +68,7 @@ const KAR=[
  {k:'reis',ad:'REİS RIZA',not:'Kıyıdan tekneyle gündüz gelen yaşlı balıkçı. Siyah kasket, hardal muşamba, kalın beyaz bıyık, elinde çay bardağı.'},
  {k:'golgesiz',ad:'GÖLGESİZ',not:'Gece yarısından şafağa dolaşan şey. Solgun, ıslak, gölge düşürmez. Sesleri taklit eder, ağzı sese uymaz.'}
 ];
-const VB_BIG='-370 -280 740 1290',VB_HEAD='-260 -290 520 560';
+const VB_BIG='-370 -290 740 1600',VB_HEAD='-260 -290 520 560';
 function svg(vb){const s=document.createElementNS(ns,'svg');s.setAttribute('viewBox',vb);return s}
 function sec(t){const d=document.createElement('div');d.className='etiket';d.textContent=t;return d}
 const big=[];
@@ -85,5 +95,7 @@ document.getElementById('konus').onclick=function(){
  if(konus){timer=setInterval(()=>{big.forEach((r,i)=>{if(i===2){Rigs.mouth(r,0);return}const x=Math.random();Rigs.mouth(r,x<.25?0:x<.55?1:x<.85?2:3)})},110)}
  else{clearInterval(timer);big.forEach(r=>Rigs.mouth(r,0))}
 };
+let yuruyor=false;
+document.getElementById('yuru').onclick=function(){yuruyor=!yuruyor;this.textContent=yuruyor?'⏸ Durdur':'▶ Yürüt';big.forEach(r=>r.classList.toggle('walk',yuruyor))};
 window.__demoAgiz=(a)=>{big.forEach((r,i)=>Rigs.mouth(r,a[i]))};
 </script></body></html>

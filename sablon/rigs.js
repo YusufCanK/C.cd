@@ -11,10 +11,15 @@ const MOUTH=(y,sc,fill,v0)=>`<g class="k-mouth" transform="translate(0 ${y}) sca
 const SKIN_B='#E3B48C',SKIN_R='#D9A07A',SKIN_G='#9db4b2';
 
 /* ---------- BEKÇİ (sen): lacivert bere, koyu petrol paltosu, turuncu atkı, gaz feneri ---------- */
-const BEKCI=`<g class="k-torso">
- <path d="M-230 1100 L-250 300 Q-240 230 -150 215 L150 215 Q240 230 250 300 L230 1100 Z" fill="#24535a" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+const BEKCI=`<g class="k-legL"><path d="M-170 800 L-30 800 L-42 1190 L-150 1190 Z" fill="#2d3548" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M-152 1170 Q-166 1180 -172 1232 Q-176 1266 -150 1270 L-34 1270 Q-14 1266 -22 1236 L-40 1170 Z" fill="#4a3320" stroke="#111" stroke-width="10" stroke-linejoin="round"/><path d="M-172 1238 L-22 1238" stroke="#111" stroke-width="6"/></g>
+<g class="k-legR"><path d="M170 800 L30 800 L42 1190 L150 1190 Z" fill="#2d3548" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M152 1170 Q166 1180 172 1232 Q176 1266 150 1270 L34 1270 Q14 1266 22 1236 L40 1170 Z" fill="#4a3320" stroke="#111" stroke-width="10" stroke-linejoin="round"/><path d="M172 1238 L22 1238" stroke="#111" stroke-width="6"/></g>
+<g class="k-torso">
+ <path d="M-232 880 L-250 300 Q-240 230 -150 215 L150 215 Q240 230 250 300 L232 880 Z" fill="#24535a" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M-236 840 L236 840" stroke="#1b3f45" stroke-width="8"/>
  <path d="M-92 216 L0 340 L92 216" fill="#1b3f45" stroke="#111" stroke-width="9" stroke-linejoin="round"/>
- <path d="M0 340 L0 1100" stroke="#111" stroke-width="7"/>
+ <path d="M0 340 L0 880" stroke="#111" stroke-width="7"/>
  <g fill="#d9a441" stroke="#111" stroke-width="6"><circle cx="-24" cy="470" r="17"/><circle cx="-24" cy="580" r="17"/><circle cx="-24" cy="690" r="17"/></g>
  <path d="M-196 560 L-84 560 L-84 700 L-196 700 Z" fill="#1f474d" stroke="#111" stroke-width="8" stroke-linejoin="round"/>
  <path d="M-130 205 Q0 300 130 205 L140 268 Q0 360 -140 268 Z" fill="#ef7d32" stroke="#111" stroke-width="9" stroke-linejoin="round"/>
@@ -48,10 +53,15 @@ const BEKCI=`<g class="k-torso">
 </g>`;
 
 /* ---------- REİS RIZA: siyah kasket, hardal muşamba, kalın beyaz bıyık, çay bardağı ---------- */
-const REIS=`<g class="k-torso">
- <path d="M-250 1100 L-270 300 Q-260 230 -160 215 L160 215 Q260 230 270 300 L250 1100 Z" fill="#c9951a" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+const REIS=`<g class="k-legL"><path d="M-170 900 L-30 900 L-40 1100 L-160 1100 Z" fill="#2b2f38" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M-160 1050 L-42 1050 L-40 1190 Q-24 1204 -22 1238 Q-20 1268 -48 1270 L-160 1270 Q-188 1266 -178 1232 Q-172 1204 -160 1190 Z" fill="#2e4a35" stroke="#111" stroke-width="10" stroke-linejoin="round"/><path d="M-160 1070 L-42 1070" stroke="#111" stroke-width="6"/></g>
+<g class="k-legR"><path d="M170 900 L30 900 L40 1100 L160 1100 Z" fill="#2b2f38" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M160 1050 L42 1050 L40 1190 Q24 1204 22 1238 Q20 1268 48 1270 L160 1270 Q188 1266 178 1232 Q172 1204 160 1190 Z" fill="#2e4a35" stroke="#111" stroke-width="10" stroke-linejoin="round"/><path d="M160 1070 L42 1070" stroke="#111" stroke-width="6"/></g>
+<g class="k-torso">
+ <path d="M-252 1020 L-270 300 Q-260 230 -160 215 L160 215 Q260 230 270 300 L252 1020 Z" fill="#c9951a" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M-256 980 L256 980" stroke="#a0720f" stroke-width="8"/>
  <path d="M-110 218 L0 330 L110 218 L150 250 Q0 400 -150 250 Z" fill="#3b2f1a" stroke="#111" stroke-width="9" stroke-linejoin="round"/>
- <path d="M0 360 L0 1100" stroke="#111" stroke-width="7"/>
+ <path d="M0 360 L0 1020" stroke="#111" stroke-width="7"/>
  <g fill="#2a2013" stroke="#111" stroke-width="6"><circle cx="-26" cy="470" r="18"/><circle cx="-26" cy="590" r="18"/><circle cx="-26" cy="710" r="18"/></g>
  <path d="M80 540 L220 540 L220 690 L80 690 Z" fill="#b5841a" stroke="#111" stroke-width="8" stroke-linejoin="round"/>
  <path d="M-170 300 Q-120 520 -150 700" fill="none" stroke="#a0720f" stroke-width="10" stroke-linecap="round"/>
@@ -86,8 +96,14 @@ const REIS=`<g class="k-torso">
 </g>`;
 
 /* ---------- GÖLGESİZ: solgun gri-yeşil, ıslak siyah saç, boş beyaz gözler, geniş sabit gülüş, damlayan su ---------- */
-const GOLGESIZ=`<g class="k-torso">
- <path d="M-170 1100 L-190 300 Q-180 235 -110 218 L110 218 Q180 235 190 300 L170 1100 Z" fill="#3b4650" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+const GOLGESIZ=`<g class="k-legL"><path d="M-112 920 L-52 920 L-60 1210 L-104 1210 Z" fill="${SKIN_G}" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M-116 1090 L-48 1090 L-52 1140 L-112 1140 Z" fill="#2c343c" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
+ <ellipse cx="-84" cy="1244" rx="58" ry="26" fill="${SKIN_G}" stroke="#111" stroke-width="10"/><path d="M-120 1250 L-118 1262 M-100 1256 L-98 1268 M-80 1258 L-80 1270" stroke="#111" stroke-width="4"/></g>
+<g class="k-legR"><path d="M112 920 L52 920 L60 1210 L104 1210 Z" fill="${SKIN_G}" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M116 1090 L48 1090 L52 1140 L112 1140 Z" fill="#2c343c" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
+ <ellipse cx="84" cy="1244" rx="58" ry="26" fill="${SKIN_G}" stroke="#111" stroke-width="10"/><path d="M120 1250 L118 1262 M100 1256 L98 1268 M80 1258 L80 1270" stroke="#111" stroke-width="4"/></g>
+<g class="k-torso">
+ <path d="M-170 960 L-190 300 Q-180 235 -110 218 L110 218 Q180 235 190 300 L170 960 L136 1004 L100 952 L62 1008 L24 954 L-16 1010 L-54 956 L-92 1008 L-130 958 Z" fill="#3b4650" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
  <path d="M-70 520 L-24 566 L-76 612 Z" fill="${SKIN_G}" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
  <path d="M60 640 L110 690 L52 720 Z" fill="${SKIN_G}" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
  <path d="M-150 250 Q-196 340 -148 430 Q-112 350 -134 262 Z" fill="#2e6b4f" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
