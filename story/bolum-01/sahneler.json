@@ -1,0 +1,303 @@
+{
+  "bolum": 1,
+  "baslik": "İlk Gece",
+  "hedef_sn": 85,
+  "not": "Taslak 1 (onay bekliyor). Süreler tahmindir: konuşma süresi ~0,36 sn/kelime + duraklama; gerçek süre ses üretilince zaman çizelgesinde belirlenir. Ses dosyası olmayan sahneler için ses_dosyasi null. 'panel' alanı durum paneli verisidir (Kat 9'da koda gömülüydü, burada veriye taşındı).",
+  "sahneler": [
+    {
+      "id": 1,
+      "sure_sn": 3.0,
+      "anlatim": "Kapıyı aç, evlat...",
+      "konusmaci": "Telsiz",
+      "ses_etiket": "[muffled] [slow]",
+      "gorsel": "siyah ekran; telsiz ekranı (KANAL 16) yeşil yanıp söner; ardından kapı, ortasında yuvarlak delik",
+      "hareket": "sert kesme, telsize yavaş zoom-in",
+      "ses_efekt": "yağmur, rüzgâr, telsiz cızırtısı",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "00:41",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 1.8,
+      "bos_pay_sn": 1.2
+    },
+    {
+      "id": 2,
+      "sure_sn": 4.5,
+      "anlatim": "Telsizden seslendi. Kapının ardından da. Bu adada senden başka kimse yok.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[low]",
+      "gorsel": "kapı içeriden, yuvarlak delik; kapıya üç vuruş; arkada telsiz ışığı",
+      "hareket": "kamera kapıya yavaş yaklaşır",
+      "ses_efekt": "üç vuruş, yankı; dışarıda ayak sesi yok",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "00:41",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 4.0,
+      "bos_pay_sn": 0.5
+    },
+    {
+      "id": 3,
+      "sure_sn": 3.0,
+      "anlatim": "",
+      "konusmaci": "-",
+      "ses_yok": true,
+      "gorsel": "başlık kartı: KARA BURUN, BÖLÜM 1 · İLK GECE (sabit kapak şablonu)",
+      "hareket": "0,25 sn karartma ile giriş ve çıkış",
+      "ses_efekt": "tek derin vuruş",
+      "panel": null,
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 0,
+      "bos_pay_sn": 3.0
+    },
+    {
+      "id": 4,
+      "sure_sn": 9.0,
+      "anlatim": "Kara Burun Feneri. Kırk yıl boyunca bir bekçi hiç eksik olmadı. Zeki Usta üç hafta önce kayboldu. Şimdi sıra sende.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[calm]",
+      "gorsel": "akşamüstü, gri Karadeniz; balıkçı teknesi kayalık rıhtıma yanaşır; sisten çıkan kırmızı-beyaz fener kulesi; sen iskeleye çıkarsın",
+      "hareket": "pan sağa, fener kulesine yavaş zoom-in",
+      "ses_efekt": "tekne motoru, martı, ahşap iskele gıcırtısı",
+      "panel": {
+        "donem": "GÜN 1",
+        "saat": "17:40",
+        "isik": "KAPALI",
+        "tekne": 0,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 7.2,
+      "bos_pay_sn": 1.8
+    },
+    {
+      "id": 5,
+      "sure_sn": 4.0,
+      "anlatim": "Yedi gece, evlat. Yedi gece dayanırsan ben gelirim.",
+      "konusmaci": "Reis Rıza",
+      "ses_etiket": "[warm] [low]",
+      "gorsel": "Reis Rıza teknenin kıçında, yağmurluklu; elini sana uzatır, bagajı verir",
+      "hareket": "sabit plan, hafif sallanma",
+      "ses_efekt": "motor, dalga",
+      "panel": {
+        "donem": "GÜN 1",
+        "saat": "17:40",
+        "isik": "KAPALI",
+        "tekne": 0,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 3.2,
+      "bos_pay_sn": 0.8
+    },
+    {
+      "id": 6,
+      "sure_sn": 8.0,
+      "anlatim": "Dört kural. Beşincisi yırtık.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[hushed]",
+      "gorsel": "fener içi, ahşap masa, gaz lambası; duvarda BEKÇİ KURALLARI kâğıdı; kurallar sırayla belirir, 5. madde yırtık, yalnızca '5.' görünür",
+      "hareket": "kâğıda zoom-in; her kuralda kısa vurgu",
+      "ses_efekt": "kâğıt hışırtısı, saat tik-tak",
+      "kural_metni": [
+        "Fener gün batımında yanar, gün doğarken söner.",
+        "Gece yarısından sonra telsize cevap verme.",
+        "Gece kapı çalarsa delikten bak. Gölgesi yoksa açma.",
+        "Kuleye çıkarken say: altmış bir. Tutmazsa geri in.",
+        "(yırtık)"
+      ],
+      "panel": {
+        "donem": "GÜN 1",
+        "saat": "17:55",
+        "isik": "KAPALI",
+        "tekne": 0,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 1.8,
+      "bos_pay_sn": 6.2
+    },
+    {
+      "id": 7,
+      "sure_sn": 5.0,
+      "anlatim": "Beşinci kuralı yırtan, Zeki Usta'nın kendisi.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[hushed]",
+      "gorsel": "Zeki Usta'nın defteri; son sayfa: 'Kural 5'i yırtan benim. Pişman değilim.' ve üç hafta önceki tarih; yırtık kâğıdın kenarı sayfayla uyuşur (yakın plan)",
+      "hareket": "defterde sayfa çevirme, yakın plana geçiş",
+      "ses_efekt": "sayfa sesi, düşük gerilim pad'i başlar",
+      "panel": {
+        "donem": "GÜN 1",
+        "saat": "17:58",
+        "isik": "KAPALI",
+        "tekne": 0,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 2.4,
+      "bos_pay_sn": 2.6
+    },
+    {
+      "id": 8,
+      "sure_sn": 9.0,
+      "anlatim": "Altmış bir. Tuttu.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[calm]",
+      "gorsel": "gün batımı 18:12; kule merdiveni, her basamakta sayaç 59, 60, 61; lamba odası, mercek; tuşa basınca lamba yanar, ışık denizi tarar",
+      "hareket": "kamera basamakları takip eder, yukarı pan; lamba yanınca parlama",
+      "ses_efekt": "adım sesleri (basamak başına), lamba uğultusu, kalın 'tak'",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "18:12",
+        "isik": "AÇIK",
+        "tekne": 0,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 1.4,
+      "bos_pay_sn": 7.6
+    },
+    {
+      "id": 9,
+      "sure_sn": 4.0,
+      "anlatim": "",
+      "konusmaci": "-",
+      "ses_yok": true,
+      "gorsel": "zaman atlama: dalga, bulut, ay; panel saati 18:12'den 23:20'ye akar",
+      "hareket": "hızlandırılmış dalga, kısa karartma",
+      "ses_efekt": "rüzgâr yükselir, uzaktan martı",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "23:20",
+        "isik": "AÇIK",
+        "tekne": 0,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 0,
+      "bos_pay_sn": 4.0
+    },
+    {
+      "id": 10,
+      "sure_sn": 3.5,
+      "anlatim": "Kara Burun, ışığınızı gördük. Teşekkürler!",
+      "konusmaci": "Telsiz",
+      "ses_etiket": "[relieved] [radio static]",
+      "gorsel": "dalgalı karanlık, uzakta küçük balıkçı teknesinin feneri; fener ışığı tekneyi bulur, tekne rotasını düzeltir; telsiz yeşil yanar",
+      "hareket": "ışık hüzmesi sağdan sola tarar",
+      "ses_efekt": "telsiz bip, dalga, tekne düdüğü (uzaktan)",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "23:22",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 2.0,
+      "bos_pay_sn": 1.5
+    },
+    {
+      "id": 11,
+      "sure_sn": 3.5,
+      "anlatim": "Işık yandıkça tekneler yolunu bulur.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[calm]",
+      "gorsel": "kule dışarıdan, ışık hüzmesi denizde; tekne sayacı 1 yeşil vurgu",
+      "hareket": "yavaş zoom-out",
+      "ses_efekt": "dalga, hafif rüzgâr",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "23:25",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 2.0,
+      "bos_pay_sn": 1.5
+    },
+    {
+      "id": 12,
+      "sure_sn": 3.0,
+      "anlatim": "Gece yarısı.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[hushed]",
+      "gorsel": "saat 00:00 tam dönüş; rüzgâr kesilir, lamba bir an titrer; telsiz dalga formu kıpırdar",
+      "hareket": "sabit plan, ışık flaşı",
+      "ses_efekt": "ani sessizlik, kalp atışı",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "00:00",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 0.9,
+      "bos_pay_sn": 2.1
+    },
+    {
+      "id": 13,
+      "sure_sn": 5.5,
+      "anlatim": "Evlat... ben Zeki. Kapıdayım. Aç.",
+      "konusmaci": "Telsiz",
+      "ses_etiket": "[muffled] [slow] [whispering]",
+      "gorsel": "telsiz yakın plan; kırmızı banner: 'KURAL 2: Gece yarısından sonra telsize cevap verme.'",
+      "hareket": "telsize zoom-in, banner girişi",
+      "ses_efekt": "telsiz cızırtısı, kalp atışı",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "00:41",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 3.2,
+      "bos_pay_sn": 2.3
+    },
+    {
+      "id": 14,
+      "sure_sn": 8.0,
+      "anlatim": "Kural delikten bakmanı söylüyor. Ama delikten bakarken, karşıdakinden bakan da seni görür.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[low] [slow]",
+      "gorsel": "kapı içeriden; yuvarlak delikten dışarıdan loş sarı ışık sızar; üç vuruş; kamera deliğe yaklaşır, deliğin içi karanlık",
+      "hareket": "yavaş zoom-in deliğe",
+      "ses_efekt": "üç vuruş (yankılı), dışarıda ayak sesi yok",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "00:41",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 4.8,
+      "bos_pay_sn": 3.2
+    },
+    {
+      "id": 15,
+      "sure_sn": 9.0,
+      "anlatim": "Ne yaparsın?",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[low]",
+      "gorsel": "oylama kartı: '00:41 · KAPI ÇALIYOR', soru NE YAPARSIN?, düğmeler DELİKTEN BAK (yeşil) ve KAPIYI AÇ (kırmızı), teori sorusu 'Kapıdaki sence kim?', sarı buton '2. GECEYİ GÖRMEK İÇİN TAKİP ET'",
+      "hareket": "kart aşağıdan girer, düğmeler sırayla yanar",
+      "ses_efekt": "tek düşük vuruş, ardından sessizlik",
+      "panel": null,
+      "ses_dosyasi": null,
+      "tahmini_konusma_sn": 1.0,
+      "bos_pay_sn": 8.0
+    }
+  ]
+}

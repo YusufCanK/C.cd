@@ -1,6 +1,6 @@
 # KARA BURUN: Bölüm 1, "İlk Gece"
 
-Süre hedefi: ~100 sn. Dikey 1080×1920, 30 fps. Taslak 1 (onay bekliyor).
+Süre hedefi: ~85 sn (Kat 9 hedefi 80-90). Dikey 1080×1920, 30 fps. Senaryo onaylandı. Sahne süreleri ve sahne numaraları `sahneler.json` içindedir; aşağıdaki saat aralıkları ilk taslağa aittir, yerine o dosya geçerlidir.
 
 - **Hook (0–6 sn):** Telsizden ve kapının ardından aynı ses: "Kapıyı aç". Adada senden başka kimse yok.
 - **Dünya ve hedef (6–30 sn):** Zeki Usta kayboldu, yeni bekçi sensin, yedi gece dayanacaksın.
