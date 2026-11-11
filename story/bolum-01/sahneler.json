@@ -2,7 +2,7 @@
   "bolum": 1,
   "baslik": "İlk Gece",
   "hedef_sn": 85,
-  "not": "Taslak 1 (onay bekliyor). Süreler tahmindir: konuşma süresi ~0,36 sn/kelime + duraklama; gerçek süre ses üretilince zaman çizelgesinde belirlenir. Ses dosyası olmayan sahneler için ses_dosyasi null. 'panel' alanı durum paneli verisidir (Kat 9'da koda gömülüydü, burada veriye taşındı).",
+  "not": "Taslak 1. Ses dosyaları üretildi (eleven_v4, tek deneme). Süreler zaman çizelgesinde gerçek ses süresine göre hesaplanır.",
   "sahneler": [
     {
       "id": 1,
@@ -20,9 +20,11 @@
         "tekne": 1,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne01-telsiz.mp3",
       "tahmini_konusma_sn": 1.8,
-      "bos_pay_sn": 1.2
+      "bos_pay_sn": 1.2,
+      "ses_metin": "[muffled] [slow] [deep voice] Kapıyı aç, evlat...",
+      "ses_id": "DiSU3yhUyLPcszpJzfjS"
     },
     {
       "id": 2,
@@ -40,9 +42,11 @@
         "tekne": 1,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne02-anlatici.mp3",
       "tahmini_konusma_sn": 4.0,
-      "bos_pay_sn": 0.5
+      "bos_pay_sn": 0.5,
+      "ses_metin": "[low] Telsizden seslendi. Kapının ardından da. Bu adada senden başka kimse yok.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     },
     {
       "id": 3,
@@ -74,9 +78,11 @@
         "tekne": 0,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne04-anlatici.mp3",
       "tahmini_konusma_sn": 7.2,
-      "bos_pay_sn": 1.8
+      "bos_pay_sn": 1.8,
+      "ses_metin": "[calm] Kara Burun Feneri. Kırk yıl boyunca bir bekçi hiç eksik olmadı. Zeki Usta üç hafta önce kayboldu. Şimdi sıra sende.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     },
     {
       "id": 5,
@@ -94,9 +100,11 @@
         "tekne": 0,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne05-riza.mp3",
       "tahmini_konusma_sn": 3.2,
-      "bos_pay_sn": 0.8
+      "bos_pay_sn": 0.8,
+      "ses_metin": "[warmly] [elderly voice] [low] Yedi gece, evlat. Yedi gece dayanırsan ben gelirim.",
+      "ses_id": "MuOq11XzQTthwLhmGZ2V"
     },
     {
       "id": 6,
@@ -121,9 +129,11 @@
         "tekne": 0,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne06-anlatici.mp3",
       "tahmini_konusma_sn": 1.8,
-      "bos_pay_sn": 6.2
+      "bos_pay_sn": 6.2,
+      "ses_metin": "[softly] Dört kural. Beşincisi yırtık.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     },
     {
       "id": 7,
@@ -141,9 +151,11 @@
         "tekne": 0,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne07-anlatici.mp3",
       "tahmini_konusma_sn": 2.4,
-      "bos_pay_sn": 2.6
+      "bos_pay_sn": 2.6,
+      "ses_metin": "[softly] Beşinci kuralı yırtan, Zeki Usta'nın kendisi.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     },
     {
       "id": 8,
@@ -161,9 +173,11 @@
         "tekne": 0,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne08-anlatici.mp3",
       "tahmini_konusma_sn": 1.4,
-      "bos_pay_sn": 7.6
+      "bos_pay_sn": 7.6,
+      "ses_metin": "[calm] Altmış bir. Tuttu.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     },
     {
       "id": 9,
@@ -190,7 +204,7 @@
       "id": 10,
       "sure_sn": 3.5,
       "anlatim": "Kara Burun, ışığınızı gördük. Teşekkürler!",
-      "konusmaci": "Telsiz",
+      "konusmaci": "Balıkçı (telsiz)",
       "ses_etiket": "[relieved] [radio static]",
       "gorsel": "dalgalı karanlık, uzakta küçük balıkçı teknesinin feneri; fener ışığı tekneyi bulur, tekne rotasını düzeltir; telsiz yeşil yanar",
       "hareket": "ışık hüzmesi sağdan sola tarar",
@@ -202,9 +216,11 @@
         "tekne": 1,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne10-balikci.mp3",
       "tahmini_konusma_sn": 2.0,
-      "bos_pay_sn": 1.5
+      "bos_pay_sn": 1.5,
+      "ses_metin": "[relieved] Kara Burun, ışığınızı gördük. Teşekkürler!",
+      "ses_id": "514g2BbzaXZcAjtgXoOr"
     },
     {
       "id": 11,
@@ -222,9 +238,11 @@
         "tekne": 1,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne11-anlatici.mp3",
       "tahmini_konusma_sn": 2.0,
-      "bos_pay_sn": 1.5
+      "bos_pay_sn": 1.5,
+      "ses_metin": "[calm] Işık yandıkça tekneler yolunu bulur.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     },
     {
       "id": 12,
@@ -242,9 +260,11 @@
         "tekne": 1,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne12-anlatici.mp3",
       "tahmini_konusma_sn": 0.9,
-      "bos_pay_sn": 2.1
+      "bos_pay_sn": 2.1,
+      "ses_metin": "[softly] Gece yarısı.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     },
     {
       "id": 13,
@@ -262,9 +282,11 @@
         "tekne": 1,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne13-telsiz.mp3",
       "tahmini_konusma_sn": 3.2,
-      "bos_pay_sn": 2.3
+      "bos_pay_sn": 2.3,
+      "ses_metin": "[muffled] [slow] [whispers] Evlat... ben Zeki. Kapıdayım. Aç.",
+      "ses_id": "DiSU3yhUyLPcszpJzfjS"
     },
     {
       "id": 14,
@@ -282,9 +304,11 @@
         "tekne": 1,
         "hedef": "7 GECE DAYAN"
       },
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne14-anlatici.mp3",
       "tahmini_konusma_sn": 4.8,
-      "bos_pay_sn": 3.2
+      "bos_pay_sn": 3.2,
+      "ses_metin": "[low] [slowly] Kural delikten bakmanı söylüyor. Ama delikten bakarken, karşıdakinden bakan da seni görür.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     },
     {
       "id": 15,
@@ -296,9 +320,11 @@
       "hareket": "kart aşağıdan girer, düğmeler sırayla yanar",
       "ses_efekt": "tek düşük vuruş, ardından sessizlik",
       "panel": null,
-      "ses_dosyasi": null,
+      "ses_dosyasi": "ses/sahne15-anlatici.mp3",
       "tahmini_konusma_sn": 1.0,
-      "bos_pay_sn": 8.0
+      "bos_pay_sn": 8.0,
+      "ses_metin": "[low] Ne yaparsın?",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60"
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "model": "eleven_v4",
+  "not": "Kara Burun sesleri. Seslerin her biri ayrı karakter; Kat 9'da kullanılmayan sesler seçildi (Anlatıcı kullanıcı seçimi).",
+  "anlatici": {
+    "voice_id": "Xxps7kSjmTEY5ipN1f60",
+    "ad": "Tagi İlbeyli",
+    "secen": "kullanıcı"
+  },
+  "riza": {
+    "voice_id": "MuOq11XzQTthwLhmGZ2V",
+    "ad": "Nihat – The Timeless Voice (Karadeniz aksanı)",
+    "secen": "asistan (kullanıcı yetki verdi)",
+    "etiketler": "[warmly] [elderly voice] [low]"
+  },
+  "telsiz_zeki": {
+    "voice_id": "DiSU3yhUyLPcszpJzfjS",
+    "ad": "Hunca - Deep & Robotic",
+    "secen": "asistan (kullanıcı yetki verdi)",
+    "etiketler": "[muffled] [slow] [deep voice]/[whispers]",
+    "not": "Zeki Usta'nın taklidi: S1 ve S13. Gölgesiz taklit eder."
+  },
+  "balikci_telsiz": {
+    "voice_id": "514g2BbzaXZcAjtgXoOr",
+    "ad": "Özenç",
+    "secen": "asistan (kullanıcı yetki verdi)",
+    "etiketler": "[relieved]"
+  }
+}

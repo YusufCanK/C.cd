@@ -48,8 +48,22 @@ window.__renderAt=function(T){
  });
 };
 // canlı oynatma (önizleme)
-let start=performance.now(),playing=true;
-window.BOLUM.play=()=>{start=performance.now();playing=true};
-(function loop(){if(playing&&!window.__manual){const T=((performance.now()-start)/1000)%D.toplam;window.__renderAt(T)}requestAnimationFrame(loop)})();
+/* önizleme sesi: yalnızca anlatım (konuşma) çalar; efekt ve müzik karışımı render aşamasında eklenir */
+const SES={},sd=document.getElementById('sesdata');
+if(sd){const m=JSON.parse(sd.textContent);Object.keys(m).forEach(id=>{SES[id]=new Audio(m[id]);SES[id].preload='auto'})}
+const sesDur=()=>Object.keys(SES).forEach(id=>{const a=SES[id];if(!a.paused){a.pause()}a.currentTime=0});
+BOLUM.sesAcik=false;
+BOLUM.sesKilit=()=>{BOLUM.sesAcik=true;Object.keys(SES).forEach(id=>{const a=SES[id];a.muted=true;const p=a.play();if(p&&p.then)p.then(()=>{a.pause();a.currentTime=0;a.muted=false}).catch(()=>{a.muted=false})})};
+BOLUM.sesKapat=()=>{BOLUM.sesAcik=false;sesDur()};
+let start=performance.now(),playing=true,prevT=0;
+window.BOLUM.play=()=>{start=performance.now();playing=true;prevT=0};
+(function loop(){
+ if(playing&&!window.__manual){
+  const T=((performance.now()-start)/1000)%D.toplam;
+  if(T<prevT)sesDur();
+  if(BOLUM.sesAcik)SC.forEach(sc=>{if(sc.ses&&SES[sc.id]){const st=sc.baslangic+sc.ses.baslangic;if(prevT<st&&T>=st){const a=SES[sc.id];a.currentTime=0;a.play().catch(()=>{})}}});
+  prevT=T;window.__renderAt(T)
+ }else if(window.__manual){sesDur()}
+ requestAnimationFrame(loop)})();
 window.__renderAt(0);
 })();
