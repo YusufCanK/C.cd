@@ -18,7 +18,11 @@ data = (B / 'zaman-cizelgesi.json').read_text()
 if len(sys.argv) > 3 and sys.argv[3] == '--onizleme':
     import base64
     D = json.loads(data); mx = int(D['toplam'] * 10)
-    ses = {str(sc['id']): 'data:audio/mpeg;base64,' + base64.b64encode((B / sc['ses']['dosya']).read_bytes()).decode() for sc in D['sahneler'] if 'ses' in sc}
+    kar = B / 'karisim.mp3'   # tam karışım (konuşma+efekt+müzik) varsa tek parça olarak çalınır, yoksa sahne başına konuşmalar
+    if kar.exists():
+        ses = {'karisim': 'data:audio/mpeg;base64,' + base64.b64encode(kar.read_bytes()).decode()}
+    else:
+        ses = {str(sc['id']): 'data:audio/mpeg;base64,' + base64.b64encode((B / sc['ses']['dosya']).read_bytes()).decode() for sc in D['sahneler'] if 'ses' in sc}
     t = t.replace('<!--SESDATA-->', '<script id="sesdata" type="application/json">' + json.dumps(ses) + '</script>' if ses else '')
     t = t.replace('<!--ONIZLEME-->', ctl_html.replace('__MAX__', str(mx))).replace('<!--ONIZLEME_JS-->', ctl_js)
 t = t.replace('<!--SESDATA-->', '')

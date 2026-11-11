@@ -3,9 +3,10 @@
 Kullanım:
   python3 sablon/bolum.py yeni 02       -> story/bolum-02/ iskeleti (senaryo, sahneler.json, sahne-cizim.js)
   python3 sablon/bolum.py kontrol 01    -> dosya, sahne çizimi ve ses kontrolü (render yok)
-  python3 sablon/bolum.py onizle 01     -> zaman çizelgesi + derlenmiş sessiz önizleme (0 kredi)
+  python3 sablon/bolum.py onizle 01     -> zaman çizelgesi + derlenmiş önizleme (0 kredi)
+  python3 sablon/bolum.py karisim 01    -> konuşma + efekt + müzik karışımı karisim.mp3 (0 kredi)
 Sıra (her ok bir onay noktası): senaryo -> sahneler.json -> sahne çizimi/önizleme -> ses (kredi tahmini) -> render -> kapak/yayın.
-Ses ve render adımları bu sürümde henüz yok: ses onaylanınca eklenecek."""
+Render adımı bu sürümde henüz yok: kullanıcı onayından sonra eklenecek (ses üretimi ElevenLabs araçlarıyla yapılır, kredi tahmini + onay şart)."""
 import sys, json, pathlib, subprocess, re
 
 K = pathlib.Path(__file__).resolve().parent.parent
@@ -57,6 +58,14 @@ def kontrol(n):
         zz = json.load(open(z)); print('süre', zz['toplam'], 'sn', '(tahmini)' if zz.get('tahmini') else '', '(hedef 80-90)')
     print('çizimler tamam' if ok else 'eksik var')
 
+def karisim(n):
+    """konuşma + ortam + efekt + müzik karışımı (ses-plani.json); -14 LUFS'a normalize edilir. Kredi harcamaz."""
+    B = yol(n); ham = f'/tmp/kb_ham{n}.wav'
+    sh('python3', 'sablon/ses_mix.py', B, ham)
+    sh('ffmpeg', '-v', 'error', '-y', '-i', ham, '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', 44100, B / 'karisim.wav')
+    sh('ffmpeg', '-v', 'error', '-y', '-i', B / 'karisim.wav', '-b:a', '128k', B / 'karisim.mp3')
+    print('karışım hazır:', B / 'karisim.mp3')
+
 def onizle(n):
     B = yol(n)
     sh('python3', 'sablon/bolum_veri.py', B)
@@ -66,7 +75,7 @@ def onizle(n):
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         sys.exit(__doc__)
-    cmd = {'yeni': yeni, 'kontrol': kontrol, 'onizle': onizle}.get(sys.argv[1])
+    cmd = {'yeni': yeni, 'kontrol': kontrol, 'onizle': onizle, 'karisim': karisim}.get(sys.argv[1])
     if cmd is None:
-        sys.exit('bilinmeyen komut (yeni|kontrol|onizle). ses ve render henüz eklenmedi.\n' + __doc__)
+        sys.exit('bilinmeyen komut (yeni|kontrol|onizle|karisim). ses ve render henüz eklenmedi.\n' + __doc__)
     cmd(sys.argv[2])
