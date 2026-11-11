@@ -134,6 +134,18 @@ root.Rigs={
  bekci:(p,o)=>{o=o||{};const g=make(p,BEKCI,o.x,o.y,o.s,'karakter bekci '+(o.anim||''));g.setAttribute('data-mood',o.mood||'calm');return g},
  reis:(p,o)=>{o=o||{};const g=make(p,REIS,o.x,o.y,o.s,'karakter reis '+(o.anim||''));g.setAttribute('data-mood',o.mood||'calm');return g},
  golgesiz:(p,o)=>{o=o||{};const g=make(p,GOLGESIZ,o.x,o.y,o.s,'karakter golgesiz '+(o.anim||''));g.setAttribute('data-mood',o.mood||'calm');return g},
- mouth:(g,v)=>{g.querySelectorAll('.m').forEach(e=>e.classList.toggle('on',+e.dataset.v===v))}
+ mouth:(g,v)=>{g.querySelectorAll('.m').forEach(e=>e.classList.toggle('on',+e.dataset.v===v))},
+ /* poz: Rigs.poz(rig,{bas:derece,bakis:px,kolL:derece,kolR:derece,mood,walk})
+    bas = başın eğilmesi, bakis = yüz özelliklerinin yana kayması (başın dönmesi hissi),
+    kolL/kolR = kolun omuzdan kalkması (kolR negatif: dışa/yukarı), mood = calm|worried|scared, walk = yürüme döngüsü */
+ poz:(g,o)=>{o=o||{};
+  const W=(sel)=>{const el=g.querySelector(sel);if(!el)return null;const p=el.parentNode;if(p&&p.classList&&p.classList.contains('pz'))return p;const w=document.createElementNS(ns,'g');w.setAttribute('class','pz');p.insertBefore(w,el);w.appendChild(el);return w};
+  const H=W('.k-head'),AL=W('.k-armL'),AR=W('.k-armR'),F=g.querySelector('.k-feat');
+  if(H)H.setAttribute('transform',`rotate(${o.bas||0} 0 190)`);
+  if(AL)AL.setAttribute('transform',`rotate(${o.kolL||0} -230 260)`);
+  if(AR)AR.setAttribute('transform',`rotate(${o.kolR||0} 230 260)`);
+  if(F)F.setAttribute('transform',`translate(${o.bakis||0} 0)`);
+  if(o.mood)g.setAttribute('data-mood',o.mood);
+  if(o.walk!==undefined)g.classList.toggle('walk',!!o.walk)}
 };
 })(typeof self!=='undefined'?self:this);

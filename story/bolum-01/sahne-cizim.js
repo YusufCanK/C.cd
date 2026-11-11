@@ -4,6 +4,8 @@
 const S=(window.BOLUM=window.BOLUM||{sahne:{}}).sahne,$=id=>document.getElementById(id),P=Cz.P;
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),fade=(id,lt,t0,d)=>{const e=$(id);if(e)e.setAttribute('opacity',clamp((lt-t0)/(d||.35),0,1))};
 const ease=x=>x<0?0:x>1?1:x*x*(3-2*x);
+/* anahtar kare ara değeri: K=[[t,{alan:değer}],…]; sayılar yumuşak geçer, metin/bool alanlar sonraki karede değişir */
+const kf=(K,t)=>{if(t<=K[0][0])return Object.assign({},K[0][1]);for(let i=1;i<K.length;i++)if(t<=K[i][0]){const[t0,a]=K[i-1],[t1,b]=K[i],u=ease((t-t0)/(t1-t0)),o={};Object.keys(b).forEach(k=>{const av=a[k]!==undefined?a[k]:b[k];o[k]=typeof b[k]==='number'?av+(b[k]-av)*u:(u>=1?b[k]:av)});return o}return Object.assign({},K[K.length-1][1])};
 const stars=(n,seed,ymax)=>{const r=Cz.rng(seed);let s='<g fill="#dfe8f2">';for(let i=0;i<n;i++)s+=`<circle cx="${(r()*1080).toFixed(0)}" cy="${(r()*ymax).toFixed(0)}" r="${(1.5+r()*2.5).toFixed(1)}" opacity="${(.4+r()*.5).toFixed(2)}"/>`;return s+'</g>'};
 const knock=(lt,ts,id,cx,cy,glow)=>{let dx=0,gl=.12;ts.forEach(t=>{const d=lt-t;if(d>0&&d<.3){dx+=Math.sin(d*70)*9*(1-d/.3);gl=Math.max(gl,.6*(1-d/.3))}});const k=$(id);if(k)k.setAttribute('transform',`translate(${cx+dx} ${cy})`);const e=$(glow);if(e)e.setAttribute('opacity',gl)};
 
@@ -25,21 +27,33 @@ S[3]={
   Cz.txt(540,1330,'BÖLÜM 1 · İLK GECE',{size:66,fill:'#fff',anchor:'middle',extra:'stroke="#000" stroke-width="12" paint-order="stroke fill" letter-spacing="3"'})},
  hook(lt,sc,g){g.style.opacity=Math.min(1,lt/.25)*Math.min(1,(sc.sure-lt)/.25)}};
 
-/* S4: ada ve iskele, Rıza teknede, bekçi iskelede */
+/* S4: ada ve iskele; Rıza tekneden iskeleye çıkar, bekçiye bagajı verir */
+let rigR4,rigB4;
 S[4]={zoom:[1,1.1,560,1050],
  ciz(g){
   g.innerHTML=Cz.duz('#56667a')+`<rect y="560" width="1080" height="420" fill="#6b7b8c" opacity=".55"/><rect y="760" width="1080" height="220" fill="#7d8c9b" opacity=".5"/>`+Cz.sea(980,'#27394a','#4e6b82')+Cz.tower(560,1180,1.0,false);
-  Rigs.reis(g,{x:260,y:1052,s:.4});
   g.insertAdjacentHTML('beforeend',`<path d="M40 1540 L470 1540 L420 1670 L100 1670 Z" fill="#8a3a2a" stroke="#111" stroke-width="10" stroke-linejoin="round"/><path d="M60 1580 H452" stroke="#efe6cc" stroke-width="12"/>
    <path d="M470 1480 L1080 1480 L1080 1560 L390 1560 Z" fill="#9a7a50" stroke="#111" stroke-width="10" stroke-linejoin="round"/><path d="M390 1560 L1080 1560 L1080 1920 L300 1920 Z" fill="#5a4029" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
    <path d="M560 1480 L500 1560 M700 1480 L650 1560 M840 1480 L800 1560 M980 1480 L950 1560" stroke="#6b4a2c" stroke-width="7"/><path d="M450 1700 H1080 M400 1820 H1080" stroke="#3a2a1b" stroke-width="7"/>`);
-  Rigs.bekci(g,{x:800,y:1012,s:.4});
+  rigR4=Rigs.reis(g,{x:0,y:0,s:.4});rigB4=Rigs.bekci(g,{x:0,y:0,s:.4});
+  g.insertAdjacentHTML('beforeend','<g id="bag4"><rect x="-44" y="-32" width="88" height="64" rx="16" fill="#7a5230" stroke="#111" stroke-width="7"/><path d="M-26 -32 Q0 -62 26 -32" fill="none" stroke="#111" stroke-width="7"/><path d="M-44 -4 H44" stroke="#4a3320" stroke-width="6"/></g>');
+ },
+ hook(lt){
+  /* Rıza: 0-3 sn teknede, 3-5,4 sn iskeleye yürür, sonra bekçiye bagajı verir */
+  const u=ease((lt-3)/2.4),x=260+300*u,y=1042-20*ease((x-400)/90);
+  rigR4.parentNode.setAttribute('transform',`translate(${x} ${y}) scale(.4)`);
+  Rigs.poz(rigR4,{walk:lt>3&&lt<5.4,bas:lt>5.4?-4:0});
+  const r=ease((lt-5.5)/.6);
+  rigB4.parentNode.setAttribute('transform','translate(800 1012) scale(.4)');
+  Rigs.poz(rigB4,{kolL:38*r,bas:lt>5.5?-3:0,bakis:lt>5.5?-10:0});
+  const bx0=x-110,by0=y+350,k=ease((lt-5.6)/.9);
+  $('bag4').setAttribute('transform',`translate(${bx0+(697-bx0)*k} ${by0+(1362-by0)*k-70*Math.sin(Math.PI*k)}) scale(.8)`)
  }};
 
 /* S5: Reis Rıza konuşuyor */
 let rigR;
 S[5]={zoom:[1,1.06,540,700],
- ciz(g){g.innerHTML=Cz.duz('#5a6b7c')+`<rect y="1000" width="1080" height="920" fill="#27394a"/><rect y="1180" width="1080" height="60" fill="#8a3a2a" stroke="#111" stroke-width="10"/>`;rigR=Rigs.reis(g,{x:540,y:640,s:1})},
+ ciz(g){g.innerHTML=Cz.duz('#5a6b7c')+`<rect y="1000" width="1080" height="920" fill="#27394a"/><g stroke="#111" stroke-width="10"><rect x="130" y="1060" width="46" height="280" fill="#6b4a2c"/><rect x="904" y="1060" width="46" height="280" fill="#6b4a2c"/></g><path d="M153 1110 Q540 1250 927 1110" fill="none" stroke="#d9c9a0" stroke-width="12"/>`;rigR=Rigs.reis(g,{x:540,y:640,s:1})},
  agiz(v){Rigs.mouth(rigR,v)}};
 
 /* S6: kural kâğıdı */
@@ -115,11 +129,17 @@ S[13]={zoom:[1,1.1,540,700],
   <g id="bn13" opacity="0"><rect x="70" y="1060" width="940" height="200" rx="22" fill="#7a1d1d" stroke="#efe6cc" stroke-width="6"/>`+Cz.txt(540,1136,'KURAL 2: Gece yarısından sonra',{size:46,fill:'#fff',anchor:'middle',cls:'hand',extra:'font-weight="700"'})+Cz.txt(540,1204,'telsize cevap verme.',{size:46,fill:'#fff',anchor:'middle',cls:'hand',extra:'font-weight="700"'})+`</g>`+Cz.rain(18,21)},
  hook(lt){$('r13w').setAttribute('d',Cz.dalga(60,340,-112,46,lt+3));const e=$('bn13');e.setAttribute('opacity',clamp((lt-2.4)/.3,0,1));e.setAttribute('transform',`translate(0 ${(1-ease((lt-2.4)/.4))*60})`)}};
 
-/* S14: kapı ve delik, kamera deliğe yaklaşır */
+/* S14: kapı ve delik; bekçi kapıya döner, yaklaşır, feneri kaldırır; kamera deliğe girer; deliğin içinde Gölgesiz yüzü */
+let rigB14;
+const bz=o=>Object.assign({x:230,bas:0,bakis:0,kolL:0,kolR:0,mood:'worried',walk:false},o);
+const B14=[[0,bz({})],[1.2,bz({})],[1.5,bz({bas:7,bakis:28,kolL:14,mood:'scared'})],[2.6,bz({bas:7,bakis:28,mood:'scared'})],[2.8,bz({bas:7,bakis:28,mood:'scared',walk:true})],[4.2,bz({x:400,bas:7,bakis:28,mood:'scared',walk:true})],[4.3,bz({x:400,bas:7,bakis:28,mood:'scared'})],[5.2,bz({x:400,bas:9,bakis:34,kolR:-55,mood:'scared'})],[8,bz({x:400,bas:9,bakis:34,kolR:-55,mood:'scared'})]];
 S[14]={zoom:[1,2.7,540,602],
  ciz(g){g.innerHTML=Cz.brick('#16262b','#0d181b')+`<rect y="1420" width="1080" height="500" fill="#2a1d12"/><path d="M0 1420H1080" stroke="#111" stroke-width="10"/>`+Cz.kapi(290,300,500,1120,'k14')+`<circle id="dl14" cx="540" cy="602" r="76" fill="#e8c76a" opacity=".12"/>
-  <g id="ey14" opacity="0"><circle cx="512" cy="604" r="15" fill="#f3f6f4"/><circle cx="568" cy="604" r="15" fill="#f3f6f4"/><circle cx="512" cy="604" r="4" fill="#111"/><circle cx="568" cy="604" r="4" fill="#111"/></g>`},
- hook(lt){knock(lt,[1.4,2.6,3.8],'k14',290,300,'dl14');fade('ey14',lt,6.6,.6)}};
+  <g id="ey14" opacity="0"><circle cx="512" cy="604" r="15" fill="#f3f6f4"/><circle cx="568" cy="604" r="15" fill="#f3f6f4"/><circle cx="512" cy="604" r="4" fill="#111"/><circle cx="568" cy="604" r="4" fill="#111"/></g><clipPath id="cp14"><circle cx="540" cy="602" r="80"/></clipPath><g id="fc14" clip-path="url(#cp14)" opacity="0"><rect x="450" y="512" width="180" height="180" fill="#0a0f14"/></g>`;
+  Rigs.golgesiz(g.querySelector('#fc14'),{x:540,y:610,s:.36});rigB14=Rigs.bekci(g,{x:230,y:862,s:.55,mood:'worried'})},
+ hook(lt){knock(lt,[1.4,2.6,3.8],'k14',290,300,'dl14');
+  const p=kf(B14,lt);rigB14.parentNode.setAttribute('transform',`translate(${p.x} 862) scale(.55)`);Rigs.poz(rigB14,p);
+  const face=lt>=7.0&&lt<7.6;$('fc14').setAttribute('opacity',face?1:0);$('ey14').setAttribute('opacity',face?0:clamp((lt-6.0)/.5,0,1)*.9)}};
 
 /* S15: oylama kartı */
 S[15]={

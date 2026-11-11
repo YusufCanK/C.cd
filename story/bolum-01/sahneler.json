@@ -64,8 +64,8 @@
       "anlatim": "Kara Burun Feneri. Kırk yıl boyunca bir bekçi hiç eksik olmadı. Zeki Usta üç hafta önce kayboldu. Şimdi sıra sende.",
       "konusmaci": "Anlatıcı",
       "ses_etiket": "[calm]",
-      "gorsel": "akşamüstü, gri Karadeniz; balıkçı teknesi kayalık rıhtıma yanaşır; sisten çıkan kırmızı-beyaz fener kulesi; sen iskeleye çıkarsın",
-      "hareket": "pan sağa, fener kulesine yavaş zoom-in",
+      "gorsel": "akşamüstü, gri Karadeniz; fener kulesi sisten çıkar; Reis Rıza tekneden iskeleye yürür, bekçiye bagajı verir (bekçi kolunu uzatıp alır)",
+      "hareket": "Rıza yürüme döngüsü, bagaj yay çizerek bekçiye geçer; kamera fener kulesine yavaş zoom-in",
       "ses_efekt": "tekne motoru, martı, ahşap iskele gıcırtısı",
       "panel": {
         "donem": "GÜN 1",
@@ -272,8 +272,8 @@
       "anlatim": "Kural delikten bakmanı söylüyor. Ama delikten bakarken, karşıdakinden bakan da seni görür.",
       "konusmaci": "Anlatıcı",
       "ses_etiket": "[low] [slow]",
-      "gorsel": "kapı içeriden; yuvarlak delikten dışarıdan loş sarı ışık sızar; üç vuruş; kamera deliğe yaklaşır, deliğin içi karanlık",
-      "hareket": "yavaş zoom-in deliğe",
+      "gorsel": "kapı içeriden; bekçi korkuyla başını kapıya çevirir, yaklaşır, feneri kaldırır; yuvarlak delikten loş sarı ışık sızar; üç vuruş; kamera deliğe yaklaşır; deliğin içinde önce iki beyaz göz, sonra kısa bir an Gölgesiz'in yüzü",
+      "hareket": "bekçi pozları: baş çevirme, yürüme, kol kaldırma; kamera deliğe 2,7x zoom",
       "ses_efekt": "üç vuruş (yankılı), dışarıda ayak sesi yok",
       "panel": {
         "donem": "GECE 1/7",
