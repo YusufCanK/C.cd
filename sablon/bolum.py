@@ -5,9 +5,10 @@ Kullanım:
   python3 sablon/bolum.py kontrol 01    -> dosya, sahne çizimi ve ses kontrolü (render yok)
   python3 sablon/bolum.py onizle 01     -> zaman çizelgesi + derlenmiş önizleme (0 kredi)
   python3 sablon/bolum.py karisim 01    -> konuşma + efekt + müzik karışımı karisim.mp3 (0 kredi)
+  python3 sablon/bolum.py render 01 --onayli -> kare + ses + mp4 (cikti.mp4; 0 kredi, birkaç dakika)
 Sıra (her ok bir onay noktası): senaryo -> sahneler.json -> sahne çizimi/önizleme -> ses (kredi tahmini) -> render -> kapak/yayın.
-Render adımı bu sürümde henüz yok: kullanıcı onayından sonra eklenecek (ses üretimi ElevenLabs araçlarıyla yapılır, kredi tahmini + onay şart)."""
-import sys, json, pathlib, subprocess, re
+Ses üretimi ElevenLabs araçlarıyla yapılır (kredi tahmini şart). Render --onayli ile çalışır."""
+import sys, json, pathlib, subprocess, re, shutil, tempfile
 
 K = pathlib.Path(__file__).resolve().parent.parent
 
@@ -66,6 +67,22 @@ def karisim(n):
     sh('ffmpeg', '-v', 'error', '-y', '-i', B / 'karisim.wav', '-b:a', '128k', B / 'karisim.mp3')
     print('karışım hazır:', B / 'karisim.mp3')
 
+def render(n):
+    """kare + ses + mp4. Kullanıcı onay kuralı: ses ve görüntü onaylandığında kullanıcı soru sormadan render'a izin verdi
+    (--onayli bayrağı bu izni belirtir). Sessiz video render edilmez: karışım her render'da yeniden üretilir."""
+    if '--onayli' not in sys.argv:
+        sys.exit('Render için kullanıcı onayı gerekir: --onayli bayrağı yalnızca onaydan sonra.')
+    B = yol(n)
+    sh('python3', 'sablon/bolum_veri.py', B)
+    sh('python3', 'sablon/bolum_derle.py', B, f'prototip/bolum{n}.render.html')   # kontrol çubuğu ve ses gömülü değil
+    karisim(n)
+    T = json.load(open(B / 'zaman-cizelgesi.json'))['toplam']
+    kd = tempfile.mkdtemp(prefix=f'kb_kareler{n}_')
+    sh('node', 'sablon/render_kareler.js', f'prototip/bolum{n}.render.html', kd, T, 30, 4)
+    sh('ffmpeg', '-v', 'error', '-y', '-framerate', 30, '-i', f'{kd}/%05d.jpg', '-i', B / 'karisim.wav', '-c:v', 'libx264', '-crf', 21, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', B / 'cikti.mp4')
+    shutil.rmtree(kd, ignore_errors=True)
+    print('hazır:', B / 'cikti.mp4')
+
 def onizle(n):
     B = yol(n)
     sh('python3', 'sablon/bolum_veri.py', B)
@@ -75,7 +92,7 @@ def onizle(n):
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         sys.exit(__doc__)
-    cmd = {'yeni': yeni, 'kontrol': kontrol, 'onizle': onizle, 'karisim': karisim}.get(sys.argv[1])
+    cmd = {'yeni': yeni, 'kontrol': kontrol, 'onizle': onizle, 'karisim': karisim, 'render': render}.get(sys.argv[1])
     if cmd is None:
-        sys.exit('bilinmeyen komut (yeni|kontrol|onizle|karisim). ses ve render henüz eklenmedi.\n' + __doc__)
+        sys.exit('bilinmeyen komut (yeni|kontrol|onizle|karisim|render).\n' + __doc__)
     cmd(sys.argv[2])
