@@ -79,7 +79,7 @@ def render(n):
     T = json.load(open(B / 'zaman-cizelgesi.json'))['toplam']
     kd = tempfile.mkdtemp(prefix=f'kb_kareler{n}_')
     sh('node', 'sablon/render_kareler.js', f'prototip/bolum{n}.render.html', kd, T, 30, 4)
-    sh('ffmpeg', '-v', 'error', '-y', '-framerate', 30, '-i', f'{kd}/%05d.jpg', '-i', B / 'karisim.wav', '-c:v', 'libx264', '-crf', 21, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', B / 'cikti.mp4')
+    sh('ffmpeg', '-v', 'error', '-y', '-framerate', 30, '-i', f'{kd}/%05d.jpg', '-i', B / 'karisim.wav', '-c:v', 'libx264', '-crf', 21, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', '-shortest', B / 'cikti.mp4')
     shutil.rmtree(kd, ignore_errors=True)
     print('hazır:', B / 'cikti.mp4')
 
