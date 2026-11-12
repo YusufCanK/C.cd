@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><title>Kara Burun kanal görselleri</title>
+<style>
+html,body{margin:0;background:#222}
+svg{display:block;margin:0}
+text{font-family:Impact,'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900}
+.wv0{animation:none}
+</style></head>
+<body>
+<!-- profil: 1080x1080, yuvarlak kırpmada (çap ~900) güvenli: tüm önemli çizim ortadaki daire içinde -->
+<svg id="profil" width="1080" height="1080" viewBox="0 0 1080 1080"></svg>
+<!-- YouTube kapağı: 2048x1152; her cihazda görünen güvenli alan ortadaki 1235x338 -->
+<svg id="banner" width="2048" height="1152" viewBox="0 0 2048 1152"></svg>
+<script src="../sablon/cizim.js"></script>
+<script>
+const P=Cz.P,ns='http://www.w3.org/2000/svg';
+function yildiz(n,seed,w,h,ymax){const r=Cz.rng(seed);let s='<g fill="#dfe8f2">';for(let i=0;i<n;i++)s+=`<circle cx="${(r()*w).toFixed(0)}" cy="${(r()*ymax).toFixed(0)}" r="${(2+r()*3.5).toFixed(1)}" opacity="${(.4+r()*.5).toFixed(2)}"/>`;return s+'</g>'}
+/* ---------- profil ---------- */
+(function(){
+ const l=Cz.lamba(540,860,.92);
+ document.getElementById('profil').innerHTML=
+  `<rect width="1080" height="1080" fill="#0b1424"/>`+yildiz(70,4,1080,1080,620)+Cz.moon(800,230,58)+
+  `<g opacity=".95">${Cz.ray(l[0],l[1],0,640,130,.22)}${Cz.ray(l[0],l[1],180,640,130,.22)}</g>`+
+  `<circle cx="${l[0]}" cy="${l[1]}" r="190" fill="#f6d56a" opacity=".16"/><circle cx="${l[0]}" cy="${l[1]}" r="110" fill="#f6d56a" opacity=".18"/>`+
+  `<rect y="840" width="1080" height="240" fill="#10212f"/>`+
+  [0,1,2,3].map(i=>`<path d="M-120 ${880+i*52} q60 -22 120 0${' t120 0'.repeat(10)}" fill="none" stroke="#2c4a60" stroke-width="7" stroke-linecap="round" opacity="${.55-i*.1}"/>`).join('')+
+  Cz.tower(540,870,.92,true)+Cz.towerDetay(540,870,.92)+Cz.kopuk(540,872,420)+
+  Cz.martiU(300,330,1.3)+Cz.martiU(420,260,.9)+Cz.martiU(760,400,1.1);
+})();
+/* ---------- YouTube kapağı ---------- */
+(function(){
+ const l=Cz.lamba(1700,980,.95);
+ document.getElementById('banner').innerHTML=
+  `<rect width="2048" height="1152" fill="#0b1424"/>`+yildiz(120,8,2048,1152,700)+Cz.moon(300,230,70)+
+  `<path d="M${l[0]} ${l[1]} L-100 ${l[1]-210} L-100 ${l[1]+210} Z" fill="#f6d56a" opacity=".16"/>`+
+  `<circle cx="${l[0]}" cy="${l[1]}" r="200" fill="#f6d56a" opacity=".16"/>`+
+  `<rect y="950" width="2048" height="202" fill="#10212f"/>`+
+  [0,1,2].map(i=>`<path d="M-120 ${990+i*50} q60 -22 120 0${' t120 0'.repeat(19)}" fill="none" stroke="#2c4a60" stroke-width="7" stroke-linecap="round" opacity="${.55-i*.12}"/>`).join('')+
+  Cz.tower(1700,980,.95,true)+Cz.towerDetay(1700,980,.95)+Cz.kopuk(1700,982,440)+
+  Cz.martiU(520,360,1.3)+Cz.martiU(1250,300,1)+Cz.martiU(1500,230,.9)+
+  Cz.txt(1024,600,'KARA BURUN',{size:200,fill:P.lamp,anchor:'middle',extra:'stroke="#000" stroke-width="18" stroke-linejoin="round" paint-order="stroke fill" textLength="860" lengthAdjust="spacingAndGlyphs"'})+
+  Cz.txt(1024,690,'7 GECE · DÖRT KURAL · SONRAKİ BÖLÜMÜ SEN SEÇERSİN',{size:44,fill:'#fff',anchor:'middle',extra:'stroke="#000" stroke-width="10" paint-order="stroke fill" textLength="1100" lengthAdjust="spacingAndGlyphs"'});
+})();
+</script></body></html>
