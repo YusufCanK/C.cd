@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><title>Kara Burun story görselleri</title>
+<style>
+html,body{margin:0;background:#222}
+svg{display:block}
+text{font-family:Impact,'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900}
+.hand{font-family:'Segoe Script','Bradley Hand','Comic Sans MS','Noteworthy',cursive;font-weight:400}
+</style></head>
+<body>
+<!-- Story: 1080x1920. Arayüz payı: üst ~250 px ve alt ~340 px boş bırakılır (yazı y 250-1580 arasında). -->
+<svg id="st1" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+<svg id="st2" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+<svg id="st3" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+<script src="../sablon/cizim.js"></script>
+<script>
+const P=Cz.P;
+const T=(x,y,s,o)=>Cz.txt(x,y,s,o);
+const kont='stroke="#000" stroke-width="14" stroke-linejoin="round" paint-order="stroke fill"';
+function yildiz(n,seed,ymax){const r=Cz.rng(seed);let s='<g fill="#dfe8f2">';for(let i=0;i<n;i++)s+=`<circle cx="${(r()*1080).toFixed(0)}" cy="${(r()*ymax).toFixed(0)}" r="${(2+r()*3).toFixed(1)}" opacity="${(.4+r()*.5).toFixed(2)}"/>`;return s+'</g>'}
+
+/* ---- ST1: bölüm duyurusu ---- */
+(function(){
+ const RULES=[["Fener gün batımında yanar,","gün doğarken söner."],["Gece yarısından sonra","telsize cevap verme."],["Gece kapı çalarsa delikten bak.","Gölgesi yoksa açma."],["Kuleye çıkarken say: altmış bir.","Tutmazsa geri in."]];
+ let s=`<rect width="1080" height="1920" fill="#0b1424"/>`+yildiz(60,12,900)+Cz.moon(975,310,46)+Cz.sea(1500,'#10212f','#2c4a60');
+ s+=T(540,360,'YENİ BÖLÜM YAYINDA',{size:56,fill:P.orange,anchor:'middle',extra:kont+' letter-spacing="3"'})+
+    T(540,500,'KARA BURUN',{size:170,fill:P.lamp,anchor:'middle',extra:kont+' textLength="860" lengthAdjust="spacingAndGlyphs"'})+
+    T(540,590,'BÖLÜM 1 · İLK GECE',{size:66,fill:'#fff',anchor:'middle',extra:kont+' letter-spacing="2"'});
+ s+=`<g transform="rotate(-1.5 540 1000)"><path d="M170 690 H910 V1370 H170 Z" fill="#efe6cc" stroke="#111" stroke-width="10" stroke-linejoin="round"/>`+
+    T(540,770,'BEKÇİ KURALLARI',{size:52,fill:'#5a2a1a',anchor:'middle'})+`<path d="M240 790 H840" stroke="#5a2a1a" stroke-width="5"/>`;
+ RULES.forEach((r,i)=>{const y=870+i*120;s+=T(215,y,(i+1)+'.',{size:50,fill:P.red,cls:'hand',extra:'font-weight="700"'})+T(280,y,r[0],{size:34,fill:'#2a1a10',cls:'hand'})+T(280,y+44,r[1],{size:34,fill:'#2a1a10',cls:'hand'})});
+ s+=`<path d="M330 1318 L380 1342 L430 1314 L490 1348 L550 1316 L620 1352 L690 1320 L760 1350 L830 1318 L916 1342 V1380 H330 Z" fill="#0b1424" stroke="#111" stroke-width="8" stroke-linejoin="round"/>`+T(215,1340,'5.',{size:50,fill:P.red,cls:'hand',extra:'font-weight="700"'})+`</g>`;
+ s+=T(540,1470,'Beşincisi yırtık.',{size:60,fill:'#fff',anchor:'middle',extra:kont})+T(540,1550,'Reels’te izle 🔦',{size:52,fill:P.lamp,anchor:'middle',extra:kont});
+ document.getElementById('st1').innerHTML=s;
+})();
+
+/* ---- ST2: oylama (ortadaki alan anket çıkartması için boş) ---- */
+(function(){
+ let s=Cz.brick('#16262b','#0d181b')+`<rect y="1480" width="1080" height="440" fill="#2a1d12"/><path d="M0 1480H1080" stroke="#111" stroke-width="10"/>`+
+  Cz.cerceve(70,520,150,190)+Cz.yagmurluk(930,540,.8)+Cz.orumcek(1080,0,1,true)+Cz.kapi(380,330,320,700,'k')+
+  `<circle cx="540" cy="519" r="52" fill="#e8c76a" opacity=".2"/>`+
+  T(540,300,'00:41 · KAPI ÇALIYOR',{size:52,fill:'#ff6a5a',anchor:'middle',extra:kont})+
+  T(540,1250,'NE YAPARSIN?',{size:120,fill:'#fff',anchor:'middle',extra:kont+' textLength="860" lengthAdjust="spacingAndGlyphs"'})+
+  Cz.simit(130,1060,40);
+ document.getElementById('st2').innerHTML=s;
+})();
+
+/* ---- ST3: teori sorusu (alt-orta alan soru çıkartması için boş) ---- */
+(function(){
+ let s=`<rect width="1080" height="1920" fill="#070d12"/>`+yildiz(40,6,1000)+Cz.rain(22,5)+
+  `<circle cx="540" cy="760" r="330" fill="#2b2b30" stroke="#111" stroke-width="22"/><circle cx="540" cy="760" r="290" fill="#0a0f14" stroke="#111" stroke-width="12"/>`+
+  `<g><circle cx="470" cy="768" r="38" fill="#f3f6f4"/><circle cx="610" cy="768" r="38" fill="#f3f6f4"/><circle cx="470" cy="768" r="9" fill="#111"/><circle cx="610" cy="768" r="9" fill="#111"/></g>`+
+  `<circle cx="540" cy="760" r="330" fill="none" stroke="#e8c76a" stroke-width="6" opacity=".25"/>`+
+  T(540,340,'DELİKTEN BAKARKEN',{size:70,fill:'#fff',anchor:'middle',extra:kont+' textLength="860" lengthAdjust="spacingAndGlyphs"'})+
+  T(540,1230,'KAPIDAKİ',{size:110,fill:P.lamp,anchor:'middle',extra:kont+' textLength="640" lengthAdjust="spacingAndGlyphs"'})+
+  T(540,1360,'SENCE KİM?',{size:150,fill:P.lamp,anchor:'middle',extra:kont+' textLength="760" lengthAdjust="spacingAndGlyphs"'});
+ document.getElementById('st3').innerHTML=s;
+})();
+</script></body></html>
