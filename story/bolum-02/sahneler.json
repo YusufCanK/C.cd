@@ -187,5 +187,20 @@
    }
   }
  ],
- "altyazi_max": 20
+ "altyazi_max": 20,
+ "oy_kelimeleri": {
+  "A": [
+   "kapı",
+   "kapi",
+   "kapıdan",
+   "önkapı",
+   "🚪"
+  ],
+  "B": [
+   "bodrum",
+   "otopark",
+   "bodrumdan",
+   "⬇️"
+  ]
+ }
 }

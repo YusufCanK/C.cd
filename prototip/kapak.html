@@ -35,4 +35,12 @@ function corridor(g){const xl=u=>400*u,yt=u=>700*u,yb=u=>1920-820*u;
   el(g,'polygon',{points:`${X(u1)},${top(u1)} ${X(u2)},${top(u2)} ${X(u2)},${yb(u2)} ${X(u1)},${yb(u1)}`,fill:'#1b2c3f',stroke:'#05090d','stroke-width':6})})})}
 corridor($('cor'));Sisli.draw($('ahmet'),Sisli.presets.ahmet,540,1090,.34);
 const dn=Rigs.deniz($('d'),{x:540,y:1330,s:1.18,mood:'scared'});Rigs.mouth(dn,3);
+// bölüm parametreleri: kapak.html?b=2&alt=MERDİVEN&soru=...&balta=1
+const Q=new URLSearchParams(location.search);
+if(Q.get('b')){document.querySelector('.big').textContent='BÖLÜM '+Q.get('b')}
+if(Q.get('alt')){document.querySelector('.sub').textContent=Q.get('alt')}
+if(Q.get('soru')){document.querySelector('.tag').textContent=Q.get('soru')}
+if(Q.get('balta')){const b=el($('svg'),'g',{transform:'translate(860 1420) rotate(24) scale(1.15)',stroke:'#111','stroke-width':9,'stroke-linejoin':'round'});
+ el(b,'rect',{x:-16,y:-250,width:32,height:520,rx:12,fill:'#8a5a33'});el(b,'path',{d:'M16 -240 Q150 -270 160 -150 Q90 -176 16 -130Z',fill:'#aab4be'});
+ el($('svg'),'circle',{cx:820,cy:1560,r:48,fill:'#E0A56B',stroke:'#111','stroke-width':10});const t=document.querySelector('#svg > g[transform="translate(0 1610)"]');if(t)$('svg').appendChild(t)}
 </script></body></html>

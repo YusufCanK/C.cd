@@ -7,11 +7,19 @@ Kural: Kişi başı tek oy sayılamaz (kullanıcı adı yoksa); satır başı bi
 import sys,re,json,pathlib
 K=pathlib.Path(__file__).resolve().parent.parent
 bol=sys.argv[1];dosyalar=[a for a in sys.argv[2:] if not a.startswith('--')]
+import json as _j,re as _r
+_S=_j.load(open(K/'story'/f'bolum-{bol}'/'sahneler.json'))
+_sec=next((x.get('secenekler') for x in _S['sahneler'] if x.get('secenekler')),None)
+EK_A,EK_B={'fener','🔦'},{'balta','🪓'}
+if _sec and 'A' in _sec and len(_sec['A'])<60:
+    EK_A={w for w in _r.findall(r'[\wçğıöşü]+',_sec['A'].lower()) if len(w)>3}-{'dolaş','koşu'}
+    EK_B={w for w in _r.findall(r'[\wçğıöşü]+',_sec['B'].lower()) if len(w)>3}
+if _S.get('oy_kelimeleri'):EK_A|=set(_S['oy_kelimeleri']['A']);EK_B|=set(_S['oy_kelimeleri']['B'])
 def oy(satir):
     t=satir.lower().strip()
     if not t:return None
     tok=set(re.findall(r'[\wçğıöşü]+|🔦|🪓',t))
-    a=any(k in tok for k in ('a','fener','🔦'));b=any(k in tok for k in ('b','balta','🪓'))
+    a=('a' in tok) or bool(tok&EK_A);b=('b' in tok) or bool(tok&EK_B)
     return 'A' if a and not b else 'B' if b and not a else None
 toplam={'A':0,'B':0};detay={}
 for f in dosyalar:
