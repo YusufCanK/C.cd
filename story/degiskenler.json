@@ -1,7 +1,9 @@
 {
   "bolum_tamamlanan": 1,
-  "esya": [],
-  "tehlike": 0,
+  "esya": [
+    "balta"
+  ],
+  "tehlike": 1,
   "guven_nezihe": 0,
   "guven_kaan": 0,
   "guven_selim": 0,
@@ -9,7 +11,13 @@
     "buzdolabi_deniz_pusula"
   ],
   "yanki_ipuclari": 0,
-  "oylar": {},
+  "oylar": {
+    "bolum-01": {
+      "kazanan": "B",
+      "secim": "BALTA",
+      "kaynak": "kullanıcı bildirdi (oy sayıları girilmedi)"
+    }
+  },
   "yayin": {
     "bolum-01": {
       "tarih_utc": "2026-11-09 18:19",

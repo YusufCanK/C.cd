@@ -1,0 +1,53 @@
+# Bölüm 1 üretim planı (rig sistemi)
+
+Yöntem: parçalı SVG karakter + kodla animasyon. Düz görsel üretimi **yok**.
+
+## Hazır
+- Deniz rig (prototip: sahne 4), Ela rig (prototip: sahne 7)
+- Ağız senkronu: `sablon/lipsync.js`
+- Ses: sahne 4 (Deniz), sahne 7 (Ela)
+
+## Yapılacak varlıklar (SVG)
+**Arka planlar:** (1) sisli metropol silueti, (2) gece sokağı + Sisli siluetleri, (3) kesinti kolajı (pencere, TV, radyo), (4) oturma odası ✅, (5) dershane ✅, (6) mutfak/buzdolabı, (7) merdiven boşluğu, (8) kapı önü + karanlık koridor.
+**Eşyalar:** pusula, telefon (%4 pil, mesaj balonu), baba fotoğrafı, Ela çizimi (buzdolabı), fener, balta.
+**Karakter pozları:** Deniz (ön ✅, 3/4 bakış, korkmuş yüz), Sisli siluet (kambur, parlayan göz), Ela ✅, anı sahnesi (Deniz+Ela kanepe).
+**Ekran katmanları (şablon):** altyazı, seçim kartı (fener | balta + "Kim?"), "BÖLÜM 1" başlığı.
+
+## Ses
+| Sahne | Durum |
+|---|---|
+| 4, 7 | ✅ hazır |
+| 1,2,3,5,6,9,10,11,12,13,14,15,16,17 | Üretilmedi. Deniz sesi (Tagi İlbeyli), eleven_v4 + etiketler, **tek deneme**. Yaklaşık 70 sn konuşma, tahmini maliyet ~1300-1500 kredi. **Üretimden önce `estimate_only` ile gerçek rakam gösterilip onay alınacak.** |
+
+## Efekt ve müzik
+Her sahne için `sahneler.json` içinde `ses_efekt` yazılı. Müzik: lisanslı veya üretilmiş, `muzik-sfx/` altına. **Sessiz render yok.**
+
+## Sıra
+1. Senaryo ve sahne listesi onayı (revizyon 4, kontrol bekliyor)
+2. Sahne 1-3 (dünya) arka plan + animasyon
+3. Kalan sahneler
+4. Ses üretimi (maliyet onayı sonrası)
+5. Montaj, altyazı, seçim kartı
+6. Prototip değerlendirme → onay → kapak
+
+## Durum (güncel)
+- **Sahne 1-3: önizleme hazır** (`prototip/sahne1-3.html`): sisli metropol, gece sokağı + Sisli siluetleri, kesinti kolajı. Altyazı, "KAT 9 · BÖLÜM 1" etiketi ve efekt sesleri (konuşma yok) dahil.
+- Senaryo **kilitli** (revizyon 5). Sahne 4'e geçilmedi, kullanıcı değerlendirmesi bekleniyor.
+- Revizyon 6 render edildi (cikti.mp4, 106,93 sn).
+
+## Durum (Bölüm 1 tamamlandı, fısıltı hariç)
+- 17 sahnenin tamamı kuruldu (`prototip/bolum01.html` + `prototip/parca/`), `sahneler.json` ve `zaman-cizelgesi.json` ile sürülüyor.
+- Anlatıcı sesleri üretildi (14 replik, v4 etiketli, tek deneme, 1.222 kredi). Uzun sessizlikler kısaltıldı.
+- Efekt ve müzik kodla sentezlendi (`sablon/ses_mix.py`), yer tutucu kalitesinde.
+- Video: `story/bolum-01/cikti.mp4` (1080x1920, 30 fps, ~106,9 sn, sesli).
+- Kapak: `story/bolum-01/kapak.png`.
+- Fısıltı eklendi (Ahmet Amca, ses: ejJ1ETWS2ohLMMeCu1H3). Telaffuz kontrolü bekliyor.
+
+## Yeniden üretim komutları
+```
+python3 sablon/bolum_veri.py story/bolum-01        # zaman çizelgesi
+python3 sablon/bolum_derle.py story/bolum-01 prototip/bolum01.build.html
+node sablon/render_kareler.js prototip/bolum01.build.html /tmp/kareler 106.9 30 4
+python3 sablon/ses_mix.py story/bolum-01 /tmp/bolum01.wav
+ffmpeg -framerate 30 -i /tmp/kareler/%05d.jpg -i /tmp/bolum01.wav -c:v libx264 -crf 21 -pix_fmt yuv420p -c:a aac -shortest cikti.mp4
+```
