@@ -28,10 +28,17 @@ def hud(i):
     if i not in HUD_SAAT:return None
     h,m=map(int,HUD_SAAT[i].split(':'));kalan=(6*60+50)-(h*60+m)
     return {'gun':3,'saat':HUD_SAAT[i],'kalan':f'{kalan//60}:{kalan%60:02d}','kat':'9' if i in (11,12) else None,'uzak':'14 KM' if i==11 else None,'hedef':HEDEF}
+EP1=B.name=='bolum-01'
+def hud2(s):
+    h=s['hud']
+    if h is None or h.get('gizli'):return None
+    hh,mm=map(int,h['saat'].split(':'));kalan=(6*60+50)-(hh*60+mm)
+    return {'gun':h.get('gun',3),'saat':h['saat'],'kalan':f'{kalan//60}:{kalan%60:02d}' if kalan>0 else '0:00','kat':h.get('kat'),'uzak':h.get('uzak'),'ek':h.get('ek'),'hedef':HEDEF}
 out=[];t=0.0
 for s in S:
-    i=s['id'];ses=None if s.get('ses_yok') else B/'ses'/(f'sahne{i:02d}-ela.mp3' if i==7 else f'sahne{i:02d}-deniz.mp3' if (B/'ses'/f'sahne{i:02d}-deniz.mp3').exists() else f'sahne{i:02d}-anlatici.mp3')
-    tail,minimum=CFG[i];sc={'id':i,'konusmaci':s['konusmaci'],'ses_efekt':s.get('ses_efekt','')}
+    i=s['id'];ela=str(s.get('konusmaci','')).lower().startswith('ela')
+    ses=None if s.get('ses_yok') else B/'ses'/(f'sahne{i:02d}-ela.mp3' if ela else f'sahne{i:02d}-deniz.mp3' if (B/'ses'/f'sahne{i:02d}-deniz.mp3').exists() else f'sahne{i:02d}-anlatici.mp3')
+    tail,minimum=(s.get('kuyruk',.5),s.get('min_sure',0)) if ('kuyruk' in s or 'min_sure' in s or not EP1) else CFG[i];sc={'id':i,'konusmaci':s['konusmaci'],'ses_efekt':s.get('ses_efekt','')}
     if ses is not None and ses.exists():
         d=sure(ses);v=visemes(ses)
         if s.get('ses_kirp_sn'):
@@ -50,7 +57,7 @@ for s in S:
         if st is not None:runs.append((st*.033,len(v)*.033))
         gaps=[(runs[k][1],runs[k+1][0]) for k in range(len(runs)-1) if runs[k+1][0]-runs[k][1]>=.12]
         n=len(sent);caps=[]
-        if i==15:sent=[re.sub(r'\s*\.\.\.\s*Deniz\.?','',x).strip() for x in sent];sent=[x for x in sent if x];n=len(sent)
+        if EP1 and i==15:sent=[re.sub(r'\s*\.\.\.\s*Deniz\.?','',x).strip() for x in sent];sent=[x for x in sent if x];n=len(sent)
         b=[]
         if n>1 and runs:
             tot=sum(len(x) for x in sent);a=runs[0][0];z=runs[-1][1];acc=0
@@ -62,14 +69,14 @@ for s in S:
         t0=max(0,(runs[0][0] if runs else 0)-.05)
         for k,x in enumerate(sent):
             a=t0 if k==0 else b[k-1];z=(b[k] if k<len(b) else (runs[-1][1] if runs else d)+.35)
-            caps.append({'t0':round(LEAD+a,2),'t1':round(LEAD+z,2),'satir':wrap(TRUP(x)),'konusan':'ela' if i==7 else 'anlatici'})
+            caps.append({'t0':round(LEAD+a,2),'t1':round(LEAD+z,2),'satir':wrap(TRUP(x)),'konusan':'ela' if ela else 'anlatici'})
         sc['altyazi']=caps
-        if i in (7,16):sc['agiz']=v
-        if i==13:  # fener / balta vurgusu için cümle sınırları
+        if s.get('agiz') or (EP1 and i in (7,16)):sc['agiz']=v
+        if EP1 and i==13:  # fener / balta vurgusu için cümle sınırları
             sc['vurgu']=[c['t0'] for c in caps]
     else:
         dur=minimum;sc['sessiz']=True;sc['altyazi']=[]
-    sc['hud']=hud(i);sc['baslangic']=round(t,2);sc['sure']=round(dur,2);t+=dur;out.append(sc)
-json.dump({'toplam':round(t,2),'sahneler':out},open(B/'zaman-cizelgesi.json','w'),ensure_ascii=False)
+    sc['hud']=hud2(s) if 'hud' in s else hud(i);sc['baslangic']=round(t,2);sc['sure']=round(dur,2);t+=dur;out.append(sc)
+json.dump({'toplam':round(t,2),'sahneler':out,'baslik_karti':SJ.get('baslik_karti',{'sahne':1,'t0':0,'t1':2.9,'ust':'BÖLÜM 1','alt':'SON MESAJ'}),'chip':SJ.get('chip','KAT 9 · BÖLÜM 1')},open(B/'zaman-cizelgesi.json','w'),ensure_ascii=False)
 print('toplam',round(t,1),'sn')
 for sc in out:print(sc['id'],sc['baslangic'],sc['sure'],[ (c['t0'],c['t1'],' / '.join(c['satir'])) for c in sc['altyazi']][:4])

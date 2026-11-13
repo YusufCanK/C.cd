@@ -4,7 +4,8 @@
 const D=JSON.parse(document.getElementById('data').textContent),svg=document.getElementById('svg'),SC=D.sahneler;
 const c1=document.getElementById('c1'),c2=document.getElementById('c2'),c3=document.getElementById('c3'),capg=document.getElementById('cap');
 const lines=[c1,c2,c3];
-window.BOLUM=window.BOLUM||{hooks:{}};BOLUM.data=D;BOLUM.hooks=BOLUM.hooks||{};
+window.BOLUM=window.BOLUM||{hooks:{}};
+{const bk=D.baslik_karti,tts=document.querySelectorAll('#title text');if(bk&&tts.length>1){tts[0].textContent=bk.ust;tts[1].textContent=bk.alt}const ch=document.querySelector('#chip text');if(ch&&D.chip)ch.textContent=D.chip}BOLUM.data=D;BOLUM.hooks=BOLUM.hooks||{};
 function active(T){for(let i=SC.length-1;i>=0;i--)if(T>=SC[i].baslangic)return SC[i];return SC[0]}
 let lastId=-1;
 function setCap(sc,lt){
@@ -21,11 +22,13 @@ window.__renderAt=function(T){
  if(sc.agiz&&g){const k=Math.min(sc.agiz.length-1,Math.max(0,Math.floor((lt-sc.ses.baslangic)/0.033)));const v=(lt>=sc.ses.baslangic&&lt<=sc.ses.baslangic+sc.ses.sure)?sc.agiz[k]:0;g.querySelectorAll('.speaker').forEach(r=>Rigs.mouth(r,v))}
  const h=BOLUM.hooks[sc.id];if(h)h(lt,sc,g);
  setCap(sc,lt);
- const tt=document.getElementById('title');if(tt)tt.style.opacity=(sc.id===1)?String(Math.max(0,Math.min(1,(2.9-lt)/.5))*Math.min(1,lt/.25)):'0';
+ const BK=D.baslik_karti||{sahne:1,t0:0,t1:2.9};const tt=document.getElementById('title');const bkOn=sc.id===BK.sahne&&lt>=BK.t0;
+ if(tt)tt.style.opacity=bkOn?String(Math.max(0,Math.min(1,(BK.t1-lt)/.5))*Math.min(1,(lt-BK.t0)/.25)):'0';
  const hudg=document.getElementById('hud');
- if(hudg){const h=sc.hud;if(!h||(sc.id===1&&lt<3.0)){hudg.style.display='none'}else{hudg.style.display='inline';hudg.style.opacity=String(sc.id===1?Math.min(1,(lt-3.0)/.4):1);
+ const hEnd=BK.t1+.1;
+ if(hudg){const h=sc.hud;if(!h||(sc.id===BK.sahne&&lt<hEnd)){hudg.style.display='none'}else{hudg.style.display='inline';hudg.style.opacity=String(sc.id===BK.sahne?Math.min(1,(lt-hEnd)/.4):1);
   const set=(id,v)=>{const e=document.getElementById(id);if(e&&e.__v!==v){e.textContent=v;e.__v=v}};
-  set('h-gun',h.gun+'. GÜN');set('h-hedef','HEDEF: '+(h.hedef||"ELA'YA ULAŞ"));set('h-saat',h.saat);set('h-kat',h.kat?('KAT: '+h.kat):'');set('h-kalan',h.kalan);set('h-uzak',h.uzak?('ELA\'YA: '+h.uzak):'')}}
+  set('h-gun',h.gun+'. GÜN');set('h-hedef','HEDEF: '+(h.hedef||"ELA'YA ULAŞ"));set('h-saat',h.saat);set('h-kat',h.kat?('KAT: '+h.kat):'');set('h-kalan',h.kalan);set('h-uzak',h.uzak?('ELA\'YA: '+h.uzak):'');set('h-ek',h.ek||'')}}
  // tüm animasyonları sahne zamanına bağla
  document.getAnimations().forEach(a=>{
   if(a.constructor&&a.constructor.name==='CSSTransition'){try{a.finish()}catch(e){}return}

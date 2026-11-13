@@ -38,7 +38,7 @@
 - Tek giriş: `python3 sablon/bolum.py yeni|kontrol|onizle|render NN`. `render` yalnızca kullanıcı onayından sonra `--onayli` ile çalıştırılır.
 - Sıra (her ok bir onay noktası): senaryo → sahneler.json → ses (önce kredi tahmini) → önizleme (Artifact) → render → kapak/yayın paketi.
 - Önceki seçim ve durum: `story/degiskenler.json`, `story/durum-sistemi.md`. Sisli ses imzası: `sablon/sisli_ses.py`.
-- Bilinen sınır: `bolum_derle.py` ve `ses_mix.py` hâlâ Bölüm 1 sahne kancalarına (`prototip/parca/`, sahne bazlı efektler) bağlı; Bölüm 2 için sahne/efekt tanımlarını veriye taşıma işi yapılacak.
+- Bölüme özel parçalar: görseller `prototip/parca/bolum-NN/` (sahneler.svg.html, sahneler.js, stil.css), efekt ve müzik `story/bolum-NN/efektler.py`, panel, başlık kartı ve çip `sahneler.json` içinde (`hud`, `baslik_karti`, `chip`, `panel_hedef`). Bölüm 1 eski yolla aynı çıktıyı verir (doğrulandı).
 
 ## İletişim düzeni
 - Kullanıcıyla doğrudan konuşulur (ChatGPT aracılığı kapandı).
