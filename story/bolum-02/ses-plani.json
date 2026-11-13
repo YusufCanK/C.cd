@@ -1,0 +1,97 @@
+{
+ "model": "eleven_v4",
+ "toplam_tahmini_kredi": 853,
+ "replikler": [
+  {
+   "sahne": 1,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[determined] [low voice] Baltayı aldım.",
+   "kredi": 39,
+   "dosya": "sahne01-anlatici.mp3"
+  },
+  {
+   "sahne": 2,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[trembling voice] Elim titriyordu. [pause] [determined] Ama geri adım atmadım.",
+   "kredi": 78,
+   "dosya": "sahne02-anlatici.mp3"
+  },
+  {
+   "sahne": 4,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[tense] Ses, dokuz kat boyunca yankılandı.",
+   "kredi": 42,
+   "dosya": "sahne04-anlatici.mp3"
+  },
+  {
+   "sahne": 6,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[sad] [quietly] Anahtarlıkta küçük bir kedi vardı. [pause] Ahmet Amca. [pause] İlk gece kedisini aramaya çıkmıştı.",
+   "kredi": 114,
+   "dosya": "sahne06-anlatici.mp3"
+  },
+  {
+   "sahne": 7,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[whispering] Sonra aşağıdan cevap geldi.",
+   "kredi": 40,
+   "dosya": "sahne07-anlatici.mp3"
+  },
+  {
+   "sahne": 8,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[tense] Ve artık beni bekliyorlar.",
+   "kredi": 34,
+   "dosya": "sahne08-anlatici.mp3"
+  },
+  {
+   "sahne": 9,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[whispering] Sekiz. [pause] Yedi. [pause] Altı.",
+   "kredi": 47,
+   "dosya": "sahne09-anlatici.mp3"
+  },
+  {
+   "sahne": 10,
+   "voice_id": "sJ0xHHPzz1LOio4QNlB0",
+   "metin": "[childlike voice] [whispering] Abi, dershanenin bodrumundan duman gibi bir şey geliyor. [pause] [cheerfully] Ama ben iyiyim, cidden. [softly] Sen acele etme.",
+   "kredi": 157,
+   "dosya": "sahne10-ela.mp3"
+  },
+  {
+   "sahne": 11,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[whispering] Titreşim onları çekti.",
+   "kredi": 35,
+   "dosya": "sahne11-anlatici.mp3"
+  },
+  {
+   "sahne": 12,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[tense] Babamın baltası bir kez daha işe yaradı. [pause] Ve bir kez daha ses çıkardı.",
+   "kredi": 85,
+   "dosya": "sahne12-anlatici.mp3"
+  },
+  {
+   "sahne": 13,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[serious] Kaçış maskesi. [pause] Tek filtre. [pause] Bir saat.",
+   "kredi": 62,
+   "dosya": "sahne13-anlatici.mp3"
+  },
+  {
+   "sahne": 14,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[tense] Zemin kat. [pause] Gün ağarıyor. [pause] [fearful] Ama kapıyla aramda üç kişi var.",
+   "kredi": 90,
+   "dosya": "sahne14-anlatici.mp3"
+  },
+  {
+   "sahne": 15,
+   "voice_id": "Xxps7kSjmTEY5ipN1f60",
+   "metin": "[serious] Deniz nasıl çıkmalı?",
+   "kredi": 30,
+   "dosya": "sahne15-anlatici.mp3"
+  }
+ ]
+}
