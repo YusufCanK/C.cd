@@ -19,7 +19,8 @@ def oy(satir):
     t=satir.lower().strip()
     if not t:return None
     tok=set(re.findall(r'[\wçğıöşü]+|🔦|🪓',t))
-    a=('a' in tok) or bool(tok&EK_A);b=('b' in tok) or bool(tok&EK_B)
+    eS=lambda E:any((len(w)>=5 and any(x.startswith(w) for x in tok)) or w in tok or (not w.isalnum() and w in t) for w in E)
+    a=('a' in tok) or eS(EK_A);b=('b' in tok) or eS(EK_B)
     return 'A' if a and not b else 'B' if b and not a else None
 toplam={'A':0,'B':0};detay={}
 for f in dosyalar:
