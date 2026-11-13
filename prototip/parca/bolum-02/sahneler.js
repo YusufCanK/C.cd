@@ -66,7 +66,7 @@ BOLUM.hooks[7]=lt=>{[...$('b2gozler').children].forEach((c,k)=>c.style.display=l
  el(v,'rect',{x:300,y:420,width:520,height:700,fill:'none',stroke:'#5b6a78','stroke-width':10,'stroke-dasharray':'30 20'});tx2(v,560,1000,n,{fill:'#e8e2d0','font-size':560,opacity:.9});tx2(v,560,1170,'KAT',{fill:'#e8e2d0','font-size':80,opacity:.8});
  el(v,'path',{d:'M-100 1700 L1200 1300',stroke:'#5b6670','stroke-width':18});Rigs.deniz(el(v,'g',{}),{x:150,y:1180,s:.5,mood:'worried'});gozler(v,900,1620,1.2+i*.5).setAttribute('class','b2-glow')});
  g.__v=vs})();
-BOLUM.hooks[9]=(lt)=>{const i=lt<2.3?0:lt<4.6?1:2;$('k9').__v.forEach((v,k)=>v.style.display=k===i?'inline':'none')};
+BOLUM.hooks[9]=(lt,sc)=>{const c=sc.altyazi||[];const b1=c[1]?c[1].t0:2.3,b2=c[2]?c[2].t0:4.6;const i=lt<b1?0:lt<b2?1:2;$('k9').__v.forEach((v,k)=>v.style.display=k===i?'inline':'none')};
 // 10: gecikmiş sesli mesaj (Ela)
 (function(){const g0=$('k10');el(g0,'rect',{x:-100,y:-100,width:1280,height:2200,fill:'#090e13'});const g=el(g0,'g',{transform:'translate(0 200)'});el(g,'rect',{x:-100,y:-100,width:1280,height:2200,fill:'#090e13'});el(g,'ellipse',{cx:540,cy:880,rx:560,ry:720,fill:'#6ac4ff',opacity:.1});
  el(g,'path',{d:'M200 1240 Q150 1100 190 980 L260 1000 L260 1300Z',fill:'#E0A56B',stroke:K2,'stroke-width':12});el(g,'rect',{x:250,y:320,width:580,height:1060,rx:80,fill:'#0d1218',stroke:K2,'stroke-width':14});

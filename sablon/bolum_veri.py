@@ -72,6 +72,17 @@ for s in S:
         for k,x in enumerate(sent):
             a=t0 if k==0 else b[k-1];z=(b[k] if k<len(b) else (runs[-1][1] if runs else d)+.35)
             caps.append({'t0':round(LEAD+a,2),'t1':round(LEAD+z,2),'satir':wrap(TRUP(x)),'konusan':'ela' if ela else 'anlatici'})
+        if not EP1:  # 3 satırı aşan altyazıyı 2'şer satırlık parçalara böl (süre harf oranıyla)
+            yeni=[]
+            for c in caps:
+                L=c['satir']
+                if len(L)>3:
+                    parcalar=[L[k:k+2] for k in range(0,len(L),2)];top=sum(len(' '.join(x)) for x in parcalar);acc=0
+                    for x in parcalar:
+                        b0=c['t0']+(c['t1']-c['t0'])*acc/top;acc+=len(' '.join(x));b1=c['t0']+(c['t1']-c['t0'])*acc/top
+                        yeni.append(dict(c,t0=round(b0,2),t1=round(b1,2),satir=x))
+                else:yeni.append(c)
+            caps=yeni
         sc['altyazi']=caps
         if s.get('agiz') or (EP1 and i in (7,16)):sc['agiz']=v
         if EP1 and i==13:  # fener / balta vurgusu için cümle sınırları
