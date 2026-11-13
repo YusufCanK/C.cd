@@ -1,4 +1,191 @@
 {
- "bolum": "02",
- "sahneler": []
+ "bolum": 2,
+ "baslik": "Merdiven",
+ "chip": "KAT 9 · BÖLÜM 2",
+ "panel_hedef": "ZEMİNE İN",
+ "baslik_karti": {
+  "sahne": 1,
+  "t0": 2.4,
+  "t1": 5.0,
+  "ust": "BÖLÜM 2",
+  "alt": "MERDİVEN"
+ },
+ "onceki_secim": "B (BALTA)",
+ "not": "Sessiz önizlemede süreler min_sure ile; ses gelince bolum_veri ses süresine göre uzatır.",
+ "sahneler": [
+  {
+   "id": 1,
+   "konusmaci": "Deniz",
+   "anlatim": "Baltayı aldım.",
+   "min_sure": 5,
+   "kuyruk": 0.5,
+   "hud": {
+    "gizli": true
+   }
+  },
+  {
+   "id": 2,
+   "konusmaci": "Deniz",
+   "anlatim": "Elim titriyordu. Ama geri adım atmadım.",
+   "min_sure": 6,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:49",
+    "kat": "9"
+   }
+  },
+  {
+   "id": 3,
+   "konusmaci": "-",
+   "anlatim": "",
+   "min_sure": 4,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:49",
+    "kat": "9"
+   },
+   "ses_yok": true
+  },
+  {
+   "id": 4,
+   "konusmaci": "Deniz",
+   "anlatim": "Ses, dokuz kat boyunca yankılandı.",
+   "min_sure": 5,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:50",
+    "kat": "9"
+   }
+  },
+  {
+   "id": 5,
+   "konusmaci": "-",
+   "anlatim": "",
+   "min_sure": 5,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:50",
+    "kat": "9"
+   },
+   "ses_yok": true
+  },
+  {
+   "id": 6,
+   "konusmaci": "Deniz",
+   "anlatim": "Anahtarlıkta küçük bir kedi vardı. Ahmet Amca. İlk gece kedisini aramaya çıkmıştı.",
+   "min_sure": 8,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:50",
+    "kat": "9"
+   }
+  },
+  {
+   "id": 7,
+   "konusmaci": "Deniz",
+   "anlatim": "Sonra aşağıdan cevap geldi.",
+   "min_sure": 6,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:51",
+    "kat": "9"
+   }
+  },
+  {
+   "id": 8,
+   "konusmaci": "Deniz",
+   "anlatim": "Ve artık beni bekliyorlar.",
+   "min_sure": 4,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:51",
+    "kat": "9"
+   }
+  },
+  {
+   "id": 9,
+   "konusmaci": "Deniz",
+   "anlatim": "Sekiz. Yedi. Altı.",
+   "min_sure": 7,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:55",
+    "kat": "7"
+   }
+  },
+  {
+   "id": 10,
+   "konusmaci": "Ela",
+   "anlatim": "Abi, dershanenin bodrumundan duman gibi bir şey geliyor. Ama ben iyiyim, cidden. Sen acele etme.",
+   "min_sure": 9,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:58",
+    "kat": "6"
+   },
+   "ses_notu": "Ela sesi (Çağlayan). Arkada çok zayıf Sisli hırıltısı (sezon ipucu), altyazıda yok."
+  },
+  {
+   "id": 11,
+   "konusmaci": "Deniz",
+   "anlatim": "Titreşim onları çekti.",
+   "min_sure": 5,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "05:59",
+    "kat": "6"
+   }
+  },
+  {
+   "id": 12,
+   "konusmaci": "Deniz",
+   "anlatim": "Babamın baltası bir kez daha işe yaradı. Ve bir kez daha ses çıkardı.",
+   "min_sure": 7,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "06:02",
+    "kat": "5"
+   }
+  },
+  {
+   "id": 13,
+   "konusmaci": "Deniz",
+   "anlatim": "Kaçış maskesi. Tek filtre. Bir saat.",
+   "min_sure": 6,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "06:03",
+    "kat": "5",
+    "ek": "MASKE: 1 FİLTRE"
+   }
+  },
+  {
+   "id": 14,
+   "konusmaci": "Deniz",
+   "anlatim": "Zemin kat. Gün ağarıyor. Ama kapıyla aramda üç kişi var.",
+   "min_sure": 7,
+   "kuyruk": 0.5,
+   "hud": {
+    "saat": "06:12",
+    "kat": "0",
+    "ek": "MASKE: 1 FİLTRE"
+   }
+  },
+  {
+   "id": 15,
+   "konusmaci": "Deniz",
+   "anlatim": "Deniz nasıl çıkmalı?",
+   "min_sure": 7,
+   "kuyruk": 0.5,
+   "hud": {
+    "gizli": true
+   },
+   "secenekler": {
+    "A": "Ön kapıdan koş",
+    "B": "Bodrum otoparkından dolaş",
+    "teori": "Ahmet Amca'nın kedisi sence nerede?"
+   }
+  }
+ ],
+ "altyazi_max": 18
 }

@@ -9,7 +9,8 @@ def visemes(mp3):
     wav='/tmp/_v.wav';subprocess.run(['ffmpeg','-v','error','-y','-i',str(mp3),'-ac','1','-ar','16000','-c:a','pcm_s16le',wav],check=True)
     return json.loads(subprocess.check_output(['node',str(kok/'sablon'/'lipsync_cli.js'),wav]).decode())
 def TRUP(s):return s.replace('i','İ').replace('ı','I').upper()
-def wrap(t,maxc=22):
+def wrap(t,maxc=None):
+    maxc=maxc or ALTMAX
     w=t.split();lines=[];cur=''
     for x in w:
         if cur and len(cur)+1+len(x)>maxc:lines.append(cur);cur=x
@@ -29,6 +30,7 @@ def hud(i):
     h,m=map(int,HUD_SAAT[i].split(':'));kalan=(6*60+50)-(h*60+m)
     return {'gun':3,'saat':HUD_SAAT[i],'kalan':f'{kalan//60}:{kalan%60:02d}','kat':'9' if i in (11,12) else None,'uzak':'14 KM' if i==11 else None,'hedef':HEDEF}
 EP1=B.name=='bolum-01'
+ALTMAX=SJ.get('altyazi_max',22)
 def hud2(s):
     h=s['hud']
     if h is None or h.get('gizli'):return None
@@ -76,6 +78,12 @@ for s in S:
             sc['vurgu']=[c['t0'] for c in caps]
     else:
         dur=minimum;sc['sessiz']=True;sc['altyazi']=[]
+        txt=re.sub(r'\([^)]*\)','',s.get('anlatim','')).strip()
+        if txt and not s.get('ses_yok') and not EP1:  # ses henüz yok: tahmini altyazı (önizleme)
+            sent=[x.strip() for x in re.split(r'(?<=[.?!])\s+',txt) if x.strip()];tot=sum(len(x) for x in sent);a0=LEAD;z0=max(LEAD+.5,dur-.4);acc=0
+            for x in sent:
+                b0=a0+(z0-a0)*acc/tot;acc+=len(x);b1=a0+(z0-a0)*acc/tot
+                sc['altyazi'].append({'t0':round(b0,2),'t1':round(b1,2),'satir':wrap(TRUP(x)),'konusan':'ela' if ela else 'anlatici','tahmini':True})
     sc['hud']=hud2(s) if 'hud' in s else hud(i);sc['baslangic']=round(t,2);sc['sure']=round(dur,2);t+=dur;out.append(sc)
 json.dump({'toplam':round(t,2),'sahneler':out,'baslik_karti':SJ.get('baslik_karti',{'sahne':1,'t0':0,'t1':2.9,'ust':'BÖLÜM 1','alt':'SON MESAJ'}),'chip':SJ.get('chip','KAT 9 · BÖLÜM 1')},open(B/'zaman-cizelgesi.json','w'),ensure_ascii=False)
 print('toplam',round(t,1),'sn')
