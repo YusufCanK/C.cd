@@ -51,7 +51,8 @@ def pseudo_agiz(text, start, dur):
         out.append(0 if (t < start or t > start + dur) else viseme_of(chars[min(n - 1, int((t - start) / dur * n))]))
     return out
 
-KONUSAN = {'Anlatıcı': 'anlatici', 'Telsiz': 'telsiz', 'Balıkçı (telsiz)': 'telsiz', 'Reis Rıza': 'riza'}
+KONUSAN = {'Anlatıcı': 'anlatici', 'Telsiz': 'telsiz', 'Balıkçı (telsiz)': 'telsiz', 'Reis Rıza': 'riza', 'Reis Rıza (telsiz)': 'riza', 'Telsiz (bekçi sesi)': 'telsiz', 'Bekçi': 'anlatici'}
+AGIZLI = ('Reis Rıza', 'Bekçi')   # ağzı görünen konuşmacılar (ağız şekilleri üretilir)
 
 def ses_dosyasi(s):
     i = s['id']
@@ -94,7 +95,7 @@ for s in S:
                 a = t0 if k == 0 else b[k - 1]
                 z = b[k] if k < len(b) else (runs[-1][1] if runs else d) + .35
                 sc['altyazi'].append({'t0': round(LEAD + a, 2), 't1': round(LEAD + z, 2), 'satir': wrap(TRUP(x)), 'konusan': konusan})
-            if s['konusmaci'] == 'Reis Rıza':
+            if s['konusmaci'].startswith(AGIZLI):
                 sc['agiz'] = [0] * int(LEAD / STEP) + v     # ses başlangıcına göre hizalı
         else:
             tahmini = True
@@ -103,7 +104,7 @@ for s in S:
                 z = a + say * len(x) / tot
                 sc['altyazi'].append({'t0': round(a, 2), 't1': round(z + (TAIL if k == len(sent) - 1 else 0), 2), 'satir': wrap(TRUP(x)), 'konusan': konusan})
                 a = z
-            if s['konusmaci'] == 'Reis Rıza':
+            if s['konusmaci'].startswith(AGIZLI):
                 sc['agiz'] = pseudo_agiz(text, LEAD, say)
     sc['sure'] = round(dur, 2)
     sc['hud'] = s.get('panel')

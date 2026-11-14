@@ -26,13 +26,13 @@ def aralik(s):
 voice = np.zeros(N); orta = np.zeros(N); sfx = np.zeros(N); mus = np.zeros(N)
 
 # ---- konuşmalar: telsizden geçenler radyo filtresinden geçer ----
-RADYO = ('Telsiz', 'Balıkçı (telsiz)')
+RADYO = ('Telsiz', 'Balıkçı (telsiz)', 'Reis Rıza (telsiz)', 'Telsiz (bekçi sesi)')
 for s in D['sahneler']:
     if 'ses' not in s: continue
     x = yukle(B / s['ses']['dosya']); x = Z.rms_norm(x, .11)
     if s['konusmaci'] in RADYO:
         x = bp(x, 380, 3400); x = np.tanh(x * 2.2) / np.tanh(2.2); x = Z.rms_norm(x, .10)
-        if s['konusmaci'] == 'Telsiz': x = echo(x, ((.18, .32), (.4, .18), (.75, .08)))   # Zeki'nin taklidi: yankılı
+        if s['konusmaci'] in ('Telsiz', 'Telsiz (bekçi sesi)'): x = echo(x, ((.18, .32), (.4, .18), (.75, .08)))   # taklit sesler: yankılı
     put(voice, x, s['baslangic'] + s['ses']['baslangic'])
 
 # ---- ortam yatakları ----

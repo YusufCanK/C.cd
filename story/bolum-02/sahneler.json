@@ -1,6 +1,278 @@
 {
   "bolum": 2,
-  "baslik": "",
+  "baslik": "Bakan",
   "hedef_sn": 85,
-  "sahneler": []
+  "kutuphane": [
+    "story/bolum-01"
+  ],
+  "not": "Taslak 1. Senaryo: story/bolum-02/senaryo.md. Önceki seçim: A (Delikten bak, %93). Sahne 8, 9, 10, 11 Bölüm 1 çizimlerini yeniden kullanır (kutuphane).",
+  "sahneler": [
+    {
+      "id": 1,
+      "sure_sn": 5.0,
+      "anlatim": "Delikten baktın. Karşıdaki de seni gördü.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[low]",
+      "gorsel": "kapı deliğinden görünüm: karanlıkta iki beyaz göz, ardından Gölgesiz'in yüzü deliğe yaklaşır, geniş sabit gülüş; deliğe üç hafif tıkırtı",
+      "hareket": "yüz deliğe yaklaşırken büyür, tıkırtılarda halka titrer",
+      "ses_efekt": "yağmur, üç tık (cam gibi), kalp atışı",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "00:41",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne01-anlatici.mp3",
+      "ses_metin": "[low] Delikten baktın. Karşıdaki de seni gördü.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 3.2
+    },
+    {
+      "id": 2,
+      "sure_sn": 7.0,
+      "anlatim": "Gölgesi yoktu. Kural açma diyordu. Açmadın.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[softly]",
+      "gorsel": "deliğin dışı: sundurma, kapı lambasının ışığı; direk ve varil zemine uzun gölge düşürüyor, ortadaki figürün gölgesi yok",
+      "hareket": "yavaş zoom-in, figürün başı hafifçe eğilir",
+      "ses_efekt": "düşük gerilim pad'i, rüzgâr, kalp atışı",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "00:41",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne02-anlatici.mp3",
+      "ses_metin": "[softly] Gölgesi yoktu. Kural açma diyordu. Açmadın.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 4.0
+    },
+    {
+      "id": 3,
+      "sure_sn": 6.0,
+      "anlatim": "Şafağa kadar kapıda bekledi. Işığı söndürmedin.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[calm]",
+      "gorsel": "kapı içeriden; bekçi yorgun, başı kapıya dönük; pencerede gökyüzü karanlıktan griye; saat 00:41'den 06:58'e akar",
+      "hareket": "zaman atlama",
+      "ses_efekt": "rüzgâr yükselir, saat tik-tak",
+      "panel": {
+        "donem": "GECE 1/7",
+        "saat": "06:58",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "7 GECE DAYAN",
+        "saat_bas": "00:41"
+      },
+      "ses_dosyasi": "ses/sahne03-anlatici.mp3",
+      "ses_metin": "[calm] Şafağa kadar kapıda bekledi. Işığı söndürmedin.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 3.4
+    },
+    {
+      "id": 4,
+      "sure_sn": 7.0,
+      "anlatim": "Şafakta çekildi. Gündüz zararsız.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[calm]",
+      "gorsel": "lamba odası, pencerelerde şafak; bekçi kolu çevirir, lamba söner, gün ışığı doğar",
+      "hareket": "ışık yavaşça söner, gökyüzü maviye döner",
+      "ses_efekt": "martı, dalga, lamba sönerken uğultu düşer",
+      "panel": {
+        "donem": "GÜN 2",
+        "saat": "07:00",
+        "isik": "KAPALI",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne04-anlatici.mp3",
+      "ses_metin": "[calm] Şafakta çekildi. Gündüz zararsız.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 3.0
+    },
+    {
+      "id": 5,
+      "sure_sn": 8.0,
+      "anlatim": "Dün gece delikten baktın, değil mi evlat? Bakanı tanırlar. Sesini öğrenirler.",
+      "konusmaci": "Reis Rıza (telsiz)",
+      "ses_etiket": "[concerned] [elderly voice] [low]",
+      "gorsel": "12:00, telsiz yakın plan; üstte çerçevede Reis Rıza konuşuyor",
+      "hareket": "Rıza'nın ağzı sese göre oynar, dalga formu konuşmayla titrer",
+      "ses_efekt": "telsiz cızırtısı, dalga",
+      "panel": {
+        "donem": "GÜN 2",
+        "saat": "12:00",
+        "isik": "KAPALI",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne05-riza.mp3",
+      "ses_metin": "[concerned] [elderly voice] [low] Dün gece delikten baktın, değil mi evlat? Bakanı tanırlar. Sesini öğrenirler.",
+      "ses_id": "MuOq11XzQTthwLhmGZ2V",
+      "tahmini_konusma_sn": 6.1
+    },
+    {
+      "id": 6,
+      "sure_sn": 5.0,
+      "anlatim": "Ne demek, sesimi öğrenirler?",
+      "konusmaci": "Bekçi",
+      "ses_etiket": "[nervous]",
+      "gorsel": "bekçi telsizin başında, korkmuş yüz, mikrofona konuşur",
+      "hareket": "kamera yavaş yaklaşır, ağız sese göre oynar",
+      "ses_efekt": "telsiz bip, kalp atışı",
+      "panel": {
+        "donem": "GÜN 2",
+        "saat": "12:02",
+        "isik": "KAPALI",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne06-bekci.mp3",
+      "ses_metin": "[nervous] Ne demek, sesimi öğrenirler?",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 2.7
+    },
+    {
+      "id": 7,
+      "sure_sn": 6.0,
+      "anlatim": "Zeki de bakmıştı.",
+      "konusmaci": "Reis Rıza (telsiz)",
+      "ses_etiket": "[low] [slow]",
+      "gorsel": "telsiz yakın plan; Rıza söyler, çerçeve kararır, dalga formu düzleşir, hat kesilir",
+      "hareket": "çerçeve söner, çizgi düz kalır",
+      "ses_efekt": "statik, bağlantı kopar (bip), sessizlik",
+      "panel": {
+        "donem": "GÜN 2",
+        "saat": "12:03",
+        "isik": "KAPALI",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne07-riza.mp3",
+      "ses_metin": "[low] [slow] Zeki de bakmıştı.",
+      "ses_id": "MuOq11XzQTthwLhmGZ2V",
+      "tahmini_konusma_sn": 1.9
+    },
+    {
+      "id": 8,
+      "sure_sn": 9.0,
+      "anlatim": "Altmış bir. Yine tuttu.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[calm]",
+      "gorsel": "Bölüm 1 lamba ritüeli: 18:10, kule merdiveni, sayaç 55-61, lamba yanar (kütüphane: bolum-01 sahne 8)",
+      "hareket": "merdiven tırmanışı, lamba yanması",
+      "ses_efekt": "adımlar, lamba uğultusu",
+      "panel": {
+        "donem": "GECE 2/7",
+        "saat": "18:10",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne08-anlatici.mp3",
+      "ses_metin": "[calm] Altmış bir. Yine tuttu.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 2.1
+    },
+    {
+      "id": 9,
+      "sure_sn": 4.0,
+      "anlatim": "",
+      "konusmaci": "-",
+      "ses_yok": true,
+      "gorsel": "zaman atlama (kütüphane: bolum-01 sahne 9); saat 18:10'dan 23:58'e",
+      "hareket": "hızlandırılmış dalga, ay",
+      "ses_efekt": "rüzgâr, martı",
+      "panel": {
+        "donem": "GECE 2/7",
+        "saat": "23:58",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN",
+        "saat_bas": "18:10"
+      },
+      "tahmini_konusma_sn": 0,
+      "ses_dosyasi": null
+    },
+    {
+      "id": 10,
+      "sure_sn": 4.0,
+      "anlatim": "Gece yarısı. Yine.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[softly]",
+      "gorsel": "00:00 saat yüzü, titreyen lamba (kütüphane: bolum-01 sahne 12)",
+      "hareket": "ışık flaşı",
+      "ses_efekt": "ani sessizlik, kalp atışı",
+      "panel": {
+        "donem": "GECE 2/7",
+        "saat": "00:00",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne10-anlatici.mp3",
+      "ses_metin": "[softly] Gece yarısı. Yine.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 2.1
+    },
+    {
+      "id": 11,
+      "sure_sn": 8.0,
+      "anlatim": "Rıza? Kuledeyim. Merdivenden çıkamıyorum. Yardım et.",
+      "konusmaci": "Telsiz (bekçi sesi)",
+      "ses_etiket": "[muffled] [slow] [nervous]",
+      "gorsel": "telsiz yakın plan, kırmızı banner KURAL 2 (kütüphane: bolum-01 sahne 13)",
+      "hareket": "banner girişi",
+      "ses_efekt": "telsiz cızırtısı, düşük pad",
+      "panel": {
+        "donem": "GECE 2/7",
+        "saat": "00:53",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne11-telsiz.mp3",
+      "ses_metin": "[muffled] [slow] [nervous] Rıza? Kuledeyim. Merdivenden çıkamıyorum. Yardım et.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 4.8
+    },
+    {
+      "id": 12,
+      "sure_sn": 6.0,
+      "anlatim": "Bu benim sesim. Ama ben buradayım.",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[nervous]",
+      "gorsel": "bekçi yüzü yakın plan, gözler iri; tavandaki kapaktan iki ağır adım, toz dökülür",
+      "hareket": "kamera yaklaşır, başını kaldırır",
+      "ses_efekt": "üstten iki ağır adım, kalp atışı hızlanır",
+      "panel": {
+        "donem": "GECE 2/7",
+        "saat": "00:53",
+        "isik": "AÇIK",
+        "tekne": 1,
+        "hedef": "6 GECE DAYAN"
+      },
+      "ses_dosyasi": "ses/sahne12-anlatici.mp3",
+      "ses_metin": "[nervous] Bu benim sesim. Ama ben buradayım.",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 3.3
+    },
+    {
+      "id": 13,
+      "sure_sn": 11.0,
+      "anlatim": "Ne yaparsın?",
+      "konusmaci": "Anlatıcı",
+      "ses_etiket": "[low]",
+      "gorsel": "oylama kartı: 00:53 · TELSİZDE KENDİ SESİN; TELSİZE CEVAP VER (yeşil) · TELSİZİ KAPAT (kırmızı); teori: Kuledeki sence kim?; sarı: 3. GECEYİ GÖRMEK İÇİN TAKİP ET",
+      "hareket": "kart aşağıdan girer, düğmeler sırayla yanar",
+      "ses_efekt": "tek düşük vuruş, ardından sessizlik",
+      "panel": null,
+      "ses_dosyasi": "ses/sahne13-anlatici.mp3",
+      "ses_metin": "[low] Ne yaparsın?",
+      "ses_id": "Xxps7kSjmTEY5ipN1f60",
+      "tahmini_konusma_sn": 1.2
+    }
+  ]
 }

@@ -7,7 +7,14 @@ k = pathlib.Path(__file__).resolve().parent.parent
 B = pathlib.Path(sys.argv[1]); out = sys.argv[2]
 t = (k / 'prototip' / 'bolum.html').read_text()
 css = (k / 'sablon' / 'rigs.css').read_text()
-js = '\n'.join('<script>\n' + (p.read_text()) + '\n</script>' for p in [k / 'sablon' / 'rigs.js', k / 'sablon' / 'cizim.js', B / 'sahne-cizim.js', k / 'sablon' / 'motor.js'])
+def kutuphane(yol):
+    """başka bir bölümün sahne çizimlerini KUT['<klasör>'] içine yükler (BOLUM.sahne geçici olarak değiştirilir)."""
+    ad = pathlib.Path(yol).name
+    return ('<script>window.KUT=window.KUT||{};(function(){window.BOLUM=window.BOLUM||{sahne:{}};var eski=window.BOLUM.sahne;window.BOLUM.sahne={};\n'
+            + (k / yol / 'sahne-cizim.js').read_text() + f"\nwindow.KUT['{ad}']=window.BOLUM.sahne;window.BOLUM.sahne=eski;}})();\n</script>")
+SJ = json.loads((B / 'sahneler.json').read_text())
+kut = '\n'.join(kutuphane(y) for y in SJ.get('kutuphane', []))
+js = '\n'.join('<script>\n' + (p.read_text()) + '\n</script>' for p in [k / 'sablon' / 'rigs.js', k / 'sablon' / 'cizim.js']) + '\n' + kut + '\n' + '\n'.join('<script>\n' + (p.read_text()) + '\n</script>' for p in [B / 'sahne-cizim.js', k / 'sablon' / 'motor.js'])
 ctl_html = '''<div id="ctl" style="position:fixed;left:0;right:0;bottom:0;background:#0b141dcc;padding:8px 12px;display:flex;gap:10px;align-items:center;font:14px system-ui;color:#e8eef5"><button id="pp" style="padding:8px 12px">⏸</button><button id="snd" style="padding:8px 12px">🔊 Sesi aç</button><input id="sl" type="range" min="0" max="__MAX__" step="1" value="0" style="flex:1"><span id="tl">0.0</span><label><input type="checkbox" id="sf"> Güvenli alan</label></div>'''
 ctl_js = '''<script>(function(){const sl=document.getElementById('sl'),tl=document.getElementById('tl'),pp=document.getElementById('pp');let paused=false;
 pp.onclick=function(){paused=!paused;window.__manual=paused;pp.textContent=paused?'▶':'⏸';if(!paused)BOLUM.play()};
