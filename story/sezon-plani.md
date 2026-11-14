@@ -51,3 +51,10 @@
 - B1: Kapıdaki ses boğuk, yağmura rağmen ıslak ayak sesi yok.
 - B2: Zeki Usta'nın defterinde "Sayı tutmadı" yazıyor.
 - Her ipucunun dallanma durumunda kullanılacak yedek sahnesi sonraki planda yazılacak.
+
+## Dallanma kaydı (oylama sonuçları; ayrıntı: degiskenler.json)
+| Bölüm | Kazanan | Oran | Sonuç |
+|---|---|---|---|
+| 1 | A · Delikten bak | %93 | Gölgesiz bekçiyi gördü. Kapı açılmadı. |
+
+Bölüm 2 yolu: delikten bakan bekçiyi Gölgesizler tanır ve sesini öğrenir. Telsiz artık Zeki'nin değil **bekçinin kendi sesiyle** konuşacak (anlatıcı sesi radyo filtresinden geçer).

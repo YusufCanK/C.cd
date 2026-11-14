@@ -1,0 +1,21 @@
+{
+  "bolum_01": {
+    "secim": "A",
+    "secenek": "Delikten bak",
+    "alternatif": "Kapıyı aç",
+    "kazanan_oran": 0.93,
+    "kaynak": "Kullanıcı bildirdi (platform ve oy sayısı belirtilmedi)",
+    "kayit_tarihi": "2026-11-14",
+    "sonuc": "Bekçi deliğe baktı. Kapıdaki Gölgesiz bekçiyi gördü ve gölgesinin olmadığı fark edildi. Kapı açılmadı."
+  },
+  "durum": {
+    "delikten_bakti": true,
+    "golgesiz_bekciyi_gordu": true,
+    "sesi_ogrenildi": false,
+    "zeki_bakmisti_bilgisi": false,
+    "kapi_acildi": false,
+    "tekne_kurtarilan": 1,
+    "tekne_kaybedilen": 0,
+    "gece": 1
+  }
+}
