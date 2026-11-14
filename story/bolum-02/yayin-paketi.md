@@ -14,7 +14,8 @@
 >
 > #kat9 #seninkarar #interaktifhikaye #animasyon #zombi #hayattakalma #hikaye
 
-YouTube Shorts başlığı: `KAT 9 · Bölüm 2: Merdiven | Ön kapı mı, bodrum mu? Sen seç #shorts`
+## YouTube başlığı
+> KAT 9 · Bölüm 2: Merdiven | Ön kapı mı, bodrum mu? Sen seç #shorts
 
 ## Sabitlenmiş yorum
 > 🗳️ OY: sadece A ya da B yaz
@@ -23,7 +24,8 @@ YouTube Shorts başlığı: `KAT 9 · Bölüm 2: Merdiven | Ön kapı mı, bodru
 > Teorin varsa ayrı yorum yaz: Ahmet Amca'nın kedisi nerede?
 
 ## Story anketi
-"Deniz nasıl çıkmalı?" seçenekleri: "🚪 Ön kapı" / "⬇️ Bodrum"
+> Deniz nasıl çıkmalı?
+> 🚪 Ön kapı / ⬇️ Bodrum
 
 ## Oy sayımı
 `python3 sablon/oy_say.py 02 yorumlar/*.txt --kaydet`

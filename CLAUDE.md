@@ -40,5 +40,9 @@
 - Önceki seçim ve durum: `story/degiskenler.json`, `story/durum-sistemi.md`. Sisli ses imzası: `sablon/sisli_ses.py`.
 - Bölüme özel parçalar: görseller `prototip/parca/bolum-NN/` (sahneler.svg.html, sahneler.js, stil.css), efekt ve müzik `story/bolum-NN/efektler.py`, panel, başlık kartı ve çip `sahneler.json` içinde (`hud`, `baslik_karti`, `chip`, `panel_hedef`). Bölüm 1 eski yolla aynı çıktıyı verir (doğrulandı).
 
+## Teslim
+- Her bölüm bitince `python3 sablon/yayin_sayfasi.py` çalıştırılır ve `story/kanallar/sayfa/index.html` aynı Artifact'a (https://claude.ai/artifact/DAgLcxtANarZURwDFo84o3, `capabilities: {downloads: true}`, videolar ve kapaklar `files` ile) yeniden yayınlanır. Sayfada video, kapak ve kopyalanabilir yayın metinleri (açıklama, YouTube başlığı, sabitlenmiş yorum, Story anketi, biyografiler) bulunur. Kullanıcı videoyu buradan kaydeder.
+- Yayın metinleri `story/bolum-NN/yayin-paketi.md` içinde `## Başlık` + `> satırlar` biçiminde yazılır.
+
 ## İletişim düzeni
 - Kullanıcıyla doğrudan konuşulur (ChatGPT aracılığı kapandı).

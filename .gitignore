@@ -4,3 +4,4 @@
 *.wav
 story/**/ses/
 story/**/klipler/
+story/kanallar/sayfa/*.png
